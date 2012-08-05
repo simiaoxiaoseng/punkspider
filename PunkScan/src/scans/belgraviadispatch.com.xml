@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://belgraviadispatch.com/</rootURL>
+        <toBrowse/>
+        <browsed>
+            <url_data uri="http://belgraviadispatch.com/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="214998"/>
+                <header name="content-location" value="http://belgraviadispatch.com/"/>
+                <header name="accept-ranges" value="bytes"/>
+                <header name="server" value="Apache/2.0.64 (Unix) mod_ssl/2.0.64 OpenSSL/0.9.7a DAV/2 mod_auth_passthrough/2.1 mod_bwlimited/1.4 FrontPage/5.0.2.2635 PHP/5.3.8"/>
+                <header name="last-modified" value="Mon, 04 Jun 2012 13:47:30 GMT"/>
+                <header name="etag" value="&quot;2c40b8-347d6-c6728080&quot;"/>
+                <header name="link_encoding" value=""/>
+                <header name="date" value="Sun, 05 Aug 2012 21:01:11 GMT"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

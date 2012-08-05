@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://beavisandblunthead.tumblr.com/</rootURL>
+        <toBrowse>
+            <url>http://beautyxpose.com/searchh</url>
+            <url>http://beautyxpose.com/submit</url>
+            <url>http://beauvoirglass.blogspot.com/</url>
+            <url>http://beauvoirglass.blogspot.com/about</url>
+            <url>http://beauvoirglass.blogspot.com/askvips</url>
+            <url>http://beauvoirglass.blogspot.com/who</url>
+            <url>http://beauvoirglass.blogspot.com/faq</url>
+            <url>http://beauvoirglass.blogspot.com/searchh</url>
+            <url>http://beauvoirglass.blogspot.com/submit</url>
+            <url>http://beaux-esprits.polyvore.com/</url>
+            <url>http://beaux-esprits.polyvore.com/about</url>
+            <url>http://beaux-esprits.polyvore.com/askvips</url>
+            <url>http://beaux-esprits.polyvore.com/who</url>
+            <url>http://beaux-esprits.polyvore.com/faq</url>
+            <url>http://beaux-esprits.polyvore.com/searchh</url>
+            <url>http://beaux-esprits.polyvore.com/submit</url>
+            <url>http://beauxgarsons.blogspot.fr/</url>
+            <url>http://beauxgarsons.blogspot.fr/about</url>
+            <url>http://beauxgarsons.blogspot.fr/askvips</url>
+            <url>http://beauxgarsons.blogspot.fr/who</url>
+            <url>http://beauxgarsons.blogspot.fr/faq</url>
+            <url>http://beauxgarsons.blogspot.fr/searchh</url>
+            <url>http://beauxgarsons.blogspot.fr/submit</url>
+            <url>http://beauxmondesdesigns.blogspot.com/</url>
+            <url>http://beauxmondesdesigns.blogspot.com/about</url>
+            <url>http://beauxmondesdesigns.blogspot.com/askvips</url>
+            <url>http://beauxmondesdesigns.blogspot.com/who</url>
+            <url>http://beauxmondesdesigns.blogspot.com/faq</url>
+            <url>http://beauxmondesdesigns.blogspot.com/searchh</url>
+            <url>http://beauxmondesdesigns.blogspot.com/submit</url>
+            <url>http://beaverbeavs.tumblr.com/</url>
+            <url>http://beaverbeavs.tumblr.com/about</url>
+            <url>http://beaverbeavs.tumblr.com/askvips</url>
+            <url>http://beaverbeavs.tumblr.com/who</url>
+            <url>http://beaverbeavs.tumblr.com/faq</url>
+            <url>http://beaverbeavs.tumblr.com/searchh</url>
+            <url>http://beaverbeavs.tumblr.com/submit</url>
+            <url>http://www.beaverbrook.com/</url>
+            <url>http://www.beaverbrook.com/about</url>
+            <url>http://www.beaverbrook.com/askvips</url>
+            <url>http://www.beaverbrook.com/who</url>
+            <url>http://www.beaverbrook.com/faq</url>
+            <url>http://www.beaverbrook.com/searchh</url>
+            <url>http://www.beaverbrook.com/submit</url>
+            <url>http://beaverton-oregon.olx.com/</url>
+            <url>http://beavisandblunthead.tumblr.com/</url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://beautyxpose.com/who">
+                <header name="status" value="301"/>
+                <header name="content-length" value="0"/>
+                <header name="expires" value="Wed, 11 Jan 1984 05:00:00 GMT"/>
+                <header name="server" value="Apache"/>
+                <header name="last-modified" value="Sun, 05 Aug 2012 01:01:07 GMT"/>
+                <header name="location" value="http://beautyxpose.com/2011/musings/who-wore-what-celebrity-jewelry.html"/>
+                <header name="pragma" value="no-cache"/>
+                <header name="cache-control" value="no-cache, must-revalidate, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 01:01:07 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://beautyxpose.com/xmlrpc.php"/>
+                <header name="link_encoding" value="utf-8"/>
+            </url_data>
+            <url_data uri="http://beautyxpose.com/askvips">
+                <header name="status" value="404"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Wed, 11 Jan 1984 05:00:00 GMT"/>
+                <header name="server" value="Apache"/>
+                <header name="last-modified" value="Sun, 05 Aug 2012 01:01:07 GMT"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="pragma" value="no-cache"/>
+                <header name="cache-control" value="no-cache, must-revalidate, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 01:01:07 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://beautyxpose.com/xmlrpc.php"/>
+            </url_data>
+            <url_data uri="http://beautyxpose.com/about">
+                <header name="status" value="200"/>
+                <header name="content-length" value="19976"/>
+                <header name="content-location" value="http://beautyxpose.com/about"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 01:01:06 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://beautyxpose.com/xmlrpc.php"/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

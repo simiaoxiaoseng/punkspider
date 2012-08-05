@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://beer.findthebest.com/</rootURL>
+        <toBrowse>
+            <url>http://beer.findthebest.com/l/1719/Goose-Island-Bourbon-County-Rare</url>
+            <url>http://beer.findthebest.com/l/1510/Russian-River-Pliny-the-Younger</url>
+            <url>http://beer.findthebest.com/l/2822/Triton-Mangnificent-Amber</url>
+            <url>http://beer.findthebest.com/l/1375/Bell-s-Black-Note-Bourbon-Barrel-Aged-Stout</url>
+            <url>http://beer.findthebest.com/l/745/Ballast-Point-Sculpin-IPA</url>
+            <url>http://beer.findthebest.com/l/1578/Russian-River-Pliny-the-Elder</url>
+            <url>http://beer.findthebest.com/l/1189/AleSmith-Barrel-Aged-Speedway-Stout</url>
+            <url>http://beer.findthebest.com/l/1058/Founders-KBS</url>
+            <url>http://beer.findthebest.com/l/2834/Weasel-Boy-Plaid-Ferret-Scottish-Ale</url>
+            <url>http://beer.findthebest.com/l/1307/Cigar-City-Hunahpu-s-Imperial-Stout</url>
+            <url>http://beer.findthebest.com/l/2258/Jackie-Os-Hop-Flake</url>
+            <url>http://beer.findthebest.com/l/2635/Dogfish-Head-Isabelle-Proximus</url>
+            <url>http://beer.findthebest.com/l/1061/Deschutes-The-Abyss</url>
+            <url>http://beer.findthebest.com/l/1138/Three-Floyds-Dark-Lord</url>
+            <url>http://beer.findthebest.com/l/1227/AleSmith-Speedway-Stout</url>
+            <url>http://beer.findthebest.com/l/1715/Goose-Island-Bourbon-County-Coffee</url>
+            <url>http://beer.findthebest.com/l/1391/Bell-s-Hopslam-Ale</url>
+            <url>http://beer.findthebest.com/l/1560/Russian-River-Supplication</url>
+            <url>http://beer.findthebest.com/l/1163/Three-Floyds-Dreadnaught</url>
+            <url>http://beer.findthebest.com/l/2181/Midnight-Sun-Anchor</url>
+            <url>http://beer.findthebest.com/l/1426/Bell%27s-Oarsman-Ale</url>
+            <url>http://beer.findthebest.com/glossary/</url>
+            <url>http://beer.findthebest.com/app-questions/</url>
+            <url>http://beer.findthebest.com/saved_compare/5-Craft-Beers-That-Won-t-Break-Your-Bank</url>
+            <url>http://beer.findthebest.com/saved_compare/7-College-Craft-Beers</url>
+            <url>http://beer.findthebest.com/saved_compare/Abtia-Turbo-Dog-Beer-vs-Budweiser-American-Ale</url>
+            <url>http://beer.findthebest.com/saved_compare/Alaskan-Brewing-Company</url>
+            <url>http://beer.findthebest.com/saved_compare/Bud-Light-vs-Coors-Light</url>
+            <url>http://beer.findthebest.com/compares</url>
+            <url>http://beer.findthebest.com/saved_search/All-American-Beers</url>
+            <url>http://beer.findthebest.com/saved_search/Beers-with-the-Highest-Alcohol-Content</url>
+            <url>http://beer.findthebest.com/saved_search/Light-Beer</url>
+            <url>http://beer.findthebest.com/saved_search/Top-10-American-Beers</url>
+            <url>http://beer.findthebest.com/saved_search/Top-5-Beers</url>
+            <url>http://beer.findthebest.com/saved_search/top-allagash-beers</url>
+            <url>http://beer.findthebest.com/d/a/Against-the-Grain-Brewery</url>
+            <url>http://beer.findthebest.com/d/a/Aiken-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Alaskan-Brewing-and-Bottling-Co</url>
+            <url>http://beer.findthebest.com/d/a/Alchemist-Pub-_and_-Brewery%2C-The</url>
+            <url>http://beer.findthebest.com/d/a/Ale-Asylum</url>
+            <url>http://beer.findthebest.com/d/a/AleSmith-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Allagash-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Alpine-Beer-Co</url>
+            <url>http://beer.findthebest.com/d/a/Altitude-Chophouse-and-Brewery</url>
+            <url>http://beer.findthebest.com/d/a/Amicas-Pizza-_and_-Microbrewery</url>
+            <url>http://beer.findthebest.com/d/a/Anchor-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Anderson-Valley-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Anheuser-.-Busch</url>
+            <url>http://beer.findthebest.com/d/a/Anheuser-.-Busch-Inc</url>
+            <url>http://beer.findthebest.com/d/a/Arbor-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Arcadia-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Avery-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Ballast-Point-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Bards-Tale-Beer-Co</url>
+            <url>http://beer.findthebest.com/d/a/Barley-Creek-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Barley-Johns-Brewpub</url>
+            <url>http://beer.findthebest.com/d/a/Barley%27s-Smokehouse-_and_-Brewpub-%28Ale-House-No.-2%29</url>
+            <url>http://beer.findthebest.com/d/a/Barleys-Casino-and-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Beachwood-BBQ-_and_-Brewing</url>
+            <url>http://beer.findthebest.com/d/a/Bear-Republic-Brewing-Co--.--Production-facility</url>
+            <url>http://beer.findthebest.com/d/a/Bell%27s-Brewery%2C-Inc</url>
+            <url>http://beer.findthebest.com/d/a/Belmont-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Bethlehem-Brew-Works</url>
+            <url>http://beer.findthebest.com/d/a/Big-Al-Brewing</url>
+            <url>http://beer.findthebest.com/d/a/Bison-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Black-Diamond-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Black-Star-Co-.-op</url>
+            <url>http://beer.findthebest.com/d/a/Blue-Mountain-Brewery</url>
+            <url>http://beer.findthebest.com/d/a/Bold-City-Brewery</url>
+            <url>http://beer.findthebest.com/d/a/Boston-Beer-Co</url>
+            <url>http://beer.findthebest.com/d/a/Boulder-Creek-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Boulevard-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Brady%27s-Brewhouse</url>
+            <url>http://beer.findthebest.com/d/a/Brew-Kettle%2C-Taproom-and-Smokehouse%2C-The</url>
+            <url>http://beer.findthebest.com/d/a/Brewer%27s-Pizza</url>
+            <url>http://beer.findthebest.com/d/a/Brewers-Union-Local-180</url>
+            <url>http://beer.findthebest.com/d/a/Brewery-Ommegang</url>
+            <url>http://beer.findthebest.com/d/a/Brewery-Vivant</url>
+            <url>http://beer.findthebest.com/d/a/BridgePort-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Brooklyn-Brewery</url>
+            <url>http://beer.findthebest.com/d/a/Bullfrog-Brewery</url>
+            <url>http://beer.findthebest.com/d/a/Butte-Creek-Brewing-Company</url>
+            <url>http://beer.findthebest.com/d/a/CH-Evans-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/COAST-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Caldera-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Captain-Lawrence-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Cascade-Brewery</url>
+            <url>http://beer.findthebest.com/d/a/Central-Waters-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Chama-River-Brewing-Company</url>
+            <url>http://beer.findthebest.com/d/a/Cigar-City-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Cismontane-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Civil-Life-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Columbia-River-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Craftsman-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Crown-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Cumberland-Brewery</url>
+            <url>http://beer.findthebest.com/d/a/D.-G.-Yuengling-and-Son-Inc</url>
+            <url>http://beer.findthebest.com/d/a/Dark-Horse-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Deschutes-Brewery</url>
+            <url>http://beer.findthebest.com/d/a/Dogfish-Head-Craft-Brewery</url>
+            <url>http://beer.findthebest.com/d/a/Dolores-River-Brewery</url>
+            <url>http://beer.findthebest.com/d/a/Dragonmead-Microbrewery</url>
+            <url>http://beer.findthebest.com/d/a/Draught-House-Pub-and-Brewery</url>
+            <url>http://beer.findthebest.com/d/a/Draught-Works-Brewing</url>
+            <url>http://beer.findthebest.com/d/a/Duck-.-Rabbit-Craft-Brewery</url>
+            <url>http://beer.findthebest.com/d/a/East-End-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Elysian-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Epic-Brewing-Co.%2C-LLC</url>
+            <url>http://beer.findthebest.com/d/a/Everybody%27s-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Everybody%60s-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Fat-Head%27s-Brewery-_and_-Saloon</url>
+            <url>http://beer.findthebest.com/d/a/Firestone-Walker-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Flat-12-Bierwerks</url>
+            <url>http://beer.findthebest.com/d/a/Flossmoor-Station-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Flying-Dog-Brewery</url>
+            <url>http://beer.findthebest.com/d/a/Foothills-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Founders-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Free-State-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Funkwerks</url>
+            <url>http://beer.findthebest.com/d/a/Funky-Buddha-Lounge-_and_-Brewery</url>
+            <url>http://beer.findthebest.com/d/a/Gellas-Diner-_and_-Liquid-Bread-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Good-People-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Goose-Island-Beer-Co</url>
+            <url>http://beer.findthebest.com/d/a/Great-Divide-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Great-Lakes-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Green-Flash-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Green-Room-Brewing</url>
+            <url>http://beer.findthebest.com/d/a/Green%27s-Gluten-Free-Beers</url>
+            <url>http://beer.findthebest.com/d/a/Green%E2%80%99s-Gluten-Free-Beers</url>
+            <url>http://beer.findthebest.com/d/a/Guinness-_and_-Co-..-</url>
+            <url>http://beer.findthebest.com/d/a/Hair-of-the-Dog-Brewing-Co</url>
+            <url>http://beer.findthebest.com/d/a/Half-Acre-Beer-Co</url>
+            <url>http://beer.findthebest.com/d/a/Hambleton-Ales</url>
+            <url>http://beer.findthebest.com/d/a/Hank-Is-Wiser-Brewery</url>
+            <url>http://beer.findthebest.com/d/b/Algeria</url>
+            <url>http://beer.findthebest.com/d/b/Angola</url>
+            <url>http://beer.findthebest.com/d/b/Argentina</url>
+            <url>http://beer.findthebest.com/d/b/Australia</url>
+            <url>http://beer.findthebest.com/d/b/Austria</url>
+            <url>http://beer.findthebest.com/d/b/Bahamas</url>
+            <url>http://beer.findthebest.com/d/b/Belarus</url>
+            <url>http://beer.findthebest.com/d/b/Belgium</url>
+            <url>http://beer.findthebest.com/d/b/Bolivia%2C-Plurinational-State-of</url>
+            <url>http://beer.findthebest.com/d/b/Botswana</url>
+            <url>http://beer.findthebest.com/d/b/Brazil</url>
+            <url>http://beer.findthebest.com/d/b/Bulgaria</url>
+            <url>http://beer.findthebest.com/d/b/Burundi</url>
+            <url>http://beer.findthebest.com/d/b/Cambodia</url>
+            <url>http://beer.findthebest.com/d/b/Cameroon</url>
+            <url>http://beer.findthebest.com/d/b/Canada</url>
+            <url>http://beer.findthebest.com/d/b/Chile</url>
+            <url>http://beer.findthebest.com/d/b/China</url>
+            <url>http://beer.findthebest.com/d/b/Colombia</url>
+            <url>http://beer.findthebest.com/d/b/Congo</url>
+            <url>http://beer.findthebest.com/d/b/Costa-Rica</url>
+            <url>http://beer.findthebest.com/d/b/Croatia</url>
+            <url>http://beer.findthebest.com/d/b/Cuba</url>
+            <url>http://beer.findthebest.com/d/b/Czech-Republic</url>
+            <url>http://beer.findthebest.com/d/b/Dominican-Republic</url>
+            <url>http://beer.findthebest.com/d/b/Ecuador</url>
+            <url>http://beer.findthebest.com/d/b/Egypt</url>
+            <url>http://beer.findthebest.com/d/b/El-Salvador</url>
+            <url>http://beer.findthebest.com/d/b/Finland</url>
+            <url>http://beer.findthebest.com/d/b/France</url>
+            <url>http://beer.findthebest.com/d/b/French-Polynesia</url>
+            <url>http://beer.findthebest.com/d/b/Germany</url>
+            <url>http://beer.findthebest.com/d/b/Ghana</url>
+            <url>http://beer.findthebest.com/d/b/Greece</url>
+            <url>http://beer.findthebest.com/d/b/Haiti</url>
+            <url>http://beer.findthebest.com/d/b/Honduras</url>
+            <url>http://beer.findthebest.com/d/b/Hungary</url>
+            <url>http://beer.findthebest.com/d/b/India</url>
+            <url>http://beer.findthebest.com/d/b/Indonesia</url>
+            <url>http://beer.findthebest.com/d/b/Ireland</url>
+            <url>http://beer.findthebest.com/d/b/Israel</url>
+            <url>http://beer.findthebest.com/d/b/Italy</url>
+            <url>http://beer.findthebest.com/d/b/Jamaica</url>
+            <url>http://beer.findthebest.com/d/b/Japan</url>
+            <url>http://beer.findthebest.com/d/b/Kenya</url>
+            <url>http://beer.findthebest.com/d/b/Lao-People%27s-Democratic-Republic</url>
+            <url>http://beer.findthebest.com/d/b/Lebanon</url>
+            <url>http://beer.findthebest.com/d/b/Lesotho</url>
+            <url>http://beer.findthebest.com/d/b/Luxembourg</url>
+            <url>http://beer.findthebest.com/d/b/Malaysia</url>
+            <url>http://beer.findthebest.com/d/b/Martinique</url>
+            <url>http://beer.findthebest.com/d/b/Mexico</url>
+            <url>http://beer.findthebest.com/d/b/Montenegro</url>
+            <url>http://beer.findthebest.com/d/b/Morocco</url>
+            <url>http://beer.findthebest.com/d/b/Mozambique</url>
+            <url>http://beer.findthebest.com/d/b/Namibia</url>
+            <url>http://beer.findthebest.com/d/b/Netherlands</url>
+            <url>http://beer.findthebest.com/d/b/New-Caledonia</url>
+            <url>http://beer.findthebest.com/d/b/New-Zealand</url>
+            <url>http://beer.findthebest.com/d/b/Nicaragua</url>
+            <url>http://beer.findthebest.com/d/b/Nigeria</url>
+            <url>http://beer.findthebest.com/d/b/Panama</url>
+            <url>http://beer.findthebest.com/d/b/Papua-New-Guinea</url>
+            <url>http://beer.findthebest.com/d/b/Peru</url>
+            <url>http://beer.findthebest.com/d/b/Poland</url>
+            <url>http://beer.findthebest.com/d/b/Portugal</url>
+            <url>http://beer.findthebest.com/d/b/Republic-of-Macedonia</url>
+            <url>http://beer.findthebest.com/d/b/Romania</url>
+            <url>http://beer.findthebest.com/d/b/Russian-Federation</url>
+            <url>http://beer.findthebest.com/d/b/R%C3%A9union</url>
+            <url>http://beer.findthebest.com/d/b/Saint-Lucia</url>
+            <url>http://beer.findthebest.com/d/b/Serbia</url>
+            <url>http://beer.findthebest.com/d/b/Singapore</url>
+            <url>http://beer.findthebest.com/d/b/Slovakia</url>
+            <url>http://beer.findthebest.com/d/b/South-Africa</url>
+            <url>http://beer.findthebest.com/d/b/Spain</url>
+            <url>http://beer.findthebest.com/d/b/Sri-Lanka</url>
+            <url>http://beer.findthebest.com/d/b/Sudan</url>
+            <url>http://beer.findthebest.com/d/b/Suriname</url>
+            <url>http://beer.findthebest.com/d/b/Switzerland</url>
+            <url>http://beer.findthebest.com/d/b/Tanzania%2C-United-Republic-Of</url>
+            <url>http://beer.findthebest.com/d/b/Thailand</url>
+            <url>http://beer.findthebest.com/d/b/Trinidad-and-Tobago</url>
+            <url>http://beer.findthebest.com/d/b/Turkey</url>
+            <url>http://beer.findthebest.com/d/b/Uganda</url>
+            <url>http://beer.findthebest.com/d/b/Ukraine</url>
+            <url>http://beer.findthebest.com/d/b/United-Kingdom</url>
+            <url>http://beer.findthebest.com/d/b/United-States</url>
+            <url>http://beer.findthebest.com/d/b/Viet-Nam</url>
+            <url>http://beer.findthebest.com/d/b/Zambia</url>
+            <url>http://beer.findthebest.com/d/b/Zimbabwe</url>
+            <url>http://beer.findthebest.com/d/c/American-Ale</url>
+            <url>http://beer.findthebest.com/d/c/American-Lager</url>
+            <url>http://beer.findthebest.com/d/c/Belgian-Ale</url>
+            <url>http://beer.findthebest.com/d/c/Czech-Lager</url>
+            <url>http://beer.findthebest.com/d/c/English-Ale</url>
+            <url>http://beer.findthebest.com/d/c/European-Lager</url>
+            <url>http://beer.findthebest.com/d/c/German-Ale</url>
+            <url>http://beer.findthebest.com/d/c/German-Lager</url>
+            <url>http://beer.findthebest.com/d/c/Irish-Ale</url>
+            <url>http://beer.findthebest.com/d/c/Japanese-Lager</url>
+            <url>http://beer.findthebest.com/d/c/Russian-Ale</url>
+            <url>http://beer.findthebest.com/d/c/Scottish-Ale</url>
+            <url>http://beer.findthebest.com/d/c/Specialty</url>
+            <url>http://beer.findthebest.com/user/password</url>
+            <url>http://beer.findthebest.com</url>
+            <url>http://beer.findthebest.com?ftb_slider=3;585.00</url>
+            <url>http://beer.findthebest.com?aj=on&amp;ba=on&amp;cb=on&amp;cbs=on&amp;cmp=on&amp;cp=on&amp;ef=on&amp;sl=on&amp;srt=on</url>
+            <url>http://beer.findthebest.com/best</url>
+            <url>http://beer.findthebest.com/d/c/German-Lager/Pilsener</url>
+            <url>http://beer.findthebest.com/d/c/American-Ale/Imperial-Stout</url>
+            <url>http://beer.findthebest.com/d/c/American-Ale/Imperial-IPA</url>
+            <url>http://beer.findthebest.com/d/c/American-Ale/Amber</url>
+            <url>http://beer.findthebest.com/app-question/22/What-is-the-best-beer</url>
+            <url>http://beer.findthebest.com/app-question/219/What-is-the-cheapest-beer</url>
+            <url>http://beer.findthebest.com/app-question/220/What-is-the-most-alcoholic-beer</url>
+            <url>http://beer.findthebest.com/app-question/221/What-beer-has-the-least-calories</url>
+            <url>http://beer.findthebest.com/?ftb_slider=3;585.00</url>
+            <url>http://beer.findthebest.com/?aj=on&amp;ba=on&amp;cb=on&amp;cbs=on&amp;cmp=on&amp;cp=on&amp;ef=on&amp;sl=on&amp;srt=on</url>
+            <url>http://beer.findthebest.com/l/2721/Good-People-Bubba</url>
+            <url>http://beer.findthebest.com/l/2721/</url>
+            <url>http://beer.findthebest.com/add_listing</url>
+            <url>http://beer.findthebest.com/edit_listing/2721</url>
+            <url>http://beer.findthebest.com/follow_listing/2721</url>
+            <url>http://beer.findthebest.com/l/2705/Good-People-Hitchhiker</url>
+            <url>http://beer.findthebest.com/l/2734/Good-People-Coffee-Oatmeal-Stout</url>
+            <url>http://beer.findthebest.com/l/2750/Good-People-Fatso</url>
+            <url>http://beer.findthebest.com/l/2712/Good-People-IPA</url>
+            <url>http://beer.findthebest.com/l/2726/Good-People-Brown</url>
+            <url>http://beer.findthebest.com/compare/1719-2721/Goose-Island-Bourbon-County-Rare-vs-Good-People-Bubba</url>
+            <url>http://beer.findthebest.com/q/2721/2768/How-highly-is-the-Good-People-Bubba-beer-rated</url>
+            <url>http://beer.findthebest.com/q/2721/2703/What-year-was-Good-People-Bubba-beer-first-brewed</url>
+            <url>http://beer.findthebest.com/q/2721/2704/What-is-the-ABV-of-Good-People-Bubba-beer</url>
+            <url>http://beer.findthebest.com/q/2721/2705/What-type-of-beer-is-Good-People-Bubba</url>
+            <url>http://beer.findthebest.com/q/2721/2706/Is-Good-People-Bubba-beer-alcoholic</url>
+            <url>http://beer.findthebest.com/q/2721/2714/What-is-the-serving-temperature-of-Good-People-Bubba-beer</url>
+            <url>http://beer.findthebest.com/q/2721/2710/What-company-makes-Good-People-Bubba-beer</url>
+            <url>http://beer.findthebest.com/q/2721/2711/Where-can-I-find-the-Good-People-Bubba-beer-website</url>
+            <url>http://beer.findthebest.com/compares/2721/Good-People-Bubba</url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://beer.findthebest.com/l/2721/Good-People-Bubba">
+                <header name="status" value="200"/>
+                <header name="content-length" value="61294"/>
+                <header name="content-location" value="http://beer.findthebest.com/l/2721/Good-People-Bubba"/>
+                <header name="content-language" value="en"/>
+                <header name="accept-ranges" value="bytes"/>
+                <header name="expires" value="Sun, 11 Mar 1984 12:00:00 GMT"/>
+                <header name="vary" value="Cookie,Accept-Encoding"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 17:35:14 GMT"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="etag" value="&quot;1344192910&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="public, max-age=86400"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:55:10 GMT"/>
+                <header name="p3p" value="CP=&quot;NON DSP COR CURa ADMa DEVa TAIa PSAa PSDa IVAa IVDa CONa HISa TELa OPTa OUR NOR COM NAV INT"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+                <header name="age" value="0"/>
+            </url_data>
+            <url_data uri="http://beer.findthebest.com/?aj=on&amp;ba=on&amp;cb=on&amp;cbs=on&amp;cmp=on&amp;cp=on&amp;ef=on&amp;sl=on&amp;srt=on">
+                <header name="status" value="200"/>
+                <header name="content-length" value="78924"/>
+                <header name="content-location" value="http://beer.findthebest.com/?aj=on&amp;ba=on&amp;cb=on&amp;cbs=on&amp;cmp=on&amp;cp=on&amp;ef=on&amp;sl=on&amp;srt=on"/>
+                <header name="content-language" value="en"/>
+                <header name="accept-ranges" value="bytes"/>
+                <header name="expires" value="Sun, 05 Aug 2012 19:55:03 GMT"/>
+                <header name="vary" value="Cookie,Accept-Encoding"/>
+                <header name="last-modified" value="Sun, 05 Aug 2012 18:55:03 +0000"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="etag" value="&quot;1344192903&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:55:09 GMT"/>
+                <header name="p3p" value="CP=&quot;NON DSP COR CURa ADMa DEVa TAIa PSAa PSDa IVAa IVDa CONa HISa TELa OPTa OUR NOR COM NAV INT"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+                <header name="age" value="0"/>
+            </url_data>
+            <url_data uri="http://beer.findthebest.com/best">
+                <header name="status" value="200"/>
+                <header name="content-length" value="55358"/>
+                <header name="content-location" value="http://beer.findthebest.com/best"/>
+                <header name="content-language" value="en"/>
+                <header name="accept-ranges" value="bytes"/>
+                <header name="expires" value="Sun, 11 Mar 1984 12:00:00 GMT"/>
+                <header name="vary" value="Cookie,Accept-Encoding"/>
+                <header name="last-modified" value="Thu, 28 Jun 2012 10:20:26 GMT"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="etag" value="&quot;1344192907&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="public, max-age=86400"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:55:08 GMT"/>
+                <header name="p3p" value="CP=&quot;NON DSP COR CURa ADMa DEVa TAIa PSAa PSDa IVAa IVDa CONa HISa TELa OPTa OUR NOR COM NAV INT"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+                <header name="age" value="0"/>
+            </url_data>
+            <url_data uri="http://beer.findthebest.com/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="78208"/>
+                <header name="content-location" value="http://beer.findthebest.com/"/>
+                <header name="content-language" value="en"/>
+                <header name="accept-ranges" value="bytes"/>
+                <header name="expires" value="Sun, 05 Aug 2012 19:15:46 GMT"/>
+                <header name="vary" value="Cookie,Accept-Encoding"/>
+                <header name="last-modified" value="Sun, 05 Aug 2012 18:15:46 +0000"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="etag" value="&quot;1344190546&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:55:07 GMT"/>
+                <header name="p3p" value="CP=&quot;NON DSP COR CURa ADMa DEVa TAIa PSAa PSDa IVAa IVDa CONa HISa TELa OPTa OUR NOR COM NAV INT"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+                <header name="age" value="2360"/>
+            </url_data>
+            <url_data uri="http://beer.findthebest.com">
+                <header name="status" value="200"/>
+                <header name="content-length" value="78208"/>
+                <header name="content-location" value="http://beer.findthebest.com"/>
+                <header name="content-language" value="en"/>
+                <header name="accept-ranges" value="bytes"/>
+                <header name="expires" value="Sun, 05 Aug 2012 19:15:46 GMT"/>
+                <header name="vary" value="Cookie,Accept-Encoding"/>
+                <header name="last-modified" value="Sun, 05 Aug 2012 18:15:46 +0000"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="etag" value="&quot;1344190546&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:55:07 GMT"/>
+                <header name="p3p" value="CP=&quot;NON DSP COR CURa ADMa DEVa TAIa PSAa PSDa IVAa IVDa CONa HISa TELa OPTa OUR NOR COM NAV INT"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+                <header name="age" value="2360"/>
+            </url_data>
+            <url_data uri="http://beer.findthebest.com/?ftb_slider=3;585.00">
+                <header name="status" value="200"/>
+                <header name="content-length" value="78228"/>
+                <header name="content-location" value="http://beer.findthebest.com/?ftb_slider=3;585.00"/>
+                <header name="content-language" value="en"/>
+                <header name="accept-ranges" value="bytes"/>
+                <header name="expires" value="Sun, 05 Aug 2012 19:55:08 GMT"/>
+                <header name="vary" value="Cookie,Accept-Encoding"/>
+                <header name="last-modified" value="Sun, 05 Aug 2012 18:55:08 +0000"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="etag" value="&quot;1344192908&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:55:08 GMT"/>
+                <header name="p3p" value="CP=&quot;NON DSP COR CURa ADMa DEVa TAIa PSAa PSDa IVAa IVDa CONa HISa TELa OPTa OUR NOR COM NAV INT"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+                <header name="age" value="0"/>
+            </url_data>
+        </browsed>
+        <forms>
+            <form encoding="utf-8" to="http://beer.findthebest.com/" url="http://beer.findthebest.com/">
+                <inputs>
+                    <input name="form_build_id" value="form-302aa3e9520ff1377ca59dee4ec218a1"/>
+                    <input name="name" value="on"/>
+                    <input name="form_id" value="user_login_small_form"/>
+                    <input name="pass" value="on"/>
+                    <input name="dest" value="on"/>
+                    <input name="op" value="LOGIN"/>
+                </inputs>
+            </form>
+            <form encoding="utf-8" to="http://beer.findthebest.com" url="http://beer.findthebest.com/">
+                <inputs>
+                    <input name="form_build_id" value="form-302aa3e9520ff1377ca59dee4ec218a1"/>
+                    <input name="name" value="on"/>
+                    <input name="form_id" value="user_login_small_form"/>
+                    <input name="pass" value="on"/>
+                    <input name="dest" value="on"/>
+                    <input name="op" value="LOGIN"/>
+                </inputs>
+            </form>
+            <form encoding="utf-8" to="http://beer.findthebest.com/best" url="http://beer.findthebest.com/best">
+                <inputs>
+                    <input name="form_build_id" value="form-4203c66db461a110771aabc8655e408e"/>
+                    <input name="name" value="on"/>
+                    <input name="form_id" value="user_login_small_form"/>
+                    <input name="pass" value="on"/>
+                    <input name="dest" value="on"/>
+                    <input name="op" value="LOGIN"/>
+                </inputs>
+            </form>
+            <form encoding="utf-8" to="http://beer.findthebest.com/?ftb_slider=3;585.00" url="http://beer.findthebest.com/?ftb_slider=3;585.00">
+                <inputs>
+                    <input name="form_build_id" value="form-2857bf8d6909e9e5ed59553665ec2a6f"/>
+                    <input name="name" value="on"/>
+                    <input name="form_id" value="user_login_small_form"/>
+                    <input name="pass" value="on"/>
+                    <input name="dest" value="on"/>
+                    <input name="op" value="LOGIN"/>
+                </inputs>
+            </form>
+            <form encoding="utf-8" to="http://beer.findthebest.com/?aj=on&amp;ba=on&amp;cb=on&amp;cbs=on&amp;cmp=on&amp;cp=on&amp;ef=on&amp;sl=on&amp;srt=on" url="http://beer.findthebest.com/?aj=on&amp;ba=on&amp;cb=on&amp;cbs=on&amp;cmp=on&amp;cp=on&amp;ef=on&amp;sl=on&amp;srt=on">
+                <inputs>
+                    <input name="form_build_id" value="form-578648e3130deaf457a67334ed84c67f"/>
+                    <input name="name" value="on"/>
+                    <input name="form_id" value="user_login_small_form"/>
+                    <input name="pass" value="on"/>
+                    <input name="dest" value="on"/>
+                    <input name="op" value="LOGIN"/>
+                </inputs>
+            </form>
+            <form encoding="utf-8" to="http://beer.findthebest.com/l/2721/Good-People-Bubba" url="http://beer.findthebest.com/l/2721/Good-People-Bubba">
+                <inputs>
+                    <input name="form_build_id" value="form-2f81e5954c4b58fa36d677a503714870"/>
+                    <input name="name" value="on"/>
+                    <input name="form_id" value="user_login_small_form"/>
+                    <input name="pass" value="on"/>
+                    <input name="dest" value="on"/>
+                    <input name="op" value="LOGIN"/>
+                </inputs>
+            </form>
+        </forms>
+        <uploads/>
+    </root>

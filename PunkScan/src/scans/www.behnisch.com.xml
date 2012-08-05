@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://www.behnisch.com/</rootURL>
+        <toBrowse/>
+        <browsed>
+            <url_data uri="http://www.behnisch.com/">
+                <header name="status" value="301"/>
+                <header name="content-length" value="228"/>
+                <header name="server" value="Apache"/>
+                <header name="location" value="http://behnisch.com/"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:13:46 GMT"/>
+                <header name="content-type" value="text/html; charset=iso-8859-1"/>
+                <header name="link_encoding" value=""/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://bearapy.me/</rootURL>
+        <toBrowse>
+            <url>http://bear000.blogspot.com/archive/2012/7</url>
+            <url>http://bear000.blogspot.com/archive/2012/8</url>
+            <url>http://bear000.blogspot.com/archive/2011/9</url>
+            <url>http://bear000.blogspot.com/archive/2011/10</url>
+            <url>http://bear000.blogspot.com/tagged/beanworld/page/2</url>
+            <url>http://bear000.blogspot.com/tagged/beanworld/page/1</url>
+            <url>http://bear000.blogspot.com/tagged/beanworld/page/3</url>
+            <url>http://bear000.blogspot.com/tagged/larry+marder/page/2</url>
+            <url>http://bear47.blogspot.com/</url>
+            <url>http://bear47.blogspot.com/archive</url>
+            <url>http://bear47.blogspot.com/ask</url>
+            <url>http://bear47.blogspot.com/search</url>
+            <url>http://bear47.blogspot.com/search?q=on</url>
+            <url>http://bear47.blogspot.com/tagged/larry+marder/page/1</url>
+            <url>http://bear47.blogspot.com/tagged/larry+marder/page/3</url>
+            <url>http://bearapy.me/</url>
+            <url>http://bearapy.me/page/2</url>
+            <url>http://bearapy.me/search</url>
+            <url>http://bearapy.me/search?q=on</url>
+            <url>http://bearapy.me/archive/2012/4</url>
+            <url>http://bearapy.me/archive/2012/5</url>
+            <url>http://bearapy.me/archive/2012/6</url>
+            <url>http://bearapy.me/archive?before_time=1333742881</url>
+            <url>http://bearapy.me/search/on</url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://bear-machine.tumblr.com/ask">
+                <header name="status" value="404"/>
+                <header name="content-length" value="18346"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="x-tumblr-user" value="bear-machine"/>
+                <header name="connection" value="close"/>
+                <header name="link" value="&lt;http://24.media.tumblr.com/avatar_80db99e692cc_16.png&gt;; rel=icon"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="max-age=300"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:59:18 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=703102"/>
+            </url_data>
+            <url_data uri="http://bear000.blogspot.com/archive">
+                <header name="status" value="404"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=fa6f32c7e8ca0d07; HttpOnly"/>
+                <header name="expires" value="Fri, 01 Jan 1990 00:00:00 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="pragma" value="no-cache"/>
+                <header name="cache-control" value="no-cache, no-store, max-age=0, must-revalidate"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:59:19 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://beapp.fr/archive/2012/4?before_time=1333829217">
+                <header name="status" value="404"/>
+                <header name="content-length" value="286"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache/2.2.14 (Ubuntu)"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:58:56 GMT"/>
+                <header name="content-type" value="text/html; charset=iso-8859-1"/>
+            </url_data>
+            <url_data uri="http://bear000.blogspot.com/ask">
+                <header name="status" value="404"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=3692d07d15e17903; HttpOnly"/>
+                <header name="expires" value="Fri, 01 Jan 1990 00:00:00 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="pragma" value="no-cache"/>
+                <header name="cache-control" value="no-cache, no-store, max-age=0, must-revalidate"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:59:20 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://bear000.blogspot.com/search?q=on">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://bear000.blogspot.com/search?q=on"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=cd1c67da5e991d0f; HttpOnly"/>
+                <header name="expires" value="Sat, 04 Aug 2012 20:59:22 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 03 Aug 2012 02:18:27 GMT"/>
+                <header name="etag" value="&quot;3246c4ee-6a6d-49d6-867a-e51a9235ddfd&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:59:22 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://bear-machine.tumblr.com/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="32201"/>
+                <header name="content-location" value="http://bear-machine.tumblr.com/"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="x-tumblr-user" value="bear-machine"/>
+                <header name="connection" value="close"/>
+                <header name="link" value="&lt;http://24.media.tumblr.com/avatar_80db99e692cc_16.png&gt;; rel=icon"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:59:17 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=807866"/>
+            </url_data>
+            <url_data uri="http://bear-machine.tumblr.com/search?q=on">
+                <header name="status" value="302"/>
+                <header name="content-length" value="0"/>
+                <header name="x-tumblr-user" value="bear-machine"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="connection" value="close"/>
+                <header name="location" value="/search/on"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:59:18 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=25859"/>
+                <header name="link_encoding" value="utf-8"/>
+            </url_data>
+            <url_data uri="http://beanworld.tumblr.com/search?q=on">
+                <header name="status" value="302"/>
+                <header name="content-length" value="0"/>
+                <header name="x-tumblr-user" value="beanworld"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="connection" value="close"/>
+                <header name="location" value="/search/on"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:58:18 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=37621"/>
+                <header name="link_encoding" value="utf-8"/>
+            </url_data>
+            <url_data uri="http://bear000.blogspot.com/archive/2012/4">
+                <header name="status" value="404"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=dc79efa9db3c5ea2; HttpOnly"/>
+                <header name="expires" value="Fri, 01 Jan 1990 00:00:00 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="pragma" value="no-cache"/>
+                <header name="cache-control" value="no-cache, no-store, max-age=0, must-revalidate"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:59:22 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://beanworld.tumblr.com/archive?before_time=1333829633">
+                <header name="status" value="200"/>
+                <header name="content-length" value="29828"/>
+                <header name="x-robots-tag" value="noindex"/>
+                <header name="x-tumblr-user" value="beanworld"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="connection" value="close"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:58:58 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=702634"/>
+                <header name="content-location" value="http://beanworld.tumblr.com/archive?before_time=1333829633"/>
+            </url_data>
+            <url_data uri="http://bear000.blogspot.com/">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://bear000.blogspot.com/"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=b063e1bb403d6c66; HttpOnly"/>
+                <header name="expires" value="Sat, 04 Aug 2012 20:59:19 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 03 Aug 2012 02:18:27 GMT"/>
+                <header name="etag" value="&quot;3246c4ee-6a6d-49d6-867a-e51a9235ddfd&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:59:19 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://bear-machine.tumblr.com/archive">
+                <header name="status" value="200"/>
+                <header name="content-length" value="62113"/>
+                <header name="x-robots-tag" value="noindex"/>
+                <header name="x-tumblr-user" value="bear-machine"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="connection" value="close"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:59:17 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=142968"/>
+                <header name="content-location" value="http://bear-machine.tumblr.com/archive"/>
+            </url_data>
+            <url_data uri="http://beapp.fr/search?q=on">
+                <header name="status" value="404"/>
+                <header name="content-length" value="278"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache/2.2.14 (Ubuntu)"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:58:55 GMT"/>
+                <header name="content-type" value="text/html; charset=iso-8859-1"/>
+            </url_data>
+            <url_data uri="http://bear000.blogspot.com/search">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://bear000.blogspot.com/search"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=b4a1b277e7c24374; HttpOnly"/>
+                <header name="expires" value="Sat, 04 Aug 2012 20:59:20 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 03 Aug 2012 02:18:27 GMT"/>
+                <header name="etag" value="&quot;3246c4ee-6a6d-49d6-867a-e51a9235ddfd&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:59:20 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://bear-machine.tumblr.com/search">
+                <header name="status" value="302"/>
+                <header name="content-length" value="0"/>
+                <header name="x-tumblr-user" value="bear-machine"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="connection" value="close"/>
+                <header name="location" value="/"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:59:18 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=22356"/>
+                <header name="link_encoding" value="utf-8"/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

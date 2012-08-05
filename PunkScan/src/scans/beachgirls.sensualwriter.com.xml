@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>
+            http://beachgirls.sensualwriter.com/
+        </rootURL>
+        <toBrowse/>
+        <browsed>
+            <url_data uri="http://beachgirls.sensualwriter.com/">
+                <header name="status" value="503"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="server" value="Apache"/>
+                <header name="connection" value="close"/>
+                <header name="link_encoding" value=""/>
+                <header name="date" value="Sat, 04 Aug 2012 06:41:28 GMT"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://beckygrrl.livejournal.com/</rootURL>
+        <toBrowse/>
+        <browsed>
+            <url_data uri="http://beckygrrl.livejournal.com/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="24383"/>
+                <header name="x-varnish" value="2106471095 2099859836"/>
+                <header name="x-gateway" value="bil1-swlb10"/>
+                <header name="content-location" value="http://beckygrrl.livejournal.com/"/>
+                <header name="content-language" value=""/>
+                <header name="accept-ranges" value="bytes"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="server" value="GoatProxy 1.0"/>
+                <header name="x-beta" value="http://varnish"/>
+                <header name="x-aws-id" value="ws37"/>
+                <header name="etag" value="GgZz&quot;4a13208669f8f8a3ab6267843160000c&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, proxy-revalidate"/>
+                <header name="date" value="Sun, 05 Aug 2012 01:40:55 GMT"/>
+                <header name="x-vws-id" value="bil1-varn22"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+                <header name="age" value="22488"/>
+            </url_data>
+        </browsed>
+        <forms>
+            <form encoding="utf-8" to="http://beckygrrl.livejournal.com/" url="http://www.livejournal.com/misc/adult_concepts.bml">
+                <inputs>
+                    <input name="adult_check" value="Yes, I am at least 14 years old."/>
+                    <input name="ret" value="http://beckygrrl.livejournal.com/"/>
+                </inputs>
+            </form>
+            <form encoding="utf-8" to="http://beckygrrl.livejournal.com/" url="https://www.livejournal.com/login.bml?ret=1">
+                <inputs>
+                    <input name="remember_me" value="1"/>
+                    <input name="password" value="on"/>
+                    <input name="mode" value="login"/>
+                    <input name="user" value="on"/>
+                </inputs>
+            </form>
+        </forms>
+        <uploads/>
+    </root>

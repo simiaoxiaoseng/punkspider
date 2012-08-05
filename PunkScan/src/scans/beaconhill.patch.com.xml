@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>
+            http://beaconhill.patch.com/
+        </rootURL>
+        <toBrowse>
+            <url>
+                http://beaconhill.patch.com/business
+            </url>
+            <url>
+                http://beaconhill.patch.com/elections-2
+            </url>
+            <url>
+                http://beaconhill.patch.com/government
+            </url>
+            <url>
+                http://beaconhill.patch.com/opinion
+            </url>
+            <url>
+                http://beaconhill.patch.com/police-fire
+            </url>
+            <url>
+                http://beaconhill.patch.com/school-news
+            </url>
+            <url>
+                http://beaconhill.patch.com/sports
+            </url>
+            <url>
+                http://beaconhill.patch.com/topics/back-to-school-guide
+            </url>
+            <url>
+                http://beaconhill.patch.com/topics/best-of-patch-readers-choice-beacon-hill
+            </url>
+            <url>
+                http://beaconhill.patch.com/topics/house-home
+            </url>
+            <url>
+                http://beaconhill.patch.com/topics/summer-guide
+            </url>
+            <url>
+                http://beaconhill.patch.com/topics/transportation-05350130
+            </url>
+            <url>
+                http://beaconhill.patch.com/search/announcements
+            </url>
+            <url>
+                http://beaconhill.patch.com/search/blog_posts
+            </url>
+            <url>
+                http://beaconhill.patch.com/events
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/category/art-entertainment
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/category/awareness
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/category/charitable
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/category/classes-lectures
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/category/fairs-festivals
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/category/family
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/category/food-drink
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/category/garage-sales
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/category/government
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/category/music
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/category/organizations
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/category/outdoor
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/category/house-and-home
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/category/religious
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/category/school-events
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/category/sports-recreation
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/category/theater
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/category/valentine-s-day-guide
+            </url>
+            <url>
+                http://beaconhill.patch.com/directory
+            </url>
+            <url>
+                http://beaconhill.patch.com/directory/category/readers-choice-2012
+            </url>
+            <url>
+                http://beaconhill.patch.com/directory/category/arts-entertainment
+            </url>
+            <url>
+                http://beaconhill.patch.com/directory/category/automotive-boating
+            </url>
+            <url>
+                http://beaconhill.patch.com/directory/category/community-resources
+            </url>
+            <url>
+                http://beaconhill.patch.com/directory/category/food-dining
+            </url>
+            <url>
+                http://beaconhill.patch.com/directory/category/government
+            </url>
+            <url>
+                http://beaconhill.patch.com/directory/category/health
+            </url>
+            <url>
+                http://beaconhill.patch.com/directory/category/nightlife
+            </url>
+            <url>
+                http://beaconhill.patch.com/directory/category/real-estate
+            </url>
+            <url>
+                http://beaconhill.patch.com/directory/category/schools
+            </url>
+            <url>
+                http://beaconhill.patch.com/directory/category/services
+            </url>
+            <url>
+                http://beaconhill.patch.com/directory/category/shopping
+            </url>
+            <url>
+                http://beaconhill.patch.com/directory/category/sports-fitness
+            </url>
+            <url>
+                http://beaconhill.patch.com/directory/category/travel-transportation
+            </url>
+            <url>
+                http://beaconhill.patch.com/directory/category/hometown-partners
+            </url>
+            <url>
+                http://beaconhill.patch.com/restaurants
+            </url>
+            <url>
+                http://beaconhill.patch.com/commute
+            </url>
+            <url>
+                http://beaconhill.patch.com/pics
+            </url>
+            <url>
+                http://beaconhill.patch.com/classifieds
+            </url>
+            <url>
+                http://beaconhill.patch.com/volunteer
+            </url>
+            <url>
+                http://beaconhill.patch.com/survey_opted_in_or_out
+            </url>
+            <url>
+                http://beaconhill.patch.com/api/features/2897853/pin/1
+            </url>
+            <url>
+                http://beaconhill.patch.com/api/features/2897853/pin?id=1
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/the-top-stories-in-july
+            </url>
+            <url>
+                http://beaconhill.patch.com/api/features/2824303/pin/2
+            </url>
+            <url>
+                http://beaconhill.patch.com/api/features/2824303/pin?id=2
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/readers-vote-2012-3c8a8111
+            </url>
+            <url>
+                http://beaconhill.patch.com/api/features/2897699/pin/3
+            </url>
+            <url>
+                http://beaconhill.patch.com/api/features/2897699/pin?id=3
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/circle-the-city-finale-to-close-rose-kennedy-greenway-area-to-traffic-on-sunday
+            </url>
+            <url>
+                http://beaconhill.patch.com/api/features/2895456/pin/4
+            </url>
+            <url>
+                http://beaconhill.patch.com/api/features/2895456/pin?id=4
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/does-massachusetts-need-more-gun-control-7d746842
+            </url>
+            <url>
+                http://beaconhill.patch.com/blog/apply
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/new
+            </url>
+            <url>
+                http://beaconhill.patch.com/people
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/check-out-these-beacon-hill-open-houses-this-weekend-3d013297
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/erica-blades
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/woman-charged-with-vandalizing-shaw-memorial-in-paint-attack
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/five-things-boston-could-have-more-wifi-hotpsots-soon
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/don-warner-saklad
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/earnhardt
+            </url>
+            <url>
+                http://beaconhill.patch.com/blog_posts/three-strikes-youre-out
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/tom-sheff
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/john-d-a48de917
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/patrick-to-make-last-call-on-crime-bill
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/sam-adams-eb0faaa6
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/n-c-morris-dhaliwal
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/westernciv
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/dad-daa13c2b
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/jan-paulsen
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/14-billion-transportation-bill-would-block-mbta-station-naming-rights
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/boston-retirees-give-to-obama-money-men-to-romney-cd9888fa
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/bill-bittar
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/summer-weekend-getaway-newport-jazz-fest-kayaking-garden-tour-15b61548
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/five-things-f16c5238
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/nate-homan-9461f047
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/woman-charged-with-shaw-memorial-paint-attach-ordered-to-undergo-mental-health-evaluation
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/right-to-repair-compromise-reached-in-legislature-bill-on-patrick-s-desk
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/andrew-ayars
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/sales-tax-holiday-passed-for-aug-11-and-12
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/update-divers-recover-body-from-charles-river-by-the-hatch-shell
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/tom-sheff/blog_posts
+            </url>
+            <url>
+                http://beaconhill.patch.com/blog_posts/vote-independent-on-november-6
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/priscilla-h-claman/blog_posts
+            </url>
+            <url>
+                http://beaconhill.patch.com/blog_posts/tourist-season-on-beacon-hill
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/paul-e-keane/blog_posts
+            </url>
+            <url>
+                http://beaconhill.patch.com/blog_posts/thoughts-on-beacon-hill-c8e8a177
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/lydia-lowe/blog_posts
+            </url>
+            <url>
+                http://beaconhill.patch.com/blog_posts/boston-redistricting-dont-crack-district-2-dont-pack-district-4
+            </url>
+            <url>
+                http://beaconhill.patch.com/listings/danish-country-antiques
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/aleksandra-balyanova
+            </url>
+            <url>
+                http://beaconhill.patch.com/listings/the-etc-cafe
+            </url>
+            <url>
+                http://beaconhill.patch.com/listings/the-grand-canal
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/jennifer-welsh
+            </url>
+            <url>
+                http://beaconhill.patch.com/listings/the-upper-crust-5
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/victoria-kichuk
+            </url>
+            <url>
+                http://beaconhill.patch.com/listings/kings-back-bay
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/beacon-hill-photo-tour
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/bcnc-offers-free-help-on-citizenship-application-4748cc3f
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/beacon-hill-walking-tour-ce49e8ae
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/ward-boss-lomasney-6e80e9f7
+            </url>
+            <url>
+                http://beaconhill.patch.com/advertise
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/new?return_to=%2Fevents%2Fnew
+            </url>
+            <url>
+                http://beaconhill.patch.com/announcements/new?return_to=%2Fannouncements%2Fnew
+            </url>
+            <url>
+                http://beaconhill.patch.com/about
+            </url>
+            <url>
+                http://beaconhill.patch.com/jobs
+            </url>
+            <url>
+                http://beaconhill.patch.com/terms
+            </url>
+            <url>
+                http://beaconhill.patch.com/privacy
+            </url>
+            <url>
+                http://beaconhill.patch.com/contact-us
+            </url>
+            <url>
+                http://beaconhill.patch.com/widgets/articles/quicklist
+            </url>
+            <url>
+                http://beaconhill.patch.com/search
+            </url>
+            <url>
+                http://beaconhill.patch.com/search?keywords=on
+            </url>
+            <url>
+                http://beaconhill.patch.com/shark_attack_subscribe
+            </url>
+            <url>
+                http://beaconhill.patch.com/tips/create
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/kimberly-ashton
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/
+            </url>
+            <url>
+                http://beaconhill.patch.com/join?return_to=%2Fusers%2Fkimberly-ashton
+            </url>
+            <url>
+                http://beaconhill.patch.com/signin?return_to=%2Fusers%2Fkimberly-ashton
+            </url>
+            <url>
+                http://beaconhill.patch.com/logout?return_to=%2Fusers%2Fkimberly-ashton
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/kimberly-ashton/photos
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/kimberly-ashton/comments
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/kimberly-ashton/board
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/boston-civic-symphony-at-the-landmarks-festival-at-the-shell-f793d2d9
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/police-news-for-beacon-hill-july-17-to-22
+            </url>
+            <url>
+                http://beaconhill.patch.com/events/mindful-monkeys-yoga-day-camp-register-today
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/microburst-hammers-arlington
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/video-woman-attempts-to-ride-motorized-wheelchair-up-escalator-d29110b6
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/governor-closes-loophole-in-drunken-driving-law
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/seen-and-heard-on-the-t
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/cambridge-savings-bank-robbed-today
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/five-things-a-viking-midsummer-celebration-at-beacon-hill-hotel-and-bistro
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/a-mothers-letter-to-her-daughter-on-bullying
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/effort-to-tax-sodas-dies-in-the-legislature-9fd53a65
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/coming-soon-to-beacon-hill-more-digital-billboards
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/state-house-committee-to-begin-weighing-measure-banning-use-of-electric-shocks-on-children
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/best-of-patch-readers-choice-j-p-licks-voted-best-ice-cream
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/five-things-a-transition-at-the-beacon-hill-civic-association
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/population-ages-in-greater-boston-63eb69f6
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/j-mclaughlin-celebrations-reopening
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/five-things-beacon-hill-art-walk-next-week
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/five-things-a-bold-armed-robbery-on-charles-street
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/photos-garden-sculptures-and-fountains-on-beacon-hill
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/photos-hidden-gardens-shine-under-bright-morning-sun
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/your-view-what-do-you-think-of-the-decision-regarding-villa-mexico-cafe
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/best-of-patch-readers-choice-best-beacon-hill-staycation
+            </url>
+            <url>
+                http://beaconhill.patch.com/articles/villa-mexico-cafe-will-not-relocate-to-12-grove-st
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/adam-john
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/michael-hunter-a6dcc3a0
+            </url>
+            <url>
+                http://beaconhill.patch.com/users/dakotta
+            </url>
+            <url>
+                http://beaconhill.patch.com/comments
+            </url>
+            <url>
+                http://beaconhill.patch.com/flag/Comment/1961412
+            </url>
+            <url>
+                http://beaconhill.patch.com/flag/Comment/1961412?authenticity_token=irDfMjqWdpUSUK+PW3vis8BTKQS4sJW+EXjxRyQ/Uak=
+            </url>
+            <url>
+                http://beaconhill.patch.com/flag/Comment/1842399
+            </url>
+            <url>
+                http://beaconhill.patch.com/flag/Comment/1842399?authenticity_token=irDfMjqWdpUSUK+PW3vis8BTKQS4sJW+EXjxRyQ/Uak=
+            </url>
+            <url>
+                http://beaconhill.patch.com/flag/Comment/1842392
+            </url>
+            <url>
+                http://beaconhill.patch.com/flag/Comment/1842392?authenticity_token=irDfMjqWdpUSUK+PW3vis8BTKQS4sJW+EXjxRyQ/Uak=
+            </url>
+            <url>
+                http://beaconhill.patch.com/flag/Comment/1842374
+            </url>
+            <url>
+                http://beaconhill.patch.com/flag/Comment/1842374?authenticity_token=irDfMjqWdpUSUK+PW3vis8BTKQS4sJW+EXjxRyQ/Uak=
+            </url>
+            <url>
+                http://beaconhill.patch.com/flag/Comment/1005196
+            </url>
+            <url>
+                http://beaconhill.patch.com/flag/Comment/1005196?authenticity_token=irDfMjqWdpUSUK+PW3vis8BTKQS4sJW+EXjxRyQ/Uak=
+            </url>
+            <url>
+                http://beaconhill.patch.com/join?return_to=%2Fadmin&amp;type=admin
+            </url>
+            <url>
+                http://beaconhill.patch.com/subscribe
+            </url>
+            <url>
+                http://beaconhill.patch.com/users
+            </url>
+            <url>
+                http://beaconhill.patch.com/facebook/authorize?return_to=%2F
+            </url>
+            <url>
+                http://beaconhill.patch.com/session
+            </url>
+            <url>
+                http://beaconhill.patch.com/forgot_password
+            </url>
+            <url>
+                http://beaconhill.patch.com/?logout=true
+            </url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://beaconhill.patch.com/admin/feature_positions/'+c.id+'">
+                <header name="status" value="404"/>
+                <header name="content-length" value="1"/>
+                <header name="x-powered-by" value="Phusion Passenger (mod_rails/mod_rack) 3.0.11"/>
+                <header name="set-cookie" value="p13n=%5B%5D; path=/, _patch_session=BAh7BzoPc2Vzc2lvbl9pZCIlMzQ0MjM3NzE2ZjQzZDk5OWJmMzhiZWQ0NDZlNDE3NmQ6FnByb21wdF9mb3Jfc3VydmV5aQA%3D--41b8b401674e04fd684313a168e43580dc6c0944; domain=patch.com; path=/"/>
+                <header name="server" value="Apache/2.2.15 (Unix) mod_ssl/2.2.15 OpenSSL/0.9.8l Phusion_Passenger/3.0.11"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="no-cache"/>
+                <header name="date" value="Sat, 04 Aug 2012 06:52:43 GMT"/>
+                <header name="content-type" value="*/*; charset=utf-8"/>
+                <header name="x-rack-cache" value="miss"/>
+            </url_data>
+            <url_data uri="http://beaconhill.patch.com/users/kimberly-ashton">
+                <header name="status" value="200"/>
+                <header name="content-length" value="82169"/>
+                <header name="content-location" value="http://beaconhill.patch.com/users/kimberly-ashton"/>
+                <header name="set-cookie" value="p13n=%5B%5D; path=/, flash=%7B%7D; path=/, _patch_session=BAh7CDoPc2Vzc2lvbl9pZCIlMjhhNzdiNjU0ODY0ZWM5Yjk4MDViNWI4MDUzNDBkYjA6FnByb21wdF9mb3Jfc3VydmV5aQA6EF9jc3JmX3Rva2VuSSIxR1J6dU96dE9iU1ZDV2V1K3ZFMzBHSFhPWEJGYVRCNEYwUDJHYWlqczY3TT0GOgZFRg%3D%3D--ae61648762ac08df17b015a4f89d7877deafd574; domain=patch.com; path=/"/>
+                <header name="x-powered-by" value="Phusion Passenger (mod_rails/mod_rack) 3.0.11"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache/2.2.15 (Unix) mod_ssl/2.2.15 OpenSSL/0.9.8l Phusion_Passenger/3.0.11"/>
+                <header name="x-runtime" value="1002"/>
+                <header name="etag" value="&quot;ea89b38cd45de854cb4144b6a53787e8&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0, must-revalidate"/>
+                <header name="date" value="Sat, 04 Aug 2012 06:52:43 GMT"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+                <header name="x-rack-cache" value="miss"/>
+            </url_data>
+            <url_data uri="http://beaconhill.patch.com/admin">
+                <header name="status" value="302"/>
+                <header name="content-length" value="132"/>
+                <header name="set-cookie" value="p13n=%5B%5D; path=/, _patch_session=BAh7BzoPc2Vzc2lvbl9pZCIlODkxNmM5YzQzZWQ2Y2JlMDk0ODRkOWE3OWQwNTU4OWU6FnByb21wdF9mb3Jfc3VydmV5aQA%3D--375fff321b991fbaa7ceed3c94ca7f6b4dc258a9; domain=patch.com; path=/"/>
+                <header name="x-powered-by" value="Phusion Passenger (mod_rails/mod_rack) 3.0.11"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache/2.2.15 (Unix) mod_ssl/2.2.15 OpenSSL/0.9.8l Phusion_Passenger/3.0.11"/>
+                <header name="x-runtime" value="7"/>
+                <header name="location" value="http://beaconhill.patch.com/join?return_to=%2Fadmin&amp;type=admin"/>
+                <header name="cache-control" value="no-cache"/>
+                <header name="date" value="Sat, 04 Aug 2012 06:52:45 GMT"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+                <header name="x-rack-cache" value="miss"/>
+                <header name="link_encoding" value="utf-8"/>
+            </url_data>
+            <url_data uri="http://beaconhill.patch.com/newsletters">
+                <header name="status" value="200"/>
+                <header name="content-length" value="21724"/>
+                <header name="content-location" value="http://beaconhill.patch.com/newsletters"/>
+                <header name="set-cookie" value="p13n=%5B%5D; path=/, flash=%7B%7D; path=/, _patch_session=BAh7CDoPc2Vzc2lvbl9pZCIlNDNlZTkzOGRkY2ZjMDhhMjAyN2Q5MDhiZGJiNzg0ZmI6FnByb21wdF9mb3Jfc3VydmV5aQA6EF9jc3JmX3Rva2VuSSIxTzNLWE5OTlVWd09hMVNFbTdSRERkbFJ2dXQrYS9WMEVJZ0wvZ2tXeFU5Zz0GOgZFRg%3D%3D--124510e687726bd8277359144490ae7f7b0b6e60; domain=patch.com; path=/"/>
+                <header name="x-powered-by" value="Phusion Passenger (mod_rails/mod_rack) 3.0.11"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache/2.2.15 (Unix) mod_ssl/2.2.15 OpenSSL/0.9.8l Phusion_Passenger/3.0.11"/>
+                <header name="x-runtime" value="75"/>
+                <header name="etag" value="&quot;6dc8b626c1493346b30310fb2f5e5a3c&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0, must-revalidate"/>
+                <header name="date" value="Sat, 04 Aug 2012 06:52:45 GMT"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+                <header name="x-rack-cache" value="miss"/>
+            </url_data>
+            <url_data uri="http://beaconhill.patch.com/signin?return_to=%2F">
+                <header name="status" value="200"/>
+                <header name="content-length" value="26374"/>
+                <header name="content-location" value="http://beaconhill.patch.com/signin?return_to=%2F"/>
+                <header name="set-cookie" value="p13n=%5B%5D; path=/, flash=%7B%7D; path=/, _patch_session=BAh7CDoPc2Vzc2lvbl9pZCIlNzBlOTRmNWEwODNkOTA1OGUyOTQ5NGM2OTA1NjJhZjU6FnByb21wdF9mb3Jfc3VydmV5aQA6EF9jc3JmX3Rva2VuSSIxWGRQOFFxN1FnYmdPQVM5MHZ1R0tOZFpiUGM5L0pFYnpJcVpGMlRGaTl6UT0GOgZFRg%3D%3D--839be71a385bc5583559bc4c6f481edb87fed072; domain=patch.com; path=/"/>
+                <header name="x-powered-by" value="Phusion Passenger (mod_rails/mod_rack) 3.0.11"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache/2.2.15 (Unix) mod_ssl/2.2.15 OpenSSL/0.9.8l Phusion_Passenger/3.0.11"/>
+                <header name="x-runtime" value="60"/>
+                <header name="etag" value="&quot;b6eae6a89002a960a94c9f0ea6c3905e&quot;"/>
+                <header name="link_encoding" value="ISO-8859-2"/>
+                <header name="cache-control" value="private, max-age=0, must-revalidate"/>
+                <header name="date" value="Sat, 04 Aug 2012 06:52:47 GMT"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+                <header name="x-rack-cache" value="miss"/>
+            </url_data>
+            <url_data uri="http://beaconhill.patch.com/join?return_to=%2F">
+                <header name="status" value="200"/>
+                <header name="content-length" value="27885"/>
+                <header name="content-location" value="http://beaconhill.patch.com/join?return_to=%2F"/>
+                <header name="set-cookie" value="p13n=%5B%5D; path=/, flash=%7B%7D; path=/, _patch_session=BAh7CDoPc2Vzc2lvbl9pZCIlNDc1N2U0MzNjNmU3OTAxMmJmZTcxOWJkMmQ2NWE5MmU6FnByb21wdF9mb3Jfc3VydmV5aQA6EF9jc3JmX3Rva2VuSSIxTkRtajZ3K2VBc1Z4MjRmd1hTMUsyeVFLd1BHNThGNnpZcklNTjJ0NW1IST0GOgZFRg%3D%3D--e24b1e27f96baa4c3bb47262b560081f671b2676; domain=patch.com; path=/"/>
+                <header name="x-powered-by" value="Phusion Passenger (mod_rails/mod_rack) 3.0.11"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache/2.2.15 (Unix) mod_ssl/2.2.15 OpenSSL/0.9.8l Phusion_Passenger/3.0.11"/>
+                <header name="x-runtime" value="68"/>
+                <header name="etag" value="&quot;aca09136808920bc270f0a06657d476e&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0, must-revalidate"/>
+                <header name="date" value="Sat, 04 Aug 2012 06:52:45 GMT"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+                <header name="x-rack-cache" value="miss"/>
+            </url_data>
+            <url_data uri="http://beaconhill.patch.com/logout?return_to=%2F">
+                <header name="status" value="302"/>
+                <header name="content-length" value="106"/>
+                <header name="set-cookie" value="p13n=%5B%5D; path=/, current_user=; domain=.patch.com; path=/; expires=Thu, 01-Jan-1970 00:00:00 GMT, auth_token=; path=/; expires=Thu, 01-Jan-1970 00:00:00 GMT, flash=%7B%22notice%22%3A%22You+have+been+logged+out.%22%7D; path=/, _patch_session=BAh7CDoPc2Vzc2lvbl9pZCIlNWIwOTVlNWEwYmI2N2I2ODFkMzJjNmJlOGVhODUzYjY6FnByb21wdF9mb3Jfc3VydmV5aQBJIgpmbGFzaAY6BkVGSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7BkkiC25vdGljZQY7B0ZJIh5Zb3UgaGF2ZSBiZWVuIGxvZ2dlZCBvdXQuBjsHVAY6CkB1c2Vkewo6C25vdGljZUZJIgtub3RpY2UGOwdGVEkiCmVycm9yBjsHRlRJIgx3YXJuaW5nBjsHRlRJIgxtZXNzYWdlBjsHRlQ%3D--26848c3d11fc72cc3f6eba42eb100bdc73434a54; domain=patch.com; path=/"/>
+                <header name="x-powered-by" value="Phusion Passenger (mod_rails/mod_rack) 3.0.11"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache/2.2.15 (Unix) mod_ssl/2.2.15 OpenSSL/0.9.8l Phusion_Passenger/3.0.11"/>
+                <header name="x-runtime" value="7"/>
+                <header name="location" value="http://beaconhill.patch.com/?logout=true"/>
+                <header name="cache-control" value="no-cache"/>
+                <header name="date" value="Sat, 04 Aug 2012 06:52:48 GMT"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+                <header name="x-rack-cache" value="miss"/>
+                <header name="link_encoding" value="utf-8"/>
+            </url_data>
+            <url_data uri="http://beaconhill.patch.com/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="159930"/>
+                <header name="content-location" value="http://beaconhill.patch.com/"/>
+                <header name="age" value="0"/>
+                <header name="x-powered-by" value="Phusion Passenger (mod_rails/mod_rack) 3.0.11"/>
+                <header name="vary" value="X-Requested-With,X-Device-Type,Accept-Encoding"/>
+                <header name="server" value="Apache/2.2.15 (Unix) mod_ssl/2.2.15 OpenSSL/0.9.8l Phusion_Passenger/3.0.11"/>
+                <header name="x-runtime" value="1844"/>
+                <header name="x-content-digest" value="3b781f581f9dc24654c18b428456b833eb258ec7"/>
+                <header name="cache-control" value="max-age=15, public"/>
+                <header name="date" value="Sat, 04 Aug 2012 06:52:39 GMT"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+                <header name="x-rack-cache" value="stale, invalid, store"/>
+                <header name="link_encoding" value="utf-8"/>
+            </url_data>
+        </browsed>
+        <forms>
+            <form encoding="utf-8" to="http://beaconhill.patch.com/" url="http://beaconhill.patch.com/shark_attack_subscribe">
+                <inputs>
+                    <input name="authenticity_token" value="LXCU0/DAw9ZUYZbRQcEewdMX6b+fANW2rlUEcS+G7tQ="/>
+                    <input name="commit" value="Sign Up"/>
+                    <input name="_utf8" value="&amp;#9731;"/>
+                    <input name="email" value="on"/>
+                    <input name="_method" value="put"/>
+                </inputs>
+            </form>
+            <form encoding="utf-8" to="http://beaconhill.patch.com/" url="http://beaconhill.patch.com/tips/create">
+                <inputs>
+                    <input name="email[include_self]" value="on"/>
+                    <input name="email[sender][name]" value="on"/>
+                    <input name="email[comment]" value="on"/>
+                    <input name="email[sender][email]" value="on"/>
+                    <input name="authenticity_token" value="LXCU0/DAw9ZUYZbRQcEewdMX6b+fANW2rlUEcS+G7tQ="/>
+                </inputs>
+            </form>
+            <form encoding="utf-8" to="http://beaconhill.patch.com/users/kimberly-ashton" url="http://beaconhill.patch.com/comments">
+                <inputs>
+                    <input name="comment[commentable_type]" value="User"/>
+                    <input name="comment[comment]" value="on"/>
+                    <input name="_utf8" value="&amp;#9731;"/>
+                    <input name="comment[commentable_id]" value="127238"/>
+                    <input name="authenticity_token" value="irDfMjqWdpUSUK+PW3vis8BTKQS4sJW+EXjxRyQ/Uak="/>
+                </inputs>
+            </form>
+            <form encoding="utf-8" to="http://beaconhill.patch.com/users/kimberly-ashton" url="http://beaconhill.patch.com/shark_attack_subscribe">
+                <inputs>
+                    <input name="authenticity_token" value="GRzuOztObSVCWeu+vE30GHXOXBFaTB4F0P2Gaijs67M="/>
+                    <input name="commit" value="Sign Up"/>
+                    <input name="_utf8" value="&amp;#9731;"/>
+                    <input name="email" value="on"/>
+                    <input name="_method" value="put"/>
+                </inputs>
+            </form>
+            <form encoding="utf-8" to="http://beaconhill.patch.com/users/kimberly-ashton" url="http://beaconhill.patch.com/tips/create">
+                <inputs>
+                    <input name="email[include_self]" value="on"/>
+                    <input name="email[sender][name]" value="on"/>
+                    <input name="email[comment]" value="on"/>
+                    <input name="email[sender][email]" value="on"/>
+                    <input name="authenticity_token" value="GRzuOztObSVCWeu+vE30GHXOXBFaTB4F0P2Gaijs67M="/>
+                </inputs>
+            </form>
+            <form encoding="ISO-8859-2" to="http://beaconhill.patch.com/newsletters" url="http://beaconhill.patch.com/subscribe">
+                <inputs>
+                    <input name="subscriptions[Weekly]" value="1"/>
+                    <input name="subscriptions[Breaking]" value="1"/>
+                    <input name="authenticity_token" value="O3KXNNNUVwOa1SEm7RDDdlRvut+a/V0EIgL/gkWxU9g="/>
+                    <input name="subscriptions[Deals]" value="1"/>
+                    <input name="commit" value="Subscribe"/>
+                    <input name="_method" value="put"/>
+                    <input name="_utf8" value="&amp;#9731;"/>
+                    <input name="subscriptions[Daily]" value="1"/>
+                    <input name="email" value="on"/>
+                </inputs>
+            </form>
+            <form encoding="ISO-8859-2" to="http://beaconhill.patch.com/join?return_to=%2F" url="http://beaconhill.patch.com/users">
+                <inputs>
+                    <input name="breaking_news_opt_in" value="true"/>
+                    <input name="user[password]" value="on"/>
+                    <input name="user[email]" value="on"/>
+                    <input name="authenticity_token" value="NDmj6w+eAsVx24fwXS1K2yQKwPG58F6zYrIMN2t5mHI="/>
+                    <input name="user[return_to]" value="/"/>
+                    <input name="newsletter_opt_in" value="true"/>
+                    <input name="_utf8" value="☃"/>
+                    <input name="user[name]" value="on"/>
+                    <input name="commit" value="Join Patch"/>
+                </inputs>
+            </form>
+            <form encoding="ISO-8859-2" to="http://beaconhill.patch.com/signin?return_to=%2F" url="http://beaconhill.patch.com/session">
+                <inputs>
+                    <input name="user[password]" value="on"/>
+                    <input name="user[email]" value="on"/>
+                    <input name="authenticity_token" value="XdP8Qq7QgbgOAS90vuGKNdZbPc9/JEbzIqZF2TFi9zQ="/>
+                    <input name="commit" value="Sign in"/>
+                    <input name="user[remember_me]" value="1"/>
+                    <input name="_utf8" value="☃"/>
+                    <input name="user[return_to]" value="/"/>
+                </inputs>
+            </form>
+        </forms>
+        <uploads/>
+    </root>

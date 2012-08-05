@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://beckystriges.deviantart.com/</rootURL>
+        <toBrowse>
+            <url>http://beckystriges.deviantart.com/stats/gallery/</url>
+            <url>http://beckystriges.deviantart.com</url>
+            <url>http://beckystriges.deviantart.com/gallery/</url>
+            <url>http://beckystriges.deviantart.com/gallery/?catpath=/</url>
+            <url>http://beckystriges.deviantart.com/gallery/?catpath=scraps</url>
+            <url>http://beckystriges.deviantart.com/gallery/?q=on</url>
+            <url>http://beckystriges.deviantart.com/prints/</url>
+            <url>http://beckystriges.deviantart.com/prints/?utm_campaign=printstab&amp;utm_medium=userpage&amp;utm_source=deviantart</url>
+            <url>http://beckystriges.deviantart.com/prints/?itemids=-1</url>
+            <url>http://beckystriges.deviantart.com/prints/?itemtypeids=1-2-11</url>
+            <url>http://beckystriges.deviantart.com/favourites/</url>
+            <url>http://beckystriges.deviantart.com/favourites/?catpath=/</url>
+            <url>http://beckystriges.deviantart.com/journal/</url>
+            <url>http://beckystriges.deviantart.com/journal/?catpath=/</url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://beckystriges.deviantart.com/journal/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="43009"/>
+                <header name="content-location" value="http://beckystriges.deviantart.com/journal/"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="userinfo=__46cec475faa94ca8cd95%3B%7B%22username%22%3A%22%22%2C%22uniqueid%22%3A%22862d528f0305046d5ba8c98cf7e2cddc%22%2C%22hitcount%22%3A2%2C%22visitcount%22%3A2%2C%22visittime%22%3A1344189149%2C%22firstvisit%22%3A1344189149%7D; expires=Tue, 04-Sep-2012 17:52:29 GMT; path=/; domain=.deviantart.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 17:52:29 GMT"/>
+                <header name="p3p" value="policyref=&quot;/w3c/p3p.xml&quot;, CP=&quot;NOI DSP COR CURa OUR STP&quot;"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://beckystriges.deviantart.com/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="74854"/>
+                <header name="content-location" value="http://beckystriges.deviantart.com/"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="userinfo=__93f82b4ddc27cf0243cc%3B%7B%22username%22%3A%22%22%2C%22uniqueid%22%3A%22148e71615eef358217c409165e91e880%22%2C%22hitcount%22%3A2%2C%22visitcount%22%3A2%2C%22visittime%22%3A1344189147%2C%22firstvisit%22%3A1344189147%7D; expires=Tue, 04-Sep-2012 17:52:27 GMT; path=/; domain=.deviantart.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 17:52:27 GMT"/>
+                <header name="p3p" value="policyref=&quot;/w3c/p3p.xml&quot;, CP=&quot;NOI DSP COR CURa OUR STP&quot;"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://beckystriges.deviantart.com">
+                <header name="status" value="200"/>
+                <header name="content-length" value="75002"/>
+                <header name="content-location" value="http://beckystriges.deviantart.com"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="userinfo=__2d345adc9ba85a513cc8%3B%7B%22username%22%3A%22%22%2C%22uniqueid%22%3A%22176438dda1a6bdb2f5303c5f91241ef9%22%2C%22hitcount%22%3A2%2C%22visitcount%22%3A2%2C%22visittime%22%3A1344189148%2C%22firstvisit%22%3A1344189148%7D; expires=Tue, 04-Sep-2012 17:52:28 GMT; path=/; domain=.deviantart.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 17:52:28 GMT"/>
+                <header name="p3p" value="policyref=&quot;/w3c/p3p.xml&quot;, CP=&quot;NOI DSP COR CURa OUR STP&quot;"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://beckystriges.deviantart.com/gallery/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="65544"/>
+                <header name="content-location" value="http://beckystriges.deviantart.com/gallery/"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="userinfo=__677bda965249151b1182%3B%7B%22username%22%3A%22%22%2C%22uniqueid%22%3A%22ca2ef3f48fa945b026bb4383736728ad%22%2C%22hitcount%22%3A2%2C%22visitcount%22%3A2%2C%22visittime%22%3A1344189148%2C%22firstvisit%22%3A1344189148%7D; expires=Tue, 04-Sep-2012 17:52:28 GMT; path=/; domain=.deviantart.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 17:52:28 GMT"/>
+                <header name="p3p" value="policyref=&quot;/w3c/p3p.xml&quot;, CP=&quot;NOI DSP COR CURa OUR STP&quot;"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://beckystriges.deviantart.com/favourites/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="51090"/>
+                <header name="content-location" value="http://beckystriges.deviantart.com/favourites/"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="userinfo=__3d6544ffefe781ce9fa4%3B%7B%22username%22%3A%22%22%2C%22uniqueid%22%3A%22346ddb6decd9048c625a7bc3d7de0a30%22%2C%22hitcount%22%3A2%2C%22visitcount%22%3A2%2C%22visittime%22%3A1344189149%2C%22firstvisit%22%3A1344189149%7D; expires=Tue, 04-Sep-2012 17:52:29 GMT; path=/; domain=.deviantart.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 17:52:29 GMT"/>
+                <header name="p3p" value="policyref=&quot;/w3c/p3p.xml&quot;, CP=&quot;NOI DSP COR CURa OUR STP&quot;"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://beckystriges.deviantart.com/prints/?utm_campaign=printstab&amp;utm_medium=userpage&amp;utm_source=deviantart">
+                <header name="status" value="200"/>
+                <header name="content-length" value="51525"/>
+                <header name="content-location" value="http://beckystriges.deviantart.com/prints/?utm_campaign=printstab&amp;utm_medium=userpage&amp;utm_source=deviantart"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="userinfo=__13a21ce241e0dceb7e7d%3B%7B%22username%22%3A%22%22%2C%22uniqueid%22%3A%22cda6c3ed3719a5c711d89e93b1888bb3%22%2C%22hitcount%22%3A2%2C%22visitcount%22%3A2%2C%22visittime%22%3A1344189149%2C%22firstvisit%22%3A1344189148%7D; expires=Tue, 04-Sep-2012 17:52:29 GMT; path=/; domain=.deviantart.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 17:52:28 GMT"/>
+                <header name="p3p" value="policyref=&quot;/w3c/p3p.xml&quot;, CP=&quot;NOI DSP COR CURa OUR STP&quot;"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+        </browsed>
+        <forms>
+            <form encoding="iso-8859-1" to="http://beckystriges.deviantart.com/" url="https://www.deviantart.com/users/login">
+                <inputs>
+                    <input name="username" value="on"/>
+                    <input name="remember_me" value="1"/>
+                    <input name="password" value="on"/>
+                    <input name="ref" value="on"/>
+                    <input name="action" value="Login"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beckystriges.deviantart.com/" url="http://my.deviantart.com/deviants/add">
+                <inputs>
+                    <input name="username" value="BeckyStriges"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beckystriges.deviantart.com/" url="http://comments.deviantart.com/post">
+                <inputs>
+                    <input name="itemid" value="20741944"/>
+                    <input name="typeid" value="4"/>
+                    <input name="body" value="on"/>
+                    <input name="validate_token" value="a838f02575237ae782a5"/>
+                    <input name="splitid" value="on"/>
+                    <input name="moodid" value="0"/>
+                    <input name="validate_key" value="1344189147"/>
+                    <input name="ref" value="http://beckystriges.deviantart.com/"/>
+                    <input name="private" value="0"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beckystriges.deviantart.com" url="https://www.deviantart.com/users/login">
+                <inputs>
+                    <input name="username" value="on"/>
+                    <input name="remember_me" value="1"/>
+                    <input name="password" value="on"/>
+                    <input name="ref" value="on"/>
+                    <input name="action" value="Login"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beckystriges.deviantart.com" url="http://my.deviantart.com/deviants/add">
+                <inputs>
+                    <input name="username" value="BeckyStriges"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beckystriges.deviantart.com" url="http://comments.deviantart.com/post">
+                <inputs>
+                    <input name="itemid" value="20741944"/>
+                    <input name="typeid" value="4"/>
+                    <input name="body" value="on"/>
+                    <input name="validate_token" value="b7777ff11f16f569a39c"/>
+                    <input name="splitid" value="on"/>
+                    <input name="moodid" value="0"/>
+                    <input name="validate_key" value="1344189148"/>
+                    <input name="ref" value="http://beckystriges.deviantart.com/"/>
+                    <input name="private" value="0"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beckystriges.deviantart.com/gallery/" url="https://www.deviantart.com/users/login">
+                <inputs>
+                    <input name="username" value="on"/>
+                    <input name="remember_me" value="1"/>
+                    <input name="password" value="on"/>
+                    <input name="ref" value="on"/>
+                    <input name="action" value="Login"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beckystriges.deviantart.com/gallery/" url="http://my.deviantart.com/deviants/add">
+                <inputs>
+                    <input name="username" value="BeckyStriges"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beckystriges.deviantart.com/gallery/" url="http://comments.deviantart.com/post">
+                <inputs>
+                    <input name="itemid" value="35034698"/>
+                    <input name="typeid" value="20"/>
+                    <input name="body" value="on"/>
+                    <input name="validate_token" value="d36122f88923dd20207d"/>
+                    <input name="splitid" value="on"/>
+                    <input name="moodid" value="0"/>
+                    <input name="validate_key" value="1344189148"/>
+                    <input name="ref" value="http://beckystriges.deviantart.com/gallery/"/>
+                    <input name="private" value="0"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beckystriges.deviantart.com/prints/?utm_campaign=printstab&amp;utm_medium=userpage&amp;utm_source=deviantart" url="https://www.deviantart.com/users/login">
+                <inputs>
+                    <input name="username" value="on"/>
+                    <input name="remember_me" value="1"/>
+                    <input name="password" value="on"/>
+                    <input name="ref" value="on"/>
+                    <input name="action" value="Login"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beckystriges.deviantart.com/prints/?utm_campaign=printstab&amp;utm_medium=userpage&amp;utm_source=deviantart" url="http://my.deviantart.com/deviants/add">
+                <inputs>
+                    <input name="username" value="BeckyStriges"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beckystriges.deviantart.com/favourites/" url="https://www.deviantart.com/users/login">
+                <inputs>
+                    <input name="username" value="on"/>
+                    <input name="remember_me" value="1"/>
+                    <input name="password" value="on"/>
+                    <input name="ref" value="on"/>
+                    <input name="action" value="Login"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beckystriges.deviantart.com/favourites/" url="http://my.deviantart.com/deviants/add">
+                <inputs>
+                    <input name="username" value="BeckyStriges"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beckystriges.deviantart.com/favourites/" url="http://comments.deviantart.com/post">
+                <inputs>
+                    <input name="itemid" value="48237833"/>
+                    <input name="typeid" value="21"/>
+                    <input name="body" value="on"/>
+                    <input name="validate_token" value="66be0881f6affd135d83"/>
+                    <input name="splitid" value="on"/>
+                    <input name="moodid" value="0"/>
+                    <input name="validate_key" value="1344189149"/>
+                    <input name="ref" value="http://beckystriges.deviantart.com/favourites/"/>
+                    <input name="private" value="0"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beckystriges.deviantart.com/journal/" url="https://www.deviantart.com/users/login">
+                <inputs>
+                    <input name="username" value="on"/>
+                    <input name="remember_me" value="1"/>
+                    <input name="password" value="on"/>
+                    <input name="ref" value="on"/>
+                    <input name="action" value="Login"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beckystriges.deviantart.com/journal/" url="http://my.deviantart.com/deviants/add">
+                <inputs>
+                    <input name="username" value="BeckyStriges"/>
+                </inputs>
+            </form>
+        </forms>
+        <uploads/>
+    </root>

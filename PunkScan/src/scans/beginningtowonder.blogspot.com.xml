@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://beginningtowonder.blogspot.com/</rootURL>
+        <toBrowse>
+            <url>http://beginningtowonder.blogspot.com/2012/04/dont-know-how-much-longer-ill-be.html</url>
+            <url>http://beginningtowonder.blogspot.com/2012/04/nra-rules-their-world-and-ours.html</url>
+            <url>http://beginningtowonder.blogspot.com/search?max-results=7&amp;updated-max=2012-04-24T10:37:00-07:00</url>
+            <url>http://beginningtowonder.blogspot.com/</url>
+            <url>http://beginningtowonder.blogspot.com/feeds/posts/default</url>
+            <url>http://beginningtowonder.blogspot.com/2012/06/on-lessons-not-learned.html</url>
+            <url>http://beginningtowonder.blogspot.com/feeds/2678857607147371061/comments/default</url>
+            <url>http://beginningtowonder.blogspot.com/2012/05/todays-must-read.html</url>
+            <url>http://beginningtowonder.blogspot.com/feeds/4667408628451120749/comments/default</url>
+            <url>http://beginningtowonder.blogspot.com/2012/05/dark-shadows.html</url>
+            <url>http://beginningtowonder.blogspot.com/2012/05/dark-shadows.html?showComment=1336763013582</url>
+            <url>http://beginningtowonder.blogspot.com/feeds/6427575465021854211/comments/default</url>
+            <url>http://beginningtowonder.blogspot.com/2012/05/on-lighter-note-today.html</url>
+            <url>http://beginningtowonder.blogspot.com/2012/05/on-lighter-note-today.html?showComment=1336482614532</url>
+            <url>http://beginningtowonder.blogspot.com/2012/05/on-lighter-note-today.html?showComment=1336482731976</url>
+            <url>http://beginningtowonder.blogspot.com/feeds/7072608408802103067/comments/default</url>
+            <url>http://beginningtowonder.blogspot.com/2012/04/what-weve-become.html</url>
+            <url>http://beginningtowonder.blogspot.com/feeds/468622415040524842/comments/default</url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://beginningtowonder.blogspot.com/2012/05/on-lighter-note-today.html">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://beginningtowonder.blogspot.com/2012/05/on-lighter-note-today.html"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=6edf75530a8c64df; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 19:10:58 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Wed, 25 Jul 2012 13:42:32 GMT"/>
+                <header name="etag" value="&quot;c9a974a2-b66a-4859-94be-ad60c8bce018&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:10:58 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://beginningtowonder.blogspot.com/2012/05/dark-shadows.html">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://beginningtowonder.blogspot.com/2012/05/dark-shadows.html"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sun, 05 Aug 2012 19:10:57 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Wed, 25 Jul 2012 13:42:32 GMT"/>
+                <header name="etag" value="&quot;c9a974a2-b66a-4859-94be-ad60c8bce018&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:10:57 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://beginningtowonder.blogspot.com/">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://beginningtowonder.blogspot.com/"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=7c91c6b25f77c40e; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 19:10:56 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Wed, 25 Jul 2012 13:42:32 GMT"/>
+                <header name="etag" value="&quot;c9a974a2-b66a-4859-94be-ad60c8bce018&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:10:56 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://beginningtowonder.blogspot.com/2012/06/on-lessons-not-learned.html">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://beginningtowonder.blogspot.com/2012/06/on-lessons-not-learned.html"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=7357b15a617be631; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 19:10:57 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Wed, 25 Jul 2012 13:42:32 GMT"/>
+                <header name="etag" value="&quot;c9a974a2-b66a-4859-94be-ad60c8bce018&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:10:57 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://beginningtowonder.blogspot.com/2012/05/todays-must-read.html">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://beginningtowonder.blogspot.com/2012/05/todays-must-read.html"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=d411748d07d4aa27; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 19:10:57 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Wed, 25 Jul 2012 13:42:32 GMT"/>
+                <header name="etag" value="&quot;c9a974a2-b66a-4859-94be-ad60c8bce018&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:10:57 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://beginningtowonder.blogspot.com/2012/04/what-weve-become.html">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://beginningtowonder.blogspot.com/2012/04/what-weve-become.html"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sun, 05 Aug 2012 19:10:58 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Wed, 25 Jul 2012 13:42:32 GMT"/>
+                <header name="etag" value="&quot;c9a974a2-b66a-4859-94be-ad60c8bce018&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:10:58 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

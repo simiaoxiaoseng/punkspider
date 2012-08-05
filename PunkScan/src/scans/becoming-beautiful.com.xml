@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://becoming-beautiful.com/</rootURL>
+        <toBrowse>
+            <url>http://becoming-beautiful.com/adelaide-beauty-bloggers-meetups/</url>
+            <url>http://becoming-beautiful.com/?s=Search this website …</url>
+            <url>http://becoming-beautiful.com/2012/07/review-tony-moly-shiny-foot-peeling-liquid-feet-mask-do-you-want-baby-feet/</url>
+            <url>http://becoming-beautiful.com/wp-content/uploads/2012/07/mask01.jpg</url>
+            <url>http://becoming-beautiful.com/wp-content/uploads/2012/07/mask02.jpg</url>
+            <url>http://becoming-beautiful.com/wp-content/uploads/2012/07/mask04.jpg</url>
+            <url>http://becoming-beautiful.com/wp-content/uploads/2012/07/mask03.jpg</url>
+            <url>http://becoming-beautiful.com/2012/07/eating-out-hobba-coffee-kitchen-prahran-melbourne/</url>
+            <url>http://becoming-beautiful.com/wp-content/uploads/2012/07/hobba01.jpg</url>
+            <url>http://becoming-beautiful.com/wp-content/uploads/2012/07/hobba02.jpg</url>
+            <url>http://becoming-beautiful.com/wp-content/uploads/2012/07/hobba03.jpg</url>
+            <url>http://becoming-beautiful.com/wp-content/uploads/2012/07/hobba04.jpg</url>
+            <url>http://becoming-beautiful.com/wp-content/uploads/2012/07/hobba05.jpg</url>
+            <url>http://becoming-beautiful.com/2012/07/review-nyx-mosaic-powder-blush-in-rosey/</url>
+            <url>http://becoming-beautiful.com/2012/07/eating-out-zedz-cafe-adelaide-central-market-adelaide/</url>
+            <url>http://becoming-beautiful.com/2012/07/review-tonic-scented-candle-in-pomelo/</url>
+            <url>http://becoming-beautiful.com/2012/07/eating-out-luxbite-south-yarra-melbourne/</url>
+            <url>http://becoming-beautiful.com/page/2/</url>
+            <url>http://becoming-beautiful.com/wp-login.php</url>
+            <url>http://becoming-beautiful.com/comments/feed/</url>
+            <url>http://becoming-beautiful.com/about/</url>
+            <url>http://becoming-beautiful.com/wp-content/uploads/2011/09/vavavoom01.jpg</url>
+            <url>http://becoming-beautiful.com/about/?share=facebook</url>
+            <url>http://becoming-beautiful.com/about/?share=stumbleupon</url>
+            <url>http://becoming-beautiful.com/about/?share=twitter</url>
+            <url>http://becoming-beautiful.com/about/?share=email</url>
+            <url>http://becoming-beautiful.com/about/disclosure-policy/</url>
+            <url>http://becoming-beautiful.com/about/disclosure-policy/?share=facebook</url>
+            <url>http://becoming-beautiful.com/about/disclosure-policy/?share=stumbleupon</url>
+            <url>http://becoming-beautiful.com/about/disclosure-policy/?share=twitter</url>
+            <url>http://becoming-beautiful.com/about/disclosure-policy/?share=email</url>
+            <url>http://becoming-beautiful.com/about/editorial-policy-and-code-of-ethics/</url>
+            <url>http://becoming-beautiful.com/about/editorial-policy-and-code-of-ethics/?share=facebook</url>
+            <url>http://becoming-beautiful.com/about/editorial-policy-and-code-of-ethics/?share=stumbleupon</url>
+            <url>http://becoming-beautiful.com/about/editorial-policy-and-code-of-ethics/?share=twitter</url>
+            <url>http://becoming-beautiful.com/about/editorial-policy-and-code-of-ethics/?share=email</url>
+            <url>http://becoming-beautiful.com/about/disclaimer/</url>
+            <url>http://becoming-beautiful.com/about/disclaimer/?share=facebook</url>
+            <url>http://becoming-beautiful.com/about/disclaimer/?share=stumbleupon</url>
+            <url>http://becoming-beautiful.com/about/disclaimer/?share=twitter</url>
+            <url>http://becoming-beautiful.com/about/disclaimer/?share=email</url>
+            <url>http://becoming-beautiful.com/contact-me/</url>
+            <url>http://becoming-beautiful.com/contact-me/?share=facebook</url>
+            <url>http://becoming-beautiful.com/contact-me/?share=stumbleupon</url>
+            <url>http://becoming-beautiful.com/contact-me/?share=twitter</url>
+            <url>http://becoming-beautiful.com/contact-me/?share=email</url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://becoming-beautiful.com/about/disclaimer/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="23790"/>
+                <header name="content-location" value="http://becoming-beautiful.com/about/disclaimer/"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="x-powered-by" value="PHP/5.2.6-1+lenny13"/>
+                <header name="vary" value="Cookie,Accept-Encoding"/>
+                <header name="server" value="nginx/0.6.32"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="link" value="&lt;http://wp.me/P13pIV-CL&gt;; rel=shortlink"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 17:51:52 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://becoming-beautiful.com/xmlrpc.php"/>
+            </url_data>
+            <url_data uri="http://becoming-beautiful.com/about/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="24434"/>
+                <header name="content-location" value="http://becoming-beautiful.com/about/"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="x-powered-by" value="PHP/5.2.6-1+lenny13"/>
+                <header name="vary" value="Cookie,Accept-Encoding"/>
+                <header name="server" value="nginx/0.6.32"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="link" value="&lt;http://wp.me/P13pIV-2&gt;; rel=shortlink"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 17:51:47 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://becoming-beautiful.com/xmlrpc.php"/>
+            </url_data>
+            <url_data uri="http://becoming-beautiful.com/about/editorial-policy-and-code-of-ethics/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="25645"/>
+                <header name="content-location" value="http://becoming-beautiful.com/about/editorial-policy-and-code-of-ethics/"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="x-powered-by" value="PHP/5.2.6-1+lenny13"/>
+                <header name="vary" value="Cookie,Accept-Encoding"/>
+                <header name="server" value="nginx/0.6.32"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="link" value="&lt;http://wp.me/P13pIV-CA&gt;; rel=shortlink"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 17:51:51 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://becoming-beautiful.com/xmlrpc.php"/>
+            </url_data>
+            <url_data uri="http://becoming-beautiful.com/contact-me/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="23785"/>
+                <header name="content-location" value="http://becoming-beautiful.com/contact-me/"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="x-powered-by" value="PHP/5.2.6-1+lenny13"/>
+                <header name="vary" value="Cookie,Accept-Encoding"/>
+                <header name="server" value="nginx/0.6.32"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="link" value="&lt;http://wp.me/P13pIV-12&gt;; rel=shortlink"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 17:51:54 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://becoming-beautiful.com/xmlrpc.php"/>
+            </url_data>
+            <url_data uri="http://becoming-beautiful.com/">
+                <header name="wp-super-cache" value="Served supercache file from PHP"/>
+                <header name="status" value="200"/>
+                <header name="content-length" value="40674"/>
+                <header name="content-location" value="http://becoming-beautiful.com/"/>
+                <header name="x-powered-by" value="PHP/5.2.6-1+lenny13"/>
+                <header name="vary" value="Accept-Encoding,Cookie"/>
+                <header name="server" value="nginx/0.6.32"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="max-age=3, must-revalidate"/>
+                <header name="date" value="Sun, 05 Aug 2012 17:51:46 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://becoming-beautiful.com/about/disclosure-policy/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="24272"/>
+                <header name="content-location" value="http://becoming-beautiful.com/about/disclosure-policy/"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="x-powered-by" value="PHP/5.2.6-1+lenny13"/>
+                <header name="vary" value="Cookie,Accept-Encoding"/>
+                <header name="server" value="nginx/0.6.32"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="link" value="&lt;http://wp.me/P13pIV-64&gt;; rel=shortlink"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 17:51:49 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://becoming-beautiful.com/xmlrpc.php"/>
+            </url_data>
+        </browsed>
+        <forms>
+            <form encoding="utf-8" to="http://becoming-beautiful.com/about/" url="http://becoming-beautiful.com/about/">
+                <inputs>
+                    <input name="source_email" value="on"/>
+                    <input name="source_name" value="on"/>
+                    <input name="target_email" value="on"/>
+                </inputs>
+            </form>
+            <form encoding="utf-8" to="http://becoming-beautiful.com/about/disclosure-policy/" url="http://becoming-beautiful.com/about/disclosure-policy/">
+                <inputs>
+                    <input name="source_email" value="on"/>
+                    <input name="source_name" value="on"/>
+                    <input name="target_email" value="on"/>
+                </inputs>
+            </form>
+            <form encoding="utf-8" to="http://becoming-beautiful.com/about/editorial-policy-and-code-of-ethics/" url="http://becoming-beautiful.com/about/editorial-policy-and-code-of-ethics/">
+                <inputs>
+                    <input name="source_email" value="on"/>
+                    <input name="source_name" value="on"/>
+                    <input name="target_email" value="on"/>
+                </inputs>
+            </form>
+            <form encoding="utf-8" to="http://becoming-beautiful.com/about/disclaimer/" url="http://becoming-beautiful.com/about/disclaimer/">
+                <inputs>
+                    <input name="source_email" value="on"/>
+                    <input name="source_name" value="on"/>
+                    <input name="target_email" value="on"/>
+                </inputs>
+            </form>
+            <form encoding="utf-8" to="http://becoming-beautiful.com/contact-me/" url="http://becoming-beautiful.com/contact-me/">
+                <inputs>
+                    <input name="source_email" value="on"/>
+                    <input name="source_name" value="on"/>
+                    <input name="target_email" value="on"/>
+                </inputs>
+            </form>
+        </forms>
+        <uploads/>
+    </root>

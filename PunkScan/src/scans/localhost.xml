@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>
+            http://localhost/index.php
+        </rootURL>
+        <toBrowse/>
+        <browsed>
+            <url_data uri="http://localhost/index.php?age=on&amp;name=on">
+                <header name="status" value="200"/>
+                <header name="content-length" value="37"/>
+                <header name="content-location" value="http://localhost/index.php?age=on&amp;name=on"/>
+                <header name="x-powered-by" value="PHP/5.3.3-7+squeeze13"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache/2.2.16 (Debian)"/>
+                <header name="link_encoding" value="ascii"/>
+                <header name="date" value="Sat, 28 Jul 2012 20:49:49 GMT"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://localhost/index.php">
+                <header name="status" value="200"/>
+                <header name="content-length" value="180"/>
+                <header name="content-location" value="http://localhost/index.php"/>
+                <header name="x-powered-by" value="PHP/5.3.3-7+squeeze13"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache/2.2.16 (Debian)"/>
+                <header name="link_encoding" value="ascii"/>
+                <header name="date" value="Sat, 28 Jul 2012 20:49:49 GMT"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>
+            http://be-boy.blogspot.com/
+        </rootURL>
+        <toBrowse/>
+        <browsed>
+            <url_data uri="http://be-boy.blogspot.com/feeds/posts/default">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://be-boy.blogspot.com/feeds/posts/default"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sat, 04 Aug 2012 03:42:49 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Thu, 16 Feb 2012 15:32:21 GMT"/>
+                <header name="etag" value="W/&quot;DEQAQHc6eCl7ImA9WhRaFE0.&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sat, 04 Aug 2012 03:42:49 GMT"/>
+                <header name="content-type" value="application/atom+xml"/>
+            </url_data>
+            <url_data uri="http://be-boy.blogspot.com/">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://be-boy.blogspot.com/"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sat, 04 Aug 2012 03:42:48 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Thu, 16 Feb 2012 15:32:21 GMT"/>
+                <header name="etag" value="&quot;792e34d4-3c81-4fc9-991c-014853cd2703&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sat, 04 Aug 2012 03:42:48 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

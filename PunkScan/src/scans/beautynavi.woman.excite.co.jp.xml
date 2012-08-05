@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://beautynavi.woman.excite.co.jp/</rootURL>
+        <toBrowse>
+            <url>http://beautyeveryday.com/.miau/x</url>
+            <url>http://beautyeveryday.com/.miau/y2kupdate</url>
+            <url>http://beautyidol.polyvore.com/</url>
+            <url>http://beautyinfilth.tumblr.com/</url>
+            <url>http://beautyinfozone.com/</url>
+            <url>http://beautykills.tumblr.com/</url>
+            <url>http://beautynavi.woman.excite.co.jp/</url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://beautyeveryday.com/.miau/miaurc">
+                <header name="status" value="200"/>
+                <header name="content-length" value="933"/>
+                <header name="content-location" value="http://beautyeveryday.com/.miau/miaurc"/>
+                <header name="accept-ranges" value="bytes"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="last-modified" value="Tue, 15 May 2012 17:18:16 GMT"/>
+                <header name="etag" value="&quot;ff097a-3a5-4c016636f48eb&quot;"/>
+                <header name="link_encoding" value="ascii"/>
+                <header name="date" value="Sun, 05 Aug 2012 00:57:15 GMT"/>
+                <header name="content-type" value="text/plain"/>
+            </url_data>
+            <url_data uri="http://beautyeveryday.com/.miau/pid">
+                <header name="status" value="403"/>
+                <header name="content-length" value="201"/>
+                <header name="accept-ranges" value="bytes"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="last-modified" value="Sat, 06 Dec 2008 18:41:01 GMT"/>
+                <header name="link_encoding" value="ascii"/>
+                <header name="date" value="Sun, 05 Aug 2012 00:57:15 GMT"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://beautyeveryday.com/.miau/start">
+                <header name="status" value="200"/>
+                <header name="content-length" value="37"/>
+                <header name="content-location" value="http://beautyeveryday.com/.miau/start"/>
+                <header name="accept-ranges" value="bytes"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="last-modified" value="Sun, 06 Dec 2009 11:32:08 GMT"/>
+                <header name="etag" value="&quot;ff0978-25-47a0db0e7fe00&quot;"/>
+                <header name="link_encoding" value="ascii"/>
+                <header name="date" value="Sun, 05 Aug 2012 00:57:15 GMT"/>
+                <header name="content-type" value="text/plain"/>
+            </url_data>
+            <url_data uri="http://beautyeveryday.com/.miau/m.dir">
+                <header name="status" value="200"/>
+                <header name="content-length" value="34"/>
+                <header name="content-location" value="http://beautyeveryday.com/.miau/m.dir"/>
+                <header name="accept-ranges" value="bytes"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="last-modified" value="Tue, 15 May 2012 18:04:32 GMT"/>
+                <header name="etag" value="&quot;ff097f-22-4c01708e3a37b&quot;"/>
+                <header name="link_encoding" value="ascii"/>
+                <header name="date" value="Sun, 05 Aug 2012 00:57:15 GMT"/>
+                <header name="content-type" value="application/x-director"/>
+            </url_data>
+            <url_data uri="http://beautyeveryday.com/.miau/restart">
+                <header name="status" value="200"/>
+                <header name="content-length" value="23"/>
+                <header name="content-location" value="http://beautyeveryday.com/.miau/restart"/>
+                <header name="accept-ranges" value="bytes"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="last-modified" value="Fri, 08 Jan 2010 17:02:16 GMT"/>
+                <header name="etag" value="&quot;ff097c-17-47caa26517600&quot;"/>
+                <header name="link_encoding" value="ascii"/>
+                <header name="date" value="Sun, 05 Aug 2012 00:57:15 GMT"/>
+                <header name="content-type" value="text/plain"/>
+            </url_data>
+            <url_data uri="http://beautyeveryday.com/.miau/run">
+                <header name="status" value="200"/>
+                <header name="content-length" value="128"/>
+                <header name="content-location" value="http://beautyeveryday.com/.miau/run"/>
+                <header name="accept-ranges" value="bytes"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="last-modified" value="Thu, 12 May 2011 19:55:31 GMT"/>
+                <header name="etag" value="&quot;ff0976-80-4a319924ef2c0&quot;"/>
+                <header name="link_encoding" value="ascii"/>
+                <header name="date" value="Sun, 05 Aug 2012 00:57:15 GMT"/>
+                <header name="content-type" value="text/plain"/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

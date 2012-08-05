@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://beiitalove.deviantart.com/</rootURL>
+        <toBrowse>
+            <url>http://beiitalove.deviantart.com/journal/</url>
+            <url>http://beiitalove.deviantart.com/stats/gallery/</url>
+            <url>http://beiitalove.deviantart.com/journal/?offset=1</url>
+            <url>http://beiitalove.deviantart.com/?offset=10</url>
+            <url>http://beiitalove.deviantart.com/?offset=20</url>
+            <url>http://beiitalove.deviantart.com</url>
+            <url>http://beiitalove.deviantart.com/badges/</url>
+            <url>http://beiitalove.deviantart.com/activity/</url>
+            <url>http://beiitalove.deviantart.com/dds/</url>
+            <url>http://beiitalove.deviantart.com/critique/</url>
+            <url>http://beiitalove.deviantart.com/journal/poll/</url>
+            <url>http://beiitalove.deviantart.com/wishlist/</url>
+            <url>http://beiitalove.deviantart.com/badges/3181572/</url>
+            <url>http://beiitalove.deviantart.com/badges/3228779/</url>
+            <url>http://beiitalove.deviantart.com/badges/?offset=5</url>
+            <url>http://beiitalove.deviantart.com/badges/llama/</url>
+            <url>http://beiitalove.deviantart.com/gallery/</url>
+            <url>http://beiitalove.deviantart.com/gallery/?catpath=/</url>
+            <url>http://beiitalove.deviantart.com/gallery/?catpath=scraps</url>
+            <url>http://beiitalove.deviantart.com/gallery/?q=on</url>
+            <url>http://beiitalove.deviantart.com/gallery/?offset=24</url>
+            <url>http://beiitalove.deviantart.com/prints/</url>
+            <url>http://beiitalove.deviantart.com/prints/?utm_campaign=printstab&amp;utm_medium=userpage&amp;utm_source=deviantart</url>
+            <url>http://beiitalove.deviantart.com/prints/?itemids=-1</url>
+            <url>http://beiitalove.deviantart.com/prints/?itemtypeids=41-42</url>
+            <url>http://beiitalove.deviantart.com/prints/?itemtypeids=24</url>
+            <url>http://beiitalove.deviantart.com/prints/?itemtypeids=1-2-11</url>
+            <url>http://beiitalove.deviantart.com/favourites/</url>
+            <url>http://beiitalove.deviantart.com/favourites/?catpath=/</url>
+            <url>http://beiitalove.deviantart.com/favourites/?offset=24</url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://beiitalove.deviantart.com/favourites/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="82923"/>
+                <header name="content-location" value="http://beiitalove.deviantart.com/favourites/"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="userinfo=__6f870b06f39b793bc4d6%3B%7B%22username%22%3A%22%22%2C%22uniqueid%22%3A%227ca9feb99cb04646fb89548350defdae%22%2C%22hitcount%22%3A2%2C%22visitcount%22%3A2%2C%22visittime%22%3A1344194118%2C%22firstvisit%22%3A1344194117%7D; expires=Tue, 04-Sep-2012 19:15:18 GMT; path=/; domain=.deviantart.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:15:17 GMT"/>
+                <header name="p3p" value="policyref=&quot;/w3c/p3p.xml&quot;, CP=&quot;NOI DSP COR CURa OUR STP&quot;"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://beiitalove.deviantart.com/badges/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="53626"/>
+                <header name="content-location" value="http://beiitalove.deviantart.com/badges/"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="userinfo=__a16f290a4bcf7ab92f60%3B%7B%22username%22%3A%22%22%2C%22uniqueid%22%3A%2286b0ff859436cd8ef50b8a92d14eb38e%22%2C%22hitcount%22%3A2%2C%22visitcount%22%3A2%2C%22visittime%22%3A1344194116%2C%22firstvisit%22%3A1344194116%7D; expires=Tue, 04-Sep-2012 19:15:16 GMT; path=/; domain=.deviantart.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:15:16 GMT"/>
+                <header name="p3p" value="policyref=&quot;/w3c/p3p.xml&quot;, CP=&quot;NOI DSP COR CURa OUR STP&quot;"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://beiitalove.deviantart.com/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="125782"/>
+                <header name="content-location" value="http://beiitalove.deviantart.com/"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="userinfo=__1f6c289e711dfa34fac3%3B%7B%22username%22%3A%22%22%2C%22uniqueid%22%3A%2254f465d1966b5cd8246fe056261e8e1f%22%2C%22hitcount%22%3A2%2C%22visitcount%22%3A2%2C%22visittime%22%3A1344194114%2C%22firstvisit%22%3A1344194114%7D; expires=Tue, 04-Sep-2012 19:15:14 GMT; path=/; domain=.deviantart.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:15:14 GMT"/>
+                <header name="p3p" value="policyref=&quot;/w3c/p3p.xml&quot;, CP=&quot;NOI DSP COR CURa OUR STP&quot;"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://beiitalove.deviantart.com/prints/?utm_campaign=printstab&amp;utm_medium=userpage&amp;utm_source=deviantart">
+                <header name="status" value="200"/>
+                <header name="content-length" value="62499"/>
+                <header name="content-location" value="http://beiitalove.deviantart.com/prints/?utm_campaign=printstab&amp;utm_medium=userpage&amp;utm_source=deviantart"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="userinfo=__efb3118405b927d718b1%3B%7B%22username%22%3A%22%22%2C%22uniqueid%22%3A%2288fdbd3c9038bdf97c0d7f2fd869b2a0%22%2C%22hitcount%22%3A2%2C%22visitcount%22%3A2%2C%22visittime%22%3A1344194117%2C%22firstvisit%22%3A1344194117%7D; expires=Tue, 04-Sep-2012 19:15:17 GMT; path=/; domain=.deviantart.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:15:17 GMT"/>
+                <header name="p3p" value="policyref=&quot;/w3c/p3p.xml&quot;, CP=&quot;NOI DSP COR CURa OUR STP&quot;"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://beiitalove.deviantart.com/gallery/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="82730"/>
+                <header name="content-location" value="http://beiitalove.deviantart.com/gallery/"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="userinfo=__18ca8d10922946e4404d%3B%7B%22username%22%3A%22%22%2C%22uniqueid%22%3A%22711d00a5549a0207cd5ec16b63c0668c%22%2C%22hitcount%22%3A2%2C%22visitcount%22%3A2%2C%22visittime%22%3A1344194116%2C%22firstvisit%22%3A1344194116%7D; expires=Tue, 04-Sep-2012 19:15:16 GMT; path=/; domain=.deviantart.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:15:16 GMT"/>
+                <header name="p3p" value="policyref=&quot;/w3c/p3p.xml&quot;, CP=&quot;NOI DSP COR CURa OUR STP&quot;"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://beiitalove.deviantart.com">
+                <header name="status" value="200"/>
+                <header name="content-length" value="125782"/>
+                <header name="content-location" value="http://beiitalove.deviantart.com"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="userinfo=__109adad640d765966f3d%3B%7B%22username%22%3A%22%22%2C%22uniqueid%22%3A%224dcd6382f484a0ad58b339cf9d1c0831%22%2C%22hitcount%22%3A2%2C%22visitcount%22%3A2%2C%22visittime%22%3A1344194115%2C%22firstvisit%22%3A1344194115%7D; expires=Tue, 04-Sep-2012 19:15:15 GMT; path=/; domain=.deviantart.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:15:15 GMT"/>
+                <header name="p3p" value="policyref=&quot;/w3c/p3p.xml&quot;, CP=&quot;NOI DSP COR CURa OUR STP&quot;"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

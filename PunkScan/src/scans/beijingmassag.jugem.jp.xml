@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://beijingmassag.jugem.jp/</rootURL>
+        <toBrowse>
+            <url>http://beijingmassag.jugem.jp/manage/</url>
+            <url>http://beijingmassag.jugem.jp/?mode=rss</url>
+            <url>http://beijingmassag.jugem.jp/?mode=atom</url>
+            <url>http://beijingmassag.jugem.jp/?eid=1</url>
+            <url>http://beijingmassag.jugem.jp/?mode=comment</url>
+            <url>http://beijingmassag.jugem.jp/?pid=1</url>
+            <url>http://beijingmassag.jugem.jp/?search=on</url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://beijingmassag.jugem.jp/?month=201207">
+                <header name="status" value="404"/>
+                <header name="x-powered-by" value="PHP/4.4.2"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="server" value="Apache/1.3.37 (Unix) PHP/4.4.2"/>
+                <header name="connection" value="close"/>
+                <header name="link_encoding" value="euc-jp"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:15:51 GMT"/>
+                <header name="content-type" value="text/html; charset=EUC-JP"/>
+            </url_data>
+            <url_data uri="http://beijingmassag.jugem.jp/?search=on">
+                <header name="status" value="200"/>
+                <header name="content-location" value="http://beijingmassag.jugem.jp/?search=on"/>
+                <header name="x-powered-by" value="PHP/4.4.2"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="server" value="Apache/1.3.37 (Unix) PHP/4.4.2"/>
+                <header name="connection" value="close"/>
+                <header name="link_encoding" value="euc-jp"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:15:53 GMT"/>
+                <header name="content-type" value="text/html; charset=EUC-JP"/>
+            </url_data>
+            <url_data uri="http://beijingmassag.jugem.jp/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="15317"/>
+                <header name="content-location" value="http://beijingmassag.jugem.jp/"/>
+                <header name="accept-ranges" value="bytes"/>
+                <header name="server" value="Apache"/>
+                <header name="last-modified" value="Thu, 02 Aug 2012 08:29:44 GMT"/>
+                <header name="connection" value="close"/>
+                <header name="link_encoding" value="euc-jp"/>
+                <header name="pragma" value="no-cache"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:15:48 GMT"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://beijingmassag.jugem.jp/?pid=1">
+                <header name="status" value="200"/>
+                <header name="content-location" value="http://beijingmassag.jugem.jp/?pid=1"/>
+                <header name="x-powered-by" value="PHP/4.4.2"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="server" value="Apache/1.3.37 (Unix) PHP/4.4.2"/>
+                <header name="connection" value="close"/>
+                <header name="link_encoding" value="euc-jp"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:15:50 GMT"/>
+                <header name="content-type" value="text/html; charset=EUC-JP"/>
+            </url_data>
+            <url_data uri="http://beijingmassag.jugem.jp/?month=201209">
+                <header name="status" value="404"/>
+                <header name="x-powered-by" value="PHP/4.4.2"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="server" value="Apache/1.3.37 (Unix) PHP/4.4.2"/>
+                <header name="connection" value="close"/>
+                <header name="link_encoding" value="euc-jp"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:15:51 GMT"/>
+                <header name="content-type" value="text/html; charset=EUC-JP"/>
+            </url_data>
+            <url_data uri="http://beijingmassag.jugem.jp/?eid=1">
+                <header name="status" value="200"/>
+                <header name="content-length" value="18107"/>
+                <header name="content-location" value="http://beijingmassag.jugem.jp/?eid=1"/>
+                <header name="accept-ranges" value="bytes"/>
+                <header name="vary" value="User-Agent,Host"/>
+                <header name="server" value="Apache"/>
+                <header name="last-modified" value="Thu, 02 Aug 2012 11:46:58 GMT"/>
+                <header name="connection" value="close"/>
+                <header name="link_encoding" value="euc-jp"/>
+                <header name="pragma" value="no-cache"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:15:49 GMT"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

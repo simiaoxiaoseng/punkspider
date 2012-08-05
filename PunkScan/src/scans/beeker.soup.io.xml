@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://beeker.soup.io/</rootURL>
+        <toBrowse/>
+        <browsed>
+            <url_data uri="http://beeker.soup.io/">
+                <header name="status" value="302"/>
+                <header name="content-length" value="0"/>
+                <header name="set-cookie" value="soup_session_id=invalid; path=/; expires=Thu, 05 Aug 2032 18:36:22 GMT; HttpOnly"/>
+                <header name="server" value="unicorn"/>
+                <header name="location" value="http://www.soup.io/remote/generate?host=beeker.soup.io&amp;referer=%2F&amp;redirect_to=%2F"/>
+                <header name="cache-control" value="no-cache"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:36:22 GMT"/>
+                <header name="p3p" value="CP=&quot;CAO PSA OUR&quot;"/>
+                <header name="content-type" value="text-plain"/>
+                <header name="link_encoding" value=""/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>
+            http://www.annapolis.org/
+        </rootURL>
+        <toBrowse/>
+        <browsed>
+            <url_data uri="http://www.annapolis.org/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="13504"/>
+                <header name="content-location" value="http://www.annapolis.org/"/>
+                <header name="x-powered-by" value="ASP.NET"/>
+                <header name="set-cookie" value="ASPSESSIONIDAQACADCT=GKAOILEAFBFJIKAJCJDNHAOD; path=/"/>
+                <header name="server" value="Microsoft-IIS/6.0"/>
+                <header name="link_encoding" value="ISO-8859-2"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sat, 14 Jul 2012 04:01:01 GMT"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>
+            http://be-light.ro/
+        </rootURL>
+        <toBrowse/>
+        <browsed>
+            <url_data uri="http://be-light.ro/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="42669"/>
+                <header name="content-location" value="http://be-light.ro/"/>
+                <header name="x-powered-by" value="PHP/5.2.11, ASP.NET"/>
+                <header name="server" value="Microsoft-IIS/7.5"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 05:32:17 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://www.be-light.ro/xmlrpc.php"/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

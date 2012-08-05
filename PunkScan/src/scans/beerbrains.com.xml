@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://beerbrains.com/</rootURL>
+        <toBrowse>
+            <url>http://beerbrains.com?s=on</url>
+            <url>http://beerbrains.com/?p=1913</url>
+            <url>http://beerbrains.com/?p=1912</url>
+            <url>http://beerbrains.com/?p=1910</url>
+            <url>http://beerbrains.com/?p=1909</url>
+            <url>http://beerbrains.com/?p=1908</url>
+            <url>http://beerbrains.com/?cat=33</url>
+            <url>http://beerbrains.com/wp-content/uploads/2012/06/ninja-kid.jpg</url>
+            <url>http://beerbrains.com/?cat=14</url>
+            <url>http://beerbrains.com/?cat=1</url>
+            <url>http://beerbrains.com/?cat=20</url>
+            <url>http://beerbrains.com/?p=1906</url>
+            <url>http://beerbrains.com/?p=1895</url>
+            <url>http://beerbrains.com/wp-content/uploads/2012/04/eastereggsucker.jpg</url>
+            <url>http://beerbrains.com/?p=1905</url>
+            <url>http://beerbrains.com/?p=1903</url>
+            <url>http://beerbrains.com/?p=1902</url>
+            <url>http://beerbrains.com/?p=1901</url>
+            <url>http://beerbrains.com/?p=1900</url>
+            <url>http://beerbrains.com/?p=1899</url>
+            <url>http://beerbrains.com/?p=1898</url>
+            <url>http://beerbrains.com/?p=1896</url>
+            <url>http://beerbrains.com/?p=1894</url>
+            <url>http://beerbrains.com/?p=1893</url>
+            <url>http://beerbrains.com/?p=1892</url>
+            <url>http://beerbrains.com/?p=1891</url>
+            <url>http://beerbrains.com/?p=1890</url>
+            <url>http://beerbrains.com/wp-content/uploads/2010/12/lloyd.gif</url>
+            <url>http://beerbrains.com/index.php?paged=2</url>
+            <url>http://beerbrains.com/</url>
+            <url>http://beerbrains.com/sitemap/</url>
+            <url>http://beerbrains.com</url>
+            <url>http://beerbrains.com/?m=201205</url>
+            <url>http://beerbrains.com/?m=20120617</url>
+            <url>http://beerbrains.com/?m=20120622</url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://beerbrains.com">
+                <header name="status" value="200"/>
+                <header name="content-length" value="59987"/>
+                <header name="content-location" value="http://beerbrains.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:56:02 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://beerbrains.com/xmlrpc.php"/>
+            </url_data>
+            <url_data uri="http://beerbrains.com/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="59987"/>
+                <header name="content-location" value="http://beerbrains.com/"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:56:01 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://beerbrains.com/xmlrpc.php"/>
+            </url_data>
+            <url_data uri="http://beerbrains.com/archives/">
+                <header name="status" value="404"/>
+                <header name="content-length" value="613"/>
+                <header name="accept-ranges" value="bytes"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:56:03 GMT"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://beerbrains.com/?feed=rss2">
+                <header name="status" value="200"/>
+                <header name="content-length" value="16805"/>
+                <header name="content-location" value="http://beerbrains.com/?feed=rss2"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="last-modified" value="Fri, 22 Jun 2012 20:59:08 GMT"/>
+                <header name="etag" value="&quot;e9f4d5594e13499016ecc338c871a05b&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:56:03 GMT"/>
+                <header name="content-type" value="text/xml; charset=UTF-8"/>
+                <header name="x-pingback" value="http://beerbrains.com/xmlrpc.php"/>
+            </url_data>
+            <url_data uri="http://beerbrains.com/?m=201206">
+                <header name="status" value="200"/>
+                <header name="content-length" value="33520"/>
+                <header name="content-location" value="http://beerbrains.com/?m=201206"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:56:03 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://beerbrains.com/xmlrpc.php"/>
+            </url_data>
+            <url_data uri="http://beerbrains.com/about/">
+                <header name="status" value="404"/>
+                <header name="content-length" value="613"/>
+                <header name="accept-ranges" value="bytes"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:56:03 GMT"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

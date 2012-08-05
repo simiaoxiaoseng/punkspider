@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://behnamagayi.blogfa.com/</rootURL>
+        <toBrowse>
+            <url>http://behnamagayi.blogfa.com/post/74</url>
+            <url>http://behnamagayi.blogfa.com/post/73</url>
+            <url>http://behnamagayi.blogfa.com/post/71</url>
+            <url>http://behnamagayi.blogfa.com/post/70</url>
+            <url>http://behnamagayi.blogfa.com/post/69</url>
+            <url>http://behnamagayi.blogfa.com/post/68</url>
+            <url>http://behnamagayi.blogfa.com/post/67</url>
+            <url>http://behnamagayi.blogfa.com/post/66</url>
+            <url>http://behnamagayi.blogfa.com/post/65</url>
+            <url>http://behnamagayi.blogfa.com/post/64</url>
+            <url>http://behnamagayi.blogfa.com</url>
+            <url>http://behnamagayi.blogfa.com/Profile/</url>
+            <url>http://behnamagayi.blogfa.com/1391/04</url>
+            <url>http://behnamagayi.blogfa.com/1391/03</url>
+            <url>http://behnamagayi.blogfa.com/1391/02</url>
+            <url>http://behnamagayi.blogfa.com/1391/01</url>
+            <url>http://behnamagayi.blogfa.com/post/79</url>
+            <url>http://behnamagayi.blogfa.com/post/78</url>
+            <url>http://behnamagayi.blogfa.com/post/77</url>
+            <url>http://behnamagayi.blogfa.com/post/76</url>
+            <url>http://behnamagayi.blogfa.com/post/75</url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://behnamagayi.blogfa.com/post/78">
+                <header name="status" value="200"/>
+                <header name="content-length" value="40041"/>
+                <header name="content-location" value="http://behnamagayi.blogfa.com/post/78"/>
+                <header name="x-powered-by" value="ASP.NET"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Microsoft-IIS/7.5"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:13:40 GMT"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+            </url_data>
+            <url_data uri="http://behnamagayi.blogfa.com/post/79">
+                <header name="status" value="200"/>
+                <header name="content-length" value="39783"/>
+                <header name="content-location" value="http://behnamagayi.blogfa.com/post/79"/>
+                <header name="x-powered-by" value="ASP.NET"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Microsoft-IIS/7.5"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:13:40 GMT"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+            </url_data>
+            <url_data uri="http://behnamagayi.blogfa.com/post/76">
+                <header name="status" value="200"/>
+                <header name="content-length" value="38830"/>
+                <header name="content-location" value="http://behnamagayi.blogfa.com/post/76"/>
+                <header name="x-powered-by" value="ASP.NET"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Microsoft-IIS/7.5"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:13:40 GMT"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+            </url_data>
+            <url_data uri="http://behnamagayi.blogfa.com/post/77">
+                <header name="status" value="200"/>
+                <header name="content-length" value="40532"/>
+                <header name="content-location" value="http://behnamagayi.blogfa.com/post/77"/>
+                <header name="x-powered-by" value="ASP.NET"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Microsoft-IIS/7.5"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:13:40 GMT"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+            </url_data>
+            <url_data uri="http://behnamagayi.blogfa.com/post/75">
+                <header name="status" value="200"/>
+                <header name="content-length" value="38930"/>
+                <header name="content-location" value="http://behnamagayi.blogfa.com/post/75"/>
+                <header name="x-powered-by" value="ASP.NET"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Microsoft-IIS/7.5"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 19:13:41 GMT"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+            </url_data>
+            <url_data uri="http://behnamagayi.blogfa.com/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="72998"/>
+                <header name="content-location" value="http://behnamagayi.blogfa.com/"/>
+                <header name="x-powered-by" value="ASP.NET"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Microsoft-IIS/7.5"/>
+                <header name="link_encoding" value=""/>
+                <header name="date" value="Sun, 05 Aug 2012 19:13:40 GMT"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

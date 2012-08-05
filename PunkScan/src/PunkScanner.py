@@ -1,0 +1,251 @@
+#PunkScanner is a module that sits on top of Wapiti, handles threading etc., and indexes these results to couchdb and Solr
+import sys
+sys.path.append('wapiti-2.2.1/src/')
+sys.path.append('pysolr/')
+sys.path.append('xmltodict/')
+sys.path.append('couchdb/')
+import wapiti
+import pysolr
+import datetime
+from lxml import etree
+from couchdb import Server
+from couchdb.client import Server, Document
+from couchdb.mapping import TextField, DateTimeField, ListField, DictField
+import subprocess
+
+class ParserUploader:
+	'''This class takes in a wapiti XML report (usually from a Target object) and uploads it to couchdb'''
+
+	def __init__(self, report, url):
+		'''At init, get the sql injectin bugs, xss bugs, and exec bugs. Also have lxml take in the wapiti report given to it.'''
+
+		self.doc = etree.fromstring(report)
+		self.url = url
+                self.__get_sql()
+                self.__get_xss()
+                self.__get_bsql()
+
+	def __get_sql(self):
+		'''Gets the sql injection bugs'''
+
+                sql_bugs = self.doc.xpath("bugTypeList/bugType[@name='SQL Injection']/bugList/bug")
+		sql_bugs_dic_list = []
+
+		if sql_bugs:
+
+			for bug in sql_bugs:
+
+				sql_bug_dic = {}
+				sql_bug_dic["level"] = bug.get("level")
+				sql_bug_dic["url"] = bug.find("url").text.strip()
+				sql_bug_dic["parameter"] = bug.find("parameter").text.strip()
+				sql_bug_dic["info"] = bug.find("info").text.strip()
+				sql_bugs_dic_list.append(sql_bug_dic)
+
+		self.sql_bugs_dic_list = sql_bugs_dic_list
+
+	def __get_xss(self):
+		'''Gets the xss bugs'''
+
+                xss_bugs = self.doc.xpath("bugTypeList/bugType[@name='Cross Site Scripting']/bugList/bug")
+                xss_bugs_dic_list = []
+
+                if xss_bugs:
+
+                        for bug in xss_bugs:
+
+                                xss_bug_dic = {}
+                                xss_bug_dic["level"] = bug.get("level")
+                                xss_bug_dic["url"] = bug.find("url").text.strip()
+                                xss_bug_dic["parameter"] = bug.find("parameter").text.strip()
+                                xss_bug_dic["info"] = bug.find("info").text.strip()
+                                xss_bugs_dic_list.append(xss_bug_dic)
+
+                self.xss_bugs_dic_list = xss_bugs_dic_list
+
+        def __get_bsql(self):
+                '''Gets the bsql bugs'''
+
+                bsql_bugs = self.doc.xpath("bugTypeList/bugType[@name='Blind SQL Injection']/bugList/bug")
+                bsql_bugs_dic_list = []
+
+                if bsql_bugs:
+
+                        for bug in bsql_bugs:
+
+                                bsql_bug_dic = {}
+                                bsql_bug_dic["level"] = bug.get("level")
+                                bsql_bug_dic["url"] = bug.find("url").text.strip()
+                                bsql_bug_dic["parameter"] = bug.find("parameter").text.strip()
+                                bsql_bug_dic["info"] = bug.find("info").text.strip()
+                                bsql_bugs_dic_list.append(bsql_bug_dic)
+
+                self.bsql_bugs_dic_list = bsql_bugs_dic_list
+
+	def __get_exec(self):
+		'''Gets the command execution bugs'''
+	
+                exec_bugs = self.doc.xpath("bugTypeList/bugType[@name='Commands execution']/bugList/bug")
+                exec_bugs_dic_list = []
+
+                if exec_bugs:
+
+                        for bug in exec_bugs:
+
+                                exec_bug_dic = {}
+                                exec_bug_dic["level"] = bug.get("level")
+                                exec_bug_dic["url"] = bug.find("url").text.strip()
+                                exec_bug_dic["parameter"] = bug.find("parameter").text.strip()
+                                exec_bug_dic["info"] = bug.find("info").text.strip()
+                                exec_bugs_dic_list.append(exec_bug_dic)
+
+                self.exec_bugs_dic_list = exec_bugs_dic_list
+
+	def solr_update(self, n_xss, n_sql, n_bsql):
+
+		conn = pysolr.Solr('http://cloud-solr:8983/solr/')
+		solr_doc_pull = conn.search("id:" + " \"" + self.url + "\" ")
+		vscan_tstamp = datetime.datetime.now()
+
+		for result in solr_doc_pull:
+			result["xss"] = n_xss
+			result["sqli"] = n_sql
+			result["bsqli"] = n_bsql
+			result["vscan_tstamp"] = datetime.datetime.now()
+
+		conn.add(solr_doc_pull)
+
+	def scdb_index(self):
+		'''This indexes vulnerabilities to couchdb and updates the timestamp and number of vulns in solr'''
+
+		#! change connection string in production
+		server = Server('http://localhost:5984')
+
+		#! set db name for production
+		try:
+        		db = server['vulnerabilities']
+		except Exception:
+        		db = server.create('vulnerabilities')
+
+		class Vulns(Document):
+
+		        _id = TextField()
+        		url = TextField()
+        		vulnis = ListField(DictField())
+        		added = DateTimeField(default=datetime.datetime.now())
+        		xss = ListField(DictField())
+        		sqli = ListField(DictField())
+        		bsqli = ListField(DictField())
+#!        		execu = ListField(DictField())
+
+		try:
+
+			vulns = Vulns(_id = self.url, url = self.url, xss = self.xss_bugs_dic_list, sqli = self.sql_bugs_dic_list, bsqli = self.bsql_bugs_dic_list)
+			db.save(vulns)
+			print "Saved a new doc"
+
+		except:
+
+			couch_doc = db[self.url]
+			couch_doc['xss'] = self.xss_bugs_dic_list
+			couch_doc['sqli'] = self.sql_bugs_dic_list
+			couch_doc['bsqli'] = self.bsql_bugs_dic_list
+#!			couch_doc['execu'] = self.exec_bugs_dic_list
+			db.save(couch_doc)
+			print "Updated a doc"
+
+		print "Updating Solr..."
+		self.solr_update(len(self.xss_bugs_dic_list), len(self.sql_bugs_dic_list), len(self.bsql_bugs_dic_list))
+
+
+class PunkSolr():
+	'''This class pulls URLs from solr in a cariety of ways for later scanning'''
+
+	def __init__(self):
+
+                self.conn = pysolr.Solr("http://hg-solr:8983/solr/")
+
+	def get_not_scanned(self):
+
+		self.not_scanned = self.conn.search("-vscan_tstamp:*", rows=1)
+
+		return self.not_scanned
+
+	def get_scanned_longest_ago(self):
+#!
+		pass
+
+class Target():
+	'''This class holds a target object and performs the actual scan. Once a scan is performed the result is a wapiti XML report'''
+
+	def __init__(self):
+
+		self.punk_solr = PunkSolr()
+		self.timestamp = datetime.datetime.now()
+#		self.seturl(self, url, "out.xml")
+
+	def set_url(self, url, outfile):
+
+		self.url = url
+		self.opt_list = [('-o', outfile), ('-f', 'xml'), ('-b', 'domain'), ('-v', '2'), ('-u', ''), ('-n', '1'), ('-t', '5'),\
+#!		('-m', '-all,xss:get,sql:get,blindsql:get')]
+		('-m', '-all,sql:get')]
+		
+
+	def update_vscan_tstamp(self):
+
+                conn = pysolr.Solr('http://hg-solr:8983/solr/')
+                solr_doc_pull = conn.search("id:" + " \"" + self.url + "\" ")
+                vscan_tstamp = datetime.datetime.now()
+
+                for result in solr_doc_pull:
+                        result["vscan_tstamp"] = datetime.datetime.now()
+
+                conn.add(solr_doc_pull)
+
+	def delete_vscan_tstamp(self):
+
+                conn = pysolr.Solr('http://hg-solr:8983/solr/')
+                solr_doc_pull = conn.search("id:" + " \"" + self.url + "\" ")
+
+                for result in solr_doc_pull:
+                        del result["vscan_tstamp"]
+
+                conn.add(solr_doc_pull)
+
+	def punk_scan(self):
+		'''This performs the actual scan. Note that the timestamp is updated before the scan starts, this makes it such that other scanners
+		know this is being scanned before it finishes the scanning. Reduces number of duplicate scans'''
+
+		reload(wapiti)
+#dbg		print "URL WITHIN THE PUNK_SCAN CLASS"
+#dbg		print self.url
+#dbg            print "PERFORMING A NEW SCAN"
+		return wapiti.scan(self.url, self.opt_list)
+
+if __name__ == "__main__":
+
+	while True:
+
+		print "________________________________________\ngetting a new website to scan............\n______________________________________________"
+		site_to_scan = PunkSolr().get_not_scanned() 
+		for website_dic in site_to_scan:
+
+			target = Target()
+			target.set_url(website_dic['url'], 'out.xml')
+			try:
+				target.update_vscan_tstamp()
+				scan_result = target.punk_scan()
+				scan_url = target.url
+				target.delete_vscan_tstamp()
+
+				#! if deployed on a rackspace server take this line out, workaround to fix timeout issues that we run into on Debian
+#				ParserUploader(scan_result, scan_url).scdb_index()
+
+			except Exception, err:
+
+				print "Exception in punkscanner....scan did not finish properly, removing vscan timestamp..."
+				print Exception, err
+				#if anything went wrong we delete the timestamp marking it as not scanned
+				#!need to add the same for couchdb
+				target.delete_vscan_tstamp()

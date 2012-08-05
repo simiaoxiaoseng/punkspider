@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://bearovi.tumblr.com/</rootURL>
+        <toBrowse>
+            <url>http://bearmoose.blogspot.com/2012_01_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/search?max-results=19&amp;updated-max=2012-01-01T00:00:00-05:00&amp;updated-min=2011-01-01T00:00:00-05:00</url>
+            <url>http://bearmoose.blogspot.com/2011_12_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/2011_08_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/2011_07_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/2011_05_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/2011_04_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/2011_03_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/2011_02_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/2011_01_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/search?max-results=5&amp;updated-max=2011-01-01T00:00:00-05:00&amp;updated-min=2010-01-01T00:00:00-05:00</url>
+            <url>http://bearmoose.blogspot.com/2010_08_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/2010_05_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/2010_01_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/search?max-results=50&amp;updated-max=2010-01-01T00:00:00-05:00&amp;updated-min=2009-01-01T00:00:00-05:00</url>
+            <url>http://bearmoose.blogspot.com/2009_11_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/2009_10_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/2009_09_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/2009_08_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/2009_07_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/2009_06_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/2009_05_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/2009_04_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/2009_03_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/2009_02_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/2009_01_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/search?max-results=9&amp;updated-max=2009-01-01T00:00:00-05:00&amp;updated-min=2008-01-01T00:00:00-05:00</url>
+            <url>http://bearmoose.blogspot.com/2008_12_01_archive.html</url>
+            <url>http://bearmoose.blogspot.com/2012/06/by-request.html</url>
+            <url>http://bearmoose.blogspot.com/feeds/2208472721992698441/comments/default</url>
+            <url>http://bearmoose.blogspot.com/2012/06/actively-forget.html</url>
+            <url>http://bearmoose.blogspot.com/feeds/7985945793087647974/comments/default</url>
+            <url>http://bearmoose.blogspot.com/2012/01/must-i-make-new-years-blog-post-yes.html</url>
+            <url>http://bearmoose.blogspot.com/2012/01/must-i-make-new-years-blog-post-yes.html?showComment=1325539524769</url>
+            <url>http://bearmoose.blogspot.com/feeds/69790814092389215/comments/default</url>
+            <url>http://bearmoose.blogspot.com/2011/12/top-ten-times-you-said-yes.html</url>
+            <url>http://bearmoose.blogspot.com/feeds/7268620265419611953/comments/default</url>
+            <url>http://bearmoose.blogspot.com/2011/08/doctors.html</url>
+            <url>http://bearmoose.blogspot.com/feeds/4726880006513049678/comments/default</url>
+            <url>http://bearo.com/</url>
+            <url>http://bearovi.tumblr.com/</url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://bearmoose.blogspot.com/search?max-results=3&amp;updated-max=2013-01-01T00:00:00-05:00&amp;updated-min=2012-01-01T00:00:00-05:00">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://bearmoose.blogspot.com/search?max-results=3&amp;updated-max=2013-01-01T00:00:00-05:00&amp;updated-min=2012-01-01T00:00:00-05:00"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=ff126b98372448c3; HttpOnly"/>
+                <header name="expires" value="Sat, 04 Aug 2012 23:59:45 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Sat, 14 Jul 2012 10:18:35 GMT"/>
+                <header name="etag" value="&quot;978fda1a-ff34-4081-8ddf-0b35c36ca6a6&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sat, 04 Aug 2012 23:59:45 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://bearmoose.blogspot.com/search?max-results=7&amp;updated-max=2011-07-25T00:49:00-04:00">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://bearmoose.blogspot.com/search?max-results=7&amp;updated-max=2011-07-25T00:49:00-04:00"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=fa0d2667972cf85d; HttpOnly"/>
+                <header name="expires" value="Sat, 04 Aug 2012 23:59:44 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Sat, 14 Jul 2012 10:18:35 GMT"/>
+                <header name="etag" value="&quot;978fda1a-ff34-4081-8ddf-0b35c36ca6a6&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sat, 04 Aug 2012 23:59:44 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://bearmoose.blogspot.com/">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://bearmoose.blogspot.com/"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sat, 04 Aug 2012 23:59:44 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Sat, 14 Jul 2012 10:18:35 GMT"/>
+                <header name="etag" value="&quot;978fda1a-ff34-4081-8ddf-0b35c36ca6a6&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sat, 04 Aug 2012 23:59:44 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://bearmoose.blogspot.com/2012_06_01_archive.html">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://bearmoose.blogspot.com/2012_06_01_archive.html"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sat, 04 Aug 2012 23:59:45 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Sat, 14 Jul 2012 10:18:35 GMT"/>
+                <header name="etag" value="&quot;978fda1a-ff34-4081-8ddf-0b35c36ca6a6&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sat, 04 Aug 2012 23:59:45 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://bearmoose.blogspot.com/search/label/strength">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://bearmoose.blogspot.com/search/label/strength"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=63769071302c1fa8; HttpOnly"/>
+                <header name="expires" value="Sat, 04 Aug 2012 23:59:44 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Sat, 14 Jul 2012 10:18:35 GMT"/>
+                <header name="etag" value="&quot;978fda1a-ff34-4081-8ddf-0b35c36ca6a6&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sat, 04 Aug 2012 23:59:44 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://bearmoose.blogspot.com/feeds/posts/default">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://bearmoose.blogspot.com/feeds/posts/default"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sat, 04 Aug 2012 23:59:44 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Sat, 14 Jul 2012 10:18:35 GMT"/>
+                <header name="etag" value="W/&quot;C0YFRHwycCl7ImA9WhJREks.&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sat, 04 Aug 2012 23:59:44 GMT"/>
+                <header name="content-type" value="application/atom+xml"/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

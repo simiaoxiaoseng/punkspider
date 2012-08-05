@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://becodasvirtudes.wordpress.com/</rootURL>
+        <toBrowse>
+            <url>http://becodasvirtudes.wordpress.com/page/2/</url>
+            <url>http://becodasvirtudes.wordpress.com/2012/08/03/inteligencia/</url>
+            <url>http://becodasvirtudes.wordpress.com/author/sopinhadeletras/</url>
+            <url>http://becodasvirtudes.wordpress.com/category/uncategorized/</url>
+            <url>http://becodasvirtudes.wordpress.com/2012/08/01/air-force-material/</url>
+            <url>http://becodasvirtudes.wordpress.com/2012/07/27/esculpir-a-musica/</url>
+            <url>http://becodasvirtudes.wordpress.com/2012/07/25/o-que-e-ser-um-povo/</url>
+            <url>http://becodasvirtudes.wordpress.com/2012/07/23/felicidade/</url>
+            <url>http://becodasvirtudes.wordpress.com/author/1000thoughtsbyjoana/</url>
+            <url>http://becodasvirtudes.wordpress.com/2012/07/18/ferimento/</url>
+            <url>http://becodasvirtudes.wordpress.com/2012/07/11/calcanhar-de-aquiles/</url>
+            <url>http://becodasvirtudes.wordpress.com/?s=on</url>
+            <url>http://becodasvirtudes.wordpress.com/2012/08/</url>
+            <url>http://becodasvirtudes.wordpress.com/2012/07/</url>
+            <url>http://becodasvirtudes.wordpress.com/2012/06/</url>
+            <url>http://becodasvirtudes.wordpress.com/2012/05/</url>
+            <url>http://becodasvirtudes.wordpress.com/wp-login.php?action=register</url>
+            <url>http://becodasvirtudes.wordpress.com/wp-login.php</url>
+            <url>http://becodasvirtudes.wordpress.com/feed/</url>
+            <url>http://becodasvirtudes.wordpress.com/comments/feed/</url>
+            <url>http://becodasvirtudes.wordpress.com/?_wp_http_referer=/&amp;_wpnonce=f898933a6a&amp;carousel-reblog-content=on&amp;carousel-reblog-submit=Republicar artigo&amp;carousel-reblog-to-blog-id=on</url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://becodasvirtudes.wordpress.com/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="53373"/>
+                <header name="content-location" value="http://becodasvirtudes.wordpress.com/"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="vary" value="Accept-Encoding, Cookie"/>
+                <header name="server" value="nginx"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="link" value="&lt;http://wp.me/2q38i&gt;; rel=shortlink"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 17:52:57 GMT"/>
+                <header name="x-hacker" value="If you're reading this, you should visit automattic.com/jobs and apply to join the fun, mention this header."/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://becodasvirtudes.wordpress.com/xmlrpc.php"/>
+            </url_data>
+        </browsed>
+        <forms>
+            <form encoding="utf-8" to="http://becodasvirtudes.wordpress.com/" url="https://subscribe.wordpress.com">
+                <inputs>
+                    <input name="source" value="http://becodasvirtudes.wordpress.com/"/>
+                    <input name="blog_id" value="35761246"/>
+                    <input name="action" value="subscribe"/>
+                    <input name="sub-type" value="loggedout-follow"/>
+                    <input name="_wp_http_referer" value="/"/>
+                    <input name="_wpnonce" value="25c0e3d2ff"/>
+                </inputs>
+            </form>
+        </forms>
+        <uploads/>
+    </root>

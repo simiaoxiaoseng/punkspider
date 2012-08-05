@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://bedfordcheeseshop.com/</rootURL>
+        <toBrowse>
+            <url>http://bedfordcheeseshop.com/search?q=on</url>
+            <url>http://bedfordcheeseshop.com/cart</url>
+            <url>http://bedfordcheeseshop.com/collections/cheese-subscriptions</url>
+            <url>http://bedfordcheeseshop.com/collections/cheese-baskets</url>
+            <url>http://bedfordcheeseshop.com/collections/gift-certificate</url>
+            <url>http://bedfordcheeseshop.com/products/the-sampler</url>
+            <url>http://bedfordcheeseshop.com/products/regional-box</url>
+            <url>http://bedfordcheeseshop.com/products/cheese-of-the-month-1-year</url>
+            <url>http://bedfordcheeseshop.com/products/cheese-of-the-month-9-month</url>
+            <url>http://bedfordcheeseshop.com/pages/shipping-policy</url>
+            <url>http://bedfordcheeseshop.com/collections/</url>
+            <url>http://bedfordcheeseshop.com/collections/all</url>
+            <url>http://bedfordcheeseshop.com/products/the-board</url>
+            <url>http://bedfordcheeseshop.com/products/the-paddle</url>
+            <url>http://bedfordcheeseshop.com/products/brooklyn-bag</url>
+            <url>http://bedfordcheeseshop.com/products/the-little-guy</url>
+            <url>http://bedfordcheeseshop.com/products/the-shepherd-s-lunch</url>
+            <url>http://bedfordcheeseshop.com/products/the-supper-club</url>
+            <url>http://bedfordcheeseshop.com/products/the-monger</url>
+            <url>http://bedfordcheeseshop.com/products/cheese-of-the-month</url>
+            <url>http://bedfordcheeseshop.com/products/cheese-of-the-month-6-months</url>
+            <url>http://bedfordcheeseshop.com/products/gift-certificate</url>
+            <url>http://bedfordcheeseshop.com/pages/</url>
+            <url>http://bedfordcheeseshop.com/pages/catering</url>
+            <url>http://bedfordcheeseshop.com/pages/about-us</url>
+            <url>http://bedfordcheeseshop.com/pages/contact</url>
+            <url>http://bedfordcheeseshop.com/search</url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://bedfordcheeseshop.com/">
+                <header name="status" value="200"/>
+                <header name="x-request-id" value="ac409e9d3b1b5bcea4f2dbe58c9e5513"/>
+                <header name="content-location" value="http://bedfordcheeseshop.com/"/>
+                <header name="x-cache" value="hit, server"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="_session_id=98f76a7c9e9c8f971ac30e009146d23d; path=/; HttpOnly"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="content-length" value="14386"/>
+                <header name="server" value="nginx"/>
+                <header name="x-runtime" value="0.034981"/>
+                <header name="etag" value="&quot;6f4b906a765ee27c5c102cfdd5f095ae&quot;"/>
+                <header name="x-ua-compatible" value="IE=Edge,chrome=1"/>
+                <header name="cache-control" value="max-age=0, private, must-revalidate"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:06:56 GMT"/>
+                <header name="p3p" value="CP=&quot;NOI DSP COR NID ADMa OPTa OUR NOR&quot;"/>
+                <header name="x-alternate-cache-key" value="&quot;432fd1cb9b1d52e9605ca8e398b931b8&quot;"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+                <header name="link_encoding" value="ascii"/>
+            </url_data>
+            <url_data uri="http://bedfordcheeseshop.com/search">
+                <header name="status" value="200"/>
+                <header name="x-request-id" value="3a3cd94637cb7f69ac25885b6090303b"/>
+                <header name="content-location" value="http://bedfordcheeseshop.com/search"/>
+                <header name="x-cache" value="miss"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="_session_id=24737c220dc26f9a491880413b9af3ff; path=/; HttpOnly"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="content-length" value="9642"/>
+                <header name="server" value="nginx"/>
+                <header name="x-runtime" value="0.118556"/>
+                <header name="etag" value="&quot;a228f73a9af1dc5b4618f4c31311a314&quot;"/>
+                <header name="x-ua-compatible" value="IE=Edge,chrome=1"/>
+                <header name="cache-control" value="max-age=0, private, must-revalidate"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:06:58 GMT"/>
+                <header name="p3p" value="CP=&quot;NOI DSP COR NID ADMa OPTa OUR NOR&quot;"/>
+                <header name="x-alternate-cache-key" value="&quot;60f7d07e0fe0a86a2eef9d757950d9cd&quot;"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+                <header name="link_encoding" value="ascii"/>
+            </url_data>
+            <url_data uri="http://bedfordcheeseshop.com/collections/all">
+                <header name="status" value="200"/>
+                <header name="x-request-id" value="eaf89797cb1183bf17b291a92e240012"/>
+                <header name="content-location" value="http://bedfordcheeseshop.com/collections/all"/>
+                <header name="x-cache" value="miss"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="_session_id=e8bb420e46df61fb382d5872385cdb92; path=/; HttpOnly"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="content-length" value="14356"/>
+                <header name="server" value="nginx"/>
+                <header name="x-runtime" value="0.147703"/>
+                <header name="etag" value="&quot;c007b79af1a60f4055fa2b480a82cd3f&quot;"/>
+                <header name="x-ua-compatible" value="IE=Edge,chrome=1"/>
+                <header name="cache-control" value="max-age=0, private, must-revalidate"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:06:57 GMT"/>
+                <header name="p3p" value="CP=&quot;NOI DSP COR NID ADMa OPTa OUR NOR&quot;"/>
+                <header name="x-alternate-cache-key" value="&quot;18acb5bfc4589a291e609eff6df87deb&quot;"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+                <header name="link_encoding" value="ISO-8859-2"/>
+            </url_data>
+            <url_data uri="http://bedfordcheeseshop.com/pages/catering">
+                <header name="status" value="200"/>
+                <header name="x-request-id" value="5ddd10baebab4d38188ba27573434039"/>
+                <header name="content-location" value="http://bedfordcheeseshop.com/pages/catering"/>
+                <header name="x-cache" value="miss"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="_session_id=2259780c262af2f2bf1e2994f8eea88d; path=/; HttpOnly"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="content-length" value="11551"/>
+                <header name="server" value="nginx"/>
+                <header name="x-runtime" value="0.086222"/>
+                <header name="etag" value="&quot;108fb6e2c68cc6ce8f4cab66044907dc&quot;"/>
+                <header name="x-ua-compatible" value="IE=Edge,chrome=1"/>
+                <header name="cache-control" value="max-age=0, private, must-revalidate"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:06:57 GMT"/>
+                <header name="p3p" value="CP=&quot;NOI DSP COR NID ADMa OPTa OUR NOR&quot;"/>
+                <header name="x-alternate-cache-key" value="&quot;e2c49435420608ea79373e608f4211bf&quot;"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+                <header name="link_encoding" value="ISO-8859-2"/>
+            </url_data>
+            <url_data uri="http://bedfordcheeseshop.com/pages/contact">
+                <header name="status" value="200"/>
+                <header name="x-request-id" value="96843f1da636cb8104f05a930839fbc9"/>
+                <header name="content-location" value="http://bedfordcheeseshop.com/pages/contact"/>
+                <header name="x-cache" value="hit, server"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="_session_id=0672ca1b866c4863932c2f5c1270079e; path=/; HttpOnly"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="content-length" value="12257"/>
+                <header name="server" value="nginx"/>
+                <header name="x-runtime" value="0.029848"/>
+                <header name="etag" value="&quot;a0e8ca6adf85d402ac3f970ba867a079&quot;"/>
+                <header name="x-ua-compatible" value="IE=Edge,chrome=1"/>
+                <header name="cache-control" value="max-age=0, private, must-revalidate"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:06:58 GMT"/>
+                <header name="p3p" value="CP=&quot;NOI DSP COR NID ADMa OPTa OUR NOR&quot;"/>
+                <header name="x-alternate-cache-key" value="&quot;d4896166f41655d3f016188c8e52cd89&quot;"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+                <header name="link_encoding" value="ascii"/>
+            </url_data>
+            <url_data uri="http://bedfordcheeseshop.com/pages/about-us">
+                <header name="status" value="200"/>
+                <header name="x-request-id" value="d545b84e6ff420412e5b89bc41c5bffb"/>
+                <header name="content-location" value="http://bedfordcheeseshop.com/pages/about-us"/>
+                <header name="x-cache" value="hit, server"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="_session_id=b8280a43b99ae3cca19b00d4463dffec; path=/; HttpOnly"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="content-length" value="10507"/>
+                <header name="server" value="nginx"/>
+                <header name="x-runtime" value="0.023986"/>
+                <header name="etag" value="&quot;c95956940857cbbda8eaedb0578111b4&quot;"/>
+                <header name="x-ua-compatible" value="IE=Edge,chrome=1"/>
+                <header name="cache-control" value="max-age=0, private, must-revalidate"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:06:58 GMT"/>
+                <header name="p3p" value="CP=&quot;NOI DSP COR NID ADMa OPTa OUR NOR&quot;"/>
+                <header name="x-alternate-cache-key" value="&quot;fdcbd1fa54b98a840ced0ef095230bdf&quot;"/>
+                <header name="content-type" value="text/html; charset=utf-8"/>
+                <header name="link_encoding" value="utf-8"/>
+            </url_data>
+        </browsed>
+        <forms>
+            <form encoding="ascii" to="http://bedfordcheeseshop.com/" url="http://bedfordcheeseshop.us2.list-manage1.com/subscribe/post?id=f312cb005a&amp;u=7e2fb17136a87294b80e1ff5a">
+                <inputs/>
+            </form>
+            <form encoding="ISO-8859-2" to="http://bedfordcheeseshop.com/collections/all" url="http://bedfordcheeseshop.us2.list-manage1.com/subscribe/post?id=f312cb005a&amp;u=7e2fb17136a87294b80e1ff5a">
+                <inputs/>
+            </form>
+            <form encoding="ISO-8859-2" to="http://bedfordcheeseshop.com/pages/catering" url="http://bedfordcheeseshop.us2.list-manage1.com/subscribe/post?id=f312cb005a&amp;u=7e2fb17136a87294b80e1ff5a">
+                <inputs/>
+            </form>
+            <form encoding="utf-8" to="http://bedfordcheeseshop.com/pages/about-us" url="http://bedfordcheeseshop.us2.list-manage1.com/subscribe/post?id=f312cb005a&amp;u=7e2fb17136a87294b80e1ff5a">
+                <inputs/>
+            </form>
+            <form encoding="ascii" to="http://bedfordcheeseshop.com/pages/contact" url="http://bedfordcheeseshop.us2.list-manage1.com/subscribe/post?id=f312cb005a&amp;u=7e2fb17136a87294b80e1ff5a">
+                <inputs/>
+            </form>
+            <form encoding="ascii" to="http://bedfordcheeseshop.com/search" url="http://bedfordcheeseshop.us2.list-manage1.com/subscribe/post?id=f312cb005a&amp;u=7e2fb17136a87294b80e1ff5a">
+                <inputs/>
+            </form>
+        </forms>
+        <uploads/>
+    </root>

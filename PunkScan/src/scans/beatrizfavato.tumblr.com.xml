@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://beatrizfavato.tumblr.com/</rootURL>
+        <toBrowse/>
+        <browsed>
+            <url_data uri="http://beatrizfavato.tumblr.com/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="6279"/>
+                <header name="x-robots-tag" value="noindex"/>
+                <header name="x-tumblr-user" value="beatrizfavato"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="connection" value="close"/>
+                <header name="link_encoding" value=""/>
+                <header name="pragma" value="no-cache"/>
+                <header name="cache-control" value="no-store"/>
+                <header name="date" value="Sun, 05 Aug 2012 00:19:59 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=19724"/>
+                <header name="content-location" value="http://beatrizfavato.tumblr.com/"/>
+            </url_data>
+        </browsed>
+        <forms>
+            <form encoding="utf-8" to="http://beatrizfavato.tumblr.com/" url="http://beatrizfavato.tumblr.com/">
+                <inputs>
+                    <input name="password" value="on"/>
+                </inputs>
+            </form>
+        </forms>
+        <uploads/>
+    </root>

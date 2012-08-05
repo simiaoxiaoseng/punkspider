@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://becomingachef.com/</rootURL>
+        <toBrowse>
+            <url>http://becomingachef.com/new_american_chef.php</url>
+            <url>http://becomingachef.com/images/books/dining_out.jpg</url>
+            <url>http://becomingachef.com/becoming_a_chef.php</url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://becomingachef.com/dining_out.php">
+                <header name="status" value="200"/>
+                <header name="content-location" value="http://becomingachef.com/dining_out.php"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="date" value="Sun, 05 Aug 2012 17:54:51 GMT"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://becomingachef.com/becoming_a_chef.php">
+                <header name="status" value="200"/>
+                <header name="content-location" value="http://becomingachef.com/becoming_a_chef.php"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="date" value="Sun, 05 Aug 2012 17:54:52 GMT"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://becomingachef.com/culinary_artistry.php">
+                <header name="status" value="200"/>
+                <header name="content-location" value="http://becomingachef.com/culinary_artistry.php"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="date" value="Sun, 05 Aug 2012 17:54:50 GMT"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://becomingachef.com/images/books/ca.jpg">
+                <header name="status" value="200"/>
+                <header name="content-length" value="14301"/>
+                <header name="content-location" value="http://becomingachef.com/images/books/ca.jpg"/>
+                <header name="accept-ranges" value="bytes"/>
+                <header name="server" value="Apache"/>
+                <header name="last-modified" value="Sun, 31 Jan 2010 08:48:45 GMT"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="date" value="Sun, 05 Aug 2012 17:54:52 GMT"/>
+                <header name="content-type" value="image/jpeg"/>
+            </url_data>
+            <url_data uri="http://becomingachef.com/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="19779"/>
+                <header name="content-location" value="http://becomingachef.com/"/>
+                <header name="accept-ranges" value="bytes"/>
+                <header name="server" value="Apache"/>
+                <header name="last-modified" value="Tue, 24 Jul 2012 12:04:40 GMT"/>
+                <header name="link_encoding" value=""/>
+                <header name="date" value="Sun, 05 Aug 2012 17:54:50 GMT"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://becomingachef.com/chefs_night_out.php">
+                <header name="status" value="200"/>
+                <header name="content-location" value="http://becomingachef.com/chefs_night_out.php"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="date" value="Sun, 05 Aug 2012 17:54:51 GMT"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+        </browsed>
+        <forms>
+            <form encoding="iso-8859-1" to="http://becomingachef.com/culinary_artistry.php" url="http://www.becomingachef.com/thank_you.php">
+                <inputs>
+                    <input name="redirect" value="http://www.becomingachef.com/thank_you.php"/>
+                    <input name="from" value="becomingachef.com web site"/>
+                    <input name="Email Address" value="on"/>
+                    <input name="Action:" value="Unsubscribe"/>
+                    <input name="recipient" value="cookbookrave@aol.com"/>
+                    <input name="submit" value="Submit"/>
+                    <input name="subject" value="e-Newsletter Subscription"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://becomingachef.com/dining_out.php" url="http://www.becomingachef.com/thank_you.php">
+                <inputs>
+                    <input name="redirect" value="http://www.becomingachef.com/thank_you.php"/>
+                    <input name="from" value="becomingachef.com web site"/>
+                    <input name="Email Address" value="on"/>
+                    <input name="Action:" value="Unsubscribe"/>
+                    <input name="recipient" value="cookbookrave@aol.com"/>
+                    <input name="submit" value="Submit"/>
+                    <input name="subject" value="e-Newsletter Subscription"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://becomingachef.com/chefs_night_out.php" url="http://www.becomingachef.com/thank_you.php">
+                <inputs>
+                    <input name="redirect" value="http://www.becomingachef.com/thank_you.php"/>
+                    <input name="from" value="becomingachef.com web site"/>
+                    <input name="Email Address" value="on"/>
+                    <input name="Action:" value="Unsubscribe"/>
+                    <input name="recipient" value="cookbookrave@aol.com"/>
+                    <input name="submit" value="Submit"/>
+                    <input name="subject" value="e-Newsletter Subscription"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://becomingachef.com/becoming_a_chef.php" url="http://www.becomingachef.com/thank_you.php">
+                <inputs>
+                    <input name="redirect" value="http://www.becomingachef.com/thank_you.php"/>
+                    <input name="from" value="becomingachef.com web site"/>
+                    <input name="Email Address" value="on"/>
+                    <input name="Action:" value="Unsubscribe"/>
+                    <input name="recipient" value="cookbookrave@aol.com"/>
+                    <input name="submit" value="Submit"/>
+                    <input name="subject" value="e-Newsletter Subscription"/>
+                </inputs>
+            </form>
+        </forms>
+        <uploads/>
+    </root>

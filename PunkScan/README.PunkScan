@@ -1,0 +1,54 @@
+PunkScan v0.1 
+Hyperion Gray, LLC
+
+What it is
+=============
+PunkScan is essentially an edited and repurposed version of 
+the Wapiti web application scanner. It is meant for massive
+scans against a high number of web applications. It indexes
+summary results to Solr (provided proper configuration) and
+detailed scan results to CouchDB.
+
+How it Works
+==============
+Dependencies:
+
+(1) You need to have an instance of Solr running
+    (a) Solr must contain URLs in a "string" field 
+        labeled "url" as defined in schema.xml
+    (b) You must have defined the fields "xss",
+        "sqli", and "bsqli" in your Solr schema
+        as string fields. As well as "vscan_tstamp"
+	as a tstamp field.
+
+*Note: This is intended to work with Apache Nutch, which
+has url as one of its fields. You just need to add the
+other fields listed above for this to work.
+
+(2) You need to have an instance of CouchDB running
+(3) Python lxml
+
+Running
+=======
+
+Once there are urls in Solr, you need to make sure Solr
+and CouchDB are accessible by PunkScan. From there just
+edit the connection details in PunkScan.py for both
+servers and you are good to go. Running is as simple as
+"Python PunkScan.py"
+
+Differences Between PunkScan and Wapiti
+=======================================
+
+Though Wapiti/lswww make up a good web application scanner
+its crawls are not limited in any way. That means that for
+larger applications with potentially thousands of links,
+scans can take an exceedingly long time. PunkScan limits
+the crawl to a specified number of links and then also
+filters them so that only links with parameters (or rather
+links with any kind of queries) and tests those. This results
+in a limited number of tests per web application.
+
+
+
+

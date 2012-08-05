@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://beatsbyesta.com/</rootURL>
+        <toBrowse>
+            <url>http://beatsantique.bandcamp.com/album/cat-skillz-remixes</url>
+            <url>http://beatsantique.bandcamp.com/album/tribal-derivations</url>
+            <url>http://beatsantique.bandcamp.com/album/elektrafone</url>
+            <url>http://beatsantique.bandcamp.com/album/blind-threshold</url>
+            <url>http://beatsantique.bandcamp.com/album/contraption-ep-vol-i-2</url>
+            <url>http://beatsantique.bandcamp.com/track/voodoo-beats-antique-remix</url>
+            <url>http://beatsantique.bandcamp.com/track/cat-skillz</url>
+            <url>http://beatsantique.bandcamp.com/album/mayans-vs-aliens-nye-2012</url>
+            <url>http://beatsantique.bandcamp.com/track/wishbone-r-d-feat-swan-sidecar-tommy-remix</url>
+            <url>http://beatsantique.bandcamp.com/album/revival-remix-ep</url>
+            <url>http://beatsantique.bandcamp.com/album/collide</url>
+            <url>http://beatsantique.bandcamp.com/album/the-trunk-archives</url>
+            <url>http://beatsantique.bandcamp.com/album/d-a-de-los-muertos-day-of-the-dead-ep</url>
+            <url>http://beatsantique.bandcamp.com/track/les-enfants-perdus-the-lost-children-all-proceeds-go-to-haiti</url>
+            <url>http://beatsantique.bandcamp.com/track/the-final-countdown-beats-antique-remix-nye-2011</url>
+            <url>http://beatsantique.bandcamp.com/track/mlk-mj-mashup-w-pied-piper-and-bk2-beats-antique</url>
+            <url>http://beatsantique.bandcamp.com/track/all-i-want-is-you-beats-antique-remix</url>
+            <url>http://beatsantique.bandcamp.com/track/friday-the-13th-beats-antique-remix</url>
+            <url>http://beatsantique.bandcamp.com/faq_downloading</url>
+            <url>http://beatsantique.bandcamp.com/no_js/contact</url>
+            <url>http://beatsantique.bandcamp.com/yum</url>
+            <url>http://beatsantique.bandcamp.com</url>
+            <url>http://beatsantique.bandcamp.com/track/</url>
+            <url>http://beatsbyesta.com/</url>
+            <url>http://beatsbyesta.com/album/came-to-get-down</url>
+            <url>http://beatsbyesta.com/download_tralbum</url>
+            <url>http://beatsbyesta.com/album/cat-skillz-remixes</url>
+            <url>http://beatsbyesta.com/album/tribal-derivations</url>
+            <url>http://beatsbyesta.com/album/elektrafone</url>
+            <url>http://beatsbyesta.com/album/blind-threshold</url>
+            <url>http://beatsbyesta.com/album/contraption-ep-vol-i-2</url>
+            <url>http://beatsbyesta.com/track/voodoo-beats-antique-remix</url>
+            <url>http://beatsbyesta.com/track/cat-skillz</url>
+            <url>http://beatsbyesta.com/album/mayans-vs-aliens-nye-2012</url>
+            <url>http://beatsbyesta.com/track/wishbone-r-d-feat-swan-sidecar-tommy-remix</url>
+            <url>http://beatsbyesta.com/album/revival-remix-ep</url>
+            <url>http://beatsbyesta.com/album/collide</url>
+            <url>http://beatsbyesta.com/album/the-trunk-archives</url>
+            <url>http://beatsbyesta.com/album/d-a-de-los-muertos-day-of-the-dead-ep</url>
+            <url>http://beatsbyesta.com/track/les-enfants-perdus-the-lost-children-all-proceeds-go-to-haiti</url>
+            <url>http://beatsbyesta.com/track/the-final-countdown-beats-antique-remix-nye-2011</url>
+            <url>http://beatsbyesta.com/track/mlk-mj-mashup-w-pied-piper-and-bk2-beats-antique</url>
+            <url>http://beatsbyesta.com/track/all-i-want-is-you-beats-antique-remix</url>
+            <url>http://beatsbyesta.com/track/friday-the-13th-beats-antique-remix</url>
+            <url>http://beatsbyesta.com/faq_downloading</url>
+            <url>http://beatsbyesta.com/no_js/contact</url>
+            <url>http://beatsbyesta.com/track/beats-antique-hottub-came-to-get-down</url>
+            <url>http://beatsbyesta.com/track/beats-antique-hottub-came-to-get-down?action=download</url>
+            <url>http://beatsbyesta.com/track/came-to-get-down-instrumental</url>
+            <url>http://beatsbyesta.com/track/came-to-get-down-instrumental?action=download</url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://beatsantique.bandcamp.com/track/came-to-get-down-instrumental">
+                <header name="status" value="200"/>
+                <header name="content-length" value="98414"/>
+                <header name="content-location" value="http://beatsantique.bandcamp.com/track/came-to-get-down-instrumental"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="client_id=596E25859E38103672C9ED56E378BD504490A90ABAFABC51A47DBEEE2B5A2265; domain=.bandcamp.com; path=/; expires=Fri, 05-Aug-2022 00:22:18 GMT, session=1%09t%3A1344126138; domain=.bandcamp.com; path=/; expires=Wed, 19-Sep-2012 00:22:18 GMT, session=1%09t%3A1344126138; domain=.bandcamp.com; path=/; expires=Wed, 19-Sep-2012 00:22:18 GMT, session=1%09r%3A%5B%221Z0t1765523760x1344126138%22%5D%09t%3A1344126138; domain=.bandcamp.com; path=/; expires=Wed, 19-Sep-2012 00:22:18 GMT, BACKENDID=panucci3; path=/; domain=.bandcamp.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="nginx"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 00:22:18 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://beatsantique.bandcamp.com/feed/album/came-to-get-down">
+                <header name="status" value="200"/>
+                <header name="content-length" value="1739"/>
+                <header name="content-location" value="http://beatsantique.bandcamp.com/feed/album/came-to-get-down"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="client_id=A035D98FE860B0248E625E7A7E0EFE6356F99AE3EE39DBC3E6C998AEE5D60E78; domain=.bandcamp.com; path=/; expires=Fri, 05-Aug-2022 00:22:20 GMT, BACKENDID=roberto2; path=/; domain=.bandcamp.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="nginx"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 00:22:20 GMT"/>
+                <header name="content-type" value="application/rss+xml"/>
+            </url_data>
+            <url_data uri="http://beatsantique.bandcamp.com/feed">
+                <header name="status" value="200"/>
+                <header name="content-length" value="50431"/>
+                <header name="content-location" value="http://beatsantique.bandcamp.com/feed"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="client_id=1EF5DC337A2A78C03A14836C89BA5AD5EC9221FB062D7CE193F33A55395D7E88; domain=.bandcamp.com; path=/; expires=Fri, 05-Aug-2022 00:22:20 GMT, BACKENDID=panucci12; path=/; domain=.bandcamp.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="nginx"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 00:22:20 GMT"/>
+                <header name="content-type" value="application/rss+xml"/>
+            </url_data>
+            <url_data uri="http://beatsantique.bandcamp.com/album/came-to-get-down">
+                <header name="status" value="200"/>
+                <header name="content-length" value="103606"/>
+                <header name="content-location" value="http://beatsantique.bandcamp.com/album/came-to-get-down"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="client_id=17BC33593B4177B40D09919BDBCA1D262E31DAAADE4191756091EA2AB2C42A49; domain=.bandcamp.com; path=/; expires=Fri, 05-Aug-2022 00:22:21 GMT, session=1%09t%3A1344126141; domain=.bandcamp.com; path=/; expires=Wed, 19-Sep-2012 00:22:21 GMT, session=1%09t%3A1344126141; domain=.bandcamp.com; path=/; expires=Wed, 19-Sep-2012 00:22:21 GMT, session=1%09r%3A%5B%221Z0a2160295021x1344126141%22%5D%09t%3A1344126141; domain=.bandcamp.com; path=/; expires=Wed, 19-Sep-2012 00:22:21 GMT, BACKENDID=panucci15; path=/; domain=.bandcamp.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="nginx"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 00:22:21 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://beatsantique.bandcamp.com/track/came-to-get-down-instrumental?action=download">
+                <header name="status" value="303"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="client_id=04BA3C32D55D8DE7D33CC71176D5A7D3B9A859671508857FC3008F4496C638C5; domain=.bandcamp.com; path=/; expires=Fri, 05-Aug-2022 00:22:19 GMT, hiddenParams=action%3Ddownload; domain=.bandcamp.com; path=/; expires=Sun, 05-Aug-2012 00:22:49 GMT, BACKENDID=roberto7; path=/; domain=.bandcamp.com"/>
+                <header name="server" value="nginx"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="location" value="http://beatsantique.bandcamp.com/track/came-to-get-down-instrumental"/>
+                <header name="date" value="Sun, 05 Aug 2012 00:22:20 GMT"/>
+                <header name="content-type" value="text/html"/>
+                <header name="link_encoding" value="utf-8"/>
+            </url_data>
+            <url_data uri="http://beatsantique.bandcamp.com/track/beats-antique-hottub-came-to-get-down?action=download">
+                <header name="status" value="303"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="client_id=51A743CCE6614F470298C38097427DC0A1316D16A2F522F83C64E89BEE214D55; domain=.bandcamp.com; path=/; expires=Fri, 05-Aug-2022 00:22:18 GMT, hiddenParams=action%3Ddownload; domain=.bandcamp.com; path=/; expires=Sun, 05-Aug-2012 00:22:48 GMT, BACKENDID=roberto15; path=/; domain=.bandcamp.com"/>
+                <header name="server" value="nginx"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="location" value="http://beatsantique.bandcamp.com/track/beats-antique-hottub-came-to-get-down"/>
+                <header name="date" value="Sun, 05 Aug 2012 00:22:18 GMT"/>
+                <header name="content-type" value="text/html"/>
+                <header name="link_encoding" value="utf-8"/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

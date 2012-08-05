@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://bear000.blogspot.com/</rootURL>
+        <toBrowse>
+            <url>http://beanworld.tumblr.com/tagged/larry+marder/page/2</url>
+            <url>http://beanworld.tumblr.com/post/27502814268</url>
+            <url>http://beanworld.tumblr.com/post/27414629870</url>
+            <url>http://beanworld.tumblr.com/tagged/skettchbook-pro</url>
+            <url>http://beanworld.tumblr.com/tagged/larrymarder</url>
+            <url>http://beanworld.tumblr.com/image/21097466316</url>
+            <url>http://beanworld.tumblr.com/post/25117889075</url>
+            <url>http://beapp.fr/</url>
+            <url>http://beapp.fr/archive</url>
+            <url>http://beapp.fr/ask</url>
+            <url>http://beapp.fr/search</url>
+            <url>http://beapp.fr/search?q=on</url>
+            <url>http://beapp.fr/tagged/sketchbook+pro/page/2</url>
+            <url>http://beapp.fr/page/1</url>
+            <url>http://beapp.fr/page/3</url>
+            <url>http://beapp.fr/archive/2012/4</url>
+            <url>http://beapp.fr/archive/2012/6</url>
+            <url>http://beapp.fr/archive/2012/7</url>
+            <url>http://beapp.fr/archive/2012/8</url>
+            <url>http://beapp.fr/archive/2011/9</url>
+            <url>http://beapp.fr/archive/2011/10</url>
+            <url>http://beapp.fr/archive/2012/4?before_time=1333829217</url>
+            <url>http://beaqueen.blogspot.com/</url>
+            <url>http://beaqueen.blogspot.com/archive</url>
+            <url>http://beaqueen.blogspot.com/ask</url>
+            <url>http://beaqueen.blogspot.com/search</url>
+            <url>http://beaqueen.blogspot.com/search?q=on</url>
+            <url>http://bear-machine.tumblr.com/</url>
+            <url>http://bear-machine.tumblr.com/archive</url>
+            <url>http://bear-machine.tumblr.com/ask</url>
+            <url>http://bear-machine.tumblr.com/search</url>
+            <url>http://bear-machine.tumblr.com/search?q=on</url>
+            <url>http://bear000.blogspot.com/</url>
+            <url>http://bear000.blogspot.com/archive</url>
+            <url>http://bear000.blogspot.com/ask</url>
+            <url>http://bear000.blogspot.com/search</url>
+            <url>http://bear000.blogspot.com/search?q=on</url>
+            <url>http://bear000.blogspot.com/archive/2012/4</url>
+            <url>http://bear000.blogspot.com/archive/2012/6</url>
+            <url>http://bear000.blogspot.com/archive/2012/7</url>
+            <url>http://bear000.blogspot.com/archive/2012/8</url>
+            <url>http://bear000.blogspot.com/archive/2011/9</url>
+            <url>http://bear000.blogspot.com/archive/2011/10</url>
+            <url>http://bear000.blogspot.com/tagged/beanworld/page/2</url>
+            <url>http://bear000.blogspot.com/tagged/beanworld/page/1</url>
+            <url>http://bear000.blogspot.com/tagged/beanworld/page/3</url>
+            <url>http://bear000.blogspot.com/tagged/larry+marder/page/2</url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://beanworld.tumblr.com/post/20668951096">
+                <header name="status" value="200"/>
+                <header name="content-length" value="12148"/>
+                <header name="content-location" value="http://beanworld.tumblr.com/post/20668951096"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="x-tumblr-user" value="beanworld"/>
+                <header name="connection" value="close"/>
+                <header name="link" value="&lt;http://tmblr.co/ZxanowJFzoeu&gt;; rel=shorturl, &lt;http://24.media.tumblr.com/avatar_56bd098aee93_16.png&gt;; rel=icon"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:58:57 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=56234"/>
+            </url_data>
+            <url_data uri="http://beanworld.tumblr.com/tagged/larry-marder">
+                <header name="status" value="200"/>
+                <header name="content-length" value="31588"/>
+                <header name="x-robots-tag" value="noindex"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="x-tumblr-user" value="beanworld"/>
+                <header name="connection" value="close"/>
+                <header name="link" value="&lt;http://24.media.tumblr.com/avatar_56bd098aee93_16.png&gt;; rel=icon"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:59:00 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=337052"/>
+                <header name="content-location" value="http://beanworld.tumblr.com/tagged/larry-marder"/>
+            </url_data>
+            <url_data uri="http://beanworld.tumblr.com/archive?before_time=1333829633">
+                <header name="status" value="200"/>
+                <header name="content-length" value="29828"/>
+                <header name="x-robots-tag" value="noindex"/>
+                <header name="x-tumblr-user" value="beanworld"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="connection" value="close"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:58:58 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=702634"/>
+                <header name="content-location" value="http://beanworld.tumblr.com/archive?before_time=1333829633"/>
+            </url_data>
+            <url_data uri="http://beanworld.tumblr.com/post/28216449306">
+                <header name="status" value="200"/>
+                <header name="content-length" value="12493"/>
+                <header name="content-location" value="http://beanworld.tumblr.com/post/28216449306"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="x-tumblr-user" value="beanworld"/>
+                <header name="connection" value="close"/>
+                <header name="link" value="&lt;http://tmblr.co/ZxanowQHrDaQ&gt;; rel=shorturl, &lt;http://24.media.tumblr.com/avatar_56bd098aee93_16.png&gt;; rel=icon"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:58:59 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=73875"/>
+            </url_data>
+            <url_data uri="http://beanworld.tumblr.com/tagged/beanworld">
+                <header name="status" value="200"/>
+                <header name="content-length" value="31401"/>
+                <header name="x-robots-tag" value="noindex"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="x-tumblr-user" value="beanworld"/>
+                <header name="connection" value="close"/>
+                <header name="link" value="&lt;http://24.media.tumblr.com/avatar_56bd098aee93_16.png&gt;; rel=icon"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:58:59 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=137834"/>
+                <header name="content-location" value="http://beanworld.tumblr.com/tagged/beanworld"/>
+            </url_data>
+            <url_data uri="http://beanworld.tumblr.com/search?q=on">
+                <header name="status" value="302"/>
+                <header name="content-length" value="0"/>
+                <header name="x-tumblr-user" value="beanworld"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="connection" value="close"/>
+                <header name="location" value="/search/on"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:58:18 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=37621"/>
+                <header name="link_encoding" value="utf-8"/>
+            </url_data>
+            <url_data uri="http://beanworld.tumblr.com/tagged/beanworld/page/2">
+                <header name="status" value="200"/>
+                <header name="content-length" value="29460"/>
+                <header name="x-robots-tag" value="noindex"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="x-tumblr-user" value="beanworld"/>
+                <header name="connection" value="close"/>
+                <header name="link" value="&lt;http://24.media.tumblr.com/avatar_56bd098aee93_16.png&gt;; rel=icon"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:59:00 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=156864"/>
+                <header name="content-location" value="http://beanworld.tumblr.com/tagged/beanworld/page/2"/>
+            </url_data>
+            <url_data uri="http://beanworld.tumblr.com/image/21446862978">
+                <header name="status" value="200"/>
+                <header name="content-length" value="6224"/>
+                <header name="content-location" value="http://beanworld.tumblr.com/image/21446862978"/>
+                <header name="x-tumblr-user" value="beanworld"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="connection" value="close"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:58:59 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=26101"/>
+            </url_data>
+            <url_data uri="http://beanworld.tumblr.com/image/21446829590">
+                <header name="status" value="200"/>
+                <header name="content-length" value="6224"/>
+                <header name="content-location" value="http://beanworld.tumblr.com/image/21446829590"/>
+                <header name="x-tumblr-user" value="beanworld"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="connection" value="close"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:58:59 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=27183"/>
+            </url_data>
+            <url_data uri="http://beanworld.tumblr.com/post/20668924904">
+                <header name="status" value="200"/>
+                <header name="content-length" value="12148"/>
+                <header name="content-location" value="http://beanworld.tumblr.com/post/20668924904"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="x-tumblr-user" value="beanworld"/>
+                <header name="connection" value="close"/>
+                <header name="link" value="&lt;http://tmblr.co/ZxanowJFziFe&gt;; rel=shorturl, &lt;http://24.media.tumblr.com/avatar_56bd098aee93_16.png&gt;; rel=icon"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:58:57 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=69277"/>
+            </url_data>
+            <url_data uri="http://beanworld.tumblr.com/post/28568529304/klimt-scientific-influence-cell-symbols">
+                <header name="status" value="200"/>
+                <header name="content-length" value="70419"/>
+                <header name="content-location" value="http://beanworld.tumblr.com/post/28568529304/klimt-scientific-influence-cell-symbols"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="x-tumblr-user" value="beanworld"/>
+                <header name="connection" value="close"/>
+                <header name="link" value="&lt;http://tmblr.co/ZxanowQcqIcO&gt;; rel=shorturl, &lt;http://24.media.tumblr.com/avatar_56bd098aee93_16.png&gt;; rel=icon"/>
+                <header name="link_encoding" value="ascii"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:58:59 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=696508"/>
+            </url_data>
+            <url_data uri="http://beanworld.tumblr.com/post/28568529304/">
+                <header name="status" value="301"/>
+                <header name="content-length" value="0"/>
+                <header name="x-tumblr-user" value="beanworld"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="connection" value="close"/>
+                <header name="location" value="http://beanworld.tumblr.com/post/28568529304/klimt-scientific-influence-cell-symbols"/>
+                <header name="cache-control" value="max-age=3600"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:58:59 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=25737"/>
+                <header name="link_encoding" value="utf-8"/>
+            </url_data>
+            <url_data uri="http://beanworld.tumblr.com/ask">
+                <header name="status" value="200"/>
+                <header name="content-length" value="11214"/>
+                <header name="content-location" value="http://beanworld.tumblr.com/ask"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="x-tumblr-user" value="beanworld"/>
+                <header name="connection" value="close"/>
+                <header name="link" value="&lt;http://24.media.tumblr.com/avatar_56bd098aee93_16.png&gt;; rel=icon"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:58:58 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=698386"/>
+            </url_data>
+            <url_data uri="http://beanworld.tumblr.com/search/on">
+                <header name="status" value="200"/>
+                <header name="content-length" value="8892"/>
+                <header name="content-location" value="http://beanworld.tumblr.com/search/on"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="x-tumblr-user" value="beanworld"/>
+                <header name="connection" value="close"/>
+                <header name="link" value="&lt;http://24.media.tumblr.com/avatar_56bd098aee93_16.png&gt;; rel=icon"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:58:59 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=712973"/>
+            </url_data>
+            <url_data uri="http://beanworld.tumblr.com/image/21446794979">
+                <header name="status" value="200"/>
+                <header name="content-length" value="6224"/>
+                <header name="content-location" value="http://beanworld.tumblr.com/image/21446794979"/>
+                <header name="x-tumblr-user" value="beanworld"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="connection" value="close"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:59:00 GMT"/>
+                <header name="p3p" value="CP=&quot;ALL ADM DEV PSAi COM OUR OTRo STP IND ONL&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-tumblr-usec" value="D=35139"/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

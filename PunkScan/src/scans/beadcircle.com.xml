@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>
+            http://beadcircle.com/
+        </rootURL>
+        <toBrowse>
+            <url>
+                http://beadcircle.com/bead-links/
+            </url>
+            <url>
+                http://beadcircle.com/bead-kits/
+            </url>
+            <url>
+                http://beadcircle.com/sponsor/
+            </url>
+            <url>
+                http://beadcircle.com/how-networking-exploded-my-business/
+            </url>
+            <url>
+                http://beadcircle.com/www.meetup.com
+            </url>
+            <url>
+                http://beadcircle.com/design-like-a-12-year-old/
+            </url>
+            <url>
+                http://beadcircle.com/emerge/
+            </url>
+            <url>
+                http://beadcircle.com/bsbp-big-reveal/
+            </url>
+            <url>
+                http://beadcircle.com/do-you-bead-everyday/
+            </url>
+            <url>
+                http://beadcircle.com/creative-process-gaultier-challenge/
+            </url>
+            <url>
+                http://beadcircle.com/12-ways-to-be-inspired-by-a-fashion-designer/
+            </url>
+            <url>
+                http://beadcircle.com/2-drop-peyote-cuff-tutorial/
+            </url>
+            <url>
+                http://beadcircle.com/bcp-06-marcia-decoster/
+            </url>
+            <url>
+                http://beadcircle.com/beading-by-the-bay/
+            </url>
+            <url>
+                http://beadcircle.com/beading-by-the-bay-part-2/
+            </url>
+            <url>
+                http://beadcircle.com/beading-by-the-bay-part-3/
+            </url>
+            <url>
+                http://beadcircle.com/category/podcast/
+            </url>
+            <url>
+                http://beadcircle.com/bead-soup-blog-party/
+            </url>
+            <url>
+                http://beadcircle.com/tip-bead-piles-in-logical-order/
+            </url>
+            <url>
+                http://beadcircle.com/spiral-rope-necklace-tutorial/
+            </url>
+            <url>
+                http://beadcircle.com/page/2/
+            </url>
+            <url>
+                http://beadcircle.com/
+            </url>
+            <url>
+                http://beadcircle.com/?s=To search, type and hit enter
+            </url>
+            <url>
+                http://beadcircle.com/category/bead-business/
+            </url>
+            <url>
+                http://beadcircle.com/category/beading/
+            </url>
+            <url>
+                http://beadcircle.com/category/beading-basics/
+            </url>
+            <url>
+                http://beadcircle.com/category/beading-community/
+            </url>
+            <url>
+                http://beadcircle.com/category/contests-swaps/
+            </url>
+            <url>
+                http://beadcircle.com/category/events/
+            </url>
+            <url>
+                http://beadcircle.com/category/inspiration/
+            </url>
+            <url>
+                http://beadcircle.com/category/miscellaneous/
+            </url>
+            <url>
+                http://beadcircle.com/category/organization/
+            </url>
+            <url>
+                http://beadcircle.com/category/process/
+            </url>
+            <url>
+                http://beadcircle.com/category/projects/
+            </url>
+            <url>
+                http://beadcircle.com/category/reviews/
+            </url>
+            <url>
+                http://beadcircle.com/category/tips-tricks/
+            </url>
+            <url>
+                http://beadcircle.com/category/videos/
+            </url>
+            <url>
+                http://beadcircle.com/wp-admin/
+            </url>
+            <url>
+                http://beadcircle.com
+            </url>
+            <url>
+                http://beadcircle.com/about/
+            </url>
+            <url>
+                http://beadcircle.com/ezine/
+            </url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://beadcircle.com">
+                <header name="status" value="200"/>
+                <header name="content-location" value="http://beadcircle.com"/>
+                <header name="x-powered-by" value="PHP/5.2.17"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="Cart66DBSID=3VR0T6V6TSZ7U0X5D34K5J776EC08FVIDLW8EX09; path=/"/>
+                <header name="server" value="Apache/2.2.22 (Unix) mod_ssl/2.2.22 OpenSSL/0.9.8e-fips-rhel5 mod_auth_passthrough/2.1 mod_bwlimited/1.4 FrontPage/5.0.2.2635 mod_fcgid/2.3.5"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:00:12 GMT"/>
+                <header name="p3p" value="CP=&quot;IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://beadcircle.com/xmlrpc.php"/>
+            </url_data>
+            <url_data uri="http://beadcircle.com/ezine/">
+                <header name="status" value="200"/>
+                <header name="content-location" value="http://beadcircle.com/ezine/"/>
+                <header name="x-powered-by" value="PHP/5.2.17"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="Cart66DBSID=NB2BF5W4F03GE1YHDQP3ZS1EIP92KW3261RMCCNH; path=/"/>
+                <header name="server" value="Apache/2.2.22 (Unix) mod_ssl/2.2.22 OpenSSL/0.9.8e-fips-rhel5 mod_auth_passthrough/2.1 mod_bwlimited/1.4 FrontPage/5.0.2.2635 mod_fcgid/2.3.5"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:00:15 GMT"/>
+                <header name="p3p" value="CP=&quot;IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://beadcircle.com/xmlrpc.php"/>
+            </url_data>
+            <url_data uri="http://beadcircle.com/about/">
+                <header name="status" value="200"/>
+                <header name="content-location" value="http://beadcircle.com/about/"/>
+                <header name="x-powered-by" value="PHP/5.2.17"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="Cart66DBSID=TN02ZL6TQR46JRDQ1LK38S65GMIP74IN8WCO98HE; path=/"/>
+                <header name="server" value="Apache/2.2.22 (Unix) mod_ssl/2.2.22 OpenSSL/0.9.8e-fips-rhel5 mod_auth_passthrough/2.1 mod_bwlimited/1.4 FrontPage/5.0.2.2635 mod_fcgid/2.3.5"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:00:13 GMT"/>
+                <header name="p3p" value="CP=&quot;IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://beadcircle.com/xmlrpc.php"/>
+            </url_data>
+            <url_data uri="http://beadcircle.com/">
+                <header name="status" value="200"/>
+                <header name="content-location" value="http://beadcircle.com/"/>
+                <header name="x-powered-by" value="PHP/5.2.17"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="Cart66DBSID=3M8BI9YDXQ49WXGT79KOXA50GAMFRCH1TGNJNCHV; path=/"/>
+                <header name="server" value="Apache/2.2.22 (Unix) mod_ssl/2.2.22 OpenSSL/0.9.8e-fips-rhel5 mod_auth_passthrough/2.1 mod_bwlimited/1.4 FrontPage/5.0.2.2635 mod_fcgid/2.3.5"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sat, 04 Aug 2012 20:00:10 GMT"/>
+                <header name="p3p" value="CP=&quot;IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT&quot;"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://beadcircle.com/xmlrpc.php"/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

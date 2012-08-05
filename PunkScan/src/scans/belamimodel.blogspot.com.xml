@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://belamimodel.blogspot.com/</rootURL>
+        <toBrowse>
+            <url>http://belamimodel.blogspot.com/feeds/7462581477869072935/comments/default</url>
+            <url>http://belamimodel.blogspot.com/2010/04/florian-nemec-julien-hussey-2.html</url>
+            <url>http://belamimodel.blogspot.com/2010/04/florian-nemec-julien-hussey-1.html</url>
+            <url>http://belamimodel.blogspot.com/2010/04/todd-rosset-pin-up-2.html</url>
+            <url>http://belamimodel.blogspot.com/2010/04/todd-rosset-pin-up-1.html</url>
+            <url>http://belamimodel.blogspot.com/2010/04/peters-twins-bobby-clark-2.html</url>
+            <url>http://belamimodel.blogspot.com/2010/04/peters-twins-bobby-clark-1.html</url>
+            <url>http://belamimodel.blogspot.com/2010/04/sean-berret-2.html</url>
+            <url>http://belamimodel.blogspot.com/search?max-results=9&amp;reverse-paginate=true&amp;updated-max=2010-05-06T09:00:00-07:00</url>
+            <url>http://belamimodel.blogspot.com/search?by-date=false&amp;max-results=9&amp;start=15&amp;updated-max=2010-04-10T13:23:00-07:00</url>
+            <url>http://belamimodel.blogspot.com/2010/06/</url>
+            <url>http://belamimodel.blogspot.com/2012/07/</url>
+            <url>http://belamimodel.blogspot.com/2010/04/</url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://belamimodel.blogspot.com/feeds/8987067920984366885/comments/default">
+                <header name="status" value="200"/>
+                <header name="gdata-version" value="1.0"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/feeds/8987067920984366885/comments/default"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:11 GMT"/>
+                <header name="vary" value="Accept, X-GData-Authorization, GData-Version"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Wed, 21 Apr 2010 14:36:13 GMT"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0, must-revalidate, no-transform"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:11 GMT"/>
+                <header name="content-type" value="application/atom+xml; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/2010/05/">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/2010/05/"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=4d6b63d8f1d6ae25; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:48:59 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:32:57 GMT"/>
+                <header name="etag" value="&quot;dc9cc76b-dde9-4cd8-9fd5-1776621b97bc&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:48:59 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/2010/04/trevor-yates-troy-allen-1.html">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/2010/04/trevor-yates-troy-allen-1.html"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=857cf3bce33192ec; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:02 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:32:57 GMT"/>
+                <header name="etag" value="&quot;dc9cc76b-dde9-4cd8-9fd5-1776621b97bc&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:02 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/2012/07/its-been-several-years-since-we-had-any.html">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/2012/07/its-been-several-years-since-we-had-any.html"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=d3d3b03f7e7824fc; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:48:55 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:32:57 GMT"/>
+                <header name="etag" value="&quot;dc9cc76b-dde9-4cd8-9fd5-1776621b97bc&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:48:55 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/feeds/205444490270229463/comments/default">
+                <header name="status" value="200"/>
+                <header name="gdata-version" value="1.0"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/feeds/205444490270229463/comments/default"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:01 GMT"/>
+                <header name="vary" value="Accept, X-GData-Authorization, GData-Version"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Sat, 01 May 2010 16:19:40 GMT"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0, must-revalidate, no-transform"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:01 GMT"/>
+                <header name="content-type" value="application/atom+xml; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/feeds/comments/default">
+                <header name="status" value="200"/>
+                <header name="gdata-version" value="1.0"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/feeds/comments/default"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:48:54 GMT"/>
+                <header name="vary" value="Accept, X-GData-Authorization, GData-Version"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Sat, 25 Jul 2009 17:35:50 GMT"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0, must-revalidate, no-transform"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:48:54 GMT"/>
+                <header name="content-type" value="application/atom+xml; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/feeds/3967167727773203877/comments/default">
+                <header name="status" value="200"/>
+                <header name="gdata-version" value="1.0"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/feeds/3967167727773203877/comments/default"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:01 GMT"/>
+                <header name="vary" value="Accept, X-GData-Authorization, GData-Version"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Sat, 01 May 2010 15:59:04 GMT"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0, must-revalidate, no-transform"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:01 GMT"/>
+                <header name="content-type" value="application/atom+xml; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/2010/05/jacques-briere-kieron-athey-2.html">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/2010/05/jacques-briere-kieron-athey-2.html"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=c99e7b0de689fd58; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:48:52 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:32:57 GMT"/>
+                <header name="etag" value="&quot;dc9cc76b-dde9-4cd8-9fd5-1776621b97bc&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:48:52 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/feeds/335629300551608914/comments/default">
+                <header name="status" value="200"/>
+                <header name="gdata-version" value="1.0"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/feeds/335629300551608914/comments/default"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:48:59 GMT"/>
+                <header name="vary" value="Accept, X-GData-Authorization, GData-Version"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Thu, 03 Jun 2010 00:04:01 GMT"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0, must-revalidate, no-transform"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:48:59 GMT"/>
+                <header name="content-type" value="application/atom+xml; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/feeds/2935296926588181263/comments/default">
+                <header name="status" value="200"/>
+                <header name="gdata-version" value="1.0"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/feeds/2935296926588181263/comments/default"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:10 GMT"/>
+                <header name="vary" value="Accept, X-GData-Authorization, GData-Version"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Wed, 21 Apr 2010 14:38:55 GMT"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0, must-revalidate, no-transform"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:10 GMT"/>
+                <header name="content-type" value="application/atom+xml; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/feeds/posts/default">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/feeds/posts/default"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:48:54 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:32:57 GMT"/>
+                <header name="etag" value="W/&quot;DkADRn45eil7ImA9WhJQFE8.&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:48:54 GMT"/>
+                <header name="content-type" value="application/atom+xml"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/search?max-results=9&amp;updated-max=2010-05-01T08:41:00-07:00">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/search?max-results=9&amp;updated-max=2010-05-01T08:41:00-07:00"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=3c691dcbf5eb9e59; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:48:54 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:32:57 GMT"/>
+                <header name="etag" value="&quot;dc9cc76b-dde9-4cd8-9fd5-1776621b97bc&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:48:54 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/2010/05/giorgio-carerra-gianni-fabian-pin-up-1.html">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/2010/05/giorgio-carerra-gianni-fabian-pin-up-1.html"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=b76c90afe120ccbf; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:48:53 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:32:57 GMT"/>
+                <header name="etag" value="&quot;dc9cc76b-dde9-4cd8-9fd5-1776621b97bc&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:48:53 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/2010/04/jean-daniel-dawson-2.html">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/2010/04/jean-daniel-dawson-2.html"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=ce52c195e1ba889d; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:01 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:32:57 GMT"/>
+                <header name="etag" value="&quot;dc9cc76b-dde9-4cd8-9fd5-1776621b97bc&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:01 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/2010/05/jacques-briere-kieron-athey-1.html">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/2010/05/jacques-briere-kieron-athey-1.html"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=15ff82b8e0c7d2fa; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:48:52 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:32:57 GMT"/>
+                <header name="etag" value="&quot;dc9cc76b-dde9-4cd8-9fd5-1776621b97bc&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:48:52 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/feeds/46251418695444931/comments/default">
+                <header name="status" value="200"/>
+                <header name="gdata-version" value="1.0"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/feeds/46251418695444931/comments/default"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:01 GMT"/>
+                <header name="vary" value="Accept, X-GData-Authorization, GData-Version"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Sat, 01 May 2010 16:06:20 GMT"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0, must-revalidate, no-transform"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:01 GMT"/>
+                <header name="content-type" value="application/atom+xml; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/feeds/8707747605378217587/comments/default">
+                <header name="status" value="200"/>
+                <header name="gdata-version" value="1.0"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/feeds/8707747605378217587/comments/default"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:10 GMT"/>
+                <header name="vary" value="Accept, X-GData-Authorization, GData-Version"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:28:58 GMT"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0, must-revalidate, no-transform"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:10 GMT"/>
+                <header name="content-type" value="application/atom+xml; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/search?by-date=false&amp;max-results=9&amp;start=7&amp;updated-max=2010-04-22T08:31:00-07:00">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/search?by-date=false&amp;max-results=9&amp;start=7&amp;updated-max=2010-04-22T08:31:00-07:00"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=4bbf0fffd6792f68; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:04 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:32:57 GMT"/>
+                <header name="etag" value="&quot;dc9cc76b-dde9-4cd8-9fd5-1776621b97bc&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:04 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/2010/06/">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/2010/06/"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=80e540b20df63d9; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:05 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:32:57 GMT"/>
+                <header name="etag" value="&quot;dc9cc76b-dde9-4cd8-9fd5-1776621b97bc&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:05 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/2010/05/giorgio-carerra-gianni-fabian-pin-up-2.html">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/2010/05/giorgio-carerra-gianni-fabian-pin-up-2.html"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=73e7d5e9d69a3f4b; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:48:53 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:32:57 GMT"/>
+                <header name="etag" value="&quot;dc9cc76b-dde9-4cd8-9fd5-1776621b97bc&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:48:53 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/feeds/8082115541624077979/comments/default">
+                <header name="status" value="200"/>
+                <header name="gdata-version" value="1.0"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/feeds/8082115541624077979/comments/default"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:01 GMT"/>
+                <header name="vary" value="Accept, X-GData-Authorization, GData-Version"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Sat, 01 May 2010 16:01:30 GMT"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0, must-revalidate, no-transform"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:01 GMT"/>
+                <header name="content-type" value="application/atom+xml; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/2010/05/lucky-lukas-orgy-2.html">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/2010/05/lucky-lukas-orgy-2.html"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=7ad4793599026046; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:48:51 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:32:57 GMT"/>
+                <header name="etag" value="&quot;dc9cc76b-dde9-4cd8-9fd5-1776621b97bc&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:48:51 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/2010/06/blog-moved.html">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/2010/06/blog-moved.html"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=af2f1a820b79e029; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:48:51 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:32:57 GMT"/>
+                <header name="etag" value="&quot;dc9cc76b-dde9-4cd8-9fd5-1776621b97bc&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:48:51 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/feeds/6316022162264872977/comments/default">
+                <header name="status" value="200"/>
+                <header name="gdata-version" value="1.0"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/feeds/6316022162264872977/comments/default"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:10 GMT"/>
+                <header name="vary" value="Accept, X-GData-Authorization, GData-Version"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Wed, 21 Apr 2010 14:44:03 GMT"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0, must-revalidate, no-transform"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:10 GMT"/>
+                <header name="content-type" value="application/atom+xml; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/2010/04/jean-daniel-dawson-1.html">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/2010/04/jean-daniel-dawson-1.html"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=a41c2cd2f0d7579; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:01 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:32:57 GMT"/>
+                <header name="etag" value="&quot;dc9cc76b-dde9-4cd8-9fd5-1776621b97bc&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:01 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/2010/04/peters-twins-ennio-guardi-1.html">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/2010/04/peters-twins-ennio-guardi-1.html"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=bda40a627055a5dd; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:03 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:32:57 GMT"/>
+                <header name="etag" value="&quot;dc9cc76b-dde9-4cd8-9fd5-1776621b97bc&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:03 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/feeds/2093220226420453137/comments/default">
+                <header name="status" value="200"/>
+                <header name="gdata-version" value="1.0"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/feeds/2093220226420453137/comments/default"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:01 GMT"/>
+                <header name="vary" value="Accept, X-GData-Authorization, GData-Version"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Sat, 01 May 2010 15:43:01 GMT"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0, must-revalidate, no-transform"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:01 GMT"/>
+                <header name="content-type" value="application/atom+xml; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=202d307ea3298479; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:48:50 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:32:57 GMT"/>
+                <header name="etag" value="&quot;dc9cc76b-dde9-4cd8-9fd5-1776621b97bc&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:48:50 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/2010/04/trevor-yates-troy-allen-2.html">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/2010/04/trevor-yates-troy-allen-2.html"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=849e860d39be4faf; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:02 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:32:57 GMT"/>
+                <header name="etag" value="&quot;dc9cc76b-dde9-4cd8-9fd5-1776621b97bc&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:02 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/feeds/8839532993822991120/comments/default">
+                <header name="status" value="200"/>
+                <header name="gdata-version" value="1.0"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/feeds/8839532993822991120/comments/default"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:10 GMT"/>
+                <header name="vary" value="Accept, X-GData-Authorization, GData-Version"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Wed, 21 Apr 2010 15:14:03 GMT"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0, must-revalidate, no-transform"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:10 GMT"/>
+                <header name="content-type" value="application/atom+xml; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/feeds/4164088647074975716/comments/default">
+                <header name="status" value="200"/>
+                <header name="gdata-version" value="1.0"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/feeds/4164088647074975716/comments/default"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:01 GMT"/>
+                <header name="vary" value="Accept, X-GData-Authorization, GData-Version"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Sat, 01 May 2010 16:19:55 GMT"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0, must-revalidate, no-transform"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:01 GMT"/>
+                <header name="content-type" value="application/atom+xml; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/feeds/3259423254084008950/comments/default">
+                <header name="status" value="200"/>
+                <header name="gdata-version" value="1.0"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/feeds/3259423254084008950/comments/default"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:10 GMT"/>
+                <header name="vary" value="Accept, X-GData-Authorization, GData-Version"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Wed, 21 Apr 2010 14:56:42 GMT"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0, must-revalidate, no-transform"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:10 GMT"/>
+                <header name="content-type" value="application/atom+xml; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/feeds/8350258961324296773/comments/default">
+                <header name="status" value="200"/>
+                <header name="gdata-version" value="1.0"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/feeds/8350258961324296773/comments/default"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:11 GMT"/>
+                <header name="vary" value="Accept, X-GData-Authorization, GData-Version"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Wed, 21 Apr 2010 14:35:08 GMT"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0, must-revalidate, no-transform"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:11 GMT"/>
+                <header name="content-type" value="application/atom+xml; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/2010/04/peters-twins-ennio-guardi-2.html">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/2010/04/peters-twins-ennio-guardi-2.html"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=431722796a8a7604; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:03 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:32:57 GMT"/>
+                <header name="etag" value="&quot;dc9cc76b-dde9-4cd8-9fd5-1776621b97bc&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:03 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/2010/04/jude-carmine-2.html">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/2010/04/jude-carmine-2.html"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=e6edfffe75fecc1c; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:49:04 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:32:57 GMT"/>
+                <header name="etag" value="&quot;dc9cc76b-dde9-4cd8-9fd5-1776621b97bc&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:49:04 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+            <url_data uri="http://belamimodel.blogspot.com/2010/05/lucky-lukas-orgy-1.html">
+                <header name="status" value="200"/>
+                <header name="x-xss-protection" value="1; mode=block"/>
+                <header name="content-location" value="http://belamimodel.blogspot.com/2010/05/lucky-lukas-orgy-1.html"/>
+                <header name="x-content-type-options" value="nosniff"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="blogger_TID=83d28349583ce6b3; HttpOnly"/>
+                <header name="expires" value="Sun, 05 Aug 2012 20:48:51 GMT"/>
+                <header name="server" value="GSE"/>
+                <header name="last-modified" value="Fri, 27 Jul 2012 21:32:57 GMT"/>
+                <header name="etag" value="&quot;dc9cc76b-dde9-4cd8-9fd5-1776621b97bc&quot;"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="cache-control" value="private, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 20:48:51 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

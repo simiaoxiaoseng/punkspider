@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://bearbook.ca/</rootURL>
+        <toBrowse/>
+        <browsed>
+            <url_data uri="http://bearbook.ca/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="3711"/>
+                <header name="content-location" value="http://bearbook.ca/"/>
+                <header name="accept-ranges" value="bytes"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="last-modified" value="Tue, 06 Mar 2012 03:18:46 GMT"/>
+                <header name="etag" value="&quot;e7f-4ba8a80343180&quot;"/>
+                <header name="link_encoding" value="ascii"/>
+                <header name="date" value="Sat, 04 Aug 2012 21:00:50 GMT"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

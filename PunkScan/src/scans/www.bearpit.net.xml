@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://www.bearpit.net/</rootURL>
+        <toBrowse/>
+        <browsed>
+            <url_data uri="http://www.bearpit.net/">
+                <header name="status" value="301"/>
+                <header name="content-length" value="0"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="bpn_session_id=81d9a0c95ff242833b22249a74811a9d; path=/; httponly"/>
+                <header name="expires" value="Sat, 04 Aug 2012 00:03:28 GMT"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="location" value="http://bearpit.net/"/>
+                <header name="pragma" value="no-cache"/>
+                <header name="cache-control" value="no-cache,must-revalidate, max-age=0"/>
+                <header name="date" value="Sun, 05 Aug 2012 00:03:28 GMT"/>
+                <header name="content-type" value="text/html;charset=ISO-8859-1"/>
+                <header name="link_encoding" value=""/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

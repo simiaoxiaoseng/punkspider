@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>
+            http://be.dunhill.com/
+        </rootURL>
+        <toBrowse/>
+        <browsed>
+            <url_data uri="http://be.dunhill.com/">
+                <header name="status" value="301"/>
+                <header name="connection" value="Keep-Alive"/>
+                <header name="location" value="http://en-be.dunhill.com/"/>
+                <header name="content-length" value="0"/>
+                <header name="link_encoding" value=""/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>

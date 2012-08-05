@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://beerinbaltimore.com/</rootURL>
+        <toBrowse>
+            <url>http://beerinbaltimore.com/?paged=2</url>
+            <url>http://beerinbaltimore.com/?p=6059</url>
+            <url>http://beerinbaltimore.com/?p=6039</url>
+            <url>http://beerinbaltimore.com/?p=6051</url>
+            <url>http://beerinbaltimore.com/?p=3713</url>
+            <url>http://beerinbaltimore.com/?s=on</url>
+            <url>http://beerinbaltimore.com/?paged=2&amp;s=on</url>
+            <url>http://beerinbaltimore.com</url>
+            <url>http://beerinbaltimore.com/?page_id=4</url>
+            <url>http://beerinbaltimore.com/?p=6122</url>
+            <url>http://beerinbaltimore.com/wp-content/uploads/2012/06/UCB_ReleaseParty%C6%92OL.pdf</url>
+            <url>http://beerinbaltimore.com/?p=5889</url>
+            <url>http://beerinbaltimore.com/?p=6001</url>
+            <url>http://beerinbaltimore.com/wp-comments-post.php</url>
+            <url>http://beerinbaltimore.com/?cat=28&amp;paged=2</url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://beerinbaltimore.com">
+                <header name="status" value="200"/>
+                <header name="content-length" value="30901"/>
+                <header name="content-location" value="http://beerinbaltimore.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:56:24 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://beerinbaltimore.com/xmlrpc.php"/>
+            </url_data>
+            <url_data uri="http://beerinbaltimore.com/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="30901"/>
+                <header name="content-location" value="http://beerinbaltimore.com/"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:56:22 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://beerinbaltimore.com/xmlrpc.php"/>
+            </url_data>
+            <url_data uri="http://beerinbaltimore.com/?s=on">
+                <header name="status" value="200"/>
+                <header name="content-length" value="25891"/>
+                <header name="content-location" value="http://beerinbaltimore.com/?s=on"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:56:23 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://beerinbaltimore.com/xmlrpc.php"/>
+            </url_data>
+            <url_data uri="http://beerinbaltimore.com/?p=6122">
+                <header name="status" value="200"/>
+                <header name="content-length" value="23790"/>
+                <header name="content-location" value="http://beerinbaltimore.com/?p=6122"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:56:26 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://beerinbaltimore.com/xmlrpc.php"/>
+            </url_data>
+            <url_data uri="http://beerinbaltimore.com/?cat=28">
+                <header name="status" value="200"/>
+                <header name="content-length" value="25091"/>
+                <header name="content-location" value="http://beerinbaltimore.com/?cat=28"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:56:31 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://beerinbaltimore.com/xmlrpc.php"/>
+            </url_data>
+            <url_data uri="http://beerinbaltimore.com/?page_id=4">
+                <header name="status" value="200"/>
+                <header name="content-length" value="22853"/>
+                <header name="content-location" value="http://beerinbaltimore.com/?page_id=4"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="utf-8"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:56:25 GMT"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="x-pingback" value="http://beerinbaltimore.com/xmlrpc.php"/>
+            </url_data>
+        </browsed>
+        <forms>
+            <form encoding="utf-8" to="http://beerinbaltimore.com/?p=6122" url="http://beerinbaltimore.com/wp-comments-post.php">
+                <inputs>
+                    <input name="comment" value="on"/>
+                    <input name="comment_parent" value="0"/>
+                    <input name="author" value="on"/>
+                    <input name="url" value="on"/>
+                    <input name="akismet_comment_nonce" value="61c4120010"/>
+                    <input name="comment_post_ID" value="6122"/>
+                    <input name="email" value="on"/>
+                    <input name="submit" value="Post"/>
+                </inputs>
+            </form>
+        </forms>
+        <uploads/>
+    </root>

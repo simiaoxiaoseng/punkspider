@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://beeraffians.deviantart.com/</rootURL>
+        <toBrowse>
+            <url>http://beeraffians.deviantart.com/notes/</url>
+            <url>http://beeraffians.deviantart.com/blog/?offset=1</url>
+            <url>http://beeraffians.deviantart.com</url>
+            <url>http://beeraffians.deviantart.com/aboutus/</url>
+            <url>http://beeraffians.deviantart.com/aboutus/?offset=3</url>
+            <url>http://beeraffians.deviantart.com/gallery/</url>
+            <url>http://beeraffians.deviantart.com/gallery/26854194</url>
+            <url>http://beeraffians.deviantart.com/favourites/</url>
+            <url>http://beeraffians.deviantart.com/favourites/41375268</url>
+            <url>http://beeraffians.deviantart.com/blog/</url>
+        </toBrowse>
+        <browsed>
+            <url_data uri="http://beeraffians.deviantart.com/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="77590"/>
+                <header name="content-location" value="http://beeraffians.deviantart.com/"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="userinfo=__000bbd1b5156dedb8540%3B%7B%22username%22%3A%22%22%2C%22uniqueid%22%3A%2286149cb80c6ea4fa89338320e766a12c%22%2C%22hitcount%22%3A2%2C%22visitcount%22%3A2%2C%22visittime%22%3A1344192936%2C%22firstvisit%22%3A1344192936%7D; expires=Tue, 04-Sep-2012 18:55:36 GMT; path=/; domain=.deviantart.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:55:36 GMT"/>
+                <header name="p3p" value="policyref=&quot;/w3c/p3p.xml&quot;, CP=&quot;NOI DSP COR CURa OUR STP&quot;"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://beeraffians.deviantart.com/aboutus/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="79197"/>
+                <header name="content-location" value="http://beeraffians.deviantart.com/aboutus/"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="userinfo=__5a05c894efd11e256df1%3B%7B%22username%22%3A%22%22%2C%22uniqueid%22%3A%228e7fd320d7b3a020e868e00167e7cb03%22%2C%22hitcount%22%3A2%2C%22visitcount%22%3A2%2C%22visittime%22%3A1344192937%2C%22firstvisit%22%3A1344192937%7D; expires=Tue, 04-Sep-2012 18:55:37 GMT; path=/; domain=.deviantart.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:55:37 GMT"/>
+                <header name="p3p" value="policyref=&quot;/w3c/p3p.xml&quot;, CP=&quot;NOI DSP COR CURa OUR STP&quot;"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://beeraffians.deviantart.com/gallery/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="55926"/>
+                <header name="content-location" value="http://beeraffians.deviantart.com/gallery/"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="userinfo=__95457f6a07d6b49b86d4%3B%7B%22username%22%3A%22%22%2C%22uniqueid%22%3A%220ada18248057602284a4bec0e48ab6c2%22%2C%22hitcount%22%3A2%2C%22visitcount%22%3A2%2C%22visittime%22%3A1344192937%2C%22firstvisit%22%3A1344192937%7D; expires=Tue, 04-Sep-2012 18:55:38 GMT; path=/; domain=.deviantart.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:55:37 GMT"/>
+                <header name="p3p" value="policyref=&quot;/w3c/p3p.xml&quot;, CP=&quot;NOI DSP COR CURa OUR STP&quot;"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://beeraffians.deviantart.com">
+                <header name="status" value="200"/>
+                <header name="content-length" value="77590"/>
+                <header name="content-location" value="http://beeraffians.deviantart.com"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="userinfo=__ae2ecac7028fe32935ba%3B%7B%22username%22%3A%22%22%2C%22uniqueid%22%3A%224829e092f687ea2492e0d08bf63a0798%22%2C%22hitcount%22%3A2%2C%22visitcount%22%3A2%2C%22visittime%22%3A1344192936%2C%22firstvisit%22%3A1344192936%7D; expires=Tue, 04-Sep-2012 18:55:36 GMT; path=/; domain=.deviantart.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:55:36 GMT"/>
+                <header name="p3p" value="policyref=&quot;/w3c/p3p.xml&quot;, CP=&quot;NOI DSP COR CURa OUR STP&quot;"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://beeraffians.deviantart.com/blog/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="50278"/>
+                <header name="content-location" value="http://beeraffians.deviantart.com/blog/"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="userinfo=__e5f98e0a7b72ba82db09%3B%7B%22username%22%3A%22%22%2C%22uniqueid%22%3A%229a462d15e08a3f09ff2e96c07a51640e%22%2C%22hitcount%22%3A2%2C%22visitcount%22%3A2%2C%22visittime%22%3A1344192938%2C%22firstvisit%22%3A1344192938%7D; expires=Tue, 04-Sep-2012 18:55:38 GMT; path=/; domain=.deviantart.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:55:38 GMT"/>
+                <header name="p3p" value="policyref=&quot;/w3c/p3p.xml&quot;, CP=&quot;NOI DSP COR CURa OUR STP&quot;"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+            <url_data uri="http://beeraffians.deviantart.com/favourites/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="52731"/>
+                <header name="content-location" value="http://beeraffians.deviantart.com/favourites/"/>
+                <header name="transfer-encoding" value="chunked"/>
+                <header name="set-cookie" value="userinfo=__51e7ed99ce05af3bfa43%3B%7B%22username%22%3A%22%22%2C%22uniqueid%22%3A%2208378554144983ff7be002c4de65cee3%22%2C%22hitcount%22%3A2%2C%22visitcount%22%3A2%2C%22visittime%22%3A1344192938%2C%22firstvisit%22%3A1344192938%7D; expires=Tue, 04-Sep-2012 18:55:38 GMT; path=/; domain=.deviantart.com"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="Apache"/>
+                <header name="link_encoding" value="iso-8859-1"/>
+                <header name="cache-control" value="private"/>
+                <header name="date" value="Sun, 05 Aug 2012 18:55:38 GMT"/>
+                <header name="p3p" value="policyref=&quot;/w3c/p3p.xml&quot;, CP=&quot;NOI DSP COR CURa OUR STP&quot;"/>
+                <header name="content-type" value="text/html"/>
+            </url_data>
+        </browsed>
+        <forms>
+            <form encoding="iso-8859-1" to="http://beeraffians.deviantart.com/" url="https://www.deviantart.com/users/login">
+                <inputs>
+                    <input name="username" value="on"/>
+                    <input name="remember_me" value="1"/>
+                    <input name="password" value="on"/>
+                    <input name="ref" value="on"/>
+                    <input name="action" value="Login"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beeraffians.deviantart.com/" url="http://my.deviantart.com/deviants/add">
+                <inputs>
+                    <input name="username" value="Beeraffians"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beeraffians.deviantart.com/" url="http://comments.deviantart.com/post">
+                <inputs>
+                    <input name="itemid" value="15423673"/>
+                    <input name="typeid" value="4"/>
+                    <input name="body" value="on"/>
+                    <input name="validate_token" value="c03af9971f3bd8818882"/>
+                    <input name="splitid" value="on"/>
+                    <input name="moodid" value="0"/>
+                    <input name="validate_key" value="1344192936"/>
+                    <input name="ref" value="http://beeraffians.deviantart.com/"/>
+                    <input name="private" value="0"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beeraffians.deviantart.com" url="https://www.deviantart.com/users/login">
+                <inputs>
+                    <input name="username" value="on"/>
+                    <input name="remember_me" value="1"/>
+                    <input name="password" value="on"/>
+                    <input name="ref" value="on"/>
+                    <input name="action" value="Login"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beeraffians.deviantart.com" url="http://my.deviantart.com/deviants/add">
+                <inputs>
+                    <input name="username" value="Beeraffians"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beeraffians.deviantart.com" url="http://comments.deviantart.com/post">
+                <inputs>
+                    <input name="itemid" value="15423673"/>
+                    <input name="typeid" value="4"/>
+                    <input name="body" value="on"/>
+                    <input name="validate_token" value="5cf7a244351e06c06bd8"/>
+                    <input name="splitid" value="on"/>
+                    <input name="moodid" value="0"/>
+                    <input name="validate_key" value="1344192936"/>
+                    <input name="ref" value="http://beeraffians.deviantart.com/"/>
+                    <input name="private" value="0"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beeraffians.deviantart.com/aboutus/" url="https://www.deviantart.com/users/login">
+                <inputs>
+                    <input name="username" value="on"/>
+                    <input name="remember_me" value="1"/>
+                    <input name="password" value="on"/>
+                    <input name="ref" value="on"/>
+                    <input name="action" value="Login"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beeraffians.deviantart.com/aboutus/" url="http://my.deviantart.com/deviants/add">
+                <inputs>
+                    <input name="username" value="Beeraffians"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beeraffians.deviantart.com/gallery/" url="https://www.deviantart.com/users/login">
+                <inputs>
+                    <input name="username" value="on"/>
+                    <input name="remember_me" value="1"/>
+                    <input name="password" value="on"/>
+                    <input name="ref" value="on"/>
+                    <input name="action" value="Login"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beeraffians.deviantart.com/gallery/" url="http://my.deviantart.com/deviants/add">
+                <inputs>
+                    <input name="username" value="Beeraffians"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beeraffians.deviantart.com/favourites/" url="https://www.deviantart.com/users/login">
+                <inputs>
+                    <input name="username" value="on"/>
+                    <input name="remember_me" value="1"/>
+                    <input name="password" value="on"/>
+                    <input name="ref" value="on"/>
+                    <input name="action" value="Login"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beeraffians.deviantart.com/favourites/" url="http://my.deviantart.com/deviants/add">
+                <inputs>
+                    <input name="username" value="Beeraffians"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beeraffians.deviantart.com/blog/" url="https://www.deviantart.com/users/login">
+                <inputs>
+                    <input name="username" value="on"/>
+                    <input name="remember_me" value="1"/>
+                    <input name="password" value="on"/>
+                    <input name="ref" value="on"/>
+                    <input name="action" value="Login"/>
+                </inputs>
+            </form>
+            <form encoding="iso-8859-1" to="http://beeraffians.deviantart.com/blog/" url="http://my.deviantart.com/deviants/add">
+                <inputs>
+                    <input name="username" value="Beeraffians"/>
+                </inputs>
+            </form>
+        </forms>
+        <uploads/>
+    </root>
