@@ -131,10 +131,10 @@ Supported options are:
     self.nice = 2
 
 
-    print "THIS IS ROOT IN LSWWW"
-    print root
-    print "THIS IS TOBROWSE AT INIT OF LSWWW"
-    print self.tobrowse
+#dbg    print "THIS IS ROOT IN LSWWW"
+#dbg    print root
+#dbg    print "THIS IS TOBROWSE AT INIT OF LSWWW"
+#dbg    print self.tobrowse
 
     if root.find("http://") != 0 and root.find("https://") != 0:
       root = "http://" + root
@@ -510,7 +510,7 @@ Supported options are:
       while len(self.tobrowse) > 0:
 #pnkd##########################set the max number of links to browse##
         print "the number of urls browsed is", str(len(self.browsed))
-        if len(self.browsed) > 400:
+        if len(self.browsed) >= 300:
 	  #raise keyboard interupt, handled below
           raise KeyboardInterrupt				     
 #pnkd#################################################################

@@ -103,7 +103,7 @@ class ParserUploader:
 
 	def solr_update(self, n_xss, n_sql, n_bsql):
 
-		conn = pysolr.Solr('http://cloud-solr:8983/solr/')
+		conn = pysolr.Solr('http://hg-solr:8983/solr/')
 		solr_doc_pull = conn.search("id:" + " \"" + self.url + "\" ")
 		vscan_tstamp = datetime.datetime.now()
 
@@ -157,23 +157,24 @@ class ParserUploader:
 		print "Updating Solr..."
 		self.solr_update(len(self.xss_bugs_dic_list), len(self.sql_bugs_dic_list), len(self.bsql_bugs_dic_list))
 
-
 class PunkSolr():
-	'''This class pulls URLs from solr in a cariety of ways for later scanning'''
+	'''This class pulls URLs from solr in a variety of ways for later scanning'''
 
 	def __init__(self):
 
                 self.conn = pysolr.Solr("http://hg-solr:8983/solr/")
 
 	def get_not_scanned(self):
-
+		'''get solr records with no vscan timestamp'''
 		self.not_scanned = self.conn.search("-vscan_tstamp:*", rows=1)
 
 		return self.not_scanned
 
 	def get_scanned_longest_ago(self):
-#!
-		pass
+		'''This gets the record from solr that was scanned longest ago, it starts with those that have no vscan timestamp'''
+		scanned_longest_ago_or_not_scanned = self.conn.search('*:*', sort='vscan_tstamp asc', rows=1)
+		
+		return scanned_longest_ago_or_not_scanned
 
 class Target():
 	'''This class holds a target object and performs the actual scan. Once a scan is performed the result is a wapiti XML report'''
@@ -188,8 +189,8 @@ class Target():
 
 		self.url = url
 		self.opt_list = [('-o', outfile), ('-f', 'xml'), ('-b', 'domain'), ('-v', '2'), ('-u', ''), ('-n', '1'), ('-t', '5'),\
-#!		('-m', '-all,xss:get,sql:get,blindsql:get')]
-		('-m', '-all,sql:get')]
+		('-m', '-all,xss:get,sql:get,blindsql:get')]
+#test		('-m', '-all,sql:get')]
 		
 
 	def update_vscan_tstamp(self):
@@ -225,27 +226,49 @@ class Target():
 
 if __name__ == "__main__":
 
+	total_time = 0
+	sites_scanned = 0
+
 	while True:
 
-		print "________________________________________\ngetting a new website to scan............\n______________________________________________"
-		site_to_scan = PunkSolr().get_not_scanned() 
+		start_scan = datetime.datetime.now()
+		print "\n\n***getting a new website to scan***\n\n"
+		site_to_scan = PunkSolr().get_scanned_longest_ago() 
+
 		for website_dic in site_to_scan:
+
+			print "Retrieved solr document:"
+			print website_dic
+			print "___________________\n"
 
 			target = Target()
 			target.set_url(website_dic['url'], 'out.xml')
 			try:
+
 				target.update_vscan_tstamp()
 				scan_result = target.punk_scan()
 				scan_url = target.url
-				target.delete_vscan_tstamp()
 
-				#! if deployed on a rackspace server take this line out, workaround to fix timeout issues that we run into on Debian
-#				ParserUploader(scan_result, scan_url).scdb_index()
+				ParserUploader(scan_result, scan_url).scdb_index()
+
+				end_scan = datetime.datetime.now()
+				scan_time_delta = end_scan - start_scan
+				scan_time_sec = scan_time_delta.total_seconds()
+				scan_time = scan_time_sec/60
+
+				print "Scan took %s minutes to run." % str(scan_time)
+				sites_scanned = sites_scanned + 1
+				total_time_sec = total_time + scan_time
+				total_time = total_time_sec/86400
+				avg_rate = sites_scanned/total_time
+
+				print "%s sites scanned so far. That's a rate of %s sites per day" % (str(sites_scanned), str(avg_rate)
 
 			except Exception, err:
 
 				print "Exception in punkscanner....scan did not finish properly, removing vscan timestamp..."
-				print Exception, err
+#dbg				print Exception, err
+
 				#if anything went wrong we delete the timestamp marking it as not scanned
 				#!need to add the same for couchdb
 				target.delete_vscan_tstamp()
