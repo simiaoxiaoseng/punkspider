@@ -262,7 +262,7 @@ if __name__ == "__main__":
 				total_time = total_time_sec/86400
 				avg_rate = sites_scanned/total_time
 
-				print "%s sites scanned so far. That's a rate of %s sites per day" % (str(sites_scanned), str(avg_rate)
+				print "%s sites scanned so far. That's a rate of %s sites per day" % (str(sites_scanned), str(avg_rate))
 
 			except Exception, err:
 
