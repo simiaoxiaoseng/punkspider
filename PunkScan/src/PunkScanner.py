@@ -119,7 +119,7 @@ class ParserUploader:
 		'''This indexes vulnerabilities to couchdb and updates the timestamp and number of vulns in solr'''
 
 		#! change connection string in production
-		server = Server('http://localhost:5984')
+		server = Server('http://hg-couchdb:5984')
 
 		#! set db name for production
 		try:
