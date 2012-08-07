@@ -226,7 +226,7 @@ class Target():
 
 if __name__ == "__main__":
 
-	total_time = 0
+	total_time_sec = 0
 	sites_scanned = 0
 
 	while True:
@@ -253,12 +253,11 @@ if __name__ == "__main__":
 
 			end_scan = datetime.datetime.now()
 			scan_time_delta = end_scan - start_scan
-			scan_time_sec = scan_time_sec + scan_time_delta.total_seconds()
-			scan_time = scan_time_sec/60
+			scan_time_sec = scan_time_delta.total_seconds()
 
 			print "Scan took %s minutes to run." % str(scan_time)
 			sites_scanned = sites_scanned + 1
-			total_time_sec = total_time_sec + scan_time
+			total_time_sec = total_time_sec + scan_time_sec
 			total_time = total_time_sec/86400
 			avg_rate = sites_scanned/total_time
 
