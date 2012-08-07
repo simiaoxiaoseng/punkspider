@@ -254,6 +254,7 @@ if __name__ == "__main__":
 			end_scan = datetime.datetime.now()
 			scan_time_delta = end_scan - start_scan
 			scan_time_sec = scan_time_delta.total_seconds()
+			scan_time = scan_time_sec/60
 
 			print "Scan took %s minutes to run." % str(scan_time)
 			sites_scanned = sites_scanned + 1
