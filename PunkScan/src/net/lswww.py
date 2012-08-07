@@ -377,7 +377,7 @@ Supported options are:
       while re.search("/([~:!,;a-zA-Z0-9\.\-+_]+)/\.\./", lien) != None:
         lien = re.sub("/([~:!,;a-zA-Z0-9\.\-+_]+)/\.\./", "/", lien)
       lien = re.sub("/\./", "/", lien)
-      # Everytgohing is good here
+      # Everything is good here
       return lien
 
   def __checklink(self, url):
@@ -510,7 +510,7 @@ Supported options are:
       while len(self.tobrowse) > 0:
 #pnkd##########################set the max number of links to browse##
         print "the number of urls browsed is", str(len(self.browsed))
-        if len(self.browsed) >= 300:
+        if len(self.browsed) >= 350:
 	  #raise keyboard interupt, handled below
           raise KeyboardInterrupt				     
 #pnkd#################################################################

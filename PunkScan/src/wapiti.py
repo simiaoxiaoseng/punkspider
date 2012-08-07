@@ -98,7 +98,6 @@ Supported options are:
 	Set the type of the report
 	xml: Report in XML format
 	html: Report in HTML format
-
 -o <output>
 --output <output_file>
 	Set the name of the report file
@@ -122,32 +121,27 @@ Supported options are:
 --help
 	To print this usage message"""
 
-  urls  = {}
-  print "GLOBAL URLS VAR:"
-  print urls
-  forms = []
-
-  color   = 0
-  verbose = 0
-
-  reportGeneratorType = "html"
-  REPORT_DIR  = "report"
-  REPORT_FILE = "vulnerabilities.xml"
-  COPY_REPORT_DIR = "generated_report"
-  outputFile = ""
-
-  options = ""
-
-  HTTP = None
-  reportGen = None
-
-  attacks = []
-
-
   def __init__(self, rooturl):
+
+    self.attack_url = rooturl
     self.HTTP = HTTP.HTTP(rooturl)
+    self.urls  = {}
+    self.forms = []
+
+    self.color   = 0
+    self.verbose = 0
+
+    self.reportGeneratorType = "html"
+    self.REPORT_DIR  = "report"
+    self.REPORT_FILE = "vulnerabilities.xml"
+    self.COPY_REPORT_DIR = "generated_report"
+    self.outputFile = ""
+    self.options = ""
+    self.reportGen = None
+    self.attacks = []
 
   def __initReport(self):
+
     if self.reportGeneratorType.lower() == "xml":
         self.reportGen = XMLReportGenerator()
     elif self.reportGeneratorType.lower() == "html":
@@ -173,7 +167,7 @@ Supported options are:
 
     print "[*]", _("Loading modules"), ":"
     print "\t"+ ", ".join(attack.modules)
-    print list(set(attack.modules))
+#dbg    print list(set(attack.modules))
     for mod_name in list(set(attack.modules)):
       mod = __import__("attack." + mod_name, fromlist=attack.modules)
       mod_instance = getattr(mod, mod_name)(self.HTTP, self.reportGen)
@@ -240,8 +234,7 @@ Supported options are:
   def attack(self):
     "Launch the attacks based on the preferences set by the command line"
     if self.urls == {} and self.forms == []:
-      print _("No links or forms found in this page !")
-      print _("Make sure the url is correct.")
+      print _("No links or forms with parameters found in this page, skipping scan stage !")
 
 #pnkd- return an empty report and finish if there aren't any relevant URLs to scan
 #       sys.exit(1)
@@ -287,6 +280,7 @@ Supported options are:
             "/index.html " + _("with a browser to see this report.")
 
     #return the report
+    print self.outputFile
     return self.reportGen.generateReport(self.outputFile)
 
   def setTimeOut(self, timeout = 6.0):
@@ -346,88 +340,88 @@ Supported options are:
 
   def setOutputFile(self, outputFile):
     "Set the filename where the report will be written"
+    f = open(outputFile, 'w')
+    f.close()
     self.outputFile = outputFile
 
-def scan(attack_url, opt_list):
+  def scan(self, attack_url, opt_list):
 
-  doc = _("wapityDoc")
-  try:
-    print opt_list
-    prox = ""
-    auth = []
-    crawlerFile = None
-    attackFile  = None
+    doc = _("wapityDoc")
+    try:
 
-    url = unicode(attack_url)
+      prox = ""
+      auth = []
+      crawlerFile = None
+      attackFile  = None
+
+      url = unicode(self.attack_url)
 #dbg    print "URL IN WAPITI IS:"
 #dbg    print url
-    wap = Wapiti(url)
 #dbg    print opt_list
 
-    for o, a in opt_list:
-      if o in ("-h", "--help"):
-        print doc
-        sys.exit(0)
-      if o in ("-s", "--start"):
-        if (a.find("http://", 0) == 0) or (a.find("https://", 0) == 0):
-          wap.addStartURL(a)
-      if o in ("-x", "--exclude"):
-        if (a.find("http://", 0) == 0) or (a.find("https://", 0) == 0):
-          wap.addExcludedURL(a)
-      if o in ("-p", "--proxy"):
-          wap.setProxy(a)
-      if o in ("-c", "--cookie"):
-        wap.setCookieFile(a)
-      if o in ("-a", "--auth"):
-        if a.find("%") >= 0:
-          auth = [a.split("%")[0], a.split("%")[1]]
-          wap.setAuthCredentials(auth)
-      if o in ("-r", "--remove"):
-        wap.addBadParam(a)
-      if o in ("-n", "--nice"):
-        if str.isdigit(a):
-          wap.setNice(int(a))
-      if o in ("-u", "--underline"):
-        wap.setColor()
-      if o in ("-v", "--verbose"):
-        if str.isdigit(a):
-          wap.verbosity(int(a))
-      if o in ("-t", "--timeout"):
-        if str.isdigit(a):
-          wap.setTimeOut(int(a))
-      if o in ("-m", "--module"):
-        wap.setModules(a)
-      if o in ("-o", "--outputfile"):
-        wap.setOutputFile(a)
-      if o in ("-f", "--reportType"):
-        if (a.find("html", 0) == 0) or (a.find("xml", 0) == 0) \
-          or (a.find("txt", 0) == 0):
-            wap.setReportGeneratorType(a)
-      if o in ("-b", "--scope"):
-        wap.setScope(a)
-      if o in ("-k", "--attack"):
-        attackFile = crawlerPersister.CRAWLER_DATA_DIR + '/' + \
-            (url.split("://")[1]).split("/")[0] + '.xml'
-      if o in ("-i", "--continue"):
-        crawlerFile = crawlerPersister.CRAWLER_DATA_DIR + '/' + \
-            (url.split("://")[1]).split("/")[0] + '.xml'
+      for o, a in opt_list:
+        if o in ("-h", "--help"):
+          print doc
+          sys.exit(0)
+        if o in ("-s", "--start"):
+          if (a.find("http://", 0) == 0) or (a.find("https://", 0) == 0):
+            self.addStartURL(a)
+        if o in ("-x", "--exclude"):
+          if (a.find("http://", 0) == 0) or (a.find("https://", 0) == 0):
+            self.addExcludedURL(a)
+        if o in ("-p", "--proxy"):
+          self.setProxy(a)
+        if o in ("-c", "--cookie"):
+          self.setCookieFile(a)
+        if o in ("-a", "--auth"):
+          if a.find("%") >= 0:
+            auth = [a.split("%")[0], a.split("%")[1]]
+            self.setAuthCredentials(auth)
+        if o in ("-r", "--remove"):
+          self.addBadParam(a)
+        if o in ("-n", "--nice"):
+          if str.isdigit(a):
+            self.setNice(int(a))
+        if o in ("-u", "--underline"):
+          self.setColor()
+        if o in ("-v", "--verbose"):
+          if str.isdigit(a):
+            self.verbosity(int(a))
+        if o in ("-t", "--timeout"):
+          if str.isdigit(a):
+            self.setTimeOut(int(a))
+        if o in ("-m", "--module"):
+          self.setModules(a)
+        if o in ("-o", "--outputfile"):
+          self.setOutputFile(a)
+        if o in ("-f", "--reportType"):
+          if (a.find("html", 0) == 0) or (a.find("xml", 0) == 0) \
+            or (a.find("txt", 0) == 0):
+              self.setReportGeneratorType(a)
+        if o in ("-b", "--scope"):
+          self.setScope(a)
+        if o in ("-k", "--attack"):
+          attackFile = crawlerPersister.CRAWLER_DATA_DIR + '/' + \
+              (url.split("://")[1]).split("/")[0] + '.xml'
+        if o in ("-i", "--continue"):
+          crawlerFile = crawlerPersister.CRAWLER_DATA_DIR + '/' + \
+              (url.split("://")[1]).split("/")[0] + '.xml'
 
-    print _("PunkScanner v0.1 - Powered by Wapiti")
+      print _("PunkScanner v0.1 - Powered by Wapiti")
 
-    wap.browse(crawlerFile)
-    try:
-      pnk_ret = wap.attack()
-      print pnk_ret
-      return pnk_ret
+      self.browse(crawlerFile)
+      try:
+        pnk_ret = self.attack()
+        print pnk_ret
+        return pnk_ret
 
-    except KeyboardInterrupt:
-      print ""
-      print _("Attack process interrupted. To perform again the attack, lauch Wapiti with \"-i\" or \"-k\" parameter.")
-      print ""
+      except KeyboardInterrupt:
+        print ""
+        print _("Attack process interrupted. To perform again the attack, launch Wapiti with \"-i\" or \"-k\" parameter.")
+        print ""
+        pass
+    except SystemExit:
       pass
-  except SystemExit:
-    pass
-
 
 if __name__=="__main__":
 

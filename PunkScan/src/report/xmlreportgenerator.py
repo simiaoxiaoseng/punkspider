@@ -55,10 +55,9 @@ class XMLReportGenerator(ReportGenerator):
     </report>
     """
 
-    __xmlDoc = None
-    __vulnerabilityTypeList = None
-
     def __init__(self):
+        self.__xmlDoc = None
+        self.__vulnerabilityTypeList = None
         self.__xmlDoc = Document()
         report = self.__addReport()
         generated = self.__xmlDoc.createElement("generatedBy")
