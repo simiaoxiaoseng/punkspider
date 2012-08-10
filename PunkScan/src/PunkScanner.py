@@ -103,7 +103,7 @@ class ParserUploader:
 
 	def solr_update(self, n_xss, n_sql, n_bsql):
 
-		conn = pysolr.Solr('http://hg-solr:8983/solr/')
+		conn = pysolr.Solr('http://hg-solr:8080/solr/')
 		solr_doc_pull = conn.search("id:" + " \"" + self.url + "\" ")
 		vscan_tstamp = datetime.datetime.now()
 
@@ -162,7 +162,7 @@ class PunkSolr():
 
 	def __init__(self):
 
-                self.conn = pysolr.Solr("http://hg-solr:8983/solr/")
+                self.conn = pysolr.Solr("http://hg-solr:8080/solr/")
 
 	def get_not_scanned(self):
 		'''get solr records with no vscan timestamp'''
@@ -195,7 +195,7 @@ class Target():
 
 	def update_vscan_tstamp(self):
 
-                conn = pysolr.Solr('http://hg-solr:8983/solr/')
+                conn = pysolr.Solr('http://hg-solr:8080/solr/')
                 solr_doc_pull = conn.search("id:" + " \"" + self.url + "\" ")
                 vscan_tstamp = datetime.datetime.now()
 
@@ -206,7 +206,7 @@ class Target():
 
 	def delete_vscan_tstamp(self):
 
-                conn = pysolr.Solr('http://hg-solr:8983/solr/')
+                conn = pysolr.Solr('http://hg-solr:8080/solr/')
                 solr_doc_pull = conn.search("id:" + " \"" + self.url + "\" ")
 
                 for result in solr_doc_pull:
