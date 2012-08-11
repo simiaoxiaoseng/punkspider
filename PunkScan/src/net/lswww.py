@@ -524,8 +524,14 @@ Supported options are:
             self.browsed[lien] = headers
             if self.verbose == 1:
               sys.stderr.write('.')
+#pnkd - added error handling
             elif self.verbose == 2:
-              print lien
+	      try:
+                print lien
+	      except:
+	        sys.stderr.write("Could not print webpage link\n")
+#pnkd end
+
         if(self.scope == self.SCOPE_PAGE):
           self.tobrowse = []
       self.saveCrawlerData()

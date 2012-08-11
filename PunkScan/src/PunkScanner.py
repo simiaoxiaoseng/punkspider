@@ -1,5 +1,6 @@
 #PunkScanner is a module that sits on top of Wapiti, handles threading etc., and indexes these results to couchdb and Solr
 import sys
+import traceback
 sys.path.append('wapiti-2.2.1/src/')
 sys.path.append('pysolr/')
 sys.path.append('xmltodict/')
@@ -119,7 +120,7 @@ class ParserUploader:
 		'''This indexes vulnerabilities to couchdb and updates the timestamp and number of vulns in solr'''
 
 		#! change connection string in production
-		server = Server('http://localhost:5984')
+		server = Server('http://hg-couchdb:5984')
 
 		#! set db name for production
 		try:
@@ -219,9 +220,6 @@ class Target():
 		know this is being scanned before it finishes the scanning. Reduces number of duplicate scans'''
 
 		wap = wapiti.Wapiti(self.url)		
-#dbg		print "URL WITHIN THE PUNK_SCAN CLASS"
-#dbg		print self.url
-#dbg            print "PERFORMING A NEW SCAN"
 		return wap.scan(self.url, self.opt_list)
 
 if __name__ == "__main__":
@@ -243,32 +241,34 @@ if __name__ == "__main__":
 
 			target = Target()
 			target.set_url(website_dic['url'], 'out.xml')
-#!			try:
 
-			target.update_vscan_tstamp()
-			scan_result = target.punk_scan()
-			scan_url = target.url
+			try:
 
-			ParserUploader(scan_result, scan_url).scdb_index()
+				target.update_vscan_tstamp()
+				scan_result = target.punk_scan()
+				scan_url = target.url
 
-			end_scan = datetime.datetime.now()
-			scan_time_delta = end_scan - start_scan
-			scan_time_sec = scan_time_delta.total_seconds()
-			scan_time = scan_time_sec/60
+				ParserUploader(scan_result, scan_url).scdb_index()
 
-			print "Scan took %s minutes to run." % str(scan_time)
-			sites_scanned = sites_scanned + 1
-			total_time_sec = total_time_sec + scan_time_sec
-			total_time = total_time_sec/86400
-			avg_rate = sites_scanned/total_time
+				end_scan = datetime.datetime.now()
+				scan_time_delta = end_scan - start_scan
+				scan_time_sec = scan_time_delta.total_seconds()
+				scan_time = scan_time_sec/60
 
-			print "%s sites scanned so far. That's a rate of %s sites per day" % (str(sites_scanned), str(avg_rate))
+				print "Scan took %s minutes to run." % str(scan_time)
+				sites_scanned = sites_scanned + 1
+				total_time_sec = total_time_sec + scan_time_sec
+				total_time = total_time_sec/86400
+				avg_rate = sites_scanned/total_time
 
-#!			except Exception, err:
+				print "%s sites scanned so far. That's a rate of %s sites per day" % (str(sites_scanned), str(avg_rate))
 
-#!				print "Exception in punkscanner....scan did not finish properly, removing vscan timestamp..."
-#dbg				print Exception, err
+			except Exception, err:
+
+				traceback.print_exc(file=sys.stdout)
+				print "Exception in punkscanner....scan did not finish properly, removing vscan timestamp..."
 
 				#if anything went wrong we delete the timestamp marking it as not scanned
 				#!need to add the same for couchdb
-#!				target.delete_vscan_tstamp()
+				target.delete_vscan_tstamp()
+				
