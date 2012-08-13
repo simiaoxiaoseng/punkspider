@@ -510,7 +510,7 @@ Supported options are:
       while len(self.tobrowse) > 0:
 #pnkd##########################set the max number of links to browse##
         print "the number of urls browsed is", str(len(self.browsed))
-        if len(self.browsed) >= 350:
+        if len(self.browsed) >= 250:
 	  #raise keyboard interupt, handled below
           raise KeyboardInterrupt				     
 #pnkd#################################################################

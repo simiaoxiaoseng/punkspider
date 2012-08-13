@@ -231,7 +231,12 @@ if __name__ == "__main__":
 
 		start_scan = datetime.datetime.now()
 		print "\n\n***getting a new website to scan***\n\n"
-		site_to_scan = PunkSolr().get_scanned_longest_ago() 
+		try:
+			site_to_scan = PunkSolr().get_scanned_longest_ago() 
+		except Exception, err:
+			traceback.print_exc(file=sys.stdout)
+			print "Could not get site to scan, trying again"
+			continue
 
 		for website_dic in site_to_scan:
 
@@ -243,32 +248,65 @@ if __name__ == "__main__":
 			target.set_url(website_dic['url'], 'out.xml')
 
 			try:
-
 				target.update_vscan_tstamp()
+			except Exception, err:
+				traceback.print_exc(file=sys.stdout)
+				print "Could not update vulnerability time stamp in solr, trying again"
+				continue
+
+			try:
 				scan_result = target.punk_scan()
-				scan_url = target.url
-
-				ParserUploader(scan_result, scan_url).scdb_index()
-
-				end_scan = datetime.datetime.now()
-				scan_time_delta = end_scan - start_scan
-				scan_time_sec = scan_time_delta.total_seconds()
-				scan_time = scan_time_sec/60
-
-				print "Scan took %s minutes to run." % str(scan_time)
-				sites_scanned = sites_scanned + 1
-				total_time_sec = total_time_sec + scan_time_sec
-				total_time = total_time_sec/86400
-				avg_rate = sites_scanned/total_time
-
-				print "%s sites scanned so far. That's a rate of %s sites per day" % (str(sites_scanned), str(avg_rate))
-
 			except Exception, err:
 
 				traceback.print_exc(file=sys.stdout)
-				print "Exception in punkscanner....scan did not finish properly, removing vscan timestamp..."
+				print "Error while scanning, attempting to delete timestamp"
+				try:
+					target.delete_vscan_tstamp()
+				except Exception, err:
+					traceback.print_exc(file=sys.stdout)
+					print "Error while attempting to delete timestamp, waiting 5 seconds, trying again and restarting the loop"
+					time.sleep(5)
+					try:
+						target.delete_vscan_tstamp()					
+					except Exception, err:
+						traceback.print_exc(file=sys.stdout)
+						print "Deleting timestamp failed again. You may have corrupted data in Solr."
+						continue
 
-				#if anything went wrong we delete the timestamp marking it as not scanned
-				#!need to add the same for couchdb
-				target.delete_vscan_tstamp()
-				
+			scan_url = target.url
+
+			try:
+				ParserUploader(scan_result, scan_url).scdb_index()
+			except Exception, err:
+				traceback.print_exc(file=sys.stdout)
+				print "Uploading of Solr document failed. Trying again."
+				try:
+					ParserUploader(scan_result, scan_url).scdb_index()
+				except Exception, err:
+					traceback.print_exc(file=sys.stdout)
+					print "Uploading results to solr failed again. Attempting to delete timestamp"
+					try:
+						target.delete_vscan_tstamp()
+					except Exception, err:
+						traceback.print_exc(file=sys.stdout)
+						print "Deleting timestamp failed, sleeping 5 seconds and trying again."
+						time.sleep(5)
+						try:
+							target.delete_vscan_tstamp()				
+						except Exception, err:
+							traceback.print_exc(file=sys.stdout)
+							print "Deleting timestamp failed again, you may have corrupt data in Solr. Moving on."
+							continue
+
+			end_scan = datetime.datetime.now()
+			scan_time_delta = end_scan - start_scan
+			scan_time_sec = scan_time_delta.total_seconds()
+			scan_time = scan_time_sec/60
+
+			print "Scan took %s minutes to run." % str(scan_time)
+			sites_scanned = sites_scanned + 1
+			total_time_sec = total_time_sec + scan_time_sec
+			total_time = total_time_sec/86400
+			avg_rate = sites_scanned/total_time
+
+			print "%s sites scanned so far. That's a rate of %s sites per day" % (str(sites_scanned), str(avg_rate))
