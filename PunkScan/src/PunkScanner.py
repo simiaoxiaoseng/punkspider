@@ -13,6 +13,7 @@ from couchdb import Server
 from couchdb.client import Server, Document
 from couchdb.mapping import TextField, DateTimeField, ListField, DictField
 import subprocess
+import time
 
 class ParserUploader:
 	'''This class takes in a wapiti XML report (usually from a Target object) and uploads it to couchdb'''
