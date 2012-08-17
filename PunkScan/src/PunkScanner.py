@@ -14,6 +14,7 @@ from couchdb.client import Server, Document
 from couchdb.mapping import TextField, DateTimeField, ListField, DictField
 import subprocess
 import time
+import urlparse
 
 class ParserUploader:
 	'''This class takes in a wapiti XML report (usually from a Target object) and uploads it to couchdb'''
@@ -26,6 +27,20 @@ class ParserUploader:
                 self.__get_sql()
                 self.__get_xss()
                 self.__get_bsql()
+		self.__reverse_url()
+
+	def __reverse_url(self):
+
+		#starting with http://www.google.com
+		out = urlparse.urlparse(self.url)
+		#http or https is the first element
+		self.protocol = out.scheme
+		#www.google.com -> [www,google,com]
+		url_list = out.netloc.split(".")
+		#list becomes -> [www,google,com]
+		url_list.reverse()
+		#return com.google.www
+		self.url_reversed = ".".join(url_list)
 
 	def __get_sql(self):
 		'''Gets the sql injection bugs'''
@@ -117,47 +132,69 @@ class ParserUploader:
 
 		conn.add(solr_doc_pull)
 
+	def solr_details_update(self):
+		'''This updates the Solr that will hold all of the bug details'''
+
+		conn = pysolr.Solr('http://hg-solr-details:8080/solr/')
+		bug_list_to_index = []
+		c = 0 
+
+		for bug in self.xss_bugs_dic_list:
+
+			c = c + 1
+			bug_dict = {}
+			bug_dict["v_url"] = bug["url"]
+			bug_dict["url_main"] = self.url_reversed
+			bug_dict["id"] = self.url_reversed + "." + str(c)
+			bug_dict["bugtype"] = "xss"
+			bug_dict["level"] = bug["level"]
+			bug_dict["parameter"] = bug["parameter"]
+			bug_dict["info"] = bug["info"]
+			bug_dict["protocol"] = self.protocol
+			bug_list_to_index.append(bug_dict)
+
+		for bug in self.sql_bugs_dic_list:
+
+			c = c + 1
+                        bug_dict = {}
+                        bug_dict["v_url"] = bug["url"]
+			bug_dict["id"] = self.url_reversed + "." + str(c)
+			bug_dict["url_main"] = self.url_reversed
+                        bug_dict["bugtype"] = "sqli"
+                        bug_dict["level"] = bug["level"]
+                        bug_dict["parameter"] = bug["parameter"]
+                        bug_dict["info"] = bug["info"]
+			bug_dict["protocol"] = self.protocol
+			bug_list_to_index.append(bug_dict)
+
+		for bug in self.bsql_bugs_dic_list:
+
+			c = c + 1
+                        bug_dict = {}
+                        bug_dict["v_url"] = bug["url"]
+                        bug_dict["url_main"] = self.url_reversed
+			bug_dict["id"] = self.url_reversed + "." + str(c)
+                        bug_dict["bugtype"] = "bsqli"
+                        bug_dict["level"] = bug["level"]
+                        bug_dict["parameter"] = bug["parameter"]
+                        bug_dict["info"] = bug["info"]
+			bug_dict["protocol"] = self.protocol
+			bug_list_to_index.append(bug_dict)
+
+		conn.delete(q="url_main:" + self.url_reversed)
+		conn.add(bug_list_to_index)
+
 	def scdb_index(self):
 		'''This indexes vulnerabilities to couchdb and updates the timestamp and number of vulns in solr'''
 
-		#! change connection string in production
-		server = Server('http://hg-couchdb:5984')
-
-		#! set db name for production
-		try:
-        		db = server['vulnerabilities']
-		except Exception:
-        		db = server.create('vulnerabilities')
-
-		class Vulns(Document):
-
-		        _id = TextField()
-        		url = TextField()
-        		vulnis = ListField(DictField())
-        		added = DateTimeField(default=datetime.datetime.now())
-        		xss = ListField(DictField())
-        		sqli = ListField(DictField())
-        		bsqli = ListField(DictField())
-#!        		execu = ListField(DictField())
-
-		try:
-
-			vulns = Vulns(_id = self.url, url = self.url, xss = self.xss_bugs_dic_list, sqli = self.sql_bugs_dic_list, bsqli = self.bsql_bugs_dic_list)
-			db.save(vulns)
-			print "Saved a new doc"
-
-		except:
-
-			couch_doc = db[self.url]
-			couch_doc['xss'] = self.xss_bugs_dic_list
-			couch_doc['sqli'] = self.sql_bugs_dic_list
-			couch_doc['bsqli'] = self.bsql_bugs_dic_list
-#!			couch_doc['execu'] = self.exec_bugs_dic_list
-			db.save(couch_doc)
-			print "Updated a doc"
-
-		print "Updating Solr..."
+		print "Updating Solr summary..."
 		self.solr_update(len(self.xss_bugs_dic_list), len(self.sql_bugs_dic_list), len(self.bsql_bugs_dic_list))
+
+		print "Updating Solr details..."
+		if len(self.xss_bugs_dic_list) != 0 or len(self.sql_bugs_dic_list) != 0 or len(self.bsql_bugs_dic_list) != 0:
+			self.solr_details_update()
+		else:
+			print "No bugs found! Skipping indexing to Solr details..."
 
 class PunkSolr():
 	'''This class pulls URLs from solr in a variety of ways for later scanning'''
@@ -185,14 +222,12 @@ class Target():
 
 		self.punk_solr = PunkSolr()
 		self.timestamp = datetime.datetime.now()
-#		self.seturl(self, url, "out.xml")
 
 	def set_url(self, url, outfile):
 
 		self.url = url
 		self.opt_list = [('-o', outfile), ('-f', 'xml'), ('-b', 'domain'), ('-v', '2'), ('-u', ''), ('-n', '1'), ('-t', '5'),\
-#!		('-m', '-all,xss:get,sql:get,blindsql:get')]
-		('-m', '-all,sql:get')]
+		('-m', '-all,xss:get,sql:get,blindsql:get')]
 		
 
 	def update_vscan_tstamp(self):
