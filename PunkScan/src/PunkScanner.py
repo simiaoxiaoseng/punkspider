@@ -181,7 +181,7 @@ class ParserUploader:
 			bug_dict["protocol"] = self.protocol
 			bug_list_to_index.append(bug_dict)
 
-		conn.delete(q="url_main:" + self.url_reversed)
+		conn.delete(q="url_main:" + "\"" + self.url_reversed + "\"")
 		conn.add(bug_list_to_index)
 
 	def scdb_index(self):
