@@ -37,7 +37,7 @@ class ParserUploader:
 		self.protocol = out.scheme
 		#www.google.com -> [www,google,com]
 		url_list = out.netloc.split(".")
-		#list becomes -> [www,google,com]
+		#list becomes -> [com,google,www]
 		url_list.reverse()
 		#return com.google.www
 		self.url_reversed = ".".join(url_list)
@@ -120,7 +120,7 @@ class ParserUploader:
 
 	def solr_update(self, n_xss, n_sql, n_bsql):
 
-		conn = pysolr.Solr('http://hg-solr:8080/solr/')
+		conn = pysolr.Solr('http://hg-solr:8080/solr/summary/')
 		solr_doc_pull = conn.search("id:" + " \"" + self.url + "\" ")
 		vscan_tstamp = datetime.datetime.now()
 
@@ -135,7 +135,7 @@ class ParserUploader:
 	def solr_details_update(self):
 		'''This updates the Solr that will hold all of the bug details'''
 
-		conn = pysolr.Solr('http://hg-solr-details:8080/solr/')
+		conn = pysolr.Solr('http://hg-solr:8080/solr/detail')
 		bug_list_to_index = []
 		c = 0 
 
@@ -201,7 +201,7 @@ class PunkSolr():
 
 	def __init__(self):
 
-                self.conn = pysolr.Solr("http://hg-solr:8080/solr/")
+                self.conn = pysolr.Solr("http://hg-solr:8080/solr/summary/")
 
 	def get_not_scanned(self):
 		'''get solr records with no vscan timestamp'''
@@ -227,12 +227,13 @@ class Target():
 
 		self.url = url
 		self.opt_list = [('-o', outfile), ('-f', 'xml'), ('-b', 'domain'), ('-v', '2'), ('-u', ''), ('-n', '1'), ('-t', '5'),\
-		('-m', '-all,xss:get,sql:get,blindsql:get')]
+#!		('-m', '-all,xss:get,sql:get,blindsql:get')]
+		('-m', '-all,xss:get,sql:get')]
 		
 
 	def update_vscan_tstamp(self):
 
-                conn = pysolr.Solr('http://hg-solr:8080/solr/')
+                conn = pysolr.Solr('http://hg-solr:8080/solr/summary/')
                 solr_doc_pull = conn.search("id:" + " \"" + self.url + "\" ")
                 vscan_tstamp = datetime.datetime.now()
 
@@ -243,7 +244,7 @@ class Target():
 
 	def delete_vscan_tstamp(self):
 
-                conn = pysolr.Solr('http://hg-solr:8080/solr/')
+                conn = pysolr.Solr('http://hg-solr:8080/solr/summary/')
                 solr_doc_pull = conn.search("id:" + " \"" + self.url + "\" ")
 
                 for result in solr_doc_pull:
