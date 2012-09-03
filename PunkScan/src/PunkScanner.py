@@ -4,14 +4,10 @@ import traceback
 sys.path.append('wapiti-2.2.1/src/')
 sys.path.append('pysolr/')
 sys.path.append('xmltodict/')
-sys.path.append('couchdb/')
 import wapiti
 import pysolr
 import datetime
 from lxml import etree
-from couchdb import Server
-from couchdb.client import Server, Document
-from couchdb.mapping import TextField, DateTimeField, ListField, DictField
 import subprocess
 import time
 import urlparse
