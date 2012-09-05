@@ -284,7 +284,7 @@ if __name__ == "__main__":
 
 		target = Target()
 		target.set_url(site_to_scan['url'], 'out.xml')
-		target.update_vscan_tstamp
+		target.update_vscan_tstamp()
 
 		try:
 			scan_result = target.punk_scan()
