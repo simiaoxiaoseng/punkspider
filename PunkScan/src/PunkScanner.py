@@ -181,17 +181,24 @@ class ParserUploader:
 		conn.delete(q="url_main:" + "\"" + self.url_reversed + "\"")
 		conn.add(bug_list_to_index)
 
-	def scdb_index(self):
+	def scdb_index(self, manual_override_all_zero = False):
 		'''This indexes vulnerabilities to couchdb and updates the timestamp and number of vulns in solr'''
 
-		print "Updating Solr summary..."
-		self.solr_update(len(self.xss_bugs_dic_list), len(self.sql_bugs_dic_list), len(self.bsql_bugs_dic_list))
+		if manual_override_all_zero == True:
 
-		print "Updating Solr details..."
-		if len(self.xss_bugs_dic_list) != 0 or len(self.sql_bugs_dic_list) != 0 or len(self.bsql_bugs_dic_list) != 0:
-			self.solr_details_update()
+			print "Got manual override, setting all vulnerabilities to 0"
+			self.solr_update(0, 0, 0)
+
 		else:
-			print "No bugs found! Skipping indexing to Solr details..."
+
+			print "Updating Solr summary..."
+			self.solr_update(len(self.xss_bugs_dic_list), len(self.sql_bugs_dic_list), len(self.bsql_bugs_dic_list))
+
+			print "Updating Solr details..."
+			if len(self.xss_bugs_dic_list) != 0 or len(self.sql_bugs_dic_list) != 0 or len(self.bsql_bugs_dic_list) != 0:
+				self.solr_details_update()
+			else:
+				print "No bugs found! Skipping indexing to Solr details..."
 
 class PunkSolr():
 	'''This class pulls URLs from solr in a variety of ways for later scanning'''
@@ -288,19 +295,24 @@ if __name__ == "__main__":
 
 		try:
 			scan_result = target.punk_scan()
+
 		except:
+
+			print "scan failed once, trying the scan again"
 			traceback.print_exc(file=sys.stdout)
+
 			try:
 				scan_result = target.punk_scan()
 
 			except:
-				print "Scanning failed! Deleting troublesome record..."
-				target.delete_record()
+			
+				traceback.print_exc(file=sys.stdout)
+				print "Scan failed for a second time, leaving it as is, with no results"
 				sites_failed = sites_failed + 1
 				continue
 
                 scan_url = target.url
-                ParserUploader(scan_result, scan_url).scdb_index()
+    		ParserUploader(scan_result, scan_url).scdb_index()
 
                 end_scan = datetime.datetime.now()
                 scan_time_delta = end_scan - start_scan
