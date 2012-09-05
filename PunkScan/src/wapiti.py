@@ -407,7 +407,7 @@ Supported options are:
           crawlerFile = crawlerPersister.CRAWLER_DATA_DIR + '/' + \
               (url.split("://")[1]).split("/")[0] + '.xml'
 
-      print _("PunkScanner v0.1 - Powered by Wapiti")
+      print _("PunkScanner v1.0.0 - Powered by Wapiti")
 
       self.browse(crawlerFile)
       try:
