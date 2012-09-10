@@ -239,9 +239,9 @@ class Target():
 	def set_url(self, url, outfile):
 
 		self.url = url
-		self.opt_list = [('-o', outfile), ('-f', 'xml'), ('-b', 'domain'), ('-v', '2'), ('-u', ''), ('-n', '1'), ('-t', '5'),\
+		self.opt_list = [('-o', outfile), ('-f', 'xml'), ('-b', 'domain'), ('-v', '2'), ('-u', ''), ('-n', '1'), ('-t', '25'),\
 #!		('-m', '-all,xss:get,sql:get,blindsql:get')]
-		('-m', '-all,xss:get,sql:get')]		
+		('-m', '-all,xss:get,sql:get'), ('-p','tor://127.0.0.1:9066')]
 
 	def update_vscan_tstamp(self):
 

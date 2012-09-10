@@ -1,0 +1,3907 @@
+
+
+***getting a new website to scan***
+
+
+{'url': 'http://chainsaw.blogfa.com/', 'segment': '20120810130028', 'tstamp': '2012-08-10T13:19:23.945Z', 'anchor': [u'\u0627\u0631\u0647 \u0628\u0631\u0642\u06cc', u'\u0627\u0631\u0647 \u0628\u0631\u0642\u064a', u'\u0627\u0631\u0647 \u0628\u0631\u0642\u064a'], 'boost': 3.4254929e-06, 'id': 'http://chainsaw.blogfa.com/', 'digest': '0ef435a3f03613aeabaf2270d98f6cd4'}
+PunkScanner v1.0.0 - Powered by Wapiti
+the number of urls browsed is 0
+http://chainsaw.blogfa.com/
+
+ Notice 
+========
+This scan has been saved in the file /home/punk/HGDev/punkscan/punkscan/PunkScan/src/scans/chainsaw.blogfa.com.xml
+No links or forms with parameters found in this page, skipping scan stage !
+[*] Loading modules :
+	mod_crlf, mod_exec, mod_file, mod_sql, mod_xss, mod_backup, mod_htaccess, mod_blindsql, mod_permanentxss, mod_nikto
+[<attack.mod_exec.mod_exec instance at 0x1c389e0>, <attack.mod_file.mod_file instance at 0x1c38ab8>, <attack.mod_backup.mod_backup instance at 0x1c415a8>, <attack.mod_htaccess.mod_htaccess instance at 0x1c41758>, <attack.mod_crlf.mod_crlf instance at 0x1c41b48>, <attack.mod_xss.mod_xss instance at 0x1c41c68>, <attack.mod_sql.mod_sql instance at 0x1c49050>, <attack.mod_nikto.mod_nikto instance at 0x1c49950>, <attack.mod_blindsql.mod_blindsql instance at 0x1c38f80>, <attack.mod_permanentxss.mod_permanentxss instance at 0x1c41878>]
+
+[+] Launching module xss
+
+[+] Launching module sql
+
+Report
+------
+A report has been generated in the file out.xml
+out.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<report type="security">
+    <generatedBy id="Wapiti 2.2.1"/>
+    <bugTypeList>
+        <bugType name="SQL Injection">
+            <bugList/>
+            <description>
+<![CDATA[SQL injection is a technique that exploits a vulnerability occurring in the database of an application.]]>            </description>
+            <solution>
+<![CDATA[To protect against SQL injection, user input must not directly be embedded in SQL statements. Instead, user input must be escaped or filtered or parameterized statements must be used.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/SQL_Injection</title>
+                    <url>http://www.owasp.org/index.php/SQL_Injection</url>
+                </reference>
+                <reference>
+                    <title>http://en.wikipedia.org/wiki/SQL_injection</title>
+                    <url>http://en.wikipedia.org/wiki/SQL_injection</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Blind SQL Injection">
+            <bugList/>
+            <description>
+<![CDATA[Blind SQL injection is a technique that exploits a vulnerability occurring in the database of an application. This kind of vulnerability is harder to detect than basic SQL injections because no error message will be displayed on the webpage.]]>            </description>
+            <solution>
+<![CDATA[To protect against SQL injection, user input must not directly be embedded in SQL statements. Instead, user input must be escaped or filtered or parameterized statements must be used.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.imperva.com/resources/adc/blind_sql_server_injection.html</title>
+                    <url>http://www.imperva.com/resources/adc/blind_sql_server_injection.html</url>
+                </reference>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Blind_SQL_Injection</title>
+                    <url>http://www.owasp.org/index.php/Blind_SQL_Injection</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="File Handling">
+            <bugList/>
+            <description>
+<![CDATA[This attack is also known as Path Transversal or Directory Transversal, its aim is the access to files and directories that are stored outside the web root folder. The attacker tries to explore the directories stored in the web server. The attacker uses some techniques, for instance, the manipulation of variables that reference files with 'dot-dot-slash (../)' sequences and its variations to move up to root directory to navigate through the file system.]]>            </description>
+            <solution>
+<![CDATA[Prefer working without user input when using file system calls<br>Use indexes rather than actual portions of file names when templating or using language files (ie value 5 from the user submission = Czechoslovakian, rather than expecting the user to return 'Czechoslovakian').<br>Ensure the user cannot supply all parts of the path – surround it with your path code.<br>Validate the user’s input by only accepting known good – do not sanitize the data.<br>Use chrooted jails and code access policies to restrict where the files can be obtained or saved to.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Path_Traversal</title>
+                    <url>http://www.owasp.org/index.php/Path_Traversal</url>
+                </reference>
+                <reference>
+                    <title>http://www.acunetix.com/websitesecurity/directory-traversal.htm</title>
+                    <url>http://www.acunetix.com/websitesecurity/directory-traversal.htm</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Cross Site Scripting">
+            <bugList/>
+            <description>
+<![CDATA[Cross-site scripting (XSS) is a type of computer security vulnerability typically found in web applications which allow code injection by malicious web users into the web pages viewed by other users. Examples of such code include HTML code and client-side scripts.]]>            </description>
+            <solution>
+<![CDATA[The best way to protect a web application from XSS attacks is ensure that the application performs validation of all headers, cookies, query strings, form fields, and hidden fields. Encoding user supplied output in the server side can also defeat XSS vulnerabilities by preventing inserted scripts from being transmitted to users in an executable form. Applications can gain significant protection from javascript based attacks by converting the following characters in all generated output to the appropriate HTML entity encoding:  &lt;, &gt;, &amp;, &quot;, ', (, ), #, %, ; , +, -.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://en.wikipedia.org/wiki/Cross-site_scripting</title>
+                    <url>http://en.wikipedia.org/wiki/Cross-site_scripting</url>
+                </reference>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Cross_Site_Scripting</title>
+                    <url>http://www.owasp.org/index.php/Cross_Site_Scripting</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="CRLF">
+            <bugList/>
+            <description>
+<![CDATA[The term CRLF refers to Carriage Return (ASCII 13, \r) Line Feed (ASCII 10, \n). They're used to note the termination of a line, however, dealt with differently in today’s popular Operating Systems. For example: in Windows both a CR and LF are required to note the end of a line, whereas in Linux/UNIX a LF is only required. This combination of CR and LR is used for example when pressing 'Enter' on the keyboard. Depending on the application being used, pressing 'Enter' generally instructs the application to start a new line, or to send a command.]]>            </description>
+            <solution>
+<![CDATA[Check the submitted parameters and do not allow CRLF to be injected by filtering CRLF]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/CRLF_Injection</title>
+                    <url>http://www.owasp.org/index.php/CRLF_Injection</url>
+                </reference>
+                <reference>
+                    <title>http://www.acunetix.com/websitesecurity/crlf-injection.htm</title>
+                    <url>http://www.acunetix.com/websitesecurity/crlf-injection.htm</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Commands execution">
+            <bugList/>
+            <description>
+<![CDATA[This attack consists in executing system commands on the server. The attacker tries to inject this commands in the request parameters]]>            </description>
+            <solution>
+<![CDATA[Prefer working without user input when using file system calls]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Command_Injection</title>
+                    <url>http://www.owasp.org/index.php/Command_Injection</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Resource consumption">
+            <bugList/>
+            <description>
+<![CDATA[An attacker can force a victim to consume more resources than should be allowed for the attacker's level of access. The program can potentially fail to release or incorrectly release a system resource. A resource is not properly cleared and made available for re-use. It can also be a false-positive due to a too short timeout used for the scan.]]>            </description>
+            <solution>
+<![CDATA[Configure properly the software giving the ressource to avoid memory consumption or system load.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Asymmetric_resource_consumption_(amplification)</title>
+                    <url>http://www.owasp.org/index.php/Asymmetric_resource_consumption_(amplification)</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Htaccess Bypass">
+            <bugList/>
+            <description>
+<![CDATA[htaccess files are used to restrict access to some files or HTTP method. In some case it may be possible to bypass this restriction and access the files.]]>            </description>
+            <solution>
+<![CDATA[Make sure every HTTP method is forbidden if the credentials are bad.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://blog.teusink.net/2009/07/common-apache-htaccess-misconfiguration.html</title>
+                    <url>http://blog.teusink.net/2009/07/common-apache-htaccess-misconfiguration.html</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Backup file">
+            <bugList/>
+            <description>
+<![CDATA[It may be possible to find backup files of scripts on the webserver that thewebadmin put here to save a previous version or backup files that are automaticallygenerated by the software editor used (like for example Emacs). These copies may revealinteresting informations like source code or credentials]]>            </description>
+            <solution>
+<![CDATA[The webadmin must manually delete the backup files or remove it from the web root. He shouldalso reconfigure its editor to deactivate automatic backups]]>            </solution>
+            <references>
+                <reference>
+                    <title>Testing for Old, Backup and Unreferenced Files (OWASP-CM-006)</title>
+                    <url>http://www.owasp.org/index.php/Testing_for_Old,_Backup_and_Unreferenced_Files_(OWASP-CM-006)</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Potentially dangerous file">
+            <bugList/>
+            <description>
+<![CDATA[Some scripts are known to be vulnerable or dangerous. Databases of such files exists and attackers often scan websites to find such vulnerabilities and exploit them. ]]>            </description>
+            <solution>
+<![CDATA[The administrator should frequently check for new version of the scripts used on his server and keep informed of vulnerabilities in the software programs he uses by reading security-list or specialised RSS.]]>            </solution>
+            <references>
+                <reference>
+                    <title>The Open Source Vulnerability Database</title>
+                    <url>http://osvdb.org/</url>
+                </reference>
+            </references>
+        </bugType>
+    </bugTypeList>
+</report>
+
+Updating Solr summary...
+Updating Solr details...
+No bugs found! Skipping indexing to Solr details...
+Scan took 0.0516590833333 minutes to run.
+1 sites scanned so far. That's a rate of 27875.0590813 sites per day
+finished scanning successfully
+*****So far 0 sites have failed to scan*****
+
+
+***getting a new website to scan***
+
+
+{'url': 'http://chakavak-ms.blogfa.com/', 'segment': '20120810130028', 'tstamp': '2012-08-10T13:04:16.505Z', 'anchor': [u'\u067e\u0631\u0648\u0627\u0632 \u062a\u0627 \u0627\u0648\u062c', u'\u067e\u0631\u0648\u0627\u0632 \u062a\u0627 \u0627\u0648\u062c', u'\u067e\u0631\u0648\u0627\u0632 \u062a\u0627 \u0627\u0648\u062c!!!!'], 'boost': 3.4346965e-06, 'id': 'http://chakavak-ms.blogfa.com/', 'digest': '281a3ab046fb8064fd5ee1b61cd29b9f'}
+PunkScanner v1.0.0 - Powered by Wapiti
+the number of urls browsed is 0
+http://chakavak-ms.blogfa.com/
+the number of urls browsed is 1
+http://chakavak-ms.blogfa.com
+the number of urls browsed is 2
+http://chakavak-ms.blogfa.com/post/45
+the number of urls browsed is 3
+http://chakavak-ms.blogfa.com/post/50
+the number of urls browsed is 4
+http://chakavak-ms.blogfa.com/post/49
+the number of urls browsed is 5
+http://chakavak-ms.blogfa.com/post/48
+the number of urls browsed is 6
+http://chakavak-ms.blogfa.com/post/47
+the number of urls browsed is 7
+http://chakavak-ms.blogfa.com/post/46
+the number of urls browsed is 8
+http://chakavak-ms.blogfa.com/post/44
+the number of urls browsed is 9
+http://chakavak-ms.blogfa.com/post/43
+the number of urls browsed is 10
+http://chakavak-ms.blogfa.com/post/42
+the number of urls browsed is 11
+http://chakavak-ms.blogfa.com/post/41
+the number of urls browsed is 12
+http://chakavak-ms.blogfa.com/Profile/
+the number of urls browsed is 13
+http://chakavak-ms.blogfa.com/1391/06
+the number of urls browsed is 14
+http://chakavak-ms.blogfa.com/1391/05
+the number of urls browsed is 15
+http://chakavak-ms.blogfa.com/1391/04
+the number of urls browsed is 16
+http://chakavak-ms.blogfa.com/1391/03
+the number of urls browsed is 17
+http://chakavak-ms.blogfa.com/1391/02
+the number of urls browsed is 18
+the number of urls browsed is 18
+the number of urls browsed is 18
+the number of urls browsed is 18
+the number of urls browsed is 18
+the number of urls browsed is 18
+the number of urls browsed is 18
+the number of urls browsed is 18
+the number of urls browsed is 18
+the number of urls browsed is 18
+the number of urls browsed is 18
+the number of urls browsed is 18
+the number of urls browsed is 18
+http://chakavak-ms.blogfa.com/post/40
+the number of urls browsed is 19
+http://chakavak-ms.blogfa.com/post/39
+the number of urls browsed is 20
+http://chakavak-ms.blogfa.com/post/38
+the number of urls browsed is 21
+http://chakavak-ms.blogfa.com/post/37
+the number of urls browsed is 22
+http://chakavak-ms.blogfa.com/post/36
+the number of urls browsed is 23
+the number of urls browsed is 23
+http://chakavak-ms.blogfa.com/post/35
+the number of urls browsed is 24
+http://chakavak-ms.blogfa.com/post/34
+the number of urls browsed is 25
+http://chakavak-ms.blogfa.com/post/33
+the number of urls browsed is 26
+http://chakavak-ms.blogfa.com/post/32
+the number of urls browsed is 27
+http://chakavak-ms.blogfa.com/post/30
+the number of urls browsed is 28
+http://chakavak-ms.blogfa.com/post/29
+the number of urls browsed is 29
+http://chakavak-ms.blogfa.com/post/28
+the number of urls browsed is 30
+http://chakavak-ms.blogfa.com/post/27
+the number of urls browsed is 31
+http://chakavak-ms.blogfa.com/post/26
+the number of urls browsed is 32
+http://chakavak-ms.blogfa.com/post/25
+the number of urls browsed is 33
+the number of urls browsed is 33
+http://chakavak-ms.blogfa.com/post/24
+the number of urls browsed is 34
+http://chakavak-ms.blogfa.com/post/23
+the number of urls browsed is 35
+http://chakavak-ms.blogfa.com/post/22
+the number of urls browsed is 36
+http://chakavak-ms.blogfa.com/post/21
+the number of urls browsed is 37
+http://chakavak-ms.blogfa.com/post/20
+the number of urls browsed is 38
+http://chakavak-ms.blogfa.com/post/19
+the number of urls browsed is 39
+http://chakavak-ms.blogfa.com/post/18
+the number of urls browsed is 40
+http://chakavak-ms.blogfa.com/post/17
+the number of urls browsed is 41
+http://chakavak-ms.blogfa.com/post/16
+the number of urls browsed is 42
+http://chakavak-ms.blogfa.com/post/15
+the number of urls browsed is 43
+http://chakavak-ms.blogfa.com/post/14
+the number of urls browsed is 44
+http://chakavak-ms.blogfa.com/post/13
+the number of urls browsed is 45
+http://chakavak-ms.blogfa.com/post/12
+the number of urls browsed is 46
+http://chakavak-ms.blogfa.com/post/11
+the number of urls browsed is 47
+http://chakavak-ms.blogfa.com/post/10
+the number of urls browsed is 48
+http://chakavak-ms.blogfa.com/post/9
+the number of urls browsed is 49
+http://chakavak-ms.blogfa.com/post/8
+the number of urls browsed is 50
+http://chakavak-ms.blogfa.com/post/7
+the number of urls browsed is 51
+http://chakavak-ms.blogfa.com/post/6
+the number of urls browsed is 52
+http://chakavak-ms.blogfa.com/post/5
+the number of urls browsed is 53
+the number of urls browsed is 53
+http://chakavak-ms.blogfa.com/post/4
+the number of urls browsed is 54
+http://chakavak-ms.blogfa.com/post/3
+the number of urls browsed is 55
+http://chakavak-ms.blogfa.com/post/2
+the number of urls browsed is 56
+http://chakavak-ms.blogfa.com/post/1
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+the number of urls browsed is 57
+
+ Notice 
+========
+This scan has been saved in the file /home/punk/HGDev/punkscan/punkscan/PunkScan/src/scans/chakavak-ms.blogfa.com.xml
+No links or forms with parameters found in this page, skipping scan stage !
+[*] Loading modules :
+	mod_crlf, mod_exec, mod_file, mod_sql, mod_xss, mod_backup, mod_htaccess, mod_blindsql, mod_permanentxss, mod_nikto
+[<attack.mod_exec.mod_exec instance at 0x1fb5290>, <attack.mod_file.mod_file instance at 0x1fb5320>, <attack.mod_backup.mod_backup instance at 0x1fb57a0>, <attack.mod_htaccess.mod_htaccess instance at 0x1fb5830>, <attack.mod_crlf.mod_crlf instance at 0x1fb59e0>, <attack.mod_xss.mod_xss instance at 0x1fb5a70>, <attack.mod_sql.mod_sql instance at 0x1fb5b90>, <attack.mod_nikto.mod_nikto instance at 0x1fb5c20>, <attack.mod_blindsql.mod_blindsql instance at 0x1fb53b0>, <attack.mod_permanentxss.mod_permanentxss instance at 0x1fb58c0>]
+
+[+] Launching module xss
+
+[+] Launching module sql
+
+Report
+------
+A report has been generated in the file out.xml
+out.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<report type="security">
+    <generatedBy id="Wapiti 2.2.1"/>
+    <bugTypeList>
+        <bugType name="SQL Injection">
+            <bugList/>
+            <description>
+<![CDATA[SQL injection is a technique that exploits a vulnerability occurring in the database of an application.]]>            </description>
+            <solution>
+<![CDATA[To protect against SQL injection, user input must not directly be embedded in SQL statements. Instead, user input must be escaped or filtered or parameterized statements must be used.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/SQL_Injection</title>
+                    <url>http://www.owasp.org/index.php/SQL_Injection</url>
+                </reference>
+                <reference>
+                    <title>http://en.wikipedia.org/wiki/SQL_injection</title>
+                    <url>http://en.wikipedia.org/wiki/SQL_injection</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Blind SQL Injection">
+            <bugList/>
+            <description>
+<![CDATA[Blind SQL injection is a technique that exploits a vulnerability occurring in the database of an application. This kind of vulnerability is harder to detect than basic SQL injections because no error message will be displayed on the webpage.]]>            </description>
+            <solution>
+<![CDATA[To protect against SQL injection, user input must not directly be embedded in SQL statements. Instead, user input must be escaped or filtered or parameterized statements must be used.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.imperva.com/resources/adc/blind_sql_server_injection.html</title>
+                    <url>http://www.imperva.com/resources/adc/blind_sql_server_injection.html</url>
+                </reference>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Blind_SQL_Injection</title>
+                    <url>http://www.owasp.org/index.php/Blind_SQL_Injection</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="File Handling">
+            <bugList/>
+            <description>
+<![CDATA[This attack is also known as Path Transversal or Directory Transversal, its aim is the access to files and directories that are stored outside the web root folder. The attacker tries to explore the directories stored in the web server. The attacker uses some techniques, for instance, the manipulation of variables that reference files with 'dot-dot-slash (../)' sequences and its variations to move up to root directory to navigate through the file system.]]>            </description>
+            <solution>
+<![CDATA[Prefer working without user input when using file system calls<br>Use indexes rather than actual portions of file names when templating or using language files (ie value 5 from the user submission = Czechoslovakian, rather than expecting the user to return 'Czechoslovakian').<br>Ensure the user cannot supply all parts of the path – surround it with your path code.<br>Validate the user’s input by only accepting known good – do not sanitize the data.<br>Use chrooted jails and code access policies to restrict where the files can be obtained or saved to.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Path_Traversal</title>
+                    <url>http://www.owasp.org/index.php/Path_Traversal</url>
+                </reference>
+                <reference>
+                    <title>http://www.acunetix.com/websitesecurity/directory-traversal.htm</title>
+                    <url>http://www.acunetix.com/websitesecurity/directory-traversal.htm</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Cross Site Scripting">
+            <bugList/>
+            <description>
+<![CDATA[Cross-site scripting (XSS) is a type of computer security vulnerability typically found in web applications which allow code injection by malicious web users into the web pages viewed by other users. Examples of such code include HTML code and client-side scripts.]]>            </description>
+            <solution>
+<![CDATA[The best way to protect a web application from XSS attacks is ensure that the application performs validation of all headers, cookies, query strings, form fields, and hidden fields. Encoding user supplied output in the server side can also defeat XSS vulnerabilities by preventing inserted scripts from being transmitted to users in an executable form. Applications can gain significant protection from javascript based attacks by converting the following characters in all generated output to the appropriate HTML entity encoding:  &lt;, &gt;, &amp;, &quot;, ', (, ), #, %, ; , +, -.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://en.wikipedia.org/wiki/Cross-site_scripting</title>
+                    <url>http://en.wikipedia.org/wiki/Cross-site_scripting</url>
+                </reference>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Cross_Site_Scripting</title>
+                    <url>http://www.owasp.org/index.php/Cross_Site_Scripting</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="CRLF">
+            <bugList/>
+            <description>
+<![CDATA[The term CRLF refers to Carriage Return (ASCII 13, \r) Line Feed (ASCII 10, \n). They're used to note the termination of a line, however, dealt with differently in today’s popular Operating Systems. For example: in Windows both a CR and LF are required to note the end of a line, whereas in Linux/UNIX a LF is only required. This combination of CR and LR is used for example when pressing 'Enter' on the keyboard. Depending on the application being used, pressing 'Enter' generally instructs the application to start a new line, or to send a command.]]>            </description>
+            <solution>
+<![CDATA[Check the submitted parameters and do not allow CRLF to be injected by filtering CRLF]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/CRLF_Injection</title>
+                    <url>http://www.owasp.org/index.php/CRLF_Injection</url>
+                </reference>
+                <reference>
+                    <title>http://www.acunetix.com/websitesecurity/crlf-injection.htm</title>
+                    <url>http://www.acunetix.com/websitesecurity/crlf-injection.htm</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Commands execution">
+            <bugList/>
+            <description>
+<![CDATA[This attack consists in executing system commands on the server. The attacker tries to inject this commands in the request parameters]]>            </description>
+            <solution>
+<![CDATA[Prefer working without user input when using file system calls]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Command_Injection</title>
+                    <url>http://www.owasp.org/index.php/Command_Injection</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Resource consumption">
+            <bugList/>
+            <description>
+<![CDATA[An attacker can force a victim to consume more resources than should be allowed for the attacker's level of access. The program can potentially fail to release or incorrectly release a system resource. A resource is not properly cleared and made available for re-use. It can also be a false-positive due to a too short timeout used for the scan.]]>            </description>
+            <solution>
+<![CDATA[Configure properly the software giving the ressource to avoid memory consumption or system load.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Asymmetric_resource_consumption_(amplification)</title>
+                    <url>http://www.owasp.org/index.php/Asymmetric_resource_consumption_(amplification)</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Htaccess Bypass">
+            <bugList/>
+            <description>
+<![CDATA[htaccess files are used to restrict access to some files or HTTP method. In some case it may be possible to bypass this restriction and access the files.]]>            </description>
+            <solution>
+<![CDATA[Make sure every HTTP method is forbidden if the credentials are bad.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://blog.teusink.net/2009/07/common-apache-htaccess-misconfiguration.html</title>
+                    <url>http://blog.teusink.net/2009/07/common-apache-htaccess-misconfiguration.html</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Backup file">
+            <bugList/>
+            <description>
+<![CDATA[It may be possible to find backup files of scripts on the webserver that thewebadmin put here to save a previous version or backup files that are automaticallygenerated by the software editor used (like for example Emacs). These copies may revealinteresting informations like source code or credentials]]>            </description>
+            <solution>
+<![CDATA[The webadmin must manually delete the backup files or remove it from the web root. He shouldalso reconfigure its editor to deactivate automatic backups]]>            </solution>
+            <references>
+                <reference>
+                    <title>Testing for Old, Backup and Unreferenced Files (OWASP-CM-006)</title>
+                    <url>http://www.owasp.org/index.php/Testing_for_Old,_Backup_and_Unreferenced_Files_(OWASP-CM-006)</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Potentially dangerous file">
+            <bugList/>
+            <description>
+<![CDATA[Some scripts are known to be vulnerable or dangerous. Databases of such files exists and attackers often scan websites to find such vulnerabilities and exploit them. ]]>            </description>
+            <solution>
+<![CDATA[The administrator should frequently check for new version of the scripts used on his server and keep informed of vulnerabilities in the software programs he uses by reading security-list or specialised RSS.]]>            </solution>
+            <references>
+                <reference>
+                    <title>The Open Source Vulnerability Database</title>
+                    <url>http://osvdb.org/</url>
+                </reference>
+            </references>
+        </bugType>
+    </bugTypeList>
+</report>
+
+Updating Solr summary...
+Updating Solr details...
+No bugs found! Skipping indexing to Solr details...
+Scan took 0.977157066667 minutes to run.
+2 sites scanned so far. That's a rate of 2799.33397235 sites per day
+finished scanning successfully
+*****So far 0 sites have failed to scan*****
+
+
+***getting a new website to scan***
+
+
+{'title': 'chanson sigeru web', 'url': 'http://chansonsigeru.web.fc2.com/', 'segment': '20120810130028', 'tstamp': '2012-08-10T13:13:40.697Z', 'anchor': ['http://chansonsigeru.web.fc2.com/'], 'boost': 3.3359267e-06, 'id': 'http://chansonsigeru.web.fc2.com/', 'digest': '100a4247f25a5a5b499505acba7ed8c9'}
+PunkScanner v1.0.0 - Powered by Wapiti
+the number of urls browsed is 0
+http://chansonsigeru.web.fc2.com/
+the number of urls browsed is 1
+http://chansonsigeru.web.fc2.com/top.html
+the number of urls browsed is 2
+http://chansonsigeru.web.fc2.com/live.html
+the number of urls browsed is 3
+http://chansonsigeru.web.fc2.com/works.html
+the number of urls browsed is 4
+http://chansonsigeru.web.fc2.com/bio.html
+the number of urls browsed is 5
+http://chansonsigeru.web.fc2.com/link.html
+the number of urls browsed is 6
+http://chansonsigeru.web.fc2.com/gallery.html
+the number of urls browsed is 7
+the number of urls browsed is 7
+http://chansonsigeru.web.fc2.com/liveowari.html
+the number of urls browsed is 8
+http://chansonsigeru.web.fc2.com/forestlimit.com/
+the number of urls browsed is 9
+the number of urls browsed is 9
+the number of urls browsed is 9
+the number of urls browsed is 9
+the number of urls browsed is 9
+http://chansonsigeru.web.fc2.com/borntobetonchi.seesaa.net
+
+ Notice 
+========
+This scan has been saved in the file /home/punk/HGDev/punkscan/punkscan/PunkScan/src/scans/chansonsigeru.web.fc2.com.xml
+No links or forms with parameters found in this page, skipping scan stage !
+[*] Loading modules :
+	mod_crlf, mod_exec, mod_file, mod_sql, mod_xss, mod_backup, mod_htaccess, mod_blindsql, mod_permanentxss, mod_nikto
+[<attack.mod_exec.mod_exec instance at 0x2143098>, <attack.mod_file.mod_file instance at 0x2143050>, <attack.mod_backup.mod_backup instance at 0x2143758>, <attack.mod_htaccess.mod_htaccess instance at 0x2143830>, <attack.mod_crlf.mod_crlf instance at 0x2143b48>, <attack.mod_xss.mod_xss instance at 0x2143cb0>, <attack.mod_sql.mod_sql instance at 0x2143f80>, <attack.mod_nikto.mod_nikto instance at 0x2143d40>, <attack.mod_blindsql.mod_blindsql instance at 0x21436c8>, <attack.mod_permanentxss.mod_permanentxss instance at 0x2143998>]
+
+[+] Launching module xss
+
+[+] Launching module sql
+
+Report
+------
+A report has been generated in the file out.xml
+out.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<report type="security">
+    <generatedBy id="Wapiti 2.2.1"/>
+    <bugTypeList>
+        <bugType name="SQL Injection">
+            <bugList/>
+            <description>
+<![CDATA[SQL injection is a technique that exploits a vulnerability occurring in the database of an application.]]>            </description>
+            <solution>
+<![CDATA[To protect against SQL injection, user input must not directly be embedded in SQL statements. Instead, user input must be escaped or filtered or parameterized statements must be used.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/SQL_Injection</title>
+                    <url>http://www.owasp.org/index.php/SQL_Injection</url>
+                </reference>
+                <reference>
+                    <title>http://en.wikipedia.org/wiki/SQL_injection</title>
+                    <url>http://en.wikipedia.org/wiki/SQL_injection</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Blind SQL Injection">
+            <bugList/>
+            <description>
+<![CDATA[Blind SQL injection is a technique that exploits a vulnerability occurring in the database of an application. This kind of vulnerability is harder to detect than basic SQL injections because no error message will be displayed on the webpage.]]>            </description>
+            <solution>
+<![CDATA[To protect against SQL injection, user input must not directly be embedded in SQL statements. Instead, user input must be escaped or filtered or parameterized statements must be used.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.imperva.com/resources/adc/blind_sql_server_injection.html</title>
+                    <url>http://www.imperva.com/resources/adc/blind_sql_server_injection.html</url>
+                </reference>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Blind_SQL_Injection</title>
+                    <url>http://www.owasp.org/index.php/Blind_SQL_Injection</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="File Handling">
+            <bugList/>
+            <description>
+<![CDATA[This attack is also known as Path Transversal or Directory Transversal, its aim is the access to files and directories that are stored outside the web root folder. The attacker tries to explore the directories stored in the web server. The attacker uses some techniques, for instance, the manipulation of variables that reference files with 'dot-dot-slash (../)' sequences and its variations to move up to root directory to navigate through the file system.]]>            </description>
+            <solution>
+<![CDATA[Prefer working without user input when using file system calls<br>Use indexes rather than actual portions of file names when templating or using language files (ie value 5 from the user submission = Czechoslovakian, rather than expecting the user to return 'Czechoslovakian').<br>Ensure the user cannot supply all parts of the path – surround it with your path code.<br>Validate the user’s input by only accepting known good – do not sanitize the data.<br>Use chrooted jails and code access policies to restrict where the files can be obtained or saved to.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Path_Traversal</title>
+                    <url>http://www.owasp.org/index.php/Path_Traversal</url>
+                </reference>
+                <reference>
+                    <title>http://www.acunetix.com/websitesecurity/directory-traversal.htm</title>
+                    <url>http://www.acunetix.com/websitesecurity/directory-traversal.htm</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Cross Site Scripting">
+            <bugList/>
+            <description>
+<![CDATA[Cross-site scripting (XSS) is a type of computer security vulnerability typically found in web applications which allow code injection by malicious web users into the web pages viewed by other users. Examples of such code include HTML code and client-side scripts.]]>            </description>
+            <solution>
+<![CDATA[The best way to protect a web application from XSS attacks is ensure that the application performs validation of all headers, cookies, query strings, form fields, and hidden fields. Encoding user supplied output in the server side can also defeat XSS vulnerabilities by preventing inserted scripts from being transmitted to users in an executable form. Applications can gain significant protection from javascript based attacks by converting the following characters in all generated output to the appropriate HTML entity encoding:  &lt;, &gt;, &amp;, &quot;, ', (, ), #, %, ; , +, -.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://en.wikipedia.org/wiki/Cross-site_scripting</title>
+                    <url>http://en.wikipedia.org/wiki/Cross-site_scripting</url>
+                </reference>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Cross_Site_Scripting</title>
+                    <url>http://www.owasp.org/index.php/Cross_Site_Scripting</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="CRLF">
+            <bugList/>
+            <description>
+<![CDATA[The term CRLF refers to Carriage Return (ASCII 13, \r) Line Feed (ASCII 10, \n). They're used to note the termination of a line, however, dealt with differently in today’s popular Operating Systems. For example: in Windows both a CR and LF are required to note the end of a line, whereas in Linux/UNIX a LF is only required. This combination of CR and LR is used for example when pressing 'Enter' on the keyboard. Depending on the application being used, pressing 'Enter' generally instructs the application to start a new line, or to send a command.]]>            </description>
+            <solution>
+<![CDATA[Check the submitted parameters and do not allow CRLF to be injected by filtering CRLF]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/CRLF_Injection</title>
+                    <url>http://www.owasp.org/index.php/CRLF_Injection</url>
+                </reference>
+                <reference>
+                    <title>http://www.acunetix.com/websitesecurity/crlf-injection.htm</title>
+                    <url>http://www.acunetix.com/websitesecurity/crlf-injection.htm</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Commands execution">
+            <bugList/>
+            <description>
+<![CDATA[This attack consists in executing system commands on the server. The attacker tries to inject this commands in the request parameters]]>            </description>
+            <solution>
+<![CDATA[Prefer working without user input when using file system calls]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Command_Injection</title>
+                    <url>http://www.owasp.org/index.php/Command_Injection</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Resource consumption">
+            <bugList/>
+            <description>
+<![CDATA[An attacker can force a victim to consume more resources than should be allowed for the attacker's level of access. The program can potentially fail to release or incorrectly release a system resource. A resource is not properly cleared and made available for re-use. It can also be a false-positive due to a too short timeout used for the scan.]]>            </description>
+            <solution>
+<![CDATA[Configure properly the software giving the ressource to avoid memory consumption or system load.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Asymmetric_resource_consumption_(amplification)</title>
+                    <url>http://www.owasp.org/index.php/Asymmetric_resource_consumption_(amplification)</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Htaccess Bypass">
+            <bugList/>
+            <description>
+<![CDATA[htaccess files are used to restrict access to some files or HTTP method. In some case it may be possible to bypass this restriction and access the files.]]>            </description>
+            <solution>
+<![CDATA[Make sure every HTTP method is forbidden if the credentials are bad.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://blog.teusink.net/2009/07/common-apache-htaccess-misconfiguration.html</title>
+                    <url>http://blog.teusink.net/2009/07/common-apache-htaccess-misconfiguration.html</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Backup file">
+            <bugList/>
+            <description>
+<![CDATA[It may be possible to find backup files of scripts on the webserver that thewebadmin put here to save a previous version or backup files that are automaticallygenerated by the software editor used (like for example Emacs). These copies may revealinteresting informations like source code or credentials]]>            </description>
+            <solution>
+<![CDATA[The webadmin must manually delete the backup files or remove it from the web root. He shouldalso reconfigure its editor to deactivate automatic backups]]>            </solution>
+            <references>
+                <reference>
+                    <title>Testing for Old, Backup and Unreferenced Files (OWASP-CM-006)</title>
+                    <url>http://www.owasp.org/index.php/Testing_for_Old,_Backup_and_Unreferenced_Files_(OWASP-CM-006)</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Potentially dangerous file">
+            <bugList/>
+            <description>
+<![CDATA[Some scripts are known to be vulnerable or dangerous. Databases of such files exists and attackers often scan websites to find such vulnerabilities and exploit them. ]]>            </description>
+            <solution>
+<![CDATA[The administrator should frequently check for new version of the scripts used on his server and keep informed of vulnerabilities in the software programs he uses by reading security-list or specialised RSS.]]>            </solution>
+            <references>
+                <reference>
+                    <title>The Open Source Vulnerability Database</title>
+                    <url>http://osvdb.org/</url>
+                </reference>
+            </references>
+        </bugType>
+    </bugTypeList>
+</report>
+
+Updating Solr summary...
+Updating Solr details...
+No bugs found! Skipping indexing to Solr details...
+Scan took 0.384386066667 minutes to run.
+3 sites scanned so far. That's a rate of 3056.88736477 sites per day
+finished scanning successfully
+*****So far 0 sites have failed to scan*****
+
+
+***getting a new website to scan***
+
+
+{'url': 'http://0-oclock.blogfa.com/', 'segment': '20120810130028', 'tstamp': '2012-08-10T13:04:57.428Z', 'anchor': [u'\u0633\u0627\u0639\u062a 00:00', u'\u062f\u0648\u0633\u062a\u06cc', u'\u0633\u0627\u0639\u062a 00:00', u'\u0633\u0627\u0639\u062a00:00(\u0631\u0636\u0627)', u'\u0635\u0641\u062d\u0647 \u0646\u062e\u0633\u062a', u'\u0633\u0627\u0639\u062a 00:00', u'\u0633\u0627\u0639\u062a00:00(\u0631\u0636\u0627)'], 'boost': 3.3976978e-06, 'id': 'http://0-oclock.blogfa.com/', 'digest': 'c42c1db540d09eee60cc12e6c6ec45d5'}
+PunkScanner v1.0.0 - Powered by Wapiti
+the number of urls browsed is 0
+http://0-oclock.blogfa.com/
+the number of urls browsed is 1
+http://0-oclock.blogfa.com
+the number of urls browsed is 2
+http://0-oclock.blogfa.com/Profile/
+the number of urls browsed is 3
+http://0-oclock.blogfa.com/1391/06
+the number of urls browsed is 4
+http://0-oclock.blogfa.com/1391/05
+the number of urls browsed is 5
+http://0-oclock.blogfa.com/1391/04
+the number of urls browsed is 6
+http://0-oclock.blogfa.com/1391/03
+the number of urls browsed is 7
+http://0-oclock.blogfa.com/1391/02
+the number of urls browsed is 8
+http://0-oclock.blogfa.com/1391/01
+the number of urls browsed is 9
+http://0-oclock.blogfa.com/category/4
+the number of urls browsed is 10
+http://0-oclock.blogfa.com/category/1
+the number of urls browsed is 11
+http://0-oclock.blogfa.com/category/3
+the number of urls browsed is 12
+http://0-oclock.blogfa.com/category/5
+the number of urls browsed is 13
+http://0-oclock.blogfa.com/category/2
+the number of urls browsed is 14
+http://0-oclock.blogfa.com/category/6
+the number of urls browsed is 15
+http://0-oclock.blogfa.com/tag/%d8%a7%d8%ad%d8%b3%d8%a7%d8%b3%d8%a7%d8%aa-%d9%82%d8%b4%d9%86%da%af
+the number of urls browsed is 16
+http://0-oclock.blogfa.com/tag/%d8%ac%d9%87%d8%a7%d9%86-%d8%b3%d9%88%d9%85
+the number of urls browsed is 17
+http://0-oclock.blogfa.com/tag/%da%a9%d9%86%da%a9%d9%88%d8%b1
+the number of urls browsed is 18
+http://0-oclock.blogfa.com/tag/%d8%b5%d8%af%d8%a7%d9%87%d8%a7%db%8c-%d9%82%d8%b4%d9%86%da%af
+the number of urls browsed is 19
+http://0-oclock.blogfa.com/tag/%d8%aa%d8%b3%d8%aa-%d9%82%d8%b4%d9%86%da%af
+the number of urls browsed is 20
+http://0-oclock.blogfa.com/tag/%d9%be%d8%b1%db%8c%d9%88%d8%af-%d9%85%d8%ba%d8%b2%db%8c
+the number of urls browsed is 21
+http://0-oclock.blogfa.com/tag/%d8%b2%d9%84%d8%b2%d9%84%d9%87-%d8%a2%d8%b0%d8%b1%d8%a8%d8%a7%db%8c%d8%ac%d8%a7%d9%86
+the number of urls browsed is 22
+http://0-oclock.blogfa.com/tag/%d8%a8%d8%a7%d8%b2%db%8c-%d9%88%d8%a8%d9%84%d8%a7%da%af%db%8c
+the number of urls browsed is 23
+http://0-oclock.blogfa.com/tag/%d9%be%db%8c%d8%b4%d9%86%d9%87%d8%a7%d8%af%d8%a7%d8%aa-%d9%82%d8%b4%d9%86%da%af
+the number of urls browsed is 24
+http://0-oclock.blogfa.com/tag/%d8%b4%d8%b9%d8%b1-%d9%82%d8%b4%d9%86%da%af
+the number of urls browsed is 25
+http://0-oclock.blogfa.com/tag/%d8%a7%d8%b9%d8%aa%d8%b1%d8%a7%d9%81
+the number of urls browsed is 26
+http://0-oclock.blogfa.com/tag/%d8%b3%d9%88%d8%a7%d9%84-%d9%82%d8%b4%d9%86%da%af
+the number of urls browsed is 27
+http://0-oclock.blogfa.com/tag/%d8%a7%d8%ad%d9%85%d8%af-%da%a9%d8%a7%db%8c%d8%a7
+the number of urls browsed is 28
+http://0-oclock.blogfa.com/tag/%c3%96zdemir-Asaf
+the number of urls browsed is 29
+http://0-oclock.blogfa.com/rss
+the number of urls browsed is 30
+http://0-oclock.blogfa.com/post/155
+the number of urls browsed is 31
+http://0-oclock.blogfa.com/post/154
+the number of urls browsed is 32
+http://0-oclock.blogfa.com/post/152
+the number of urls browsed is 33
+http://0-oclock.blogfa.com/post/151
+the number of urls browsed is 34
+http://0-oclock.blogfa.com/post/50
+the number of urls browsed is 35
+http://0-oclock.blogfa.com/post/150
+the number of urls browsed is 36
+http://0-oclock.blogfa.com/post/149
+the number of urls browsed is 37
+http://0-oclock.blogfa.com/post/148
+the number of urls browsed is 38
+http://0-oclock.blogfa.com/post/147
+the number of urls browsed is 39
+http://0-oclock.blogfa.com/post/146
+the number of urls browsed is 40
+http://0-oclock.blogfa.com/post/145
+the number of urls browsed is 41
+the number of urls browsed is 41
+the number of urls browsed is 41
+http://0-oclock.blogfa.com/post/144
+the number of urls browsed is 42
+http://0-oclock.blogfa.com/post/143
+the number of urls browsed is 43
+http://0-oclock.blogfa.com/post/142
+the number of urls browsed is 44
+http://0-oclock.blogfa.com/post/141
+the number of urls browsed is 45
+http://0-oclock.blogfa.com/post/140
+the number of urls browsed is 46
+http://0-oclock.blogfa.com/post/139
+the number of urls browsed is 47
+http://0-oclock.blogfa.com/post/138
+the number of urls browsed is 48
+http://0-oclock.blogfa.com/post/136
+the number of urls browsed is 49
+http://0-oclock.blogfa.com/post/135
+the number of urls browsed is 50
+http://0-oclock.blogfa.com/post/134
+the number of urls browsed is 51
+http://0-oclock.blogfa.com/post/133
+the number of urls browsed is 52
+http://0-oclock.blogfa.com/post/131
+the number of urls browsed is 53
+http://0-oclock.blogfa.com/post/130
+the number of urls browsed is 54
+the number of urls browsed is 54
+http://0-oclock.blogfa.com/post/129
+the number of urls browsed is 55
+http://0-oclock.blogfa.com/post/128
+the number of urls browsed is 56
+http://0-oclock.blogfa.com/post/127
+the number of urls browsed is 57
+http://0-oclock.blogfa.com/post/126
+the number of urls browsed is 58
+http://0-oclock.blogfa.com/post/125
+the number of urls browsed is 59
+http://0-oclock.blogfa.com/post/124
+the number of urls browsed is 60
+http://0-oclock.blogfa.com/post/123
+the number of urls browsed is 61
+http://0-oclock.blogfa.com/post/122
+the number of urls browsed is 62
+http://0-oclock.blogfa.com/post/121
+the number of urls browsed is 63
+http://0-oclock.blogfa.com/post/120
+the number of urls browsed is 64
+http://0-oclock.blogfa.com/post/119
+the number of urls browsed is 65
+http://0-oclock.blogfa.com/post/118
+the number of urls browsed is 66
+http://0-oclock.blogfa.com/post/117
+the number of urls browsed is 67
+http://0-oclock.blogfa.com/post/116
+the number of urls browsed is 68
+http://0-oclock.blogfa.com/post/115
+the number of urls browsed is 69
+http://0-oclock.blogfa.com/post/114
+the number of urls browsed is 70
+http://0-oclock.blogfa.com/post/113
+the number of urls browsed is 71
+http://0-oclock.blogfa.com/post/112
+the number of urls browsed is 72
+http://0-oclock.blogfa.com/post/111
+the number of urls browsed is 73
+http://0-oclock.blogfa.com/post/110
+the number of urls browsed is 74
+http://0-oclock.blogfa.com/post/109
+the number of urls browsed is 75
+http://0-oclock.blogfa.com/post/108
+the number of urls browsed is 76
+http://0-oclock.blogfa.com/post/106
+the number of urls browsed is 77
+http://0-oclock.blogfa.com/post/105
+the number of urls browsed is 78
+http://0-oclock.blogfa.com/post/103
+the number of urls browsed is 79
+http://0-oclock.blogfa.com/post/102
+the number of urls browsed is 80
+http://0-oclock.blogfa.com/post/101
+the number of urls browsed is 81
+http://0-oclock.blogfa.com/post/100
+the number of urls browsed is 82
+http://0-oclock.blogfa.com/post/99
+the number of urls browsed is 83
+http://0-oclock.blogfa.com/post/98
+the number of urls browsed is 84
+http://0-oclock.blogfa.com/post/97
+the number of urls browsed is 85
+http://0-oclock.blogfa.com/post/96
+the number of urls browsed is 86
+http://0-oclock.blogfa.com/post/95
+the number of urls browsed is 87
+http://0-oclock.blogfa.com/post/94
+the number of urls browsed is 88
+http://0-oclock.blogfa.com/post/93
+the number of urls browsed is 89
+http://0-oclock.blogfa.com/post/92
+the number of urls browsed is 90
+http://0-oclock.blogfa.com/post/91
+the number of urls browsed is 91
+http://0-oclock.blogfa.com/post/89
+the number of urls browsed is 92
+http://0-oclock.blogfa.com/post/88
+the number of urls browsed is 93
+http://0-oclock.blogfa.com/post/87
+the number of urls browsed is 94
+http://0-oclock.blogfa.com/post/86
+the number of urls browsed is 95
+http://0-oclock.blogfa.com/post/85
+the number of urls browsed is 96
+http://0-oclock.blogfa.com/post/84
+the number of urls browsed is 97
+http://0-oclock.blogfa.com/post/83
+the number of urls browsed is 98
+http://0-oclock.blogfa.com/post/82
+the number of urls browsed is 99
+http://0-oclock.blogfa.com/post/80
+the number of urls browsed is 100
+http://0-oclock.blogfa.com/post/79
+the number of urls browsed is 101
+http://0-oclock.blogfa.com/post/78
+the number of urls browsed is 102
+http://0-oclock.blogfa.com/post/77
+the number of urls browsed is 103
+the number of urls browsed is 103
+http://0-oclock.blogfa.com/post/76
+the number of urls browsed is 104
+http://0-oclock.blogfa.com/post/74
+the number of urls browsed is 105
+http://0-oclock.blogfa.com/post/73
+the number of urls browsed is 106
+http://0-oclock.blogfa.com/post/71
+the number of urls browsed is 107
+http://0-oclock.blogfa.com/post/69
+the number of urls browsed is 108
+http://0-oclock.blogfa.com/post/68
+the number of urls browsed is 109
+http://0-oclock.blogfa.com/post/67
+the number of urls browsed is 110
+http://0-oclock.blogfa.com/post/66
+the number of urls browsed is 111
+http://0-oclock.blogfa.com/post/65
+the number of urls browsed is 112
+http://0-oclock.blogfa.com/post/63
+the number of urls browsed is 113
+http://0-oclock.blogfa.com/post/62
+the number of urls browsed is 114
+http://0-oclock.blogfa.com/post/61
+the number of urls browsed is 115
+http://0-oclock.blogfa.com/post/60
+the number of urls browsed is 116
+http://0-oclock.blogfa.com/post/59
+the number of urls browsed is 117
+http://0-oclock.blogfa.com/1391/www.ghadefandogh.blogfa.com
+the number of urls browsed is 118
+http://0-oclock.blogfa.com/post/58
+the number of urls browsed is 119
+http://0-oclock.blogfa.com/post/57
+the number of urls browsed is 120
+http://0-oclock.blogfa.com/post/56
+the number of urls browsed is 121
+http://0-oclock.blogfa.com/post/54
+the number of urls browsed is 122
+http://0-oclock.blogfa.com/post/51
+the number of urls browsed is 123
+http://0-oclock.blogfa.com/post/49
+the number of urls browsed is 124
+http://0-oclock.blogfa.com/post/47
+the number of urls browsed is 125
+http://0-oclock.blogfa.com/post/46
+the number of urls browsed is 126
+http://0-oclock.blogfa.com/post/45
+the number of urls browsed is 127
+http://0-oclock.blogfa.com/post/44
+the number of urls browsed is 128
+http://0-oclock.blogfa.com/post/43
+the number of urls browsed is 129
+http://0-oclock.blogfa.com/post/42
+the number of urls browsed is 130
+http://0-oclock.blogfa.com/post/41
+the number of urls browsed is 131
+http://0-oclock.blogfa.com/1391/www.tetepetee.blogfa.com
+the number of urls browsed is 132
+http://0-oclock.blogfa.com/post/40
+the number of urls browsed is 133
+http://0-oclock.blogfa.com/post/38
+the number of urls browsed is 134
+http://0-oclock.blogfa.com/post/36
+the number of urls browsed is 135
+http://0-oclock.blogfa.com/post/34
+the number of urls browsed is 136
+http://0-oclock.blogfa.com/post/33
+the number of urls browsed is 137
+http://0-oclock.blogfa.com/post/32
+the number of urls browsed is 138
+http://0-oclock.blogfa.com/post/31
+the number of urls browsed is 139
+http://0-oclock.blogfa.com/post/30
+the number of urls browsed is 140
+the number of urls browsed is 140
+http://0-oclock.blogfa.com/post/29
+the number of urls browsed is 141
+http://0-oclock.blogfa.com/post/28
+the number of urls browsed is 142
+http://0-oclock.blogfa.com/post/26
+the number of urls browsed is 143
+http://0-oclock.blogfa.com/post/25
+the number of urls browsed is 144
+http://0-oclock.blogfa.com/post/24
+the number of urls browsed is 145
+http://0-oclock.blogfa.com/post/22
+the number of urls browsed is 146
+http://0-oclock.blogfa.com/post/21
+the number of urls browsed is 147
+http://0-oclock.blogfa.com/post/20
+the number of urls browsed is 148
+http://0-oclock.blogfa.com/post/19
+the number of urls browsed is 149
+http://0-oclock.blogfa.com/post/18
+the number of urls browsed is 150
+http://0-oclock.blogfa.com/post/17
+the number of urls browsed is 151
+the number of urls browsed is 151
+http://0-oclock.blogfa.com/post/14
+the number of urls browsed is 152
+http://0-oclock.blogfa.com/post/13
+the number of urls browsed is 153
+http://0-oclock.blogfa.com/post/12
+the number of urls browsed is 154
+http://0-oclock.blogfa.com/post/9
+the number of urls browsed is 155
+http://0-oclock.blogfa.com/post/8
+the number of urls browsed is 156
+http://0-oclock.blogfa.com/post/7
+the number of urls browsed is 157
+http://0-oclock.blogfa.com/post/6
+the number of urls browsed is 158
+the number of urls browsed is 158
+http://0-oclock.blogfa.com/post/5
+the number of urls browsed is 159
+http://0-oclock.blogfa.com/post/4
+the number of urls browsed is 160
+http://0-oclock.blogfa.com/post/3
+the number of urls browsed is 161
+http://0-oclock.blogfa.com/post/2
+the number of urls browsed is 162
+http://0-oclock.blogfa.com/post/1
+the number of urls browsed is 163
+the number of urls browsed is 163
+http://0-oclock.blogfa.com/category/4?p=2
+the number of urls browsed is 164
+the number of urls browsed is 164
+the number of urls browsed is 164
+the number of urls browsed is 164
+http://0-oclock.blogfa.com/category/www.ghadefandogh.blogfa.com
+the number of urls browsed is 165
+http://0-oclock.blogfa.com/category/www.tetepetee.blogfa.com
+the number of urls browsed is 166
+the number of urls browsed is 166
+the number of urls browsed is 166
+the number of urls browsed is 166
+http://0-oclock.blogfa.com/tag/www.ghadefandogh.blogfa.com
+the number of urls browsed is 167
+the number of urls browsed is 167
+the number of urls browsed is 167
+the number of urls browsed is 167
+http://0-oclock.blogfa.com/tag/www.tetepetee.blogfa.com
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+the number of urls browsed is 168
+http://0-oclock.blogfa.com/post/www.ghadefandogh.blogfa.com
+the number of urls browsed is 169
+the number of urls browsed is 169
+the number of urls browsed is 169
+the number of urls browsed is 169
+the number of urls browsed is 169
+the number of urls browsed is 169
+the number of urls browsed is 169
+the number of urls browsed is 169
+the number of urls browsed is 169
+the number of urls browsed is 169
+the number of urls browsed is 169
+the number of urls browsed is 169
+the number of urls browsed is 169
+the number of urls browsed is 169
+http://0-oclock.blogfa.com/post/www.tetepetee.blogfa.com
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+the number of urls browsed is 170
+http://0-oclock.blogfa.com/category/4?p=1
+
+ Notice 
+========
+This scan has been saved in the file /home/punk/HGDev/punkscan/punkscan/PunkScan/src/scans/0-oclock.blogfa.com.xml
+[*] Loading modules :
+	mod_crlf, mod_exec, mod_file, mod_sql, mod_xss, mod_backup, mod_htaccess, mod_blindsql, mod_permanentxss, mod_nikto
+[<attack.mod_exec.mod_exec instance at 0x31916c8>, <attack.mod_file.mod_file instance at 0x3191758>, <attack.mod_backup.mod_backup instance at 0x3191bd8>, <attack.mod_htaccess.mod_htaccess instance at 0x3191c68>, <attack.mod_crlf.mod_crlf instance at 0x3191e60>, <attack.mod_xss.mod_xss instance at 0x3191ef0>, <attack.mod_sql.mod_sql instance at 0x30b0098>, <attack.mod_nikto.mod_nikto instance at 0x30b0128>, <attack.mod_blindsql.mod_blindsql instance at 0x31917e8>, <attack.mod_permanentxss.mod_permanentxss instance at 0x3191cf8>]
+
+[+] Launching module xss
+
+[+] Launching module sql
++ http://0-oclock.blogfa.com/category/4?p=%BF%27%22%28
+
+Report
+------
+A report has been generated in the file out.xml
+out.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<report type="security">
+    <generatedBy id="Wapiti 2.2.1"/>
+    <bugTypeList>
+        <bugType name="SQL Injection">
+            <bugList/>
+            <description>
+<![CDATA[SQL injection is a technique that exploits a vulnerability occurring in the database of an application.]]>            </description>
+            <solution>
+<![CDATA[To protect against SQL injection, user input must not directly be embedded in SQL statements. Instead, user input must be escaped or filtered or parameterized statements must be used.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/SQL_Injection</title>
+                    <url>http://www.owasp.org/index.php/SQL_Injection</url>
+                </reference>
+                <reference>
+                    <title>http://en.wikipedia.org/wiki/SQL_injection</title>
+                    <url>http://en.wikipedia.org/wiki/SQL_injection</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Blind SQL Injection">
+            <bugList/>
+            <description>
+<![CDATA[Blind SQL injection is a technique that exploits a vulnerability occurring in the database of an application. This kind of vulnerability is harder to detect than basic SQL injections because no error message will be displayed on the webpage.]]>            </description>
+            <solution>
+<![CDATA[To protect against SQL injection, user input must not directly be embedded in SQL statements. Instead, user input must be escaped or filtered or parameterized statements must be used.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.imperva.com/resources/adc/blind_sql_server_injection.html</title>
+                    <url>http://www.imperva.com/resources/adc/blind_sql_server_injection.html</url>
+                </reference>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Blind_SQL_Injection</title>
+                    <url>http://www.owasp.org/index.php/Blind_SQL_Injection</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="File Handling">
+            <bugList/>
+            <description>
+<![CDATA[This attack is also known as Path Transversal or Directory Transversal, its aim is the access to files and directories that are stored outside the web root folder. The attacker tries to explore the directories stored in the web server. The attacker uses some techniques, for instance, the manipulation of variables that reference files with 'dot-dot-slash (../)' sequences and its variations to move up to root directory to navigate through the file system.]]>            </description>
+            <solution>
+<![CDATA[Prefer working without user input when using file system calls<br>Use indexes rather than actual portions of file names when templating or using language files (ie value 5 from the user submission = Czechoslovakian, rather than expecting the user to return 'Czechoslovakian').<br>Ensure the user cannot supply all parts of the path – surround it with your path code.<br>Validate the user’s input by only accepting known good – do not sanitize the data.<br>Use chrooted jails and code access policies to restrict where the files can be obtained or saved to.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Path_Traversal</title>
+                    <url>http://www.owasp.org/index.php/Path_Traversal</url>
+                </reference>
+                <reference>
+                    <title>http://www.acunetix.com/websitesecurity/directory-traversal.htm</title>
+                    <url>http://www.acunetix.com/websitesecurity/directory-traversal.htm</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Cross Site Scripting">
+            <bugList/>
+            <description>
+<![CDATA[Cross-site scripting (XSS) is a type of computer security vulnerability typically found in web applications which allow code injection by malicious web users into the web pages viewed by other users. Examples of such code include HTML code and client-side scripts.]]>            </description>
+            <solution>
+<![CDATA[The best way to protect a web application from XSS attacks is ensure that the application performs validation of all headers, cookies, query strings, form fields, and hidden fields. Encoding user supplied output in the server side can also defeat XSS vulnerabilities by preventing inserted scripts from being transmitted to users in an executable form. Applications can gain significant protection from javascript based attacks by converting the following characters in all generated output to the appropriate HTML entity encoding:  &lt;, &gt;, &amp;, &quot;, ', (, ), #, %, ; , +, -.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://en.wikipedia.org/wiki/Cross-site_scripting</title>
+                    <url>http://en.wikipedia.org/wiki/Cross-site_scripting</url>
+                </reference>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Cross_Site_Scripting</title>
+                    <url>http://www.owasp.org/index.php/Cross_Site_Scripting</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="CRLF">
+            <bugList/>
+            <description>
+<![CDATA[The term CRLF refers to Carriage Return (ASCII 13, \r) Line Feed (ASCII 10, \n). They're used to note the termination of a line, however, dealt with differently in today’s popular Operating Systems. For example: in Windows both a CR and LF are required to note the end of a line, whereas in Linux/UNIX a LF is only required. This combination of CR and LR is used for example when pressing 'Enter' on the keyboard. Depending on the application being used, pressing 'Enter' generally instructs the application to start a new line, or to send a command.]]>            </description>
+            <solution>
+<![CDATA[Check the submitted parameters and do not allow CRLF to be injected by filtering CRLF]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/CRLF_Injection</title>
+                    <url>http://www.owasp.org/index.php/CRLF_Injection</url>
+                </reference>
+                <reference>
+                    <title>http://www.acunetix.com/websitesecurity/crlf-injection.htm</title>
+                    <url>http://www.acunetix.com/websitesecurity/crlf-injection.htm</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Commands execution">
+            <bugList/>
+            <description>
+<![CDATA[This attack consists in executing system commands on the server. The attacker tries to inject this commands in the request parameters]]>            </description>
+            <solution>
+<![CDATA[Prefer working without user input when using file system calls]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Command_Injection</title>
+                    <url>http://www.owasp.org/index.php/Command_Injection</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Resource consumption">
+            <bugList/>
+            <description>
+<![CDATA[An attacker can force a victim to consume more resources than should be allowed for the attacker's level of access. The program can potentially fail to release or incorrectly release a system resource. A resource is not properly cleared and made available for re-use. It can also be a false-positive due to a too short timeout used for the scan.]]>            </description>
+            <solution>
+<![CDATA[Configure properly the software giving the ressource to avoid memory consumption or system load.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Asymmetric_resource_consumption_(amplification)</title>
+                    <url>http://www.owasp.org/index.php/Asymmetric_resource_consumption_(amplification)</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Htaccess Bypass">
+            <bugList/>
+            <description>
+<![CDATA[htaccess files are used to restrict access to some files or HTTP method. In some case it may be possible to bypass this restriction and access the files.]]>            </description>
+            <solution>
+<![CDATA[Make sure every HTTP method is forbidden if the credentials are bad.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://blog.teusink.net/2009/07/common-apache-htaccess-misconfiguration.html</title>
+                    <url>http://blog.teusink.net/2009/07/common-apache-htaccess-misconfiguration.html</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Backup file">
+            <bugList/>
+            <description>
+<![CDATA[It may be possible to find backup files of scripts on the webserver that thewebadmin put here to save a previous version or backup files that are automaticallygenerated by the software editor used (like for example Emacs). These copies may revealinteresting informations like source code or credentials]]>            </description>
+            <solution>
+<![CDATA[The webadmin must manually delete the backup files or remove it from the web root. He shouldalso reconfigure its editor to deactivate automatic backups]]>            </solution>
+            <references>
+                <reference>
+                    <title>Testing for Old, Backup and Unreferenced Files (OWASP-CM-006)</title>
+                    <url>http://www.owasp.org/index.php/Testing_for_Old,_Backup_and_Unreferenced_Files_(OWASP-CM-006)</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Potentially dangerous file">
+            <bugList/>
+            <description>
+<![CDATA[Some scripts are known to be vulnerable or dangerous. Databases of such files exists and attackers often scan websites to find such vulnerabilities and exploit them. ]]>            </description>
+            <solution>
+<![CDATA[The administrator should frequently check for new version of the scripts used on his server and keep informed of vulnerabilities in the software programs he uses by reading security-list or specialised RSS.]]>            </solution>
+            <references>
+                <reference>
+                    <title>The Open Source Vulnerability Database</title>
+                    <url>http://osvdb.org/</url>
+                </reference>
+            </references>
+        </bugType>
+    </bugTypeList>
+</report>
+
+Updating Solr summary...
+Updating Solr details...
+No bugs found! Skipping indexing to Solr details...
+Scan took 2.74635871667 minutes to run.
+4 sites scanned so far. That's a rate of 1384.76153909 sites per day
+finished scanning successfully
+*****So far 0 sites have failed to scan*****
+
+
+***getting a new website to scan***
+
+
+{'title': u'Spare Time in Life\xableetom\u7684\u535a\u5ba2', 'url': 'http://1.sparelife.sinaapp.com/', 'segment': '20120810130028', 'tstamp': '2012-08-10T13:04:32.933Z', 'anchor': [u'\u9996\u9875', 'Spare Time in Life'], 'boost': 3.4144757e-06, 'id': 'http://1.sparelife.sinaapp.com/', 'digest': '353a4bf7fc263be3d656592e26a75f2a'}
+PunkScanner v1.0.0 - Powered by Wapiti
+the number of urls browsed is 0
+http://1.sparelife.sinaapp.com/
+the number of urls browsed is 1
+the number of urls browsed is 1
+http://1.sparelife.sinaapp.com/?page_id=422
+the number of urls browsed is 2
+the number of urls browsed is 2
+http://1.sparelife.sinaapp.com
+the number of urls browsed is 3
+http://1.sparelife.sinaapp.com?s=on
+the number of urls browsed is 4
+http://1.sparelife.sinaapp.com/?p=444
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+the number of urls browsed is 5
+http://1.sparelife.sinaapp.com/?feed=rss2
+the number of urls browsed is 6
+http://1.sparelife.sinaapp.com/?p=282
+the number of urls browsed is 7
+the number of urls browsed is 7
+the number of urls browsed is 7
+the number of urls browsed is 7
+the number of urls browsed is 7
+the number of urls browsed is 7
+the number of urls browsed is 7
+the number of urls browsed is 7
+the number of urls browsed is 7
+the number of urls browsed is 7
+the number of urls browsed is 7
+the number of urls browsed is 7
+the number of urls browsed is 7
+the number of urls browsed is 7
+the number of urls browsed is 7
+http://1.sparelife.sinaapp.com/?tag=blackberry
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+the number of urls browsed is 8
+http://1.sparelife.sinaapp.com/wp-login.php
+the number of urls browsed is 9
+http://1.sparelife.sinaapp.com/?feed=comments-rss2
+the number of urls browsed is 10
+the number of urls browsed is 10
+the number of urls browsed is 10
+the number of urls browsed is 10
+the number of urls browsed is 10
+the number of urls browsed is 10
+the number of urls browsed is 10
+http://1.sparelife.sinaapp.com/wp-trackback.php?p=422
+the number of urls browsed is 11
+http://1.sparelife.sinaapp.com/wp-comments-post.php
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+the number of urls browsed is 12
+http://1.sparelife.sinaapp.com/wp-trackback.php?p=444
+the number of urls browsed is 13
+the number of urls browsed is 13
+the number of urls browsed is 13
+the number of urls browsed is 13
+the number of urls browsed is 13
+the number of urls browsed is 13
+the number of urls browsed is 13
+the number of urls browsed is 13
+the number of urls browsed is 13
+the number of urls browsed is 13
+the number of urls browsed is 13
+the number of urls browsed is 13
+http://1.sparelife.sinaapp.com/wp-trackback.php?p=306
+the number of urls browsed is 14
+the number of urls browsed is 14
+the number of urls browsed is 14
+the number of urls browsed is 14
+the number of urls browsed is 14
+http://1.sparelife.sinaapp.com/wp-trackback.php?p=304
+the number of urls browsed is 15
+the number of urls browsed is 15
+the number of urls browsed is 15
+the number of urls browsed is 15
+http://1.sparelife.sinaapp.com/wp-trackback.php?p=302
+the number of urls browsed is 16
+the number of urls browsed is 16
+the number of urls browsed is 16
+the number of urls browsed is 16
+the number of urls browsed is 16
+the number of urls browsed is 16
+the number of urls browsed is 16
+the number of urls browsed is 16
+the number of urls browsed is 16
+the number of urls browsed is 16
+the number of urls browsed is 16
+http://1.sparelife.sinaapp.com/wp-trackback.php?p=301
+the number of urls browsed is 17
+the number of urls browsed is 17
+the number of urls browsed is 17
+the number of urls browsed is 17
+the number of urls browsed is 17
+the number of urls browsed is 17
+the number of urls browsed is 17
+the number of urls browsed is 17
+the number of urls browsed is 17
+the number of urls browsed is 17
+the number of urls browsed is 17
+http://1.sparelife.sinaapp.com/wp-trackback.php?p=292
+the number of urls browsed is 18
+the number of urls browsed is 18
+the number of urls browsed is 18
+the number of urls browsed is 18
+the number of urls browsed is 18
+http://1.sparelife.sinaapp.com/wp-trackback.php?p=291
+the number of urls browsed is 19
+the number of urls browsed is 19
+the number of urls browsed is 19
+http://1.sparelife.sinaapp.com/wp-trackback.php?p=287
+the number of urls browsed is 20
+the number of urls browsed is 20
+the number of urls browsed is 20
+http://1.sparelife.sinaapp.com/wp-trackback.php?p=286
+the number of urls browsed is 21
+the number of urls browsed is 21
+the number of urls browsed is 21
+the number of urls browsed is 21
+the number of urls browsed is 21
+the number of urls browsed is 21
+the number of urls browsed is 21
+the number of urls browsed is 21
+http://1.sparelife.sinaapp.com/wp-trackback.php?p=283
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+the number of urls browsed is 22
+http://1.sparelife.sinaapp.com/wp-trackback.php?p=282
+the number of urls browsed is 23
+the number of urls browsed is 23
+the number of urls browsed is 23
+http://1.sparelife.sinaapp.com/wp-trackback.php?p=203
+the number of urls browsed is 24
+the number of urls browsed is 24
+the number of urls browsed is 24
+http://1.sparelife.sinaapp.com/wp-trackback.php?p=141
+the number of urls browsed is 25
+the number of urls browsed is 25
+the number of urls browsed is 25
+the number of urls browsed is 25
+http://1.sparelife.sinaapp.com/wp-trackback.php?p=196
+the number of urls browsed is 26
+the number of urls browsed is 26
+the number of urls browsed is 26
+http://1.sparelife.sinaapp.com/wp-trackback.php?p=234
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+the number of urls browsed is 27
+http://1.sparelife.sinaapp.com/wp-login.php?action=lostpassword
+the number of urls browsed is 28
+the number of urls browsed is 28
+the number of urls browsed is 28
+the number of urls browsed is 28
+the number of urls browsed is 28
+the number of urls browsed is 28
+the number of urls browsed is 28
+the number of urls browsed is 28
+the number of urls browsed is 28
+the number of urls browsed is 28
+the number of urls browsed is 28
+http://1.sparelife.sinaapp.com/?author=1
+the number of urls browsed is 29
+the number of urls browsed is 29
+the number of urls browsed is 29
+the number of urls browsed is 29
+the number of urls browsed is 29
+the number of urls browsed is 29
+the number of urls browsed is 29
+the number of urls browsed is 29
+the number of urls browsed is 29
+the number of urls browsed is 29
+the number of urls browsed is 29
+the number of urls browsed is 29
+the number of urls browsed is 29
+the number of urls browsed is 29
+the number of urls browsed is 29
+http://1.sparelife.sinaapp.com/?paged=9&s=on
+the number of urls browsed is 30
+the number of urls browsed is 30
+the number of urls browsed is 30
+the number of urls browsed is 30
+the number of urls browsed is 30
+the number of urls browsed is 30
+the number of urls browsed is 30
+http://1.sparelife.sinaapp.com/?author=1&paged=11
+the number of urls browsed is 31
+the number of urls browsed is 31
+http://1.sparelife.sinaapp.com/?m=201108
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+the number of urls browsed is 32
+http://1.sparelife.sinaapp.com/demo/snake.html
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+the number of urls browsed is 33
+http://1.sparelife.sinaapp.com/demo/snake.html/?paged=4
+the number of urls browsed is 34
+the number of urls browsed is 34
+the number of urls browsed is 34
+the number of urls browsed is 34
+the number of urls browsed is 34
+the number of urls browsed is 34
+the number of urls browsed is 34
+http://1.sparelife.sinaapp.com/?cat=284
+the number of urls browsed is 35
+the number of urls browsed is 35
+the number of urls browsed is 35
+the number of urls browsed is 35
+the number of urls browsed is 35
+the number of urls browsed is 35
+the number of urls browsed is 35
+the number of urls browsed is 35
+the number of urls browsed is 35
+the number of urls browsed is 35
+the number of urls browsed is 35
+the number of urls browsed is 35
+the number of urls browsed is 35
+http://1.sparelife.sinaapp.com/demo/snake.html/
+the number of urls browsed is 36
+the number of urls browsed is 36
+the number of urls browsed is 36
+the number of urls browsed is 36
+the number of urls browsed is 36
+
+ Notice 
+========
+This scan has been saved in the file /home/punk/HGDev/punkscan/punkscan/PunkScan/src/scans/1.sparelife.sinaapp.com.xml
+[*] Loading modules :
+	mod_crlf, mod_exec, mod_file, mod_sql, mod_xss, mod_backup, mod_htaccess, mod_blindsql, mod_permanentxss, mod_nikto
+[<attack.mod_exec.mod_exec instance at 0x2e0f290>, <attack.mod_file.mod_file instance at 0x2e0f320>, <attack.mod_backup.mod_backup instance at 0x2e0f7a0>, <attack.mod_htaccess.mod_htaccess instance at 0x2e0f830>, <attack.mod_crlf.mod_crlf instance at 0x2e0f9e0>, <attack.mod_xss.mod_xss instance at 0x2e0fa70>, <attack.mod_sql.mod_sql instance at 0x2e0fbd8>, <attack.mod_nikto.mod_nikto instance at 0x2e0fc68>, <attack.mod_blindsql.mod_blindsql instance at 0x2e0f3b0>, <attack.mod_permanentxss.mod_permanentxss instance at 0x2e0f8c0>]
+
+[+] Launching module xss
++ http://1.sparelife.sinaapp.com/?feed=%3CScRiPt%3Ealert%28%27ist7qnz4yo%27%29%3C%2FsCrIpT%3E
++ http://1.sparelife.sinaapp.com/?feed=<ScRiPt>alert('ist7qnz4yo')</sCrIpT>
++ http://1.sparelife.sinaapp.com/?feed=%3CScRiPt%3Ealert%28%22ist7qnz4yo%22%29%3C%2FsCrIpT%3E
++ http://1.sparelife.sinaapp.com/?feed=<ScRiPt>alert("ist7qnz4yo")</sCrIpT>
++ http://1.sparelife.sinaapp.com/?feed=%3Cimg+src%3Djavascript%3Aalert%28%27ist7qnz4yo%27%29+%2F%3E
++ http://1.sparelife.sinaapp.com/?feed=<img+src=javascript:alert('ist7qnz4yo')+/>
++ http://1.sparelife.sinaapp.com/?feed=%3Cimg+src%3Djavascript%3Aalert%28%22ist7qnz4yo%22%29+%2F%3E
++ http://1.sparelife.sinaapp.com/?feed=<img+src=javascript:alert("ist7qnz4yo")+/>
++ http://1.sparelife.sinaapp.com/?feed=%3Cscr%3Cscript%3Eipt%3Ealert%28%27ist7qnz4yo%27%29%3C%2Fscript%3E
++ http://1.sparelife.sinaapp.com/?feed=<scr<script>ipt>alert('ist7qnz4yo')</script>
++ http://1.sparelife.sinaapp.com/?feed=%3Cscr%3Cscript%3Eipt%3Ealert%28%27ist7qnz4yo%27%29%3C%2Fscr%3C%2Fscript%3Eipt%3E
++ http://1.sparelife.sinaapp.com/?feed=<scr<script>ipt>alert('ist7qnz4yo')</scr</script>ipt>
++ http://1.sparelife.sinaapp.com/?feed=%3Cscr%3Cscript%3Eipt%3Ealert%28%22ist7qnz4yo%22%29%3C%2Fscript%3E
++ http://1.sparelife.sinaapp.com/?feed=<scr<script>ipt>alert("ist7qnz4yo")</script>
++ http://1.sparelife.sinaapp.com/?feed=%3Cscr%3Cscript%3Eipt%3Ealert%28%22ist7qnz4yo%22%29%3C%2Fscr%3C%2Fscript%3Eipt%3E
++ http://1.sparelife.sinaapp.com/?feed=<scr<script>ipt>alert("ist7qnz4yo")</scr</script>ipt>
++ http://1.sparelife.sinaapp.com/?paged=9&s=%3C%2Ftitle%3E%3CScRiPt%3Ealert%28%274rxixk73fu%27%29%3C%2FsCrIpT%3E
++ http://1.sparelife.sinaapp.com/?paged=9&s=</title><ScRiPt>alert('4rxixk73fu')</sCrIpT>
++ http://1.sparelife.sinaapp.com/?paged=9&s=%3C%2Ftitle%3E%3CScRiPt%3Ealert%28%224rxixk73fu%22%29%3C%2FsCrIpT%3E
++ http://1.sparelife.sinaapp.com/?paged=9&s=</title><ScRiPt>alert("4rxixk73fu")</sCrIpT>
++ http://1.sparelife.sinaapp.com/?paged=9&s=%3C%2Ftitle%3E%3Cimg+src%3Djavascript%3Aalert%28%274rxixk73fu%27%29+%2F%3E
++ http://1.sparelife.sinaapp.com/?paged=9&s=</title><img+src=javascript:alert('4rxixk73fu')+/>
++ http://1.sparelife.sinaapp.com/?paged=9&s=%3C%2Ftitle%3E%3Cimg+src%3Djavascript%3Aalert%28%224rxixk73fu%22%29+%2F%3E
++ http://1.sparelife.sinaapp.com/?paged=9&s=</title><img+src=javascript:alert("4rxixk73fu")+/>
++ http://1.sparelife.sinaapp.com/?paged=9&s=%3C%2Ftitle%3E%3Cscr%3Cscript%3Eipt%3Ealert%28%274rxixk73fu%27%29%3C%2Fscript%3E
++ http://1.sparelife.sinaapp.com/?paged=9&s=</title><scr<script>ipt>alert('4rxixk73fu')</script>
++ http://1.sparelife.sinaapp.com/?paged=9&s=%3C%2Ftitle%3E%3Cscr%3Cscript%3Eipt%3Ealert%28%274rxixk73fu%27%29%3C%2Fscr%3C%2Fscript%3Eipt%3E
++ http://1.sparelife.sinaapp.com/?paged=9&s=</title><scr<script>ipt>alert('4rxixk73fu')</scr</script>ipt>
++ http://1.sparelife.sinaapp.com/?paged=9&s=%3C%2Ftitle%3E%3Cscr%3Cscript%3Eipt%3Ealert%28%224rxixk73fu%22%29%3C%2Fscript%3E
++ http://1.sparelife.sinaapp.com/?paged=9&s=</title><scr<script>ipt>alert("4rxixk73fu")</script>
++ http://1.sparelife.sinaapp.com/?paged=9&s=%3C%2Ftitle%3E%3Cscr%3Cscript%3Eipt%3Ealert%28%224rxixk73fu%22%29%3C%2Fscr%3C%2Fscript%3Eipt%3E
++ http://1.sparelife.sinaapp.com/?paged=9&s=</title><scr<script>ipt>alert("4rxixk73fu")</scr</script>ipt>
++ http://1.sparelife.sinaapp.com?s=%3C%2Ftitle%3E%3CScRiPt%3Ealert%28%271zjjkeshqu%27%29%3C%2FsCrIpT%3E
++ http://1.sparelife.sinaapp.com?s=</title><ScRiPt>alert('1zjjkeshqu')</sCrIpT>
++ http://1.sparelife.sinaapp.com?s=%3C%2Ftitle%3E%3CScRiPt%3Ealert%28%221zjjkeshqu%22%29%3C%2FsCrIpT%3E
++ http://1.sparelife.sinaapp.com?s=</title><ScRiPt>alert("1zjjkeshqu")</sCrIpT>
++ http://1.sparelife.sinaapp.com?s=%3C%2Ftitle%3E%3Cimg+src%3Djavascript%3Aalert%28%271zjjkeshqu%27%29+%2F%3E
++ http://1.sparelife.sinaapp.com?s=</title><img+src=javascript:alert('1zjjkeshqu')+/>
++ http://1.sparelife.sinaapp.com?s=%3C%2Ftitle%3E%3Cimg+src%3Djavascript%3Aalert%28%221zjjkeshqu%22%29+%2F%3E
++ http://1.sparelife.sinaapp.com?s=</title><img+src=javascript:alert("1zjjkeshqu")+/>
++ http://1.sparelife.sinaapp.com?s=%3C%2Ftitle%3E%3Cscr%3Cscript%3Eipt%3Ealert%28%271zjjkeshqu%27%29%3C%2Fscript%3E
++ http://1.sparelife.sinaapp.com?s=</title><scr<script>ipt>alert('1zjjkeshqu')</script>
++ http://1.sparelife.sinaapp.com?s=%3C%2Ftitle%3E%3Cscr%3Cscript%3Eipt%3Ealert%28%271zjjkeshqu%27%29%3C%2Fscr%3C%2Fscript%3Eipt%3E
++ http://1.sparelife.sinaapp.com?s=</title><scr<script>ipt>alert('1zjjkeshqu')</scr</script>ipt>
++ http://1.sparelife.sinaapp.com?s=%3C%2Ftitle%3E%3Cscr%3Cscript%3Eipt%3Ealert%28%221zjjkeshqu%22%29%3C%2Fscript%3E
++ http://1.sparelife.sinaapp.com?s=</title><scr<script>ipt>alert("1zjjkeshqu")</script>
++ http://1.sparelife.sinaapp.com?s=%3C%2Ftitle%3E%3Cscr%3Cscript%3Eipt%3Ealert%28%221zjjkeshqu%22%29%3C%2Fscr%3C%2Fscript%3Eipt%3E
++ http://1.sparelife.sinaapp.com?s=</title><scr<script>ipt>alert("1zjjkeshqu")</scr</script>ipt>
+
+[+] Launching module sql
++ http://1.sparelife.sinaapp.com/wp-trackback.php?p=%BF%27%22%28
++ http://1.sparelife.sinaapp.com/?feed=%BF%27%22%28
++ http://1.sparelife.sinaapp.com/?p=%BF%27%22%28
++ http://1.sparelife.sinaapp.com/?page_id=%BF%27%22%28
++ http://1.sparelife.sinaapp.com/?author=%BF%27%22%28
++ http://1.sparelife.sinaapp.com/?paged=%BF%27%22%28&s=on
++ http://1.sparelife.sinaapp.com/?paged=9&s=%BF%27%22%28
++ http://1.sparelife.sinaapp.com/?m=%BF%27%22%28
++ http://1.sparelife.sinaapp.com/?paged=%BF%27%22%28&author=1
++ http://1.sparelife.sinaapp.com/?paged=11&author=%BF%27%22%28
++ http://1.sparelife.sinaapp.com?s=%BF%27%22%28
++ http://1.sparelife.sinaapp.com/wp-login.php?action=%BF%27%22%28
++ http://1.sparelife.sinaapp.com/?cat=%BF%27%22%28
++ http://1.sparelife.sinaapp.com/demo/snake.html/?paged=%BF%27%22%28
++ http://1.sparelife.sinaapp.com/?tag=%BF%27%22%28
+
+Report
+------
+A report has been generated in the file out.xml
+out.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<report type="security">
+    <generatedBy id="Wapiti 2.2.1"/>
+    <bugTypeList>
+        <bugType name="SQL Injection">
+            <bugList/>
+            <description>
+<![CDATA[SQL injection is a technique that exploits a vulnerability occurring in the database of an application.]]>            </description>
+            <solution>
+<![CDATA[To protect against SQL injection, user input must not directly be embedded in SQL statements. Instead, user input must be escaped or filtered or parameterized statements must be used.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/SQL_Injection</title>
+                    <url>http://www.owasp.org/index.php/SQL_Injection</url>
+                </reference>
+                <reference>
+                    <title>http://en.wikipedia.org/wiki/SQL_injection</title>
+                    <url>http://en.wikipedia.org/wiki/SQL_injection</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Blind SQL Injection">
+            <bugList/>
+            <description>
+<![CDATA[Blind SQL injection is a technique that exploits a vulnerability occurring in the database of an application. This kind of vulnerability is harder to detect than basic SQL injections because no error message will be displayed on the webpage.]]>            </description>
+            <solution>
+<![CDATA[To protect against SQL injection, user input must not directly be embedded in SQL statements. Instead, user input must be escaped or filtered or parameterized statements must be used.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.imperva.com/resources/adc/blind_sql_server_injection.html</title>
+                    <url>http://www.imperva.com/resources/adc/blind_sql_server_injection.html</url>
+                </reference>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Blind_SQL_Injection</title>
+                    <url>http://www.owasp.org/index.php/Blind_SQL_Injection</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="File Handling">
+            <bugList/>
+            <description>
+<![CDATA[This attack is also known as Path Transversal or Directory Transversal, its aim is the access to files and directories that are stored outside the web root folder. The attacker tries to explore the directories stored in the web server. The attacker uses some techniques, for instance, the manipulation of variables that reference files with 'dot-dot-slash (../)' sequences and its variations to move up to root directory to navigate through the file system.]]>            </description>
+            <solution>
+<![CDATA[Prefer working without user input when using file system calls<br>Use indexes rather than actual portions of file names when templating or using language files (ie value 5 from the user submission = Czechoslovakian, rather than expecting the user to return 'Czechoslovakian').<br>Ensure the user cannot supply all parts of the path – surround it with your path code.<br>Validate the user’s input by only accepting known good – do not sanitize the data.<br>Use chrooted jails and code access policies to restrict where the files can be obtained or saved to.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Path_Traversal</title>
+                    <url>http://www.owasp.org/index.php/Path_Traversal</url>
+                </reference>
+                <reference>
+                    <title>http://www.acunetix.com/websitesecurity/directory-traversal.htm</title>
+                    <url>http://www.acunetix.com/websitesecurity/directory-traversal.htm</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Cross Site Scripting">
+            <bugList/>
+            <description>
+<![CDATA[Cross-site scripting (XSS) is a type of computer security vulnerability typically found in web applications which allow code injection by malicious web users into the web pages viewed by other users. Examples of such code include HTML code and client-side scripts.]]>            </description>
+            <solution>
+<![CDATA[The best way to protect a web application from XSS attacks is ensure that the application performs validation of all headers, cookies, query strings, form fields, and hidden fields. Encoding user supplied output in the server side can also defeat XSS vulnerabilities by preventing inserted scripts from being transmitted to users in an executable form. Applications can gain significant protection from javascript based attacks by converting the following characters in all generated output to the appropriate HTML entity encoding:  &lt;, &gt;, &amp;, &quot;, ', (, ), #, %, ; , +, -.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://en.wikipedia.org/wiki/Cross-site_scripting</title>
+                    <url>http://en.wikipedia.org/wiki/Cross-site_scripting</url>
+                </reference>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Cross_Site_Scripting</title>
+                    <url>http://www.owasp.org/index.php/Cross_Site_Scripting</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="CRLF">
+            <bugList/>
+            <description>
+<![CDATA[The term CRLF refers to Carriage Return (ASCII 13, \r) Line Feed (ASCII 10, \n). They're used to note the termination of a line, however, dealt with differently in today’s popular Operating Systems. For example: in Windows both a CR and LF are required to note the end of a line, whereas in Linux/UNIX a LF is only required. This combination of CR and LR is used for example when pressing 'Enter' on the keyboard. Depending on the application being used, pressing 'Enter' generally instructs the application to start a new line, or to send a command.]]>            </description>
+            <solution>
+<![CDATA[Check the submitted parameters and do not allow CRLF to be injected by filtering CRLF]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/CRLF_Injection</title>
+                    <url>http://www.owasp.org/index.php/CRLF_Injection</url>
+                </reference>
+                <reference>
+                    <title>http://www.acunetix.com/websitesecurity/crlf-injection.htm</title>
+                    <url>http://www.acunetix.com/websitesecurity/crlf-injection.htm</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Commands execution">
+            <bugList/>
+            <description>
+<![CDATA[This attack consists in executing system commands on the server. The attacker tries to inject this commands in the request parameters]]>            </description>
+            <solution>
+<![CDATA[Prefer working without user input when using file system calls]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Command_Injection</title>
+                    <url>http://www.owasp.org/index.php/Command_Injection</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Resource consumption">
+            <bugList/>
+            <description>
+<![CDATA[An attacker can force a victim to consume more resources than should be allowed for the attacker's level of access. The program can potentially fail to release or incorrectly release a system resource. A resource is not properly cleared and made available for re-use. It can also be a false-positive due to a too short timeout used for the scan.]]>            </description>
+            <solution>
+<![CDATA[Configure properly the software giving the ressource to avoid memory consumption or system load.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Asymmetric_resource_consumption_(amplification)</title>
+                    <url>http://www.owasp.org/index.php/Asymmetric_resource_consumption_(amplification)</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Htaccess Bypass">
+            <bugList/>
+            <description>
+<![CDATA[htaccess files are used to restrict access to some files or HTTP method. In some case it may be possible to bypass this restriction and access the files.]]>            </description>
+            <solution>
+<![CDATA[Make sure every HTTP method is forbidden if the credentials are bad.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://blog.teusink.net/2009/07/common-apache-htaccess-misconfiguration.html</title>
+                    <url>http://blog.teusink.net/2009/07/common-apache-htaccess-misconfiguration.html</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Backup file">
+            <bugList/>
+            <description>
+<![CDATA[It may be possible to find backup files of scripts on the webserver that thewebadmin put here to save a previous version or backup files that are automaticallygenerated by the software editor used (like for example Emacs). These copies may revealinteresting informations like source code or credentials]]>            </description>
+            <solution>
+<![CDATA[The webadmin must manually delete the backup files or remove it from the web root. He shouldalso reconfigure its editor to deactivate automatic backups]]>            </solution>
+            <references>
+                <reference>
+                    <title>Testing for Old, Backup and Unreferenced Files (OWASP-CM-006)</title>
+                    <url>http://www.owasp.org/index.php/Testing_for_Old,_Backup_and_Unreferenced_Files_(OWASP-CM-006)</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Potentially dangerous file">
+            <bugList/>
+            <description>
+<![CDATA[Some scripts are known to be vulnerable or dangerous. Databases of such files exists and attackers often scan websites to find such vulnerabilities and exploit them. ]]>            </description>
+            <solution>
+<![CDATA[The administrator should frequently check for new version of the scripts used on his server and keep informed of vulnerabilities in the software programs he uses by reading security-list or specialised RSS.]]>            </solution>
+            <references>
+                <reference>
+                    <title>The Open Source Vulnerability Database</title>
+                    <url>http://osvdb.org/</url>
+                </reference>
+            </references>
+        </bugType>
+    </bugTypeList>
+</report>
+
+Updating Solr summary...
+Updating Solr details...
+No bugs found! Skipping indexing to Solr details...
+Scan took 17.6537721167 minutes to run.
+5 sites scanned so far. That's a rate of 330.073353921 sites per day
+finished scanning successfully
+*****So far 0 sites have failed to scan*****
+
+
+***getting a new website to scan***
+
+
+{'url': 'http://ahmad1m.blogfa.com/', 'segment': '20120810130028', 'tstamp': '2012-08-10T13:05:32.561Z', 'anchor': [u'\u0639\u0634\u0642\u0648\u0644\u0627\u0646\u0647', u'\u0639\u0634\u0642\u0648\u0644\u0627\u0646\u0647 (\u0627\u062d\u0645\u062f)', u'\u0639\u0634\u0642\u0648\u0644\u0627\u0646\u0647 (\u0627\u062d\u0645\u062f)', u'\u0639\u0634\u0642\u0648\u0644\u0627\u0646\u0647'], 'boost': 3.2253536e-06, 'id': 'http://ahmad1m.blogfa.com/', 'digest': '25b97a1e99c473a3ebef11c2cf16bd9e'}
+PunkScanner v1.0.0 - Powered by Wapiti
+the number of urls browsed is 0
+http://ahmad1m.blogfa.com/
+the number of urls browsed is 1
+http://ahmad1m.blogfa.com/post-201.aspx
+the number of urls browsed is 2
+http://ahmad1m.blogfa.com/post-200.aspx
+the number of urls browsed is 3
+http://ahmad1m.blogfa.com/post-199.aspx
+the number of urls browsed is 4
+http://ahmad1m.blogfa.com/post-198.aspx
+the number of urls browsed is 5
+http://ahmad1m.blogfa.com/post-197.aspx
+the number of urls browsed is 6
+http://ahmad1m.blogfa.com/post-196.aspx
+the number of urls browsed is 7
+http://ahmad1m.blogfa.com/post-195.aspx
+the number of urls browsed is 8
+http://ahmad1m.blogfa.com/post-193.aspx
+the number of urls browsed is 9
+http://ahmad1m.blogfa.com/post-192.aspx
+the number of urls browsed is 10
+http://ahmad1m.blogfa.com/post-191.aspx
+the number of urls browsed is 11
+http://ahmad1m.blogfa.com
+the number of urls browsed is 12
+http://ahmad1m.blogfa.com/Profile/
+the number of urls browsed is 13
+http://ahmad1m.blogfa.com/9105.aspx
+the number of urls browsed is 14
+http://ahmad1m.blogfa.com/9104.aspx
+the number of urls browsed is 15
+http://ahmad1m.blogfa.com/9103.aspx
+the number of urls browsed is 16
+http://ahmad1m.blogfa.com/9102.aspx
+the number of urls browsed is 17
+http://ahmad1m.blogfa.com/9101.aspx
+the number of urls browsed is 18
+http://ahmad1m.blogfa.com/9012.aspx
+the number of urls browsed is 19
+http://ahmad1m.blogfa.com/9011.aspx
+the number of urls browsed is 20
+http://ahmad1m.blogfa.com/9008.aspx
+the number of urls browsed is 21
+http://ahmad1m.blogfa.com/9007.aspx
+the number of urls browsed is 22
+http://ahmad1m.blogfa.com/9006.aspx
+the number of urls browsed is 23
+http://ahmad1m.blogfa.com/9005.aspx
+the number of urls browsed is 24
+http://ahmad1m.blogfa.com/9004.aspx
+the number of urls browsed is 25
+http://ahmad1m.blogfa.com/9003.aspx
+the number of urls browsed is 26
+http://ahmad1m.blogfa.com/9002.aspx
+the number of urls browsed is 27
+http://ahmad1m.blogfa.com/9001.aspx
+the number of urls browsed is 28
+http://ahmad1m.blogfa.com/8912.aspx
+the number of urls browsed is 29
+http://ahmad1m.blogfa.com/8911.aspx
+the number of urls browsed is 30
+http://ahmad1m.blogfa.com/8910.aspx
+the number of urls browsed is 31
+http://ahmad1m.blogfa.com/8907.aspx
+the number of urls browsed is 32
+http://ahmad1m.blogfa.com/8902.aspx
+the number of urls browsed is 33
+http://ahmad1m.blogfa.com/8802.aspx
+the number of urls browsed is 34
+http://ahmad1m.blogfa.com/8711.aspx
+the number of urls browsed is 35
+http://ahmad1m.blogfa.com/8707.aspx
+the number of urls browsed is 36
+http://ahmad1m.blogfa.com/8705.aspx
+the number of urls browsed is 37
+http://ahmad1m.blogfa.com/8703.aspx
+the number of urls browsed is 38
+http://ahmad1m.blogfa.com/8701.aspx
+the number of urls browsed is 39
+http://ahmad1m.blogfa.com/8612.aspx
+the number of urls browsed is 40
+http://ahmad1m.blogfa.com/8611.aspx
+the number of urls browsed is 41
+http://ahmad1m.blogfa.com/8610.aspx
+the number of urls browsed is 42
+http://ahmad1m.blogfa.com/8609.aspx
+the number of urls browsed is 43
+http://ahmad1m.blogfa.com/8607.aspx
+the number of urls browsed is 44
+http://ahmad1m.blogfa.com/8605.aspx
+the number of urls browsed is 45
+the number of urls browsed is 45
+the number of urls browsed is 45
+the number of urls browsed is 45
+the number of urls browsed is 45
+the number of urls browsed is 45
+the number of urls browsed is 45
+the number of urls browsed is 45
+the number of urls browsed is 45
+the number of urls browsed is 45
+the number of urls browsed is 45
+the number of urls browsed is 45
+the number of urls browsed is 45
+the number of urls browsed is 45
+http://ahmad1m.blogfa.com/post-190.aspx
+the number of urls browsed is 46
+the number of urls browsed is 46
+http://ahmad1m.blogfa.com/post-189.aspx
+the number of urls browsed is 47
+http://ahmad1m.blogfa.com/post-188.aspx
+the number of urls browsed is 48
+http://ahmad1m.blogfa.com/post-187.aspx
+the number of urls browsed is 49
+http://ahmad1m.blogfa.com/post-186.aspx
+the number of urls browsed is 50
+the number of urls browsed is 50
+http://ahmad1m.blogfa.com/post-185.aspx
+the number of urls browsed is 51
+http://ahmad1m.blogfa.com/post-184.aspx
+the number of urls browsed is 52
+http://ahmad1m.blogfa.com/post-183.aspx
+the number of urls browsed is 53
+http://ahmad1m.blogfa.com/post-182.aspx
+the number of urls browsed is 54
+the number of urls browsed is 54
+http://ahmad1m.blogfa.com/post-181.aspx
+the number of urls browsed is 55
+http://ahmad1m.blogfa.com/post-180.aspx
+the number of urls browsed is 56
+the number of urls browsed is 56
+http://ahmad1m.blogfa.com/post-179.aspx
+the number of urls browsed is 57
+http://ahmad1m.blogfa.com/post-178.aspx
+the number of urls browsed is 58
+the number of urls browsed is 58
+http://ahmad1m.blogfa.com/post-176.aspx
+the number of urls browsed is 59
+http://ahmad1m.blogfa.com/post-175.aspx
+the number of urls browsed is 60
+the number of urls browsed is 60
+http://ahmad1m.blogfa.com/post-174.aspx
+the number of urls browsed is 61
+the number of urls browsed is 61
+http://ahmad1m.blogfa.com/post-173.aspx
+the number of urls browsed is 62
+http://ahmad1m.blogfa.com/post-172.aspx
+the number of urls browsed is 63
+http://ahmad1m.blogfa.com/post-171.aspx
+the number of urls browsed is 64
+the number of urls browsed is 64
+http://ahmad1m.blogfa.com/post-169.aspx
+the number of urls browsed is 65
+http://ahmad1m.blogfa.com/post-167.aspx
+the number of urls browsed is 66
+http://ahmad1m.blogfa.com/post-166.aspx
+the number of urls browsed is 67
+http://ahmad1m.blogfa.com/post-165.aspx
+the number of urls browsed is 68
+http://ahmad1m.blogfa.com/post-164.aspx
+the number of urls browsed is 69
+the number of urls browsed is 69
+http://ahmad1m.blogfa.com/post-163.aspx
+the number of urls browsed is 70
+http://ahmad1m.blogfa.com/post-162.aspx
+the number of urls browsed is 71
+http://ahmad1m.blogfa.com/post-161.aspx
+the number of urls browsed is 72
+the number of urls browsed is 72
+http://ahmad1m.blogfa.com/post-160.aspx
+the number of urls browsed is 73
+http://ahmad1m.blogfa.com/post-159.aspx
+the number of urls browsed is 74
+http://ahmad1m.blogfa.com/post-158.aspx
+the number of urls browsed is 75
+http://ahmad1m.blogfa.com/post-156.aspx
+the number of urls browsed is 76
+the number of urls browsed is 76
+http://ahmad1m.blogfa.com/post-147.aspx
+the number of urls browsed is 77
+http://ahmad1m.blogfa.com/post-157.aspx
+the number of urls browsed is 78
+the number of urls browsed is 78
+http://ahmad1m.blogfa.com/post-155.aspx
+the number of urls browsed is 79
+http://ahmad1m.blogfa.com/post-154.aspx
+the number of urls browsed is 80
+http://ahmad1m.blogfa.com/post-153.aspx
+the number of urls browsed is 81
+http://ahmad1m.blogfa.com/post-152.aspx
+the number of urls browsed is 82
+http://ahmad1m.blogfa.com/post-151.aspx
+the number of urls browsed is 83
+http://ahmad1m.blogfa.com/post-150.aspx
+the number of urls browsed is 84
+http://ahmad1m.blogfa.com/post-149.aspx
+the number of urls browsed is 85
+http://ahmad1m.blogfa.com/post-148.aspx
+the number of urls browsed is 86
+http://ahmad1m.blogfa.com/post-146.aspx
+the number of urls browsed is 87
+the number of urls browsed is 87
+http://ahmad1m.blogfa.com/post-141.aspx
+the number of urls browsed is 88
+http://ahmad1m.blogfa.com/post-145.aspx
+the number of urls browsed is 89
+http://ahmad1m.blogfa.com/post-144.aspx
+the number of urls browsed is 90
+http://ahmad1m.blogfa.com/post-143.aspx
+the number of urls browsed is 91
+http://ahmad1m.blogfa.com/post-142.aspx
+the number of urls browsed is 92
+the number of urls browsed is 92
+http://ahmad1m.blogfa.com/post-140.aspx
+the number of urls browsed is 93
+http://ahmad1m.blogfa.com/post-139.aspx
+the number of urls browsed is 94
+http://ahmad1m.blogfa.com/post-138.aspx
+the number of urls browsed is 95
+http://ahmad1m.blogfa.com/post-137.aspx
+the number of urls browsed is 96
+the number of urls browsed is 96
+http://ahmad1m.blogfa.com/post-136.aspx
+the number of urls browsed is 97
+http://ahmad1m.blogfa.com/post-135.aspx
+the number of urls browsed is 98
+http://ahmad1m.blogfa.com/post-134.aspx
+the number of urls browsed is 99
+http://ahmad1m.blogfa.com/post-133.aspx
+the number of urls browsed is 100
+http://ahmad1m.blogfa.com/post-132.aspx
+the number of urls browsed is 101
+http://ahmad1m.blogfa.com/post-131.aspx
+the number of urls browsed is 102
+http://ahmad1m.blogfa.com/post-130.aspx
+the number of urls browsed is 103
+http://ahmad1m.blogfa.com/post-129.aspx
+the number of urls browsed is 104
+http://ahmad1m.blogfa.com/post-128.aspx
+the number of urls browsed is 105
+the number of urls browsed is 105
+http://ahmad1m.blogfa.com/post-127.aspx
+the number of urls browsed is 106
+the number of urls browsed is 106
+http://ahmad1m.blogfa.com/post-126.aspx
+the number of urls browsed is 107
+http://ahmad1m.blogfa.com/post-125.aspx
+the number of urls browsed is 108
+http://ahmad1m.blogfa.com/post-124.aspx
+the number of urls browsed is 109
+http://ahmad1m.blogfa.com/post-123.aspx
+the number of urls browsed is 110
+http://ahmad1m.blogfa.com/post-122.aspx
+the number of urls browsed is 111
+http://ahmad1m.blogfa.com/post-121.aspx
+the number of urls browsed is 112
+http://ahmad1m.blogfa.com/post-120.aspx
+the number of urls browsed is 113
+http://ahmad1m.blogfa.com/post-119.aspx
+the number of urls browsed is 114
+http://ahmad1m.blogfa.com/post-118.aspx
+the number of urls browsed is 115
+the number of urls browsed is 115
+http://ahmad1m.blogfa.com/post-117.aspx
+the number of urls browsed is 116
+http://ahmad1m.blogfa.com/post-116.aspx
+the number of urls browsed is 117
+http://ahmad1m.blogfa.com/post-115.aspx
+the number of urls browsed is 118
+http://ahmad1m.blogfa.com/post-114.aspx
+the number of urls browsed is 119
+http://ahmad1m.blogfa.com/post-113.aspx
+the number of urls browsed is 120
+http://ahmad1m.blogfa.com/post-112.aspx
+the number of urls browsed is 121
+http://ahmad1m.blogfa.com/post-111.aspx
+the number of urls browsed is 122
+the number of urls browsed is 122
+http://ahmad1m.blogfa.com/post-110.aspx
+the number of urls browsed is 123
+http://ahmad1m.blogfa.com/post-109.aspx
+the number of urls browsed is 124
+http://ahmad1m.blogfa.com/post-108.aspx
+the number of urls browsed is 125
+http://ahmad1m.blogfa.com/post-107.aspx
+the number of urls browsed is 126
+http://ahmad1m.blogfa.com/post-106.aspx
+the number of urls browsed is 127
+http://ahmad1m.blogfa.com/post-105.aspx
+the number of urls browsed is 128
+http://ahmad1m.blogfa.com/post-104.aspx
+the number of urls browsed is 129
+http://ahmad1m.blogfa.com/post-103.aspx
+the number of urls browsed is 130
+http://ahmad1m.blogfa.com/post-102.aspx
+the number of urls browsed is 131
+http://ahmad1m.blogfa.com/post-101.aspx
+the number of urls browsed is 132
+the number of urls browsed is 132
+http://ahmad1m.blogfa.com/post-100.aspx
+the number of urls browsed is 133
+http://ahmad1m.blogfa.com/post-99.aspx
+the number of urls browsed is 134
+http://ahmad1m.blogfa.com/post-98.aspx
+the number of urls browsed is 135
+http://ahmad1m.blogfa.com/post-97.aspx
+the number of urls browsed is 136
+http://ahmad1m.blogfa.com/post-96.aspx
+the number of urls browsed is 137
+http://ahmad1m.blogfa.com/post-95.aspx
+the number of urls browsed is 138
+http://ahmad1m.blogfa.com/post-94.aspx
+the number of urls browsed is 139
+http://ahmad1m.blogfa.com/post-93.aspx
+the number of urls browsed is 140
+http://ahmad1m.blogfa.com/post-92.aspx
+the number of urls browsed is 141
+http://ahmad1m.blogfa.com/post-91.aspx
+the number of urls browsed is 142
+the number of urls browsed is 142
+http://ahmad1m.blogfa.com/post-90.aspx
+the number of urls browsed is 143
+http://ahmad1m.blogfa.com/post-89.aspx
+the number of urls browsed is 144
+http://ahmad1m.blogfa.com/post-88.aspx
+the number of urls browsed is 145
+http://ahmad1m.blogfa.com/post-87.aspx
+the number of urls browsed is 146
+http://ahmad1m.blogfa.com/post-86.aspx
+the number of urls browsed is 147
+http://ahmad1m.blogfa.com/post-85.aspx
+the number of urls browsed is 148
+http://ahmad1m.blogfa.com/post-84.aspx
+the number of urls browsed is 149
+http://ahmad1m.blogfa.com/post-83.aspx
+the number of urls browsed is 150
+http://ahmad1m.blogfa.com/post-82.aspx
+the number of urls browsed is 151
+the number of urls browsed is 151
+http://ahmad1m.blogfa.com/post-81.aspx
+the number of urls browsed is 152
+http://ahmad1m.blogfa.com/post-80.aspx
+the number of urls browsed is 153
+http://ahmad1m.blogfa.com/post-79.aspx
+the number of urls browsed is 154
+http://ahmad1m.blogfa.com/post-78.aspx
+the number of urls browsed is 155
+http://ahmad1m.blogfa.com/post-77.aspx
+the number of urls browsed is 156
+http://ahmad1m.blogfa.com/post-76.aspx
+the number of urls browsed is 157
+http://ahmad1m.blogfa.com/post-75.aspx
+the number of urls browsed is 158
+http://ahmad1m.blogfa.com/post-74.aspx
+the number of urls browsed is 159
+http://ahmad1m.blogfa.com/post-73.aspx
+the number of urls browsed is 160
+the number of urls browsed is 160
+http://ahmad1m.blogfa.com/post-72.aspx
+the number of urls browsed is 161
+http://ahmad1m.blogfa.com/post-71.aspx
+the number of urls browsed is 162
+http://ahmad1m.blogfa.com/post-70.aspx
+the number of urls browsed is 163
+http://ahmad1m.blogfa.com/post-69.aspx
+the number of urls browsed is 164
+http://ahmad1m.blogfa.com/post-68.aspx
+the number of urls browsed is 165
+http://ahmad1m.blogfa.com/post-67.aspx
+the number of urls browsed is 166
+http://ahmad1m.blogfa.com/post-66.aspx
+the number of urls browsed is 167
+http://ahmad1m.blogfa.com/post-65.aspx
+the number of urls browsed is 168
+http://ahmad1m.blogfa.com/post-64.aspx
+the number of urls browsed is 169
+http://ahmad1m.blogfa.com/post-63.aspx
+the number of urls browsed is 170
+the number of urls browsed is 170
+http://ahmad1m.blogfa.com/post-62.aspx
+the number of urls browsed is 171
+http://ahmad1m.blogfa.com/post-61.aspx
+the number of urls browsed is 172
+http://ahmad1m.blogfa.com/post-60.aspx
+the number of urls browsed is 173
+http://ahmad1m.blogfa.com/post-59.aspx
+the number of urls browsed is 174
+http://ahmad1m.blogfa.com/post-58.aspx
+the number of urls browsed is 175
+http://ahmad1m.blogfa.com/post-57.aspx
+the number of urls browsed is 176
+http://ahmad1m.blogfa.com/post-56.aspx
+the number of urls browsed is 177
+the number of urls browsed is 177
+http://ahmad1m.blogfa.com/post-55.aspx
+the number of urls browsed is 178
+http://ahmad1m.blogfa.com/post-54.aspx
+the number of urls browsed is 179
+http://ahmad1m.blogfa.com/post-53.aspx
+the number of urls browsed is 180
+http://ahmad1m.blogfa.com/post-52.aspx
+the number of urls browsed is 181
+http://ahmad1m.blogfa.com/post-51.aspx
+the number of urls browsed is 182
+http://ahmad1m.blogfa.com/post-50.aspx
+the number of urls browsed is 183
+http://ahmad1m.blogfa.com/post-49.aspx
+the number of urls browsed is 184
+http://ahmad1m.blogfa.com/post-48.aspx
+the number of urls browsed is 185
+the number of urls browsed is 185
+http://ahmad1m.blogfa.com/post-47.aspx
+the number of urls browsed is 186
+http://ahmad1m.blogfa.com/post-46.aspx
+the number of urls browsed is 187
+http://ahmad1m.blogfa.com/post-45.aspx
+the number of urls browsed is 188
+http://ahmad1m.blogfa.com/post-44.aspx
+the number of urls browsed is 189
+http://ahmad1m.blogfa.com/post-43.aspx
+the number of urls browsed is 190
+http://ahmad1m.blogfa.com/post-42.aspx
+the number of urls browsed is 191
+http://ahmad1m.blogfa.com/post-41.aspx
+the number of urls browsed is 192
+http://ahmad1m.blogfa.com/post-40.aspx
+the number of urls browsed is 193
+http://ahmad1m.blogfa.com/post-39.aspx
+the number of urls browsed is 194
+http://ahmad1m.blogfa.com/post-38.aspx
+the number of urls browsed is 195
+http://ahmad1m.blogfa.com/post-37.aspx
+the number of urls browsed is 196
+http://ahmad1m.blogfa.com/post-36.aspx
+the number of urls browsed is 197
+http://ahmad1m.blogfa.com/post-35.aspx
+the number of urls browsed is 198
+http://ahmad1m.blogfa.com/post-34.aspx
+the number of urls browsed is 199
+http://ahmad1m.blogfa.com/post-33.aspx
+the number of urls browsed is 200
+the number of urls browsed is 200
+http://ahmad1m.blogfa.com/post-32.aspx
+the number of urls browsed is 201
+http://ahmad1m.blogfa.com/post-31.aspx
+the number of urls browsed is 202
+http://ahmad1m.blogfa.com/post-30.aspx
+the number of urls browsed is 203
+http://ahmad1m.blogfa.com/post-29.aspx
+the number of urls browsed is 204
+http://ahmad1m.blogfa.com/post-28.aspx
+the number of urls browsed is 205
+the number of urls browsed is 205
+http://ahmad1m.blogfa.com/post-27.aspx
+the number of urls browsed is 206
+http://ahmad1m.blogfa.com/post-26.aspx
+the number of urls browsed is 207
+http://ahmad1m.blogfa.com/post-25.aspx
+the number of urls browsed is 208
+http://ahmad1m.blogfa.com/post-24.aspx
+the number of urls browsed is 209
+http://ahmad1m.blogfa.com/post-23.aspx
+the number of urls browsed is 210
+http://ahmad1m.blogfa.com/post-22.aspx
+the number of urls browsed is 211
+http://ahmad1m.blogfa.com/post-21.aspx
+the number of urls browsed is 212
+http://ahmad1m.blogfa.com/post-20.aspx
+the number of urls browsed is 213
+http://ahmad1m.blogfa.com/post-19.aspx
+the number of urls browsed is 214
+http://ahmad1m.blogfa.com/post-18.aspx
+the number of urls browsed is 215
+http://ahmad1m.blogfa.com/post-17.aspx
+the number of urls browsed is 216
+http://ahmad1m.blogfa.com/post-16.aspx
+the number of urls browsed is 217
+the number of urls browsed is 217
+http://ahmad1m.blogfa.com/post-15.aspx
+the number of urls browsed is 218
+http://ahmad1m.blogfa.com/post-14.aspx
+the number of urls browsed is 219
+http://ahmad1m.blogfa.com/post-13.aspx
+the number of urls browsed is 220
+http://ahmad1m.blogfa.com/post-12.aspx
+the number of urls browsed is 221
+http://ahmad1m.blogfa.com/post-11.aspx
+the number of urls browsed is 222
+http://ahmad1m.blogfa.com/post-10.aspx
+the number of urls browsed is 223
+http://ahmad1m.blogfa.com/post-9.aspx
+the number of urls browsed is 224
+http://ahmad1m.blogfa.com/post-8.aspx
+the number of urls browsed is 225
+http://ahmad1m.blogfa.com/post-7.aspx
+the number of urls browsed is 226
+http://ahmad1m.blogfa.com/post-6.aspx
+the number of urls browsed is 227
+http://ahmad1m.blogfa.com/post-5.aspx
+the number of urls browsed is 228
+http://ahmad1m.blogfa.com/post-4.aspx
+the number of urls browsed is 229
+http://ahmad1m.blogfa.com/post-3.aspx
+the number of urls browsed is 230
+http://ahmad1m.blogfa.com/post-2.aspx
+the number of urls browsed is 231
+http://ahmad1m.blogfa.com/post-1.aspx
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+the number of urls browsed is 232
+
+ Notice 
+========
+This scan has been saved in the file /home/punk/HGDev/punkscan/punkscan/PunkScan/src/scans/ahmad1m.blogfa.com.xml
+No links or forms with parameters found in this page, skipping scan stage !
+[*] Loading modules :
+	mod_crlf, mod_exec, mod_file, mod_sql, mod_xss, mod_backup, mod_htaccess, mod_blindsql, mod_permanentxss, mod_nikto
+[<attack.mod_exec.mod_exec instance at 0x21eecf8>, <attack.mod_file.mod_file instance at 0x21eed88>, <attack.mod_backup.mod_backup instance at 0x2213248>, <attack.mod_htaccess.mod_htaccess instance at 0x22132d8>, <attack.mod_crlf.mod_crlf instance at 0x2213488>, <attack.mod_xss.mod_xss instance at 0x2213518>, <attack.mod_sql.mod_sql instance at 0x2213638>, <attack.mod_nikto.mod_nikto instance at 0x22136c8>, <attack.mod_blindsql.mod_blindsql instance at 0x21eee18>, <attack.mod_permanentxss.mod_permanentxss instance at 0x2213368>]
+
+[+] Launching module xss
+
+[+] Launching module sql
+
+Report
+------
+A report has been generated in the file out.xml
+out.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<report type="security">
+    <generatedBy id="Wapiti 2.2.1"/>
+    <bugTypeList>
+        <bugType name="SQL Injection">
+            <bugList/>
+            <description>
+<![CDATA[SQL injection is a technique that exploits a vulnerability occurring in the database of an application.]]>            </description>
+            <solution>
+<![CDATA[To protect against SQL injection, user input must not directly be embedded in SQL statements. Instead, user input must be escaped or filtered or parameterized statements must be used.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/SQL_Injection</title>
+                    <url>http://www.owasp.org/index.php/SQL_Injection</url>
+                </reference>
+                <reference>
+                    <title>http://en.wikipedia.org/wiki/SQL_injection</title>
+                    <url>http://en.wikipedia.org/wiki/SQL_injection</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Blind SQL Injection">
+            <bugList/>
+            <description>
+<![CDATA[Blind SQL injection is a technique that exploits a vulnerability occurring in the database of an application. This kind of vulnerability is harder to detect than basic SQL injections because no error message will be displayed on the webpage.]]>            </description>
+            <solution>
+<![CDATA[To protect against SQL injection, user input must not directly be embedded in SQL statements. Instead, user input must be escaped or filtered or parameterized statements must be used.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.imperva.com/resources/adc/blind_sql_server_injection.html</title>
+                    <url>http://www.imperva.com/resources/adc/blind_sql_server_injection.html</url>
+                </reference>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Blind_SQL_Injection</title>
+                    <url>http://www.owasp.org/index.php/Blind_SQL_Injection</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="File Handling">
+            <bugList/>
+            <description>
+<![CDATA[This attack is also known as Path Transversal or Directory Transversal, its aim is the access to files and directories that are stored outside the web root folder. The attacker tries to explore the directories stored in the web server. The attacker uses some techniques, for instance, the manipulation of variables that reference files with 'dot-dot-slash (../)' sequences and its variations to move up to root directory to navigate through the file system.]]>            </description>
+            <solution>
+<![CDATA[Prefer working without user input when using file system calls<br>Use indexes rather than actual portions of file names when templating or using language files (ie value 5 from the user submission = Czechoslovakian, rather than expecting the user to return 'Czechoslovakian').<br>Ensure the user cannot supply all parts of the path – surround it with your path code.<br>Validate the user’s input by only accepting known good – do not sanitize the data.<br>Use chrooted jails and code access policies to restrict where the files can be obtained or saved to.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Path_Traversal</title>
+                    <url>http://www.owasp.org/index.php/Path_Traversal</url>
+                </reference>
+                <reference>
+                    <title>http://www.acunetix.com/websitesecurity/directory-traversal.htm</title>
+                    <url>http://www.acunetix.com/websitesecurity/directory-traversal.htm</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Cross Site Scripting">
+            <bugList/>
+            <description>
+<![CDATA[Cross-site scripting (XSS) is a type of computer security vulnerability typically found in web applications which allow code injection by malicious web users into the web pages viewed by other users. Examples of such code include HTML code and client-side scripts.]]>            </description>
+            <solution>
+<![CDATA[The best way to protect a web application from XSS attacks is ensure that the application performs validation of all headers, cookies, query strings, form fields, and hidden fields. Encoding user supplied output in the server side can also defeat XSS vulnerabilities by preventing inserted scripts from being transmitted to users in an executable form. Applications can gain significant protection from javascript based attacks by converting the following characters in all generated output to the appropriate HTML entity encoding:  &lt;, &gt;, &amp;, &quot;, ', (, ), #, %, ; , +, -.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://en.wikipedia.org/wiki/Cross-site_scripting</title>
+                    <url>http://en.wikipedia.org/wiki/Cross-site_scripting</url>
+                </reference>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Cross_Site_Scripting</title>
+                    <url>http://www.owasp.org/index.php/Cross_Site_Scripting</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="CRLF">
+            <bugList/>
+            <description>
+<![CDATA[The term CRLF refers to Carriage Return (ASCII 13, \r) Line Feed (ASCII 10, \n). They're used to note the termination of a line, however, dealt with differently in today’s popular Operating Systems. For example: in Windows both a CR and LF are required to note the end of a line, whereas in Linux/UNIX a LF is only required. This combination of CR and LR is used for example when pressing 'Enter' on the keyboard. Depending on the application being used, pressing 'Enter' generally instructs the application to start a new line, or to send a command.]]>            </description>
+            <solution>
+<![CDATA[Check the submitted parameters and do not allow CRLF to be injected by filtering CRLF]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/CRLF_Injection</title>
+                    <url>http://www.owasp.org/index.php/CRLF_Injection</url>
+                </reference>
+                <reference>
+                    <title>http://www.acunetix.com/websitesecurity/crlf-injection.htm</title>
+                    <url>http://www.acunetix.com/websitesecurity/crlf-injection.htm</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Commands execution">
+            <bugList/>
+            <description>
+<![CDATA[This attack consists in executing system commands on the server. The attacker tries to inject this commands in the request parameters]]>            </description>
+            <solution>
+<![CDATA[Prefer working without user input when using file system calls]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Command_Injection</title>
+                    <url>http://www.owasp.org/index.php/Command_Injection</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Resource consumption">
+            <bugList/>
+            <description>
+<![CDATA[An attacker can force a victim to consume more resources than should be allowed for the attacker's level of access. The program can potentially fail to release or incorrectly release a system resource. A resource is not properly cleared and made available for re-use. It can also be a false-positive due to a too short timeout used for the scan.]]>            </description>
+            <solution>
+<![CDATA[Configure properly the software giving the ressource to avoid memory consumption or system load.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Asymmetric_resource_consumption_(amplification)</title>
+                    <url>http://www.owasp.org/index.php/Asymmetric_resource_consumption_(amplification)</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Htaccess Bypass">
+            <bugList/>
+            <description>
+<![CDATA[htaccess files are used to restrict access to some files or HTTP method. In some case it may be possible to bypass this restriction and access the files.]]>            </description>
+            <solution>
+<![CDATA[Make sure every HTTP method is forbidden if the credentials are bad.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://blog.teusink.net/2009/07/common-apache-htaccess-misconfiguration.html</title>
+                    <url>http://blog.teusink.net/2009/07/common-apache-htaccess-misconfiguration.html</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Backup file">
+            <bugList/>
+            <description>
+<![CDATA[It may be possible to find backup files of scripts on the webserver that thewebadmin put here to save a previous version or backup files that are automaticallygenerated by the software editor used (like for example Emacs). These copies may revealinteresting informations like source code or credentials]]>            </description>
+            <solution>
+<![CDATA[The webadmin must manually delete the backup files or remove it from the web root. He shouldalso reconfigure its editor to deactivate automatic backups]]>            </solution>
+            <references>
+                <reference>
+                    <title>Testing for Old, Backup and Unreferenced Files (OWASP-CM-006)</title>
+                    <url>http://www.owasp.org/index.php/Testing_for_Old,_Backup_and_Unreferenced_Files_(OWASP-CM-006)</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Potentially dangerous file">
+            <bugList/>
+            <description>
+<![CDATA[Some scripts are known to be vulnerable or dangerous. Databases of such files exists and attackers often scan websites to find such vulnerabilities and exploit them. ]]>            </description>
+            <solution>
+<![CDATA[The administrator should frequently check for new version of the scripts used on his server and keep informed of vulnerabilities in the software programs he uses by reading security-list or specialised RSS.]]>            </solution>
+            <references>
+                <reference>
+                    <title>The Open Source Vulnerability Database</title>
+                    <url>http://osvdb.org/</url>
+                </reference>
+            </references>
+        </bugType>
+    </bugTypeList>
+</report>
+
+Updating Solr summary...
+Updating Solr details...
+No bugs found! Skipping indexing to Solr details...
+Scan took 3.9925833 minutes to run.
+6 sites scanned so far. That's a rate of 334.806944377 sites per day
+finished scanning successfully
+*****So far 0 sites have failed to scan*****
+
+
+***getting a new website to scan***
+
+
+{'url': 'http://aliboy89.blogfa.com/', 'segment': '20120810130028', 'tstamp': '2012-08-10T13:12:35.743Z', 'anchor': [u'\u0639\u0644\u064a: \u0627\u0646\u0631\u0698\u064a \u0645\u0627\u0645\u0627\u0646 \u0648 \u0628\u0627\u0628\u0627'], 'boost': 3.3646222e-06, 'id': 'http://aliboy89.blogfa.com/', 'digest': '56862732790e6ed7e491bc118fcb72a9'}
+PunkScanner v1.0.0 - Powered by Wapiti
+the number of urls browsed is 0
+http://aliboy89.blogfa.com/
+the number of urls browsed is 1
+http://aliboy89.blogfa.com
+the number of urls browsed is 2
+http://aliboy89.blogfa.com/posts
+the number of urls browsed is 3
+http://aliboy89.blogfa.com/Profile/
+the number of urls browsed is 4
+http://aliboy89.blogfa.com/post-45.aspx
+the number of urls browsed is 5
+http://aliboy89.blogfa.com/post-44.aspx
+the number of urls browsed is 6
+http://aliboy89.blogfa.com/post-43.aspx
+the number of urls browsed is 7
+http://aliboy89.blogfa.com/post-41.aspx
+the number of urls browsed is 8
+http://aliboy89.blogfa.com/post-40.aspx
+the number of urls browsed is 9
+http://aliboy89.blogfa.com/post-39.aspx
+the number of urls browsed is 10
+http://aliboy89.blogfa.com/post-38.aspx
+the number of urls browsed is 11
+http://aliboy89.blogfa.com/post-37.aspx
+the number of urls browsed is 12
+http://aliboy89.blogfa.com/post-36.aspx
+the number of urls browsed is 13
+http://aliboy89.blogfa.com/post-35.aspx
+the number of urls browsed is 14
+http://aliboy89.blogfa.com/9106.aspx
+the number of urls browsed is 15
+http://aliboy89.blogfa.com/9105.aspx
+the number of urls browsed is 16
+http://aliboy89.blogfa.com/9103.aspx
+the number of urls browsed is 17
+http://aliboy89.blogfa.com/9102.aspx
+the number of urls browsed is 18
+http://aliboy89.blogfa.com/9101.aspx
+the number of urls browsed is 19
+http://aliboy89.blogfa.com/9012.aspx
+the number of urls browsed is 20
+http://aliboy89.blogfa.com/9010.aspx
+the number of urls browsed is 21
+http://aliboy89.blogfa.com/9009.aspx
+the number of urls browsed is 22
+http://aliboy89.blogfa.com/9008.aspx
+the number of urls browsed is 23
+http://aliboy89.blogfa.com/9007.aspx
+the number of urls browsed is 24
+http://aliboy89.blogfa.com/9005.aspx
+the number of urls browsed is 25
+http://aliboy89.blogfa.com/9003.aspx
+the number of urls browsed is 26
+http://aliboy89.blogfa.com/9002.aspx
+the number of urls browsed is 27
+http://aliboy89.blogfa.com/9001.aspx
+the number of urls browsed is 28
+http://aliboy89.blogfa.com/8912.aspx
+the number of urls browsed is 29
+http://aliboy89.blogfa.com/8911.aspx
+the number of urls browsed is 30
+http://aliboy89.blogfa.com/8910.aspx
+the number of urls browsed is 31
+http://aliboy89.blogfa.com/8909.aspx
+the number of urls browsed is 32
+http://aliboy89.blogfa.com/8908.aspx
+the number of urls browsed is 33
+the number of urls browsed is 33
+http://aliboy89.blogfa.com/post-34.aspx
+the number of urls browsed is 34
+http://aliboy89.blogfa.com/post-33.aspx
+the number of urls browsed is 35
+http://aliboy89.blogfa.com/post-32.aspx
+the number of urls browsed is 36
+http://aliboy89.blogfa.com/post-31.aspx
+the number of urls browsed is 37
+http://aliboy89.blogfa.com/post-30.aspx
+the number of urls browsed is 38
+http://aliboy89.blogfa.com/post-29.aspx
+the number of urls browsed is 39
+http://aliboy89.blogfa.com/post-28.aspx
+the number of urls browsed is 40
+http://aliboy89.blogfa.com/post-27.aspx
+the number of urls browsed is 41
+http://aliboy89.blogfa.com/post-26.aspx
+the number of urls browsed is 42
+http://aliboy89.blogfa.com/post-25.aspx
+the number of urls browsed is 43
+http://aliboy89.blogfa.com/post-24.aspx
+the number of urls browsed is 44
+http://aliboy89.blogfa.com/post-23.aspx
+the number of urls browsed is 45
+http://aliboy89.blogfa.com/post-22.aspx
+the number of urls browsed is 46
+http://aliboy89.blogfa.com/post-20.aspx
+the number of urls browsed is 47
+http://aliboy89.blogfa.com/post-21.aspx
+the number of urls browsed is 48
+http://aliboy89.blogfa.com/post-19.aspx
+the number of urls browsed is 49
+http://aliboy89.blogfa.com/post-18.aspx
+the number of urls browsed is 50
+http://aliboy89.blogfa.com/post-1.aspx
+the number of urls browsed is 51
+http://aliboy89.blogfa.com/post-17.aspx
+the number of urls browsed is 52
+http://aliboy89.blogfa.com/post-16.aspx
+the number of urls browsed is 53
+http://aliboy89.blogfa.com/post-15.aspx
+the number of urls browsed is 54
+http://aliboy89.blogfa.com/post-14.aspx
+the number of urls browsed is 55
+http://aliboy89.blogfa.com/post-13.aspx
+the number of urls browsed is 56
+http://aliboy89.blogfa.com/post-12.aspx
+the number of urls browsed is 57
+http://aliboy89.blogfa.com/post-11.aspx
+the number of urls browsed is 58
+http://aliboy89.blogfa.com/post-10.aspx
+the number of urls browsed is 59
+http://aliboy89.blogfa.com/post-9.aspx
+the number of urls browsed is 60
+http://aliboy89.blogfa.com/post-8.aspx
+the number of urls browsed is 61
+http://aliboy89.blogfa.com/post-7.aspx
+the number of urls browsed is 62
+http://aliboy89.blogfa.com/post-6.aspx
+the number of urls browsed is 63
+http://aliboy89.blogfa.com/post-5.aspx
+the number of urls browsed is 64
+http://aliboy89.blogfa.com/post-4.aspx
+the number of urls browsed is 65
+http://aliboy89.blogfa.com/post-3.aspx
+the number of urls browsed is 66
+http://aliboy89.blogfa.com/post-2.aspx
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+the number of urls browsed is 67
+
+ Notice 
+========
+This scan has been saved in the file /home/punk/HGDev/punkscan/punkscan/PunkScan/src/scans/aliboy89.blogfa.com.xml
+No links or forms with parameters found in this page, skipping scan stage !
+[*] Loading modules :
+	mod_crlf, mod_exec, mod_file, mod_sql, mod_xss, mod_backup, mod_htaccess, mod_blindsql, mod_permanentxss, mod_nikto
+[<attack.mod_exec.mod_exec instance at 0x253b830>, <attack.mod_file.mod_file instance at 0x253b8c0>, <attack.mod_backup.mod_backup instance at 0x253bd40>, <attack.mod_htaccess.mod_htaccess instance at 0x253bdd0>, <attack.mod_crlf.mod_crlf instance at 0x253bf80>, <attack.mod_xss.mod_xss instance at 0x27cc050>, <attack.mod_sql.mod_sql instance at 0x27cc170>, <attack.mod_nikto.mod_nikto instance at 0x27cc200>, <attack.mod_blindsql.mod_blindsql instance at 0x253b950>, <attack.mod_permanentxss.mod_permanentxss instance at 0x253be60>]
+
+[+] Launching module xss
+
+[+] Launching module sql
+
+Report
+------
+A report has been generated in the file out.xml
+out.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<report type="security">
+    <generatedBy id="Wapiti 2.2.1"/>
+    <bugTypeList>
+        <bugType name="SQL Injection">
+            <bugList/>
+            <description>
+<![CDATA[SQL injection is a technique that exploits a vulnerability occurring in the database of an application.]]>            </description>
+            <solution>
+<![CDATA[To protect against SQL injection, user input must not directly be embedded in SQL statements. Instead, user input must be escaped or filtered or parameterized statements must be used.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/SQL_Injection</title>
+                    <url>http://www.owasp.org/index.php/SQL_Injection</url>
+                </reference>
+                <reference>
+                    <title>http://en.wikipedia.org/wiki/SQL_injection</title>
+                    <url>http://en.wikipedia.org/wiki/SQL_injection</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Blind SQL Injection">
+            <bugList/>
+            <description>
+<![CDATA[Blind SQL injection is a technique that exploits a vulnerability occurring in the database of an application. This kind of vulnerability is harder to detect than basic SQL injections because no error message will be displayed on the webpage.]]>            </description>
+            <solution>
+<![CDATA[To protect against SQL injection, user input must not directly be embedded in SQL statements. Instead, user input must be escaped or filtered or parameterized statements must be used.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.imperva.com/resources/adc/blind_sql_server_injection.html</title>
+                    <url>http://www.imperva.com/resources/adc/blind_sql_server_injection.html</url>
+                </reference>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Blind_SQL_Injection</title>
+                    <url>http://www.owasp.org/index.php/Blind_SQL_Injection</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="File Handling">
+            <bugList/>
+            <description>
+<![CDATA[This attack is also known as Path Transversal or Directory Transversal, its aim is the access to files and directories that are stored outside the web root folder. The attacker tries to explore the directories stored in the web server. The attacker uses some techniques, for instance, the manipulation of variables that reference files with 'dot-dot-slash (../)' sequences and its variations to move up to root directory to navigate through the file system.]]>            </description>
+            <solution>
+<![CDATA[Prefer working without user input when using file system calls<br>Use indexes rather than actual portions of file names when templating or using language files (ie value 5 from the user submission = Czechoslovakian, rather than expecting the user to return 'Czechoslovakian').<br>Ensure the user cannot supply all parts of the path – surround it with your path code.<br>Validate the user’s input by only accepting known good – do not sanitize the data.<br>Use chrooted jails and code access policies to restrict where the files can be obtained or saved to.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Path_Traversal</title>
+                    <url>http://www.owasp.org/index.php/Path_Traversal</url>
+                </reference>
+                <reference>
+                    <title>http://www.acunetix.com/websitesecurity/directory-traversal.htm</title>
+                    <url>http://www.acunetix.com/websitesecurity/directory-traversal.htm</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Cross Site Scripting">
+            <bugList/>
+            <description>
+<![CDATA[Cross-site scripting (XSS) is a type of computer security vulnerability typically found in web applications which allow code injection by malicious web users into the web pages viewed by other users. Examples of such code include HTML code and client-side scripts.]]>            </description>
+            <solution>
+<![CDATA[The best way to protect a web application from XSS attacks is ensure that the application performs validation of all headers, cookies, query strings, form fields, and hidden fields. Encoding user supplied output in the server side can also defeat XSS vulnerabilities by preventing inserted scripts from being transmitted to users in an executable form. Applications can gain significant protection from javascript based attacks by converting the following characters in all generated output to the appropriate HTML entity encoding:  &lt;, &gt;, &amp;, &quot;, ', (, ), #, %, ; , +, -.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://en.wikipedia.org/wiki/Cross-site_scripting</title>
+                    <url>http://en.wikipedia.org/wiki/Cross-site_scripting</url>
+                </reference>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Cross_Site_Scripting</title>
+                    <url>http://www.owasp.org/index.php/Cross_Site_Scripting</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="CRLF">
+            <bugList/>
+            <description>
+<![CDATA[The term CRLF refers to Carriage Return (ASCII 13, \r) Line Feed (ASCII 10, \n). They're used to note the termination of a line, however, dealt with differently in today’s popular Operating Systems. For example: in Windows both a CR and LF are required to note the end of a line, whereas in Linux/UNIX a LF is only required. This combination of CR and LR is used for example when pressing 'Enter' on the keyboard. Depending on the application being used, pressing 'Enter' generally instructs the application to start a new line, or to send a command.]]>            </description>
+            <solution>
+<![CDATA[Check the submitted parameters and do not allow CRLF to be injected by filtering CRLF]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/CRLF_Injection</title>
+                    <url>http://www.owasp.org/index.php/CRLF_Injection</url>
+                </reference>
+                <reference>
+                    <title>http://www.acunetix.com/websitesecurity/crlf-injection.htm</title>
+                    <url>http://www.acunetix.com/websitesecurity/crlf-injection.htm</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Commands execution">
+            <bugList/>
+            <description>
+<![CDATA[This attack consists in executing system commands on the server. The attacker tries to inject this commands in the request parameters]]>            </description>
+            <solution>
+<![CDATA[Prefer working without user input when using file system calls]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Command_Injection</title>
+                    <url>http://www.owasp.org/index.php/Command_Injection</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Resource consumption">
+            <bugList/>
+            <description>
+<![CDATA[An attacker can force a victim to consume more resources than should be allowed for the attacker's level of access. The program can potentially fail to release or incorrectly release a system resource. A resource is not properly cleared and made available for re-use. It can also be a false-positive due to a too short timeout used for the scan.]]>            </description>
+            <solution>
+<![CDATA[Configure properly the software giving the ressource to avoid memory consumption or system load.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Asymmetric_resource_consumption_(amplification)</title>
+                    <url>http://www.owasp.org/index.php/Asymmetric_resource_consumption_(amplification)</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Htaccess Bypass">
+            <bugList/>
+            <description>
+<![CDATA[htaccess files are used to restrict access to some files or HTTP method. In some case it may be possible to bypass this restriction and access the files.]]>            </description>
+            <solution>
+<![CDATA[Make sure every HTTP method is forbidden if the credentials are bad.]]>            </solution>
+            <references>
+                <reference>
+                    <title>http://blog.teusink.net/2009/07/common-apache-htaccess-misconfiguration.html</title>
+                    <url>http://blog.teusink.net/2009/07/common-apache-htaccess-misconfiguration.html</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Backup file">
+            <bugList/>
+            <description>
+<![CDATA[It may be possible to find backup files of scripts on the webserver that thewebadmin put here to save a previous version or backup files that are automaticallygenerated by the software editor used (like for example Emacs). These copies may revealinteresting informations like source code or credentials]]>            </description>
+            <solution>
+<![CDATA[The webadmin must manually delete the backup files or remove it from the web root. He shouldalso reconfigure its editor to deactivate automatic backups]]>            </solution>
+            <references>
+                <reference>
+                    <title>Testing for Old, Backup and Unreferenced Files (OWASP-CM-006)</title>
+                    <url>http://www.owasp.org/index.php/Testing_for_Old,_Backup_and_Unreferenced_Files_(OWASP-CM-006)</url>
+                </reference>
+            </references>
+        </bugType>
+        <bugType name="Potentially dangerous file">
+            <bugList/>
+            <description>
+<![CDATA[Some scripts are known to be vulnerable or dangerous. Databases of such files exists and attackers often scan websites to find such vulnerabilities and exploit them. ]]>            </description>
+            <solution>
+<![CDATA[The administrator should frequently check for new version of the scripts used on his server and keep informed of vulnerabilities in the software programs he uses by reading security-list or specialised RSS.]]>            </solution>
+            <references>
+                <reference>
+                    <title>The Open Source Vulnerability Database</title>
+                    <url>http://osvdb.org/</url>
+                </reference>
+            </references>
+        </bugType>
+    </bugTypeList>
+</report>
+
+Updating Solr summary...
+Updating Solr details...
+No bugs found! Skipping indexing to Solr details...
+Scan took 2.34759398333 minutes to run.
+7 sites scanned so far. That's a rate of 358.03705757 sites per day
+finished scanning successfully
+*****So far 0 sites have failed to scan*****
+
+
+***getting a new website to scan***
+
+
+{'title': u'\uff3b Dream Project \uff3dby ALL DREAM NET', 'url': 'http://alldreamnet.blog.fc2.com/', 'segment': '20120810130028', 'tstamp': '2012-08-10T13:02:38.457Z', 'anchor': ['dp_banner.jpg dp_banner.jpg'], 'boost': 4.1144535e-06, 'id': 'http://alldreamnet.blog.fc2.com/', 'digest': '10b96715c38cbefdd93c99900b5a1d35'}
+PunkScanner v1.0.0 - Powered by Wapiti
+the number of urls browsed is 0
+http://alldreamnet.blog.fc2.com/
+the number of urls browsed is 1
+the number of urls browsed is 1
+http://alldreamnet.blog.fc2.com
+the number of urls browsed is 2
+http://alldreamnet.blog.fc2.com/blog-entry-3.html
+the number of urls browsed is 3
+http://alldreamnet.blog.fc2.com/blog-entry-5.html
+the number of urls browsed is 4
+http://alldreamnet.blog.fc2.com/blog-entry-4.html
+the number of urls browsed is 5
+http://alldreamnet.blog.fc2.com/blog-entry-7.html
+the number of urls browsed is 6
+http://alldreamnet.blog.fc2.com/blog-entry-6.html
+the number of urls browsed is 7
+http://alldreamnet.blog.fc2.com/blog-entry-261.html
+the number of urls browsed is 8
+http://alldreamnet.blog.fc2.com/blog-entry-259.html
+the number of urls browsed is 9
+http://alldreamnet.blog.fc2.com/blog-entry-260.html
+the number of urls browsed is 10
+http://alldreamnet.blog.fc2.com/blog-entry-258.html
+the number of urls browsed is 11
+http://alldreamnet.blog.fc2.com/blog-entry-257.html
+the number of urls browsed is 12
+http://alldreamnet.blog.fc2.com/blog-entry-256.html
+the number of urls browsed is 13
+http://alldreamnet.blog.fc2.com/blog-entry-255.html
+the number of urls browsed is 14
+http://alldreamnet.blog.fc2.com/blog-entry-254.html
+the number of urls browsed is 15
+http://alldreamnet.blog.fc2.com/blog-entry-253.html
+the number of urls browsed is 16
+http://alldreamnet.blog.fc2.com/blog-entry-252.html
+the number of urls browsed is 17
+http://alldreamnet.blog.fc2.com/blog-entry-234.html
+the number of urls browsed is 18
+http://alldreamnet.blog.fc2.com/blog-category-19.html
+the number of urls browsed is 19
+http://alldreamnet.blog.fc2.com/blog-category-6.html
+the number of urls browsed is 20
+http://alldreamnet.blog.fc2.com/blog-category-20.html
+the number of urls browsed is 21
+http://alldreamnet.blog.fc2.com/page-1.html
+the number of urls browsed is 22
+http://alldreamnet.blog.fc2.com/blog-category-0.html
+the number of urls browsed is 23
+http://alldreamnet.blog.fc2.com/blog-category-3.html
+the number of urls browsed is 24
+http://alldreamnet.blog.fc2.com/blog-category-1.html
+the number of urls browsed is 25
+http://alldreamnet.blog.fc2.com/blog-category-8.html
+the number of urls browsed is 26
+http://alldreamnet.blog.fc2.com/blog-category-16.html
+the number of urls browsed is 27
+http://alldreamnet.blog.fc2.com/blog-category-4.html
+the number of urls browsed is 28
+http://alldreamnet.blog.fc2.com/blog-category-17.html
+the number of urls browsed is 29
+http://alldreamnet.blog.fc2.com/blog-category-18.html
+the number of urls browsed is 30
+http://alldreamnet.blog.fc2.com/blog-category-9.html
+the number of urls browsed is 31
+http://alldreamnet.blog.fc2.com/blog-category-27.html
+the number of urls browsed is 32
+http://alldreamnet.blog.fc2.com/blog-category-28.html
+the number of urls browsed is 33
+http://alldreamnet.blog.fc2.com/blog-category-2.html
+the number of urls browsed is 34
+http://alldreamnet.blog.fc2.com/blog-category-7.html
+the number of urls browsed is 35
+http://alldreamnet.blog.fc2.com/blog-category-14.html
+the number of urls browsed is 36
+http://alldreamnet.blog.fc2.com/blog-category-23.html
+the number of urls browsed is 37
+http://alldreamnet.blog.fc2.com/blog-category-5.html
+the number of urls browsed is 38
+http://alldreamnet.blog.fc2.com/blog-category-24.html
+the number of urls browsed is 39
+http://alldreamnet.blog.fc2.com/blog-category-26.html
+the number of urls browsed is 40
+http://alldreamnet.blog.fc2.com/blog-category-29.html
+the number of urls browsed is 41
+http://alldreamnet.blog.fc2.com/blog-category-30.html
+the number of urls browsed is 42
+http://alldreamnet.blog.fc2.com/blog-category-25.html
+the number of urls browsed is 43
+http://alldreamnet.blog.fc2.com/blog-date-201208.html
+the number of urls browsed is 44
+http://alldreamnet.blog.fc2.com/blog-date-201210.html
+the number of urls browsed is 45
+http://alldreamnet.blog.fc2.com/blog-date-20120901.html
+the number of urls browsed is 46
+http://alldreamnet.blog.fc2.com/blog-date-20120907.html
+the number of urls browsed is 47
+http://alldreamnet.blog.fc2.com/blog-date-20120908.html
+the number of urls browsed is 48
+http://alldreamnet.blog.fc2.com/?ul=26f3e120dd6a5bbc
+the number of urls browsed is 49
+http://alldreamnet.blog.fc2.com/?menu=on
+the number of urls browsed is 50
+http://alldreamnet.blog.fc2.com/blog-date-201209.html
+the number of urls browsed is 51
+http://alldreamnet.blog.fc2.com/blog-date-201207.html
+the number of urls browsed is 52
+http://alldreamnet.blog.fc2.com/blog-date-201206.html
+the number of urls browsed is 53
+http://alldreamnet.blog.fc2.com/blog-date-201205.html
+the number of urls browsed is 54
+http://alldreamnet.blog.fc2.com/blog-date-201204.html
+the number of urls browsed is 55
+http://alldreamnet.blog.fc2.com/blog-date-201203.html
+the number of urls browsed is 56
+http://alldreamnet.blog.fc2.com/blog-date-201202.html
+the number of urls browsed is 57
+http://alldreamnet.blog.fc2.com/blog-date-201201.html
+the number of urls browsed is 58
+http://alldreamnet.blog.fc2.com/blog-date-201112.html
+the number of urls browsed is 59
+http://alldreamnet.blog.fc2.com/blog-date-201111.html
+the number of urls browsed is 60
+http://alldreamnet.blog.fc2.com/blog-date-201110.html
+the number of urls browsed is 61
+http://alldreamnet.blog.fc2.com/blog-entry-103.html
+the number of urls browsed is 62
+http://alldreamnet.blog.fc2.com/blog-entry-106.html
+the number of urls browsed is 63
+http://alldreamnet.blog.fc2.com/blog-entry-108.html
+the number of urls browsed is 64
+http://alldreamnet.blog.fc2.com/blog-entry-109.html
+the number of urls browsed is 65
+http://alldreamnet.blog.fc2.com/blog-entry-110.html
+the number of urls browsed is 66
+http://alldreamnet.blog.fc2.com/blog-entry-111.html
+the number of urls browsed is 67
+http://alldreamnet.blog.fc2.com/blog-entry-104.html
+the number of urls browsed is 68
+http://alldreamnet.blog.fc2.com/blog-entry-105.html
+the number of urls browsed is 69
+http://alldreamnet.blog.fc2.com/blog-entry-107.html
+the number of urls browsed is 70
+http://alldreamnet.blog.fc2.com/blog-entry-115.html
+the number of urls browsed is 71
+http://alldreamnet.blog.fc2.com/blog-entry-113.html
+the number of urls browsed is 72
+http://alldreamnet.blog.fc2.com/?q=on
+the number of urls browsed is 73
+the number of urls browsed is 73
+the number of urls browsed is 73
+http://alldreamnet.blog.fc2.com/?no=3&ul=090391ff9a8d82ff
+the number of urls browsed is 74
+the number of urls browsed is 74
+http://alldreamnet.blog.fc2.com/?no=5&ul=ae13529475d29ab0
+the number of urls browsed is 75
+the number of urls browsed is 75
+http://alldreamnet.blog.fc2.com/blog-entry-161.html
+the number of urls browsed is 76
+http://alldreamnet.blog.fc2.com/blog-entry-11.html
+the number of urls browsed is 77
+http://alldreamnet.blog.fc2.com/blog-entry-20.html
+the number of urls browsed is 78
+http://alldreamnet.blog.fc2.com/blog-entry-18.html
+the number of urls browsed is 79
+http://alldreamnet.blog.fc2.com/blog-entry-87.html
+the number of urls browsed is 80
+http://alldreamnet.blog.fc2.com/blog-entry-17.html
+the number of urls browsed is 81
+http://alldreamnet.blog.fc2.com/blog-entry-71.html
+the number of urls browsed is 82
+http://alldreamnet.blog.fc2.com/?no=4&ul=5407585ec84a1565
+the number of urls browsed is 83
+the number of urls browsed is 83
+http://alldreamnet.blog.fc2.com/blog-entry-8.html
+the number of urls browsed is 84
+http://alldreamnet.blog.fc2.com/?no=7&ul=5e3cd462a39ebc08
+the number of urls browsed is 85
+the number of urls browsed is 85
+http://alldreamnet.blog.fc2.com/?no=6&ul=63abcb59a72194d6
+the number of urls browsed is 86
+the number of urls browsed is 86
+http://alldreamnet.blog.fc2.com/?no=261&ul=1f6c7c84bbb7242e
+the number of urls browsed is 87
+the number of urls browsed is 87
+http://alldreamnet.blog.fc2.com/?no=259&ul=a08229dbdb4b6025
+the number of urls browsed is 88
+the number of urls browsed is 88
+http://alldreamnet.blog.fc2.com/?no=260&ul=fac732836d05dc0e
+the number of urls browsed is 89
+the number of urls browsed is 89
+http://alldreamnet.blog.fc2.com/?no=258&ul=842222f7f24b188f
+the number of urls browsed is 90
+the number of urls browsed is 90
+http://alldreamnet.blog.fc2.com/?no=257&ul=fa092d60a303c186
+the number of urls browsed is 91
+the number of urls browsed is 91
+http://alldreamnet.blog.fc2.com/?no=256&ul=87d7d609a7bc8ce3
+the number of urls browsed is 92
+the number of urls browsed is 92
+http://alldreamnet.blog.fc2.com/blog-entry-247.html
+the number of urls browsed is 93
+http://alldreamnet.blog.fc2.com/blog-entry-250.html
+the number of urls browsed is 94
+http://alldreamnet.blog.fc2.com/?no=255&ul=945296ac8261270c
+the number of urls browsed is 95
+the number of urls browsed is 95
+http://alldreamnet.blog.fc2.com/blog-entry-251.html
+the number of urls browsed is 96
+http://alldreamnet.blog.fc2.com/?no=254&ul=0f62182960431aa1
+the number of urls browsed is 97
+the number of urls browsed is 97
+http://alldreamnet.blog.fc2.com/?no=253&ul=89b48688406c950e
+the number of urls browsed is 98
+the number of urls browsed is 98
+http://alldreamnet.blog.fc2.com/?no=252&ul=84c248a17d178b52
+the number of urls browsed is 99
+http://alldreamnet.blog.fc2.com/blog-entry-235.html
+the number of urls browsed is 100
+http://alldreamnet.blog.fc2.com/blog-entry-233.html
+the number of urls browsed is 101
+the number of urls browsed is 101
+http://alldreamnet.blog.fc2.com/?no=234&ul=c9734603c1a34885
+the number of urls browsed is 102
+http://alldreamnet.blog.fc2.com/category19-1.html
+the number of urls browsed is 103
+the number of urls browsed is 103
+http://alldreamnet.blog.fc2.com/blog-entry-242.html
+the number of urls browsed is 104
+http://alldreamnet.blog.fc2.com/blog-entry-222.html
+the number of urls browsed is 105
+http://alldreamnet.blog.fc2.com/blog-entry-224.html
+the number of urls browsed is 106
+http://alldreamnet.blog.fc2.com/?cat=19&ul=26f3e120dd6a5bbc
+the number of urls browsed is 107
+http://alldreamnet.blog.fc2.com/category6-1.html
+the number of urls browsed is 108
+the number of urls browsed is 108
+http://alldreamnet.blog.fc2.com/blog-entry-232.html
+the number of urls browsed is 109
+http://alldreamnet.blog.fc2.com/blog-entry-213.html
+the number of urls browsed is 110
+http://alldreamnet.blog.fc2.com/blog-entry-191.html
+the number of urls browsed is 111
+the number of urls browsed is 111
+http://alldreamnet.blog.fc2.com/category20-1.html
+the number of urls browsed is 112
+the number of urls browsed is 112
+the number of urls browsed is 112
+http://alldreamnet.blog.fc2.com/page-0.html
+the number of urls browsed is 113
+http://alldreamnet.blog.fc2.com/page-2.html
+the number of urls browsed is 114
+http://alldreamnet.blog.fc2.com/?page=1&ul=26f3e120dd6a5bbc
+the number of urls browsed is 115
+the number of urls browsed is 115
+the number of urls browsed is 115
+http://alldreamnet.blog.fc2.com/category3-1.html
+the number of urls browsed is 116
+http://alldreamnet.blog.fc2.com/blog-entry-221.html
+the number of urls browsed is 117
+the number of urls browsed is 117
+http://alldreamnet.blog.fc2.com/blog-entry-216.html
+the number of urls browsed is 118
+http://alldreamnet.blog.fc2.com/blog-entry-156.html
+the number of urls browsed is 119
+http://alldreamnet.blog.fc2.com/blog-entry-205.html
+the number of urls browsed is 120
+http://alldreamnet.blog.fc2.com/blog-entry-199.html
+the number of urls browsed is 121
+http://alldreamnet.blog.fc2.com/blog-entry-195.html
+the number of urls browsed is 122
+the number of urls browsed is 122
+http://alldreamnet.blog.fc2.com/category1-1.html
+the number of urls browsed is 123
+http://alldreamnet.blog.fc2.com/blog-entry-120.html
+the number of urls browsed is 124
+the number of urls browsed is 124
+http://alldreamnet.blog.fc2.com/blog-entry-114.html
+the number of urls browsed is 125
+the number of urls browsed is 125
+http://alldreamnet.blog.fc2.com/blog-entry-16.html
+the number of urls browsed is 126
+the number of urls browsed is 126
+the number of urls browsed is 126
+http://alldreamnet.blog.fc2.com/category16-1.html
+the number of urls browsed is 127
+http://alldreamnet.blog.fc2.com/blog-entry-209.html
+the number of urls browsed is 128
+the number of urls browsed is 128
+http://alldreamnet.blog.fc2.com/blog-entry-207.html
+the number of urls browsed is 129
+http://alldreamnet.blog.fc2.com/blog-entry-203.html
+the number of urls browsed is 130
+http://alldreamnet.blog.fc2.com/blog-entry-200.html
+the number of urls browsed is 131
+http://alldreamnet.blog.fc2.com/blog-entry-198.html
+the number of urls browsed is 132
+the number of urls browsed is 132
+http://alldreamnet.blog.fc2.com/category4-1.html
+the number of urls browsed is 133
+http://alldreamnet.blog.fc2.com/blog-entry-210.html
+the number of urls browsed is 134
+the number of urls browsed is 134
+http://alldreamnet.blog.fc2.com/blog-entry-208.html
+the number of urls browsed is 135
+http://alldreamnet.blog.fc2.com/blog-entry-206.html
+the number of urls browsed is 136
+http://alldreamnet.blog.fc2.com/blog-entry-204.html
+the number of urls browsed is 137
+http://alldreamnet.blog.fc2.com/blog-entry-202.html
+the number of urls browsed is 138
+the number of urls browsed is 138
+http://alldreamnet.blog.fc2.com/category17-1.html
+the number of urls browsed is 139
+http://alldreamnet.blog.fc2.com/blog-entry-52.html
+the number of urls browsed is 140
+the number of urls browsed is 140
+http://alldreamnet.blog.fc2.com/blog-entry-49.html
+the number of urls browsed is 141
+http://alldreamnet.blog.fc2.com/blog-entry-43.html
+the number of urls browsed is 142
+http://alldreamnet.blog.fc2.com/blog-entry-42.html
+the number of urls browsed is 143
+http://alldreamnet.blog.fc2.com/blog-entry-21.html
+the number of urls browsed is 144
+the number of urls browsed is 144
+http://alldreamnet.blog.fc2.com/blog-entry-118.html
+the number of urls browsed is 145
+the number of urls browsed is 145
+http://alldreamnet.blog.fc2.com/blog-entry-54.html
+the number of urls browsed is 146
+the number of urls browsed is 146
+http://alldreamnet.blog.fc2.com/category9-1.html
+the number of urls browsed is 147
+http://alldreamnet.blog.fc2.com/blog-entry-230.html
+the number of urls browsed is 148
+the number of urls browsed is 148
+http://alldreamnet.blog.fc2.com/blog-entry-139.html
+the number of urls browsed is 149
+http://alldreamnet.blog.fc2.com/blog-entry-138.html
+the number of urls browsed is 150
+http://alldreamnet.blog.fc2.com/blog-entry-131.html
+the number of urls browsed is 151
+http://alldreamnet.blog.fc2.com/blog-entry-126.html
+the number of urls browsed is 152
+the number of urls browsed is 152
+http://alldreamnet.blog.fc2.com/blog-entry-248.html
+the number of urls browsed is 153
+http://alldreamnet.blog.fc2.com/blog-entry-223.html
+the number of urls browsed is 154
+the number of urls browsed is 154
+http://alldreamnet.blog.fc2.com/blog-entry-229.html
+the number of urls browsed is 155
+http://alldreamnet.blog.fc2.com/blog-entry-228.html
+the number of urls browsed is 156
+http://alldreamnet.blog.fc2.com/blog-entry-226.html
+the number of urls browsed is 157
+the number of urls browsed is 157
+the number of urls browsed is 157
+the number of urls browsed is 157
+http://alldreamnet.blog.fc2.com/blog-entry-127.html
+the number of urls browsed is 158
+the number of urls browsed is 158
+http://alldreamnet.blog.fc2.com/blog-entry-112.html
+the number of urls browsed is 159
+http://alldreamnet.blog.fc2.com/blog-entry-40.html
+the number of urls browsed is 160
+http://alldreamnet.blog.fc2.com/blog-entry-91.html
+the number of urls browsed is 161
+http://alldreamnet.blog.fc2.com/blog-entry-9.html
+the number of urls browsed is 162
+the number of urls browsed is 162
+http://alldreamnet.blog.fc2.com/category7-1.html
+the number of urls browsed is 163
+http://alldreamnet.blog.fc2.com/blog-entry-149.html
+the number of urls browsed is 164
+the number of urls browsed is 164
+http://alldreamnet.blog.fc2.com/blog-entry-143.html
+the number of urls browsed is 165
+http://alldreamnet.blog.fc2.com/blog-entry-77.html
+the number of urls browsed is 166
+http://alldreamnet.blog.fc2.com/blog-entry-56.html
+the number of urls browsed is 167
+http://alldreamnet.blog.fc2.com/blog-entry-37.html
+the number of urls browsed is 168
+http://alldreamnet.blog.fc2.com/blog-entry-32.html
+the number of urls browsed is 169
+the number of urls browsed is 169
+the number of urls browsed is 169
+the number of urls browsed is 169
+http://alldreamnet.blog.fc2.com/category23-1.html
+the number of urls browsed is 170
+http://alldreamnet.blog.fc2.com/blog-entry-231.html
+the number of urls browsed is 171
+http://alldreamnet.blog.fc2.com/blog-entry-218.html
+the number of urls browsed is 172
+the number of urls browsed is 172
+http://alldreamnet.blog.fc2.com/blog-entry-227.html
+the number of urls browsed is 173
+http://alldreamnet.blog.fc2.com/blog-entry-179.html
+the number of urls browsed is 174
+http://alldreamnet.blog.fc2.com/blog-entry-177.html
+the number of urls browsed is 175
+the number of urls browsed is 175
+http://alldreamnet.blog.fc2.com/category5-1.html
+the number of urls browsed is 176
+http://alldreamnet.blog.fc2.com/blog-entry-217.html
+the number of urls browsed is 177
+the number of urls browsed is 177
+http://alldreamnet.blog.fc2.com/blog-entry-192.html
+the number of urls browsed is 178
+http://alldreamnet.blog.fc2.com/blog-entry-165.html
+the number of urls browsed is 179
+http://alldreamnet.blog.fc2.com/blog-entry-144.html
+the number of urls browsed is 180
+http://alldreamnet.blog.fc2.com/blog-entry-133.html
+the number of urls browsed is 181
+the number of urls browsed is 181
+http://alldreamnet.blog.fc2.com/category24-1.html
+the number of urls browsed is 182
+http://alldreamnet.blog.fc2.com/blog-entry-214.html
+the number of urls browsed is 183
+http://alldreamnet.blog.fc2.com/blog-entry-211.html
+the number of urls browsed is 184
+the number of urls browsed is 184
+http://alldreamnet.blog.fc2.com/blog-entry-155.html
+the number of urls browsed is 185
+http://alldreamnet.blog.fc2.com/blog-entry-119.html
+the number of urls browsed is 186
+http://alldreamnet.blog.fc2.com/blog-entry-142.html
+the number of urls browsed is 187
+the number of urls browsed is 187
+http://alldreamnet.blog.fc2.com/blog-entry-215.html
+the number of urls browsed is 188
+http://alldreamnet.blog.fc2.com/blog-entry-171.html
+the number of urls browsed is 189
+the number of urls browsed is 189
+http://alldreamnet.blog.fc2.com/blog-entry-173.html
+the number of urls browsed is 190
+the number of urls browsed is 190
+the number of urls browsed is 190
+the number of urls browsed is 190
+the number of urls browsed is 190
+the number of urls browsed is 190
+http://alldreamnet.blog.fc2.com/blog-entry-166.html
+the number of urls browsed is 191
+http://alldreamnet.blog.fc2.com/blog-entry-157.html
+the number of urls browsed is 192
+the number of urls browsed is 192
+http://alldreamnet.blog.fc2.com/blog-entry-151.html
+the number of urls browsed is 193
+the number of urls browsed is 193
+http://alldreamnet.blog.fc2.com/blog-date-201208-1.html
+the number of urls browsed is 194
+http://alldreamnet.blog.fc2.com/blog-date-20120801.html
+the number of urls browsed is 195
+http://alldreamnet.blog.fc2.com/blog-date-20120802.html
+the number of urls browsed is 196
+http://alldreamnet.blog.fc2.com/blog-date-20120804.html
+the number of urls browsed is 197
+http://alldreamnet.blog.fc2.com/blog-date-20120805.html
+the number of urls browsed is 198
+http://alldreamnet.blog.fc2.com/blog-date-20120806.html
+the number of urls browsed is 199
+http://alldreamnet.blog.fc2.com/blog-date-20120808.html
+the number of urls browsed is 200
+http://alldreamnet.blog.fc2.com/blog-date-20120811.html
+the number of urls browsed is 201
+http://alldreamnet.blog.fc2.com/blog-date-20120812.html
+the number of urls browsed is 202
+http://alldreamnet.blog.fc2.com/blog-date-20120814.html
+the number of urls browsed is 203
+http://alldreamnet.blog.fc2.com/blog-date-20120817.html
+the number of urls browsed is 204
+http://alldreamnet.blog.fc2.com/blog-date-20120818.html
+the number of urls browsed is 205
+http://alldreamnet.blog.fc2.com/blog-date-20120819.html
+the number of urls browsed is 206
+http://alldreamnet.blog.fc2.com/blog-date-20120820.html
+the number of urls browsed is 207
+http://alldreamnet.blog.fc2.com/blog-date-20120821.html
+the number of urls browsed is 208
+http://alldreamnet.blog.fc2.com/blog-date-20120824.html
+the number of urls browsed is 209
+http://alldreamnet.blog.fc2.com/blog-date-20120826.html
+the number of urls browsed is 210
+http://alldreamnet.blog.fc2.com/blog-date-20120827.html
+the number of urls browsed is 211
+http://alldreamnet.blog.fc2.com/blog-date-20120828.html
+the number of urls browsed is 212
+http://alldreamnet.blog.fc2.com/blog-date-20120829.html
+the number of urls browsed is 21
