@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <root>
+        <rootURL>http://corapigunohibi.blog67.fc2.com/</rootURL>
+        <toBrowse/>
+        <browsed>
+            <url_data uri="http://corapigunohibi.blog67.fc2.com/">
+                <header name="status" value="200"/>
+                <header name="content-length" value="4437"/>
+                <header name="date" value="Wed, 12 Sep 2012 22:19:11 GMT"/>
+                <header name="content-location" value="http://corapigunohibi.blog67.fc2.com/"/>
+                <header name="expires" value="-1"/>
+                <header name="vary" value="Accept-Encoding"/>
+                <header name="server" value="nginx/1.2.0"/>
+                <header name="last-modified" value="Wed, 12 Sep 2012 22:19:11 GMT"/>
+                <header name="connection" value="keep-alive"/>
+                <header name="etag" value="1c540c324241418cfd3034ef2b95a0bf"/>
+                <header name="x-ua-compatible" value="IE=EmulateIE7"/>
+                <header name="cache-control" value="must-revalidate"/>
+                <header name="x-fc2-cache" value="On"/>
+                <header name="x-powered-by" value="PHP/5.3.14"/>
+                <header name="content-type" value="text/html; charset=UTF-8"/>
+                <header name="link_encoding" value=""/>
+            </url_data>
+        </browsed>
+        <forms/>
+        <uploads/>
+    </root>
