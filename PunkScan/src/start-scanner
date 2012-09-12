@@ -1,20 +1,20 @@
 #!/bin/bash
 
-echo "starting vpnc persistent connection"
-sudo bash vpnc-files/vpnc-persist > log/vpnc.log &
-sleep 1
+#echo "starting vpnc persistent connection"
+#sudo bash vpnc-files/vpnc-persist > log/vpnc.log &
+#sleep 1
 
 echo "Preparing to start tor as $CURRENT_USER..."
-if [ -e "tor-files/torrc-9055" ]
+if [ -e "tor-files/torrc" ]
 then
-	echo "torrc-9055 exists...starting a second tor session"
-	tor -f tor-files/torrc-9055 > log/tor.log &
+	echo "torrc exists...starting a second tor session"
+	tor -f tor-files/torrc > log/tor.log &
 else
 	echo "Second tor file does not exist."
 	exit 1
 fi
 
-echo "Waiting for tor tor to start..."
+echo "Waiting for tor to start..."
 sleep 15
 
 for i in {1..5}
