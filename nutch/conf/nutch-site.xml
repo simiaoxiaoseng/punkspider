@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+<property>
+<name>http.agent.name</name>
+<value>PunkSCAN</value>
+</property>
+
+<property>
+  <name>http.agent.name</name>
+  <value>PunkSCAN</value>
+  <description>HTTP 'User-Agent' request header. MUST NOT be empty -
+  please set this to a single word uniquely related to your organization.
+
+  NOTE: You should also check other related properties:
+
+        http.robots.agents
+        http.agent.description
+        http.agent.url
+        http.agent.email
+        http.agent.version
+
+  and set their values appropriately.
+
+  </description>
+</property>
+
+<property>
+  <name>http.agent.version</name>
+  <value>PunkSCAN-v1.2.0</value>
+  <description>A version string to advertise in the User-Agent
+   header.</description>
+</property>
+
+<property>
+  <name>fetcher.threads.fetch</name>
+  <value>5</value>
+  <description>The number of FetcherThreads the fetcher should use.
+  This is also determines the maximum number of requests that are
+  made at once (each FetcherThread handles one connection). The total
+  number of threads running in distributed mode will be the number of
+  fetcher threads * number of nodes as fetcher has one map task per node.
+  </description>
+</property>
+
+<property>
+  <name>http.content.limit</name>
+  <value>-1</value>
+  <description>The length limit for downloaded content using the http://
+  protocol, in bytes. If this value is nonnegative (>=0), content longer
+  than it will be truncated; otherwise, no truncation at all. Do not
+  confuse this setting with the file.content.limit setting.
+  </description>
+</property>
+
+<property>
+  <name>db.max.outlinks.per.page</name>
+  <value>1000</value>
+  <description>The maximum number of outlinks that we'll process for a page.
+  If this value is nonnegative (>=0), at most db.max.outlinks.per.page outlinks
+  will be processed for a page; otherwise, all outlinks will be processed.
+  </description>
+</property>
+
+<property>
+  <name>db.max.anchor.length</name>
+  <value>1000</value>
+  <description>The maximum number of characters permitted in an anchor.
+  </description>
+</property>
+
+<property>
+  <name>generate.max.count</name>
+  <value>-1</value>
+  <description>The maximum number of urls in a single
+  fetchlist.  -1 if unlimited. The urls are counted according
+  to the value of the parameter generator.count.mode.
+  </description>
+</property>
+
+<property>
+  <name>fetcher.verbose</name>
+  <value>true</value>
+  <description>If true, fetcher will log more verbosely.</description>
+</property>
+
+
+<property>
+  <name>indexer.max.content.length</name>
+  <value>-1</value>
+  <description>The maximum number of characters of a content that are indexed.
+  Content beyond the limit is truncated. A value of -1 disables this check.
+  </description>
+</property>
+
+</configuration>

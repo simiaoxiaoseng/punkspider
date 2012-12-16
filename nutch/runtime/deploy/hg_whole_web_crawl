@@ -1,0 +1,143 @@
+#!/bin/bash
+
+#!This needs to use the command line flags in nutch  like topN more to customize for large-scale crawling
+
+solr_index() {
+
+#!separate function because later this should be done asynchronously?
+
+#! This needs to have some error checking, sometimes bad segments (maybe due to incomplete
+#! crawls) make this crash and burn
+
+#	bin/nutch solrindex http://hg-solr:8080/solr/summary/ crawldb -linkdb crawldb/linkdb crawldb/segments/2*
+
+}
+
+crawl_once() {
+
+	depth=$1
+	#don't know what this file does but its annoying, stops the process if exists
+	echo "removing .locked file..."
+	$HADOOP_HOME/bin/hadoop dfs -rmr crawldb/.locked
+	$HADOOP_HOME/bin/hadoop dfs -rmr crawldb/linkdb/.locked
+	
+	echo "removing current urls folder from dfs...."
+	$HADOOP_HOME/bin/hadoop dfs -rmr urls
+
+	echo "copying local urls folder to dfs..."
+	$HADOOP_HOME/bin/hadoop dfs -copyFromLocal urls urls
+
+	#inject urls folder to crawldb
+	echo "injecting urls folder into crawldb..."
+	bin/nutch inject crawldb urls
+
+##################################################################################################################################
+#! Should be repeating generate-fetch-update until a certain "depth" is reached.
+
+	#this sets the depth 
+
+	for i in {1..3}
+	do
+
+		echo "crawling to depth $i"
+
+		#generate new segment, only get -topN x top urls to form the segment
+		echo "generating segments..."
+		bin/nutch generate crawldb crawldb/segments -topN 10000
+
+		#! Should be validating this better, don't like using tail here...
+		echo "getting the current crawl segment..."
+		current_crawl_seg=`$HADOOP_HOME/bin/hadoop dfs -ls crawldb/segments/ | tail -1 | awk '{print $8}'`
+
+		echo "current crawl segment is $current_crawl_seg"
+
+		echo "running a fetch on the segment $current_crawl_seg"
+		#!in production might want some higher threading
+		bin/nutch fetch $current_crawl_seg -threads 6
+
+		echo "running parse on the segment $current_crawl_seg"
+		bin/nutch parse $current_crawl_seg
+
+		echo "updating the db $current_crawl_seg"
+		bin/nutch updatedb crawldb $current_crawl_seg
+
+	done
+
+####################################################################################################################################
+
+	#inefficient to run this every time?
+	echo "inverting links..."
+	bin/nutch invertlinks crawldb/linkdb -dir crawldb/segments
+
+	#index to solr
+	echo "indexing to solr..."
+	solr_index
+
+	#clean up the segments
+	echo "cleaning up, removing the crawl segments..."
+	$HADOOP_HOME/bin/hadoop dfs -rmr crawldb/segments/*
+}
+
+crawl_continuous() {
+
+	#set up the file start and file end, the difference here (+1) will be how many urls are crawled
+	#at the same time
+	file_start=1
+	file_end=3
+	increment=$(($file_end - $file_start + 1))
+	num_lines=`cat seed/seed.txt | wc -l`
+
+	#this is the file that's going to be used to continue a crawl if it is stopped	
+	continue_file=crawl_continue_file
+
+	#if the continue file exists we use the data in it to continue the crawl
+	if [ -f "$continue_file" ]
+	then
+
+        	file_start=`head -n 1 crawl_continue_file`
+        	file_end=`tail -n 1 crawl_continue_file`
+        	echo "got file start at $file_start"
+        	echo "got file end at $file_end"
+
+else
+	#if not just move on (i.e. start from the beginning)
+        echo "no crawl continue file found, starting the crawl from scratch"
+fi
+
+#while we haven't read the files end
+while [ $file_end -lt $num_lines ]
+do
+
+	#clear the urls folder
+	rm urls/*
+	#get the proper lines of the file and move them to the urls folder
+        sed -n "${file_start},${file_end}p" seed/seed.txt > urls/urls
+
+	#get the crawl_continue file ready
+        file_end=$(($file_end + $increment))
+        file_start=$(($file_start + $increment))
+        echo -e "${file_start}\n${file_end}" > crawl_continue_file
+
+	#perform the actual crawl
+	crawl_once
+
+done
+
+rm crawl_continue_file
+
+}
+
+#!gotta add some cleanup
+
+#Set the heapsize, not sure what this should be??
+#export NUTCH_HEAPSIZE=420
+#export JAVA_HEAP_MAX=-Xmx450m
+#this will reinitiate the crawl, without divide_urls command it will continue a crawl
+
+crawl_continuous
+
+#add error cheking to solr part since it tends to throw an error with incomplete segments
+solr_index
+
+#remove .mil addresses
+
