@@ -1,8 +1,0 @@
-<ScRiPt>alert('__XSS__')</sCrIpT>
-<ScRiPt>alert("__XSS__")</sCrIpT>
-<img src=javascript:alert('__XSS__') />
-<img src=javascript:alert("__XSS__") />
-<scr<script>ipt>alert('__XSS__')</script>
-<scr<script>ipt>alert('__XSS__')</scr</script>ipt>
-<scr<script>ipt>alert("__XSS__")</script>
-<scr<script>ipt>alert("__XSS__")</scr</script>ipt>
