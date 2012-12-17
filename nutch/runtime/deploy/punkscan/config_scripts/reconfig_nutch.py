@@ -2,10 +2,10 @@ import sys
 import os
 cwdir = os.path.dirname(__file__)
 punkscan_base = os.path.join(cwdir, "../")
-sys.path.append(os.path.join(punkscan_base,"pysolr/"))
+sys.path.append(os.path.join(punkscan_base,"punk_solr"))
 sys.path.append(os.path.join(punkscan_base, 'hadooper'))
 import hadooper
-import pysolr
+import punkscan_solr
 from ConfigParser import SafeConfigParser
 config_parser = SafeConfigParser()
 config_parser.read(os.path.join(punkscan_base,'punkscan_configs', 'punkscan_config.cfg'))
@@ -18,22 +18,20 @@ class ConfigoRoboto:
 
         def __init__(self):
 
-                self.conn = pysolr.Solr("http://hg-solr:8080/solr/summary/")
-		self.num_urls_to_scan = config_parser.get('performance','sim_urls_to_scan')
-
-        def __get_scanned_longest_ago(self):
-                '''This gets the record from solr that was scanned longest ago, it starts with those that have no vscan timestamp'''
-                scanned_longest_ago_or_not_scanned_dic = self.conn.search('*:*', sort='vscan_tstamp asc', rows=self.num_urls_to_scan)
-
-                return scanned_longest_ago_or_not_scanned_dic
+		self.punk_solro = punkscan_solr.PunkSolr()
+		self.solr_urls_dic = self.punk_solro.get_scanned_longest_ago()
 
 	def __get_regex_url(self, no_regex = False):
-		'''Replace regex url configuration file, this will be used by punkscan to restrict crawls to the domains we are going to scan'''
-		#sample regex: +https?://www.leavenworth.org/.*
+		'''Replace regex url configuration file, this will be used by punkscan to restrict crawls to the domains we are going to scan.
+		This method is very important. As soon as this method is called, a URL is marked as being scanned in Solr'''
 
-		solr_urls_dic = self.__get_scanned_longest_ago()
+		#sample regex entry: +http://www.leavenworth.org/.*
 
-		for url_dic in solr_urls_dic:
+		for url_dic in self.solr_urls_dic:
+
+			#mark the url as being scanned with the vscan_tstamp field
+			self.punk_solro.update_vscan_tstamp(url_dic['url'])
+			
 			if not no_regex:
 				url_regex = "+" + url_dic['url'].rstrip("/") + ".*"
 				yield url_regex
@@ -50,7 +48,12 @@ class ConfigoRoboto:
 
 	def generate_seed_list(self):
 
-		f_seed = open(os.path.join(NUTCH_HOME, "runtime", "deploy", "urls", "seed.txt"),'w')
+		seed_dir = os.path.join(NUTCH_HOME, "runtime", "deploy", "urls")
+
+		if not os.path.exists(seed_dir):
+			os.makedirs(seed_dir)
+
+		f_seed = open(os.path.join(seed_dir, "seed.txt"),'w')
 
 		for url in self.__get_regex_url(no_regex = True):
 			url_n = url + "\n"
@@ -60,12 +63,10 @@ class ConfigoRoboto:
 	
 		hadooper.Hadooper().rmr("urls")
 		hadooper.Hadooper().copyFromLocal(os.path.join(NUTCH_RUNTIME_DEP, "urls"), "urls")
-		
-
 
 if __name__ == "__main__":
 
 	x = ConfigoRoboto()
-#	x.generate_template_file()
-#	x.generate_seed_list()
+	x.generate_template_file()
+	x.generate_seed_list()
 	x.clear_and_put_seed_list_on_hdfs()	
