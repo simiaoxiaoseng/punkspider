@@ -1,38 +1,21 @@
 from mrjob.job import MRJob
 from urlparse import urlparse
 from urlparse import parse_qs
+import requests
+import punk_fuzz
 
-class PunkFuzz:
-
-    def __init__(self):
-
-        pass
-
-    def check_if_param(self, url):
-        '''Check if a URL has parameters, if it does return true,if not return false'''
-
-        if not url.query:
-            return False
-
-        else:
-            return True
-
-    def replace_param(self):
-
-        pass
-
-class MRWordCounter(MRJob):
+class PunkFuzzDistributed(MRJob):
 
     def mapper_init(self):
 
-        self.mapper_punk_fuzz = PunkFuzz()
+        self.mapper_punk_fuzz = punk_fuzz.PunkFuzz()
 
     def reducer_init(self):
 
-        self.reducer_punk_fuzz = PunkFuzz()
-        import requests
-        
+        self.reducer_punk_fuzz = punk_fuzz.PunkFuzz()
+
     def mapper(self, key, url):
+        '''Yield all URL as the key, and parameter to be fuzzed as the value'''
 
         parsed_url = urlparse(url)
 
@@ -51,10 +34,11 @@ class MRWordCounter(MRJob):
 
         for param in param_to_replace:
 
+            
             #make requests and fuzz each url
             #this will automatically distribute fuzzing through hadoop
 
             yield url, param
 
 if __name__ == '__main__':
-    MRWordCounter.run()
+    PunkFuzzDistributed.run()
