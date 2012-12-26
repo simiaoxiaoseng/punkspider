@@ -3,7 +3,6 @@ import os
 import subprocess
 import shutil
 cwdir = os.path.dirname(__file__)
-print cwdir
 punkscan_base = os.path.join(cwdir, "../")
 sys.path.append(os.path.join(punkscan_base, 'hadooper'))
 import hadooper

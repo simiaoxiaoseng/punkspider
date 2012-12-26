@@ -16,6 +16,12 @@ class PunkSolr:
         self.conn = pysolr.Solr(config_parser.get('urls', 'solr_summary_url'))
         self.num_urls_to_scan = config_parser.get('performance', 'sim_urls_to_scan')
 
+    def get_record_by_id(self):
+
+        solr_doc_pull = self.conn.search('id:' + '"' + url + '/"')
+
+        return solr_doc_pull
+
     def get_scanned_longest_ago(self):
         '''This gets the record from solr that was scanned longest ago, it starts with those that have no vscan timestamp'''
         
@@ -25,7 +31,7 @@ class PunkSolr:
                                                         
     def update_vscan_tstamp(self, url):
 
-        solr_doc_pull = self.conn.search('id:' + '"' + url + '"')
+        solr_doc_pull = self.conn.search('id:' + '"' + url + '/"')
         vscan_tstamp = datetime.datetime.now()
 
         for result in solr_doc_pull:
@@ -35,7 +41,7 @@ class PunkSolr:
 
     def delete_vscan_tstamp(self, url):
 
-        solr_doc_pull = self.conn.search('id:' + '"' + url + '"')
+        solr_doc_pull = self.conn.search('id:' + '"' + url + '/"')
 
         for result in solr_doc_pull:
             del result['vscan_tstamp']
@@ -44,5 +50,6 @@ class PunkSolr:
 
 if __name__ == "__main__":
 
-    PunkSolr().update_vscan_tstamp("http://willowknows.com/")
+    PunkSolr().get_scanned_longest_ago()
+#    PunkSolr().update_vscan_tstamp("http://willowknows.com/")
 
