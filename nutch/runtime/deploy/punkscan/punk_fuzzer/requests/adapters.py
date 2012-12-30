@@ -7,22 +7,22 @@ requests.adapters
 This module contains the transport adapters that Requests uses to define
 and maintain connections.
 """
-import os
-from .models import Response
-from .packages.urllib3.poolmanager import PoolManager
-from .utils import DEFAULT_CA_BUNDLE_PATH
 
 import socket
+
+from .models import Response
+from .packages.urllib3.poolmanager import PoolManager, proxy_from_url
+from .hooks import dispatch_hook
+from .compat import urlparse, basestring, urldefrag
+from .utils import (DEFAULT_CA_BUNDLE_PATH, get_encoding_from_headers,
+                    prepend_scheme_if_needed)
 from .structures import CaseInsensitiveDict
-from .packages.urllib3.exceptions import MaxRetryError, LocationParseError
+from .packages.urllib3.exceptions import MaxRetryError
 from .packages.urllib3.exceptions import TimeoutError
 from .packages.urllib3.exceptions import SSLError as _SSLError
 from .packages.urllib3.exceptions import HTTPError as _HTTPError
-from .packages.urllib3 import connectionpool, poolmanager
-from .packages.urllib3.filepost import encode_multipart_formdata
-from .exceptions import (
-ConnectionError, HTTPError, RequestException, Timeout, TooManyRedirects,
-URLRequired, SSLError, MissingSchema, InvalidSchema, InvalidURL)
+from .cookies import extract_cookies_to_jar
+from .exceptions import ConnectionError, Timeout, SSLError
 
 DEFAULT_POOLSIZE = 10
 DEFAULT_RETRIES = 0
@@ -34,8 +34,8 @@ class BaseAdapter(object):
     def __init__(self):
         super(BaseAdapter, self).__init__()
 
-    # def send(self):
-    #     raise NotImplementedError
+    def send(self):
+        raise NotImplementedError
 
     def close(self):
         raise NotImplementedError
@@ -43,9 +43,7 @@ class BaseAdapter(object):
 
 class HTTPAdapter(BaseAdapter):
     """Built-In HTTP Adapter for Urllib3."""
-    def __init__(self,
-        pool_connections=DEFAULT_POOLSIZE,
-        pool_maxsize=DEFAULT_POOLSIZE):
+    def __init__(self, pool_connections=DEFAULT_POOLSIZE, pool_maxsize=DEFAULT_POOLSIZE):
         self.max_retries = DEFAULT_RETRIES
         self.config = {}
 
@@ -63,15 +61,7 @@ class HTTPAdapter(BaseAdapter):
 
             # Allow self-specified cert location.
             if verify is not True:
-                cert_loc = self.verify
-
-            # Look for configuration.
-            if not cert_loc and self.config.get('trust_env'):
-                cert_loc = os.environ.get('REQUESTS_CA_BUNDLE')
-
-            # Curl compatibility.
-            if not cert_loc and self.config.get('trust_env'):
-                cert_loc = os.environ.get('CURL_CA_BUNDLE')
+                cert_loc = verify
 
             if not cert_loc:
                 cert_loc = DEFAULT_CA_BUNDLE_PATH
@@ -86,14 +76,13 @@ class HTTPAdapter(BaseAdapter):
             conn.ca_certs = None
 
         if cert:
-            if len(cert) == 2:
+            if not isinstance(cert, basestring):
                 conn.cert_file = cert[0]
                 conn.key_file = cert[1]
             else:
                 conn.cert_file = cert
 
-    @staticmethod
-    def build_response(req, resp):
+    def build_response(self, req, resp):
         response = Response()
 
         # Fallback to None if there's no status_code, for whatever reason.
@@ -103,7 +92,7 @@ class HTTPAdapter(BaseAdapter):
         response.headers = CaseInsensitiveDict(getattr(resp, 'headers', {}))
 
         # Set encoding.
-        # response.encoding = get_encoding_from_headers(response.headers)
+        response.encoding = get_encoding_from_headers(response.headers)
         response.raw = resp
 
         if isinstance(req.url, bytes):
@@ -111,11 +100,29 @@ class HTTPAdapter(BaseAdapter):
         else:
             response.url = req.url
 
-        return response
         # Add new cookies from the server.
-        # extract_cookies_to_jar(self.cookies, self, resp)
+        extract_cookies_to_jar(response.cookies, req, resp)
 
+        # Give the Response some context.
+        response.request = req
+        response.connection = self
 
+        # Run the Response hook.
+        response = dispatch_hook('response', req.hooks, response)
+        return response
+
+    def get_connection(self, url, proxies=None):
+        """Returns a connection for the given URL."""
+        proxies = proxies or {}
+        proxy = proxies.get(urlparse(url).scheme)
+
+        if proxy:
+            proxy = prepend_scheme_if_needed(proxy, urlparse(url).scheme)
+            conn = proxy_from_url(proxy)
+        else:
+            conn = self.poolmanager.connection_from_url(url)
+
+        return conn
 
     def close(self):
         """Dispose of any internal state.
@@ -125,17 +132,35 @@ class HTTPAdapter(BaseAdapter):
         """
         self.poolmanager.clear()
 
-    def send(self, request, prefetch=True, timeout=None, verify=True, cert=None):
+    def request_url(self, request, proxies):
+        """Obtain the url to use when making the final request.
+
+        If the message is being sent through a proxy, the full URL has to be
+        used. Otherwise, we should only use the path portion of the URL."""
+        proxies = proxies or {}
+        proxy = proxies.get(urlparse(request.url).scheme)
+
+        if proxy:
+            url, _ = urldefrag(request.url)
+        else:
+            url = request.path_url
+
+        return url
+
+    def send(self, request, stream=False, timeout=None, verify=True, cert=None, proxies=None):
         """Sends PreparedRequest object. Returns Response object."""
 
-        conn = self.poolmanager.connection_from_url(request.url)
+        conn = self.get_connection(request.url, proxies)
+
         self.cert_verify(conn, request.url, verify, cert)
+
+        url = self.request_url(request, proxies)
 
         try:
             # Send the request.
             resp = conn.urlopen(
                 method=request.method,
-                url=request.path_url,
+                url=url,
                 body=request.body,
                 headers=request.headers,
                 redirect=False,
@@ -162,13 +187,7 @@ class HTTPAdapter(BaseAdapter):
 
         r = self.build_response(request, resp)
 
-        if prefetch:
+        if not stream:
             r.content
 
         return r
-
-
-
-
-
-

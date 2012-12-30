@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<punkfuzz_config>
+  <modules>
+    <xss_config>
+      <xss_strings>
+      <xss_string><![CDATA[<SCrIpT>alert(313371234)</ScRiPt>]]></xss_string>
+      <xss_string><![CDATA[</TITLE><SCRIPT>alert(313371234);</SCRIPT>]]></xss_string>
+      <xss_string><![CDATA[<ScR<script>iPt>alert(313371234)</SCr<script>IpT>]]></xss_string>
+      </xss_strings>
+    </xss_config>
+  </modules>
+
+  <network_configs>
+    <proxy type="http">
+      <ip_port><![CDATA[37.221.160.130:3128]]></ip_port>
+    </proxy>
+    <solr>
+      <detail_url><![CDATA[http://10.183.97.90:8080/solr/detail/]]></detail_url>
+      <summary_url><![CDATA[http://10.183.97.90:8080/solr/summary/]]></summary_url>
+    </solr>
+  </network_configs>
+
+</punkfuzz_config>

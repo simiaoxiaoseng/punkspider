@@ -28,10 +28,10 @@ class PunkSolr:
         scanned_longest_ago_or_not_scanned_dic = self.conn.search('*:*', sort='vscan_tstamp asc', rows=self.num_urls_to_scan)
 
         return scanned_longest_ago_or_not_scanned_dic
-                                                        
+
     def update_vscan_tstamp(self, url):
 
-        solr_doc_pull = self.conn.search('id:' + '"' + url + '/"')
+        solr_doc_pull = self.conn.search('id:' + '"' + url + '"')
         vscan_tstamp = datetime.datetime.now()
 
         for result in solr_doc_pull:
@@ -41,7 +41,7 @@ class PunkSolr:
 
     def delete_vscan_tstamp(self, url):
 
-        solr_doc_pull = self.conn.search('id:' + '"' + url + '/"')
+        solr_doc_pull = self.conn.search('id:' + '"' + url + '"')
 
         for result in solr_doc_pull:
             del result['vscan_tstamp']

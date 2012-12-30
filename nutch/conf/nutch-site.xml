@@ -97,4 +97,18 @@
   </description>
 </property>
 
+
+<property>
+  <name>http.proxy.host</name>
+  <value>37.221.160.130</value>
+  <description>The proxy hostname.  If empty, no proxy is used.</description>
+</property>
+
+<property>
+  <name>http.proxy.port</name>
+  <value>3128</value>
+  <description>The proxy port.</description>
+</property>
+
+
 </configuration>

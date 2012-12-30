@@ -3,6 +3,8 @@ import os
 import subprocess
 cwdir = os.path.dirname(__file__)
 punkscan_base = os.path.join(cwdir, "../")
+sys.path.append(os.path.join(punkscan_base, "hadooper"))
+import hadooper
 from ConfigParser import SafeConfigParser
 config_parser = SafeConfigParser()
 config_parser.read(os.path.join(punkscan_base,'punkscan_configs', 'punkscan_config.cfg'))
@@ -12,8 +14,15 @@ NUTCH_RUNTIME_DEP = os.path.join(NUTCH_HOME, "runtime", "deploy")
 
 class NutchController:
 
-    def crawl(self):
+    def __clear_previous_crawl(self):
+        '''Clear all data from the previous crawl '''
 
+        hadooper.Hadooper().rmr("punkscan_crawl")
+
+    def crawl(self):
+        '''Leverages Nutch to crawl sites'''
+
+        self.__clear_previous_crawl()
         topN = config_parser.get('performance','topN')
 	depth = config_parser.get('performance','depth')
 	nutch_bin = os.path.join('bin', 'nutch')
@@ -27,4 +36,4 @@ class NutchController:
 
 if __name__ == "__main__":
 
-	NutchController().crawl()
+    NutchController().crawl()

@@ -1,8 +1,15 @@
+import os
+import sys
 from mrjob.job import MRJob
 from urlparse import urlparse
 from urlparse import parse_qs
 import requests
+cwdir = os.path.dirname(__file__)
+sys.path.append(os.path.join(cwdir,"mapreduce_indexer"))
+sys.path.append(os.path.join(cwdir,"punk_fuzz"))
 import punk_fuzz
+import mapreduce_indexer
+
 
 class PunkFuzzDistributed(MRJob):
 
@@ -33,11 +40,12 @@ class PunkFuzzDistributed(MRJob):
                 yield domain, (url, query_param)
 
     def reducer(self, domain, url_query_params):
-        '''The key in this mapreduce job is the domain. It yields a list of vulnerabilities
-        as the values.'''
+        '''The key in this reduce job is the domain. It yields a list of vulnerabilities
+        as the values. It will combine '''
 
         #reducer should take the urls as the key and output a dictionary of vulnerabilities per each URL,
-        #reducing the <url, query param> to <url, all_vulnerabilities_list>
+        #reducing the <url, query param> to <url, all_vuln_list> all_vuln_list is a list of vulns of the form
+        #[[vuln_url, payload, vuln_type], etc.]
 
         vuln_list = []
         for url_query_param in url_query_params:
@@ -52,10 +60,10 @@ class PunkFuzzDistributed(MRJob):
 
                 vuln_list.append(vuln)
 
-        #!TODO: solr these records here....
+        #index this stuff to Solr
+        mapreduce_indexer.PunkMapReduceIndexer(domain, vuln_list).add_vuln_info()
 
         yield domain, vuln_list
-
 
 if __name__ == '__main__':
 

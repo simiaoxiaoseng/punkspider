@@ -33,7 +33,7 @@ class ConfigoRoboto:
 			self.punk_solro.update_vscan_tstamp(url_dic['url'])
 			
 			if not no_regex:
-				url_regex = "+" + url_dic['url'].rstrip("/") + ".*"
+				url_regex = "+" + url_dic['url'] + ".*"
 				yield url_regex
 			else:
 				yield url_dic['url']

@@ -6,8 +6,8 @@ from urllib import quote_plus
 import os
 import sys
 cwdir = os.path.dirname(__file__)
-sys.path.append(os.path.join(cwdir, "fuzzer_config"))
-sys.path.append(os.path.join(cwdir, "beautifulsoup"))
+sys.path.append(os.path.join(cwdir,  "fuzzer_config"))
+sys.path.append(os.path.join(cwdir,  "beautifulsoup"))
 
 #add when running in mr job
 import fuzz_config_parser
@@ -109,9 +109,12 @@ class GenFuzz:
         self.url = url
         self.param = param
         self.proxy = self.fuzz_config.get_proxies_dic()
+#!dbg
+        print self.proxy
         
         try:
             self.url_parsed = urlparse(self.url)
+            self.protocol = self.url_parsed.scheme
             return self.url_parsed
 
         except:
@@ -153,7 +156,6 @@ class GenFuzz:
             url = url_payload[0]
             payload = url_payload[1]
 
-#print "going to request %s" % url
             r = requests.get(url, proxies = self.proxy)
 
             yield (url, payload, r.text)
@@ -170,7 +172,7 @@ class GenFuzz:
         vulnerable_url_list = []
         for url_response in url_response_gen:
 
-            url_payload = (url_response[0], url_response[1], vuln_type)
+            url_payload_info = (url_response[0], url_response[1], vuln_type, self.param, self.protocol)
             soup = BeautifulSoup(url_response[2])
 
             for tag_in_page in soup.find_all(tag):
@@ -180,14 +182,14 @@ class GenFuzz:
                     tag_string = tag_in_page.string
 
                     if tag_string and match_string in tag_string:
-                        vulnerable_url_list.append(url_payload)
+                        vulnerable_url_list.append(url_payload_info)
 
                 #if attribute is set, look in the attribute's string
                 if attribute:
                     attribute_string = tag_in_page.get(attribute)
 
                     if attribute_string and match_string in attribute_string:
-                        vulnerable_url_list.append(url_payload)
+                        vulnerable_url_list.append(url_payload_info)
 
         return vulnerable_url_list
 
@@ -253,7 +255,7 @@ class PunkFuzz(XSSFuzz):
 if __name__ == "__main__":
 
     x = PunkFuzz()
-    x.set_target("http://www.leavenworth.org/modules/pages/?pageid=266", "pageid")
+    x.set_target("http://www.mysticboarding.com/dealers/distributors/?did=123", "did")
     print x.fuzz()
 #    x = XSSFuzz()
 #    x.xss_set_target("http://www.mysticboarding.com/dealers/distributors/?did=", "did")

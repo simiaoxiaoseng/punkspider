@@ -1,4 +1,4 @@
 #!/bin/bash
-cd /usr/local/nutch
+cd ../../
 ant job
-cp build/nutch-1.4.job /usr/local/nutch/runtime/deploy
+cp build/apache-nutch-1.5.1.job runtime/deploy
