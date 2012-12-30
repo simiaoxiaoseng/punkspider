@@ -1,23 +1,32 @@
 #!/bin/bash
 
 DIR="$( cd "$( dirname "$0" )" && pwd )"
-cd $DIR
-
-#run crawl to generate urls to fuzz
-cd ..
-python punkcrawler.py
-cd $DIR
 
 while getopts ":dl" opt; do
   case $opt in
 
     l)
       echo "Running punk_fuzz in local mode... This should only be used for testing."
+
+      cd $DIR
+      
+      #run crawl to generate urls to fuzz
+      cd ..
+      python punkcrawler.py
+      cd $DIR
+
       python punk_mapreduce.py < urls_to_fuzz > output_local
       ;;
 
     d)
       echo "Running punk_fuzz in distributed mode."
+
+      cd $DIR
+
+      #run crawl to generate urls to fuzz                                                                           
+      cd ..
+      python punkcrawler.py
+      cd $DIR
 
       python punk_mapreduce.py -r hadoop --cmdenv PYTHONPATH=$DIR --file punk_fuzz.py\
  --file fuzzer_config/fuzz_config_parser.py --file fuzzer_config/punk_fuzz.cfg.xml\
@@ -25,7 +34,7 @@ while getopts ":dl" opt; do
       ;;
 
    \?)
-      echo "Invalid option: -$OPTARG" >&2
+      echo "Invalid option: -$OPTARG. Use either -d (distributed mode) or -l (local mode)" >&2
       ;;
 
   esac
