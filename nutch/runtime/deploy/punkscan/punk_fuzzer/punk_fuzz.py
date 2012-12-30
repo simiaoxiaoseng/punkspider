@@ -109,8 +109,6 @@ class GenFuzz:
         self.url = url
         self.param = param
         self.proxy = self.fuzz_config.get_proxies_dic()
-#!dbg
-        print self.proxy
         
         try:
             self.url_parsed = urlparse(self.url)
