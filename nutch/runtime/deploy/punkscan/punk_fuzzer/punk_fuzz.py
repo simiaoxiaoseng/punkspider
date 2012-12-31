@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from urlparse import urlparse
 from urlparse import urlunparse
 from urlparse import parse_qs
@@ -188,6 +189,12 @@ class GenFuzz:
 
                     if attribute_string and match_string in attribute_string:
                         vulnerable_url_list.append(url_payload_info)
+
+                #stop once we find a vulnerability in tag, attribute, or both
+                #in one iteration
+                
+                if vulnerable_url_list:
+                    return vulnerable_url_list
 
         return vulnerable_url_list
 

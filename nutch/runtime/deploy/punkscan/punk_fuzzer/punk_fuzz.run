@@ -4,12 +4,11 @@ DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 while getopts ":dl" opt; do
   case $opt in
-
     l)
       echo "Running punk_fuzz in local mode... This should only be used for testing."
 
       cd $DIR
-      
+
       #run crawl to generate urls to fuzz
       cd ..
       python punkcrawler.py
@@ -23,7 +22,7 @@ while getopts ":dl" opt; do
 
       cd $DIR
 
-      #run crawl to generate urls to fuzz                                                                           
+      #run crawl to generate urls to fuzz
       cd ..
       python punkcrawler.py
       cd $DIR

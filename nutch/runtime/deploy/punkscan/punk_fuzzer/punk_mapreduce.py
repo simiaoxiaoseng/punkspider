@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import os
 import sys
 from mrjob.job import MRJob
@@ -50,6 +51,7 @@ class PunkFuzzDistributed(MRJob):
         vuln_list = []
         for url_query_param in url_query_params:
 
+            self.set_status(u'Finished query param moving on to next one')
             url_to_fuzz = url_query_param[0]
             param_to_fuzz = url_query_param[1]
 
