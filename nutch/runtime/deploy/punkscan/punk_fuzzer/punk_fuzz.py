@@ -9,6 +9,7 @@ import sys
 cwdir = os.path.dirname(__file__)
 sys.path.append(os.path.join(cwdir,  "fuzzer_config"))
 sys.path.append(os.path.join(cwdir,  "beautifulsoup"))
+sys.path.append(cwdir)
 
 #add when running in mr job
 import fuzz_config_parser
@@ -21,8 +22,6 @@ punkscan_base = os.path.join(cwdir, "../")
 from ConfigParser import SafeConfigParser
 config_parser = SafeConfigParser()
 config_parser.read(os.path.join(punkscan_base,'punkscan_configs', 'punkscan_config.cfg'))
-
-
 
 class GenFuzz:
     '''Series of methods useful in the individual fuzzing objects'''
@@ -237,7 +236,26 @@ class XSSFuzz(GenFuzz):
 
         return self.search_urls_tag(self.__xss_get_url_responses(),  "alert(313371234)", "xss", tag="script")
 
-class PunkFuzz(XSSFuzz):
+class SQLiFuzz(GenFuzz):
+
+    def __init__(self):
+
+        GenFuzz.__init__(self)
+
+    def sqli_set_target(self, url, param):
+        '''Set the target '''
+
+        self.target = self.set_target(url, param)
+
+    def __sqli_make_payloads(self):
+
+        pass
+        #mutate payloads
+
+
+        #return final list of payloads
+
+class PunkFuzz(GenFuzz):
     '''A utility class that uses all of the fuzzing objects'''
 
     def __init__(self):

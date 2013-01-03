@@ -8,9 +8,9 @@ import requests
 cwdir = os.path.dirname(__file__)
 sys.path.append(os.path.join(cwdir,"mapreduce_indexer"))
 sys.path.append(os.path.join(cwdir,"punk_fuzz"))
+sys.path.append(cwdir)
 import punk_fuzz
 import mapreduce_indexer
-
 
 class PunkFuzzDistributed(MRJob):
 

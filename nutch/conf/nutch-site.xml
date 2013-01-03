@@ -88,7 +88,6 @@
   <description>If true, fetcher will log more verbosely.</description>
 </property>
 
-
 <property>
   <name>indexer.max.content.length</name>
   <value>-1</value>
@@ -96,7 +95,6 @@
   Content beyond the limit is truncated. A value of -1 disables this check.
   </description>
 </property>
-
 
 <property>
   <name>http.proxy.host</name>
@@ -109,6 +107,5 @@
   <value>3128</value>
   <description>The proxy port.</description>
 </property>
-
 
 </configuration>

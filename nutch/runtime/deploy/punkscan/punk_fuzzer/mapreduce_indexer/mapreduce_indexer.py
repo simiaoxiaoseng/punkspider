@@ -6,6 +6,7 @@ from urlparse import urlparse
 cwdir = os.path.dirname(__file__)
 sys.path.append(os.path.join(cwdir, "../", "pysolr/"))
 sys.path.append(os.path.join(cwdir, "../", "fuzzer_config/"))
+sys.path.append(cwdir)
 import pysolr
 import fuzz_config_parser
 

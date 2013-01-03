@@ -8,6 +8,13 @@
       <xss_string><![CDATA[<ScR<script>iPt>alert(313371234)</SCr<script>IpT>]]></xss_string>
       </xss_strings>
     </xss_config>
+    <sqli_config>
+      <sqli_strings>
+      <sqli_string><![CDATA[']]></sqli_string>
+      <sqli_string><![CDATA['']]></sqli_string>
+      <sqli_string><![CDATA[--;'#]]></sqli_string>
+      </sqli_strings>
+    </sqli_config>
   </modules>
 
   <network_configs>
