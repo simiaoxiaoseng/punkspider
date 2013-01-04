@@ -1,6 +1,8 @@
 import os
 cwdir = os.path.dirname(__file__)
 import xml.etree.ElementTree as ET
+import sys
+sys.path.append(cwdir)
 
 class ConfigO:
 
@@ -13,6 +15,13 @@ class ConfigO:
         xss_string_list = [xss_string.text for xss_string in xss_strings_elt]
 
         return xss_string_list
+
+    def get_sqli_strings(self):
+
+        sqli_strings_elt = self.tree.findall('modules/sqli_config/sqli_strings/sqli_string')
+        sqli_string_list = [sqli_string.text for sqli_string in sqli_strings_elt]
+
+        return sqli_string_list
 
     def get_proxies_dic(self):
 
@@ -33,3 +42,5 @@ if __name__ == "__main__":
 
     print ConfigO().get_xss_strings()
     print ConfigO().get_proxies_dic()
+    print ConfigO().get_sqli_strings()
+    

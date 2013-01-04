@@ -20,12 +20,12 @@ while getopts ":dl" opt; do
     d)
       echo "Running punk_fuzz in distributed mode."
 
-#      cd $DIR
+      cd $DIR
 
       #run crawl to generate urls to fuzz
-#      cd ..
-#      python punkcrawler.py
-#      cd $DIR
+      cd ..
+      python punkcrawler.py
+      cd $DIR
 
       python punk_mapreduce.py -r hadoop --file pysolr/pysolr.py --file pysolr/BeautifulSoup.py --file mapreduce_indexer/mapreduce_indexer.py --file punk_fuzz.py\
  --file fuzzer_config/fuzz_config_parser.py --file fuzzer_config/punk_fuzz.cfg.xml\
