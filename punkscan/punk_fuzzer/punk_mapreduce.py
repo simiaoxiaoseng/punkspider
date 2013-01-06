@@ -14,21 +14,14 @@ import mapreduce_indexer
 
 class PunkFuzzDistributed(MRJob):
 
-    def mapper_init(self):
-
-        self.mapper_punk_fuzz = punk_fuzz.PunkFuzz()
-
-    def reducer_init(self):
-
-        self.reducer_punk_fuzz = punk_fuzz.PunkFuzz()
-
     def mapper(self, key, url):
         '''Yield domain as the key, and parameter to be fuzzed as the value'''
 
+        mapper_punk_fuzz = punk_fuzz.PunkFuzz()
         parsed_url = urlparse(url)
         domain = parsed_url.scheme + "://" + parsed_url.netloc + "/"
 
-        if self.mapper_punk_fuzz.check_if_param(parsed_url):
+        if mapper_punk_fuzz.check_if_param(parsed_url):
 
             parsed_url_query = parsed_url.query
             url_q_dic = parse_qs(parsed_url_query)
@@ -48,6 +41,7 @@ class PunkFuzzDistributed(MRJob):
         #reducing the <url, query param> to <url, all_vuln_list> all_vuln_list is a list of vulns of the form
         #[[vuln_url, payload, vuln_type], etc.]
 
+        reducer_punk_fuzz = punk_fuzz.PunkFuzz()
         vuln_list = []
         for url_query_param in url_query_params:
 
@@ -55,8 +49,8 @@ class PunkFuzzDistributed(MRJob):
             url_to_fuzz = url_query_param[0]
             param_to_fuzz = url_query_param[1]
 
-            self.reducer_punk_fuzz.set_target(url_to_fuzz, param_to_fuzz)
-            fuzzer_vuln_list = self.reducer_punk_fuzz.fuzz()
+            reducer_punk_fuzz.punk_set_target(url_to_fuzz, param_to_fuzz)
+            fuzzer_vuln_list = reducer_punk_fuzz.fuzz()
 
             for vuln in fuzzer_vuln_list:
 

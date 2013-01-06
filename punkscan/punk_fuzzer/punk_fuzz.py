@@ -28,9 +28,9 @@ class GenFuzz:
         self.fuzz_config = fuzz_config_parser.ConfigO()
 
         #get various payloads
-        self.xss_payloads = self.fuzz_config.get_xss_strings()
-        self.sqli_payloads = self.fuzz_config.get_sqli_strings()
-        self.bsqli_payloads = self.fuzz_config.get_bsqli_strings()
+        self.xss_payloads_raw = self.fuzz_config.get_xss_strings()
+        self.sqli_payloads_raw = self.fuzz_config.get_sqli_strings()
+        self.bsqli_payloads_raw = self.fuzz_config.get_bsqli_strings()
 
     def mutate_append(self, payload_list, str_to_append):
         '''Takes in a list of strings to append to append to the payloads,
@@ -126,11 +126,10 @@ class GenFuzz:
             self.url_parsed = urlparse(self.url)
             self.protocol = self.url_parsed.scheme
             self.query_dic = parse_qs(self.url_parsed.query)
-        
-            #choose the first valid query value
-        
-            self.valid_query_val = self.query_dic[self.param][0]
-            self.interpret_payloads()
+            valid_query_val = self.query_dic[self.param][0]
+
+            #replace the wildcards in the config
+            self.interpret_payloads(valid_query_val)
 
             return self.url_parsed
 
@@ -138,17 +137,14 @@ class GenFuzz:
             
             raise Exception("Cannot parse url %s" % self.url)
 
-    def interpret_payloads(self):
+    def interpret_payloads(self, valid_query_val):
 
-        self.random_int = randint(1, 30000)
+        #!There's an issue here with what valid_param gets replaced with. It 
+        self.random_int = randint(1,30000)
 
-        self.xss_payloads = [x.replace("__VALID_PARAM__", self.valid_query_val) for x in self.xss_payloads]
-        self.sqli_payloads = [x.replace("__VALID_PARAM__", self.valid_query_val) for x in self.sqli_payloads]
-        self.bsqli_payloads = [x.replace("__VALID_PARAM__", self.valid_query_val) for x in self.bsqli_payloads]
-
-        self.xss_payloads = [x.replace("__RANDOM_INT__", str(self.random_int)) for x in self.xss_payloads]
-        self.sqli_payloads = [x.replace("__RANDOM_INT__", str(self.random_int)) for x in self.sqli_payloads]
-        self.bsqli_payloads = [x.replace("__RANDOM_INT__", str(self.random_int)) for x in self.bsqli_payloads]
+        self.xss_payloads = [x.replace("__VALID_PARAM__", valid_query_val).replace("__RANDOM_INT__", str(self.random_int)) for x in self.xss_payloads_raw]
+        self.sqli_payloads = [x.replace("__VALID_PARAM__", valid_query_val).replace("__RANDOM_INT__", str(self.random_int)) for x in self.sqli_payloads_raw]
+        self.bsqli_payloads = [x.replace("__VALID_PARAM__", valid_query_val).replace("__RANDOM_INT__", str(self.random_int)) for x in self.bsqli_payloads_raw]
 
     def replace_param(self, replacement_string):
         '''Replace a parameter in a url with another string.
@@ -416,7 +412,6 @@ class BSQLiFuzz(GenFuzz):
 
     def __bsqli_url_gen(self):
 
-        final_url_list = []
         for payload in self.__bsqli_make_payloads():
 
             true_sql_payload = payload[0]
@@ -424,7 +419,7 @@ class BSQLiFuzz(GenFuzz):
             
             true_url = self.generate_url(true_sql_payload)
             false_url = self.generate_url(false_sql_payload)
-
+            
             yield (true_url, false_url)
 
     def bsqli_fuzz(self):
@@ -449,6 +444,8 @@ class BSQLiFuzz(GenFuzz):
                 #return as soon as you find a potential vulnerability
                 return vulnerable_url_list
 
+        return vulnerable_url_list
+
 class PunkFuzz(GenFuzz):
     '''A utility class that uses all of the fuzzing objects'''
 
@@ -459,7 +456,7 @@ class PunkFuzz(GenFuzz):
         self.sqli_fuzzer = SQLiFuzz()
         self.bsqli_fuzzer = BSQLiFuzz()
 
-    def set_target(self, url, param):
+    def punk_set_target(self, url, param):
         '''Set the targets for the fuzzers '''
 
         self.xss_fuzzer.xss_set_target(url, param)
@@ -479,10 +476,10 @@ class PunkFuzz(GenFuzz):
 
 if __name__ == "__main__":
 
-#    x = PunkFuzz()
-    x = BSQLiFuzz()    
-    x.set_target("http://prisons.ir/index.php?Module=SMMNewsAgency&SMMOp=View&SMM_CMD=&PageId=3937", "PageId")
-    print x.bsqli_fuzz()
+    x = PunkFuzz()
+#    x = BSQLiFuzz()    
+    x.punk_set_target("http://prisons.ir/index.php?Module=SMMNewsAgency&SMMOp=View&SMM_CMD=&PageId=3937", "PageId")
+    print x.fuzz()
     
 #    x.set_target("http://www.sheikhtaji.com/viewproduct.php?op=blee&pages=12&min=12", "op")
 #    print x.fuzz()
