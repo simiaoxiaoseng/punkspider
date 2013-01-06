@@ -23,6 +23,13 @@ class ConfigO:
 
         return sqli_string_list
 
+    def get_bsqli_strings(self):
+
+        bsqli_strings_elt = self.tree.findall('modules/bsqli_config/bsqli_strings/bsqli_string')
+        bsqli_string_list = [bsqli_string.text for bsqli_string in bsqli_strings_elt]
+
+        return bsqli_string_list
+
     def get_proxies_dic(self):
 
         protocol = self.tree.find('network_configs/proxy').get('type')

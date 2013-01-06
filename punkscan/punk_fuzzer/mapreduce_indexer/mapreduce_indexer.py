@@ -109,7 +109,6 @@ class PunkMapReduceIndexer:
                 bsqli_c += 1
 
         #commit details vulnerabilities in batch
-        print vuln_details_dic_list
         self.conn_details.add(vuln_details_dic_list)                
 
         #set the summary details dictionary and commit

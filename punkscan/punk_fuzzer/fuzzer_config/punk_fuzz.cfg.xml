@@ -2,21 +2,38 @@
 <punkfuzz_config>
   <modules>
     <xss_config>
+    <!--This module searches in <script> tags for alert(__RANDOM_INT__) where __RANDOM_INT__ is
+    a random integer assigned at runtime. If you'd like to add payloads, make sure you use this
+    as the script you are attempting to inject.-->
       <xss_strings>
-      <xss_string><![CDATA[<SCrIpT>alert(313371234)</ScRiPt>]]></xss_string>
-      <xss_string><![CDATA[</TITLE><SCRIPT>alert(313371234);</SCRIPT>]]></xss_string>
-      <xss_string><![CDATA[<ScR<script>iPt>alert(313371234)</SCr<script>IpT>]]></xss_string>
+      <xss_string><![CDATA[<SCrIpT>alert(__RANDOM_INT__)</ScRiPt>]]></xss_string>
+      <xss_string><![CDATA[</TITLE><SCRIPT>alert(__RANDOM_INT__);</SCRIPT>]]></xss_string>
+      <xss_string><![CDATA[<ScR<script>iPt>alert(__RANDOM_INT__)</SCr<script>IpT>]]></xss_string>
       </xss_strings>
     </xss_config>
     <sqli_config>
+    <!--This module simply searches the response for SQL errors. Feel free to add any payloads you'd like.-->
       <sqli_strings>
       <sqli_string><![CDATA[']]></sqli_string>
       <sqli_string><![CDATA['']]></sqli_string>
       <sqli_string><![CDATA[--;'#]]></sqli_string>
       </sqli_strings>
     </sqli_config>
+    <bsqli_config>
+    <!--This module tests for blind sql injection by attempting to inject true
+    SQL statements into parameters then untrue and testing the content length of each. We recommend
+    not adding payloads to this unless you have a strong understanding of the code behind this.-->
+      <bsqli_strings>
+      <bsqli_string><![CDATA[__VALID_PARAM__ AND '1'='1]]></bsqli_string>
+      <bsqli_string><![CDATA[__VALID_PARAM__ AND 1=1]]></bsqli_string>
+      <bsqli_string><![CDATA[__VALID_PARAM__ AND 1=1#]]></bsqli_string>
+      <bsqli_string><![CDATA[__VALID_PARAM__ OR 1=1#]]></bsqli_string>
+      <bsqli_string><![CDATA[__VALID_PARAM__ AND 1=1--]]></bsqli_string>
+      <bsqli_string><![CDATA[__VALID_PARAM__ OR 1=1--]]></bsqli_string>
+      <bsqli_string><![CDATA[__VALID_PARAM__ OR '1'='1]]></bsqli_string>
+      </bsqli_strings>
+    </bsqli_config>
   </modules>
-
   <network_configs>
     <proxy type="http">
       <ip_port><![CDATA[37.221.160.130:3128]]></ip_port>
