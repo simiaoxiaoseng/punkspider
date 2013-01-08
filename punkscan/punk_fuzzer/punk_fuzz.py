@@ -8,13 +8,17 @@ import os
 import sys
 from random import randint
 cwdir = os.path.dirname(__file__)
+
+#for local imports
 sys.path.append(os.path.join(cwdir,  "fuzzer_config"))
 sys.path.append(os.path.join(cwdir,  "beautifulsoup"))
+#for distributed imports
 sys.path.append(cwdir)
+
+#import the modules aded to the path
 import fuzz_config_parser
 import requests
 from bs4 import BeautifulSoup
-cwdir = os.path.dirname(__file__)
 punkscan_base = os.path.join(cwdir, "../")
 from ConfigParser import SafeConfigParser
 config_parser = SafeConfigParser()
@@ -24,17 +28,16 @@ class GenFuzz:
     '''Series of methods useful in the individual fuzzing objects'''
 
     def __init__(self):
+        '''Grabs the various raw fuzzer payloads '''
 
         self.fuzz_config = fuzz_config_parser.ConfigO()
-
-        #get various payloads
         self.xss_payloads_raw = self.fuzz_config.get_xss_strings()
         self.sqli_payloads_raw = self.fuzz_config.get_sqli_strings()
         self.bsqli_payloads_raw = self.fuzz_config.get_bsqli_strings()
 
     def mutate_append(self, payload_list, str_to_append):
-        '''Takes in a list of strings to append to append to the payloads,
-        appends to and returns list taken in'''
+        '''Takes in a list of strings to append to the payloads,
+        appends to the list and returns all values as a list'''
 
         mutated_list = []
         for payload in payload_list:
@@ -47,8 +50,8 @@ class GenFuzz:
         return full_list
         
     def mutate_prepend(self, payload_list, str_to_prepend):
-        '''Takes in a list of strings to prepend to prepend to the payloads,
-        prepends to and returns list taken in'''
+        '''Takes in a list of strings to prepend to the payloads,
+        apppends to the list and returns all values as a list'''
 
         mutated_list = []
         for payload in payload_list:
@@ -61,8 +64,8 @@ class GenFuzz:
         return full_list
 
     def mutate_replace(self, payload_list, str_to_replace, str_to_replace_with):
-        '''Takes in a list of strings, appends to the list those same strings
-        with str_to_replace_with in place of str_to_replace if the string was changed'''
+        '''Takes in a list of strings, adds values where str_to_replace is replaced
+        with str_to_replace_with and returns a list.'''
 
         mutated_list = []
         for payload in payload_list:
@@ -77,7 +80,7 @@ class GenFuzz:
         return full_list
 
     def mutate_urlencode(self, list_to_enc):
-        '''Takes in a list of strings to add encoded payloads to,
+        '''Takes in a list of strings to add URL encoded payloads to,
         appends to and returns list taken in. Note the way that
         we are doing requests, this will end up double-url encoding
         before the web server receives the info'''
@@ -91,10 +94,16 @@ class GenFuzz:
 
 
     def mutate_urlencode_single(self, str_to_enc):
+        '''URL Encodes a single string. This is used for any on-the-fly
+        encoding needed in fuzzer modules.'''
 
         return quote_plus(str_to_enc)
 
     def mutate_replace_char_from_end(self, payload_list, str_to_replace, str_to_replace_with, occurrences_to_replace):
+        '''Replaces str_to_replace with str_to_replace_with starting at the end of a string
+        and working its way backwards. Replaces a total of occurrences_to_replace characters.
+        Note that unlike some of the other utate classes this does not append to and return the full
+        list, this only returns the mutated list.'''
 
         mutated_list = []
         for payload in payload_list:
@@ -106,7 +115,7 @@ class GenFuzz:
         return mutated_list
         
     def check_if_param(self, url):
-        '''Check if a URL has parameters, if it does return true, if not return false'''
+        '''Check if a URL has parameters, if it does return true, if not return false.'''
 
         if not url.query:
             
@@ -122,14 +131,18 @@ class GenFuzz:
         self.param = param
         self.proxy = self.fuzz_config.get_proxies_dic()
         
+        #attempt to parse the URL and query parameters
+        #if unable to an exception is raised
+        
         try:
+            
             self.url_parsed = urlparse(self.url)
             self.protocol = self.url_parsed.scheme
             self.query_dic = parse_qs(self.url_parsed.query)
             valid_query_val = self.query_dic[self.param][0]
 
-            #replace the wildcards in the config
-            self.interpret_payloads(valid_query_val)
+            #replace the wildcards in the config with useful values
+            self.__interpret_payloads(valid_query_val)
 
             return self.url_parsed
 
@@ -137,9 +150,10 @@ class GenFuzz:
             
             raise Exception("Cannot parse url %s" % self.url)
 
-    def interpret_payloads(self, valid_query_val):
+    def __interpret_payloads(self, valid_query_val):
+        '''Generates our final payloads, replacing wildcard characters
+        in the config with useful values.'''
 
-        #!There's an issue here with what valid_param gets replaced with. It 
         self.random_int = randint(1,30000)
 
         self.xss_payloads = [x.replace("__VALID_PARAM__", valid_query_val).replace("__RANDOM_INT__", str(self.random_int)) for x in self.xss_payloads_raw]
@@ -147,8 +161,8 @@ class GenFuzz:
         self.bsqli_payloads = [x.replace("__VALID_PARAM__", valid_query_val).replace("__RANDOM_INT__", str(self.random_int)) for x in self.bsqli_payloads_raw]
 
     def replace_param(self, replacement_string):
-        '''Replace a parameter in a url with another string.
-        Will be used extensively in fuzzing'''
+        '''Replace a parameter in a url with another string. Returns
+        a fully reassembled url as a string.'''
         
         self.query_dic[self.param] = replacement_string
 
@@ -165,7 +179,8 @@ class GenFuzz:
         return url_reassembled
 
     def generate_urls_gen(self, final_payload_list):
-        '''Returns a generator of urls from a list of payloads'''
+        '''Takes in a list of payloads and returns a generator of
+        (urls with fuzz values, payload) tuples from a list of payloads.'''
         
         for payload in final_payload_list:
             
@@ -173,8 +188,8 @@ class GenFuzz:
             yield (fuzzy_url, payload)
 
     def url_response_gen(self, url_gen):
-        '''Takes in a (full fuzzed request URL, payload) generator and returns a (url,
-        payload, response) generator.'''
+        '''Takes in a (url with fuzz values, payload) generator and returns a (url,
+        payload, response) tuple generator.'''
 
         for url_payload in url_gen():
 
@@ -185,13 +200,16 @@ class GenFuzz:
             yield (url, payload, r.text)
 
     def generate_url(self, payload):
+        '''Takes in a single payload as a string, and returns a single
+        (url with fuzz value, payload) tuple.'''
 
         fuzzy_url = self.replace_param(payload)
 
         return (fuzzy_url, payload)
     
     def url_response(self, url_payload):
-        '''Returns a (payload, URL response) tuple'''
+        '''Takes in a single (url lwith fuzz value, payload) tuple and
+        returns a (payload, URL response) tuple'''
 
         url = url_payload[0]
         payload = url_payload[1]

@@ -4,9 +4,11 @@ cwdir = os.path.dirname(__file__)
 punkscan_base = os.path.join(cwdir, "../")
 sys.path.append(os.path.join(punkscan_base,"punk_solr"))
 sys.path.append(os.path.join(punkscan_base, 'hadooper'))
+sys.path.append(cwdir)
 import hadooper
 import punkscan_solr
 from ConfigParser import SafeConfigParser
+import paramiko
 config_parser = SafeConfigParser()
 config_parser.read(os.path.join(punkscan_base,'punkscan_configs', 'punkscan_config.cfg'))
 HADOOP_HOME=config_parser.get('directories','HADOOP_HOME')
@@ -20,6 +22,9 @@ class ConfigoRoboto:
 
 		self.punk_solro = punkscan_solr.PunkSolr()
 		self.solr_urls_dic = self.punk_solro.get_scanned_longest_ago()
+		self.datanodes = config_parser.get('hadoop', 'datanodes').split(',')
+		self.urlfilter_lcp = os.path.join(HADOOP_HOME,'conf','regex-urlfilter.txt')
+		self.username = config_parser.get('users', 'hadoop_user')
 
 	def __get_regex_url(self, no_regex = False):
 		'''Replace regex url configuration file, this will be used by punkscan to restrict crawls to the domains we are going to scan.
@@ -38,13 +43,33 @@ class ConfigoRoboto:
 			else:
 				yield url_dic['url']
 
+	def __transfer_sftp(self, host_raw, local_path, remote_path):
+		
+		host = "".join(host_raw.split())
+		ssh = paramiko.SSHClient()
+		ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+		ssh.connect(host)
+		sftp=ssh.open_sftp()
+		sftp.put(local_path, remote_path)
+
+	def __transfer_urlfilter(self):
+
+		for node in self.datanodes:
+
+			print "Transferring urlfilter file to %s" % node
+			self.__transfer_sftp(node, self.urlfilter_lcp, self.urlfilter_lcp)
+
 	def generate_template_file(self):
 
 		f_template = open(os.path.join(os.path.dirname(__file__),"templates","regex-urlfilter.txt"),'r').read()
 		for url_regex in self.__get_regex_url():
 			f_template += url_regex + "\n"
 
-		f_final = open(os.path.join(HADOOP_HOME,'conf','regex-urlfilter.txt'),'w').write(f_template)
+		f_final = open(self.urlfilter_lcp, 'w').write(f_template)
+
+		#transfer urlfilter config to each datanode to override nutch config
+		if self.datanodes[0]:
+			self.__transfer_urlfilter()
 
 	def generate_seed_list(self):
 
