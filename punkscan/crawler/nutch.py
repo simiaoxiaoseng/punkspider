@@ -20,20 +20,16 @@ class NutchController:
         hadooper.Hadooper().rmr("punkscan_crawl")
 
     def crawl(self):
-        '''Leverages Nutch to crawl sites'''
+        '''Crawl sites from seeed list'''
 
         self.__clear_previous_crawl()
         topN = config_parser.get('performance','topN')
-	depth = config_parser.get('performance','depth')
-	nutch_bin = os.path.join('bin', 'nutch')
+        depth = config_parser.get('performance','depth')
+        nutch_bin = os.path.join('bin', 'nutch')
 
-	if topN.lower() == "all":
-	    shell_call_list = [nutch_bin, "crawl", "urls", "-dir", "punkscan_crawl", "-depth", depth]
-	else:
-	    shell_call_list = [nutch_bin, "crawl", "urls", "-dir", "punkscan_crawl", "-depth", depth, "-topN", topN]
+        if topN.lower() == "all":
+            shell_call_list = [nutch_bin, "crawl", "urls", "-dir", "punkscan_crawl", "-depth", depth]
+        else:
+            shell_call_list = [nutch_bin, "crawl", "urls", "-dir", "punkscan_crawl", "-depth", depth, "-topN", topN]
 
-	output = subprocess.Popen(shell_call_list, cwd = NUTCH_RUNTIME_DEP).communicate()[0]
-
-if __name__ == "__main__":
-
-    NutchController().crawl()
+        output = subprocess.Popen(shell_call_list, cwd = NUTCH_RUNTIME_DEP).communicate()[0]

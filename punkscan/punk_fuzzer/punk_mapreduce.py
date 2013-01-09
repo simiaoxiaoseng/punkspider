@@ -24,7 +24,6 @@ class PunkFuzzDistributed(MRJob):
         domain = parsed_url.scheme + "://" + parsed_url.netloc + "/"
 
         if mapper_punk_fuzz.check_if_param(parsed_url):
-
             parsed_url_query = parsed_url.query
             url_q_dic = parse_qs(parsed_url_query)
 
@@ -45,6 +44,7 @@ class PunkFuzzDistributed(MRJob):
 
         reducer_punk_fuzz = punk_fuzz.PunkFuzz()
         vuln_list = []
+
         for url_query_param in url_query_params:
 
             self.set_status(u'Finished query param moving on to next one')

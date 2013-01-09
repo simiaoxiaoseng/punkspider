@@ -23,42 +23,24 @@ class CrawlDBParser:
         pass
 
     def dump_crawl_db(self):
+        '''Dump the crawldb to the hdfs'''
 
-        #clear current crawl dump if exists
+        #clear current crawl dump if exists, dump new crawldb
         hadooper.Hadooper().rmr('punkscan_crawl_dump')
-
         nutch_bin = os.path.join('bin','nutch')
-
-        #would have used webhdfs but does not have moveFromLocal function
-        #this function is the most efficient way, as then we will not have to delete the crawldb once done
-
-        shell_call_list = [nutch_bin, 'readdb', os.path.join('punkscan_crawl', 'crawldb'), '-dump', 'punkscan_crawl_dump', '-format', 'csv']
-	    	
-	output = subprocess.Popen(shell_call_list, cwd = NUTCH_RUNTIME_DEP).communicate()[0]
+        shell_call_list = [nutch_bin, 'readdb', os.path.join('punkscan_crawl', 'crawldb'), '-dump', 'punkscan_crawl_dump', '-format', 'csv']	    	
+        output = subprocess.Popen(shell_call_list, cwd = NUTCH_RUNTIME_DEP).communicate()[0]
 
     def get_crawl_db_dump(self):
+        '''Copy crawldb dump from hdfs to local fs'''
 
-	try:
+        try:
             shutil.rmtree(os.path.join(NUTCH_RUNTIME_DEP, 'punkscan_crawl_dump'))
 
-	except:
+        except:
             print "problem deleting directory, perhaps it doesn't exist yet?"
-            pass
 
         hadooper.Hadooper().copyToLocal('punkscan_crawl_dump', os.path.join(NUTCH_RUNTIME_DEP, 'punkscan_crawl_dump'))
-
-
-    def __skip_ascii_null(self, csv_data):
-
-        for line in csv_data:
-
-            try:
-
-                yield line
-
-            except:
-
-                pass
 
     def crawl_db_url_generator(self):
         '''Generator for the urls from the crawldb'''
@@ -83,18 +65,9 @@ class CrawlDBParser:
 
                 yield result
         
-        print "Had trouble reading the following entries in the crawldb:"
+        print "Had trouble reading the following entries in the crawldb."
 
         for line in trouble_list:
-
             print line
         
-        print "Skipped %s URLs because we had trouble reading them: " % str(len(trouble_list))
-
-if __name__ == "__main__":
-
-    x = CrawlDBParser()
-#    x.dump_crawl_db()
-#    x.get_crawl_db_dump()
-    for whatever in x.crawl_db_url_generator():
-        print whatever
+        print "Skipped %s URLs because we had trouble reading them. " % str(len(trouble_list))

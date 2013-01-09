@@ -47,9 +47,3 @@ class PunkSolr:
             del result['vscan_tstamp']
 
         self.conn.add(solr_doc_pull)
-
-if __name__ == "__main__":
-
-    PunkSolr().get_scanned_longest_ago()
-#    PunkSolr().update_vscan_tstamp("http://willowknows.com/")
-
