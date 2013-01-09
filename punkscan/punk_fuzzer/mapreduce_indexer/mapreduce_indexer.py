@@ -11,6 +11,7 @@ import pysolr
 import fuzz_config_parser
 
 class PunkMapReduceIndexer:
+    '''Class to index the results of a mapreduce fuzzer job'''
 
     def __init__(self, domain, domain_vuln_list, del_current = True):
 
@@ -23,15 +24,13 @@ class PunkMapReduceIndexer:
         self.conn_summ = pysolr.Solr(solr_summary_url)
         self.conn_details = pysolr.Solr(solr_details_url)
 
+        #grab a domain entry in solr summary
         self.solr_summary_doc = self.conn_summ.search('id:' + '"' + domain + '"', rows=1)
-
         self.domain_vuln_list = domain_vuln_list
         self.domain = domain
-
         self.reversed_domain = self.__reverse_url(domain)
 
         if del_current:
-
             self.__clear_current()
 
     def __clear_current(self):
@@ -40,6 +39,7 @@ class PunkMapReduceIndexer:
         self.conn_details.delete(q = "url_main:" + self.reversed_domain)
         
     def __reverse_url(self, url):
+        '''Reverse a url. E.g. www.google.com -> com.google.www'''
 
         #strip the trailing slash from the url if it has one
         last_char = url[-1]
@@ -74,6 +74,9 @@ class PunkMapReduceIndexer:
         xss_c = 0
         sqli_c = 0
         bsqli_c = 0
+
+        #for each vulnerability, make necessary counts
+        #and set necessary parameters to add to Solr
 
         for vuln in self.domain_vuln_list:
 
@@ -119,11 +122,3 @@ class PunkMapReduceIndexer:
             summ_doc["bsqli"] = bsqli_c
             
         self.conn_summ.add(self.solr_summary_doc)
-
-if __name__ == "__main__":
-
-    vuln_list = [["http://www.mysticboarding.com/dealers/distributors/?did=%22%3E%3CSCrIpT%3Ealert%28313371234%29%3C%2FScRiPt%3E", "\"><SCrIpT>alert(313371234)</ScRiPt>", "xss", "did", "http"], ["http://www.mysticboarding.com/dealers/distributors/?did=%22%3E%3C%2FTITLE%3E%3CSCRIPT%3Ealert%28313371234%29%3B%3C%2FSCRIPT%3E", "\"></TITLE><SCRIPT>alert(313371234);</SCRIPT>", "xss", "did", "http"], ["http://www.mysticboarding.com/dealers/distributors/?did=%22%3E%3CScR%3Cscript%3EiPt%3Ealert%28313371234%29%3C%2FSCr%3Cscript%3EIpT%3E", "\"><ScR<script>iPt>alert(313371234)</SCr<script>IpT>", "xss", "did", "http"]]
-    domain = "http://www.mysticboarding.com/"
-
-    PunkMapReduceIndexer(domain, vuln_list)
-    

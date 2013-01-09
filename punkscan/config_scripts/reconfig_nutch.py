@@ -18,46 +18,60 @@ NUTCH_RUNTIME_DEP = os.path.join(NUTCH_HOME, "runtime", "deploy")
 class ConfigoRoboto:
 	'''This class is in charge of replacing and writing configuration files for nutch and/or hadoop'''
 
-        def __init__(self):
+    def __init__(self):
 
-		self.punk_solro = punkscan_solr.PunkSolr()
-		self.solr_urls_dic = self.punk_solro.get_scanned_longest_ago()
-		self.datanodes = config_parser.get('hadoop', 'datanodes').split(',')
-		self.urlfilter_lcp = os.path.join(HADOOP_HOME,'conf','regex-urlfilter.txt')
-		self.username = config_parser.get('users', 'hadoop_user')
+	    self.punk_solro = punkscan_solr.PunkSolr()
+	    self.solr_urls_dic = self.punk_solro.get_scanned_longest_ago()
+	    self.datanodes = config_parser.get('hadoop', 'datanodes').split(',')
+	    self.urlfilter_lcp = os.path.join(HADOOP_HOME,'conf','regex-urlfilter.txt')
+	    self.username = config_parser.get('users', 'hadoop_user')
 
 	def __get_regex_url(self, no_regex = False):
 		'''Replace regex url configuration file, this will be used by punkscan to restrict crawls to the domains we are going to scan.
 		This method is very important. As soon as this method is called, a URL is marked as being scanned in Solr'''
 
-		#sample regex entry: +http://www.leavenworth.org/.*
+        #sample regex entry: +http://www.leavenworth.org/.*
 
-		for url_dic in self.solr_urls_dic:
+	    for url_dic in self.solr_urls_dic:
 
-			#mark the url as being scanned with the vscan_tstamp field
-			self.punk_solro.update_vscan_tstamp(url_dic['url'])
+            #mark the url as being scanned with the vscan_tstamp field
+	        self.punk_solro.update_vscan_tstamp(url_dic['url'])
 			
-			if not no_regex:
-				url_regex = "+" + url_dic['url'] + ".*"
-				yield url_regex
-			else:
-				yield url_dic['url']
+		if not no_regex:
+		    url_regex = "+" + url_dic['url'] + ".*"
+		    yield url_regex
+
+		else:
+		    yield url_dic['url']
 
 	def __transfer_sftp(self, host_raw, local_path, remote_path):
-		
-		host = "".join(host_raw.split())
-		ssh = paramiko.SSHClient()
-		ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-		ssh.connect(host)
-		sftp=ssh.open_sftp()
-		sftp.put(local_path, remote_path)
+		'''Transfer file via SFTP '''
+
+	    host = "".join(host_raw.split())
+	    ssh = paramiko.SSHClient()
+	    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+	    ssh.connect(host)
+	    sftp=ssh.open_sftp()
+	    sftp.put(local_path, remote_path)
 
 	def __transfer_urlfilter(self):
+		'''Transfer the regex-urlfilter.txt file to each datanode '''
 
-		for node in self.datanodes:
+	    failed_node_num = 0
+		failed_node_list = []
+	    for node in self.datanodes:
 
-			print "Transferring urlfilter file to %s" % node
-			self.__transfer_sftp(node, self.urlfilter_lcp, self.urlfilter_lcp)
+	        print "Transferring urlfilter file to %s" % node
+	
+			try:
+			    self.__transfer_sftp(node, self.urlfilter_lcp, self.urlfilter_lcp)
+
+			except:
+				print "Failed to transfer urlfilter-regex.txt to %s" % node
+			    failed_node_num = failed_node_nums + 1
+		
+		print "Failed to transfer regex-urlfilter.txt to %s nodes. If these nodes\
+		come back up this may cause unexpected results." % str(failed_node_num)
 
 	def generate_template_file(self):
 
@@ -88,10 +102,3 @@ class ConfigoRoboto:
 	
 		hadooper.Hadooper().rmr("urls")
 		hadooper.Hadooper().copyFromLocal(os.path.join(NUTCH_RUNTIME_DEP, "urls"), "urls")
-
-if __name__ == "__main__":
-
-	x = ConfigoRoboto()
-	x.generate_template_file()
-	x.generate_seed_list()
-	x.clear_and_put_seed_list_on_hdfs()	

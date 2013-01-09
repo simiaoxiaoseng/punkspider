@@ -17,6 +17,8 @@ class PunkFuzzDistributed(MRJob):
     def mapper(self, key, url):
         '''Yield domain as the key, and parameter to be fuzzed as the value'''
 
+        #takes in <None, url> as the <key, value> of the mapper input
+
         mapper_punk_fuzz = punk_fuzz.PunkFuzz()
         parsed_url = urlparse(url)
         domain = parsed_url.scheme + "://" + parsed_url.netloc + "/"

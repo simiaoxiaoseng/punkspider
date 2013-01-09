@@ -12,6 +12,7 @@ cwdir = os.path.dirname(__file__)
 #for local imports
 sys.path.append(os.path.join(cwdir,  "fuzzer_config"))
 sys.path.append(os.path.join(cwdir,  "beautifulsoup"))
+
 #for distributed imports
 sys.path.append(cwdir)
 
@@ -25,10 +26,11 @@ config_parser = SafeConfigParser()
 config_parser.read(os.path.join(punkscan_base,'punkscan_configs', 'punkscan_config.cfg'))
 
 class GenFuzz:
-    '''Series of methods useful in the individual fuzzing objects'''
+    '''Series of methods useful in the individual fuzzing objects. Note this
+    class is built to fuzz a single URL-parameter pair.'''
 
     def __init__(self):
-        '''Grabs the various raw fuzzer payloads '''
+        '''Grab the various raw fuzzer payloads '''
 
         self.fuzz_config = fuzz_config_parser.ConfigO()
         self.xss_payloads_raw = self.fuzz_config.get_xss_strings()
@@ -36,8 +38,8 @@ class GenFuzz:
         self.bsqli_payloads_raw = self.fuzz_config.get_bsqli_strings()
 
     def mutate_append(self, payload_list, str_to_append):
-        '''Takes in a list of strings to append to the payloads,
-        appends to the list and returns all values as a list'''
+        '''Take in a list of strings to append to the payloads,
+        append to the list and return all values as a list'''
 
         mutated_list = []
         for payload in payload_list:
@@ -50,8 +52,8 @@ class GenFuzz:
         return full_list
         
     def mutate_prepend(self, payload_list, str_to_prepend):
-        '''Takes in a list of strings to prepend to the payloads,
-        apppends to the list and returns all values as a list'''
+        '''Take in a list of strings to prepend to the payloads,
+        apppend to the list and return all values as a list'''
 
         mutated_list = []
         for payload in payload_list:
@@ -64,8 +66,8 @@ class GenFuzz:
         return full_list
 
     def mutate_replace(self, payload_list, str_to_replace, str_to_replace_with):
-        '''Takes in a list of strings, adds values where str_to_replace is replaced
-        with str_to_replace_with and returns a list.'''
+        '''Take in a list of strings, add values where str_to_replace for
+        items in the list are replaced with str_to_replace_with and return a list.'''
 
         mutated_list = []
         for payload in payload_list:
@@ -78,26 +80,6 @@ class GenFuzz:
         full_list = mutated_list + payload_list
 
         return full_list
-
-    def mutate_urlencode(self, list_to_enc):
-        '''Takes in a list of strings to add URL encoded payloads to,
-        appends to and returns list taken in. Note the way that
-        we are doing requests, this will end up double-url encoding
-        before the web server receives the info'''
-
-        list_to_enc_copy = list(list_to_enc)
-        list_enc = [quote_plus(x) for x in list_to_enc_copy]
-
-        full_list = list_to_enc_copy + list_enc
-
-        return full_list
-
-
-    def mutate_urlencode_single(self, str_to_enc):
-        '''URL Encodes a single string. This is used for any on-the-fly
-        encoding needed in fuzzer modules.'''
-
-        return quote_plus(str_to_enc)
 
     def mutate_replace_char_from_end(self, payload_list, str_to_replace, str_to_replace_with, occurrences_to_replace):
         '''Replaces str_to_replace with str_to_replace_with starting at the end of a string
@@ -113,12 +95,30 @@ class GenFuzz:
             mutated_list.append(payload_new)
 
         return mutated_list
-        
+
+    def mutate_urlencode(self, list_to_enc):
+        '''Take in a list of strings to add URL encoded payloads to,
+        appends to and returns list taken in. Note the way that
+        we are doing requests, this will end up double-url encoding
+        before the web server receives the info'''
+
+        list_to_enc_copy = list(list_to_enc)
+        list_enc = [quote_plus(x) for x in list_to_enc_copy]
+
+        full_list = list_to_enc_copy + list_enc
+
+        return full_list
+
+    def mutate_urlencode_single(self, str_to_enc):
+        '''URL Encode a single string. This is used for any on-the-fly
+        encoding needed in fuzzer modules.'''
+
+        return quote_plus(str_to_enc)
+
     def check_if_param(self, url):
         '''Check if a URL has parameters, if it does return true, if not return false.'''
 
         if not url.query:
-            
             return False
 
         else:
@@ -141,7 +141,7 @@ class GenFuzz:
             self.query_dic = parse_qs(self.url_parsed.query)
             valid_query_val = self.query_dic[self.param][0]
 
-            #replace the wildcards in the config with useful values
+            #replace the wildcards in the fuzzer config with useful values
             self.__interpret_payloads(valid_query_val)
 
             return self.url_parsed
@@ -179,7 +179,7 @@ class GenFuzz:
         return url_reassembled
 
     def generate_urls_gen(self, final_payload_list):
-        '''Takes in a list of payloads and returns a generator of
+        '''Take in a list of payloads and returns a generator of
         (urls with fuzz values, payload) tuples from a list of payloads.'''
         
         for payload in final_payload_list:
@@ -188,8 +188,9 @@ class GenFuzz:
             yield (fuzzy_url, payload)
 
     def url_response_gen(self, url_gen):
-        '''Takes in a (url with fuzz values, payload) generator and returns a (url,
-        payload, response) tuple generator.'''
+        '''Take in a (url with fuzz values, payload) generator and returns a (url,
+        payload, response) tuple generator. Most commonly takes in a generator from
+        the generate_urls_gen method.'''
 
         for url_payload in url_gen():
 
@@ -200,15 +201,15 @@ class GenFuzz:
             yield (url, payload, r.text)
 
     def generate_url(self, payload):
-        '''Takes in a single payload as a string, and returns a single
+        '''Take in a single payload as a string, and returns a single
         (url with fuzz value, payload) tuple.'''
 
         fuzzy_url = self.replace_param(payload)
 
         return (fuzzy_url, payload)
-    
+
     def url_response(self, url_payload):
-        '''Takes in a single (url lwith fuzz value, payload) tuple and
+        '''Take in a single (url with fuzz value, payload) tuple and
         returns a (payload, URL response) tuple'''
 
         url = url_payload[0]
@@ -219,12 +220,9 @@ class GenFuzz:
         return (url, payload, r.text)
 
     def search_urls_tag(self, url_response_gen, match_list, vuln_type, tag = False, attribute = False):
-        '''Takes in a (url, payload, response) generator and returns a list
+        '''Take in a (url, payload, response text) generator and returns a list
         of (url, payload, vuln_type) that appear to be vulnerable through a string match
-        in a tag'''
-
-        #!method should be able to handle a list of match_strings not a single string
-        #for consistency with the method below
+        either from text in a tag or text in an attribute or both.'''
 
         if not tag and not attribute:
             
@@ -265,8 +263,9 @@ class GenFuzz:
         return vulnerable_url_list
 
     def search_responses(self, url_response_gen, match_list, vuln_type):
-        '''Search all URLs in a url response generator for a matching string anywhere on the page.
-        Note we .lower() the response, so don\'t search with any capital letters. Takes a list of strings.'''
+        '''Take in a (url, payload, response text), search for a matching string anywhere on the page w/out parsing.
+        Note we .lower() the response, so don\'t search with any capital letters. Takes a list of strings to match.
+        Also requires the vulnerability type if a match is found.'''
 
         vulnerable_url_list = []
 
@@ -286,14 +285,16 @@ class GenFuzz:
         return vulnerable_url_list
 
     def compare_response_length(self, url_response, content_length_one, content_length_two, difference, vuln_type):
-        '''If content length one is greater than content length two + difference report back a vulnerability.
+        '''If content length is greater than content length two + difference report back a vulnerability.
         Currently used for blind sql where true sql statement is content one and false sql statement is two. In
-        other words we are hoping to find content length one to be larger due to a true sql statement being injected'''
+        other words we are hoping to find content length one to be larger due to a true sql statement being injected.
+        url_response is a (url, payload, response text) from either one, this tuple is only used for url tracking 
+        purposes in this case.'''
 
         if content_length_one > content_length_two + 10:
 
-            url_payload_info = ()
-            return (url_response[0], url_response[1], vuln_type, self.param, self.protocol)
+            vulnerability = (url_response[0], url_response[1], vuln_type, self.param, self.protocol)
+            return vulnerability
 
         else:
             
@@ -334,11 +335,13 @@ class XSSFuzz(GenFuzz):
         return self.url_response_gen(self.__xss_url_gen)
 
     def xss_fuzz(self):
-        '''Returns a list of (vulnerable url, payload) tuples'''
+        '''Returns a list of (vulnerable url, payload) tuples
+        of vuln type "xss"'''
 
         return self.search_urls_tag(self.__xss_get_url_responses(),  ["alert(%s)" % self.random_int], "xss", tag="script")
 
 class SQLiFuzz(GenFuzz):
+    '''This class is an error-based sql injection fuzzer '''
 
     def __init__(self):
 
@@ -350,6 +353,7 @@ class SQLiFuzz(GenFuzz):
         self.target = self.set_target(url, param)
 
     def __sqli_make_payloads(self):
+        '''Set various mutations for SQL Injection'''
 
         #mutate payloads
         sqli_string_list_add_mut_append = self.mutate_append(self.sqli_payloads, ')')
@@ -360,14 +364,21 @@ class SQLiFuzz(GenFuzz):
         return final_list
 
     def __sqli_url_gen(self):
+        '''Yield URLs that are to be SQLi requests'''
 
         return self.generate_urls_gen(self.__sqli_make_payloads())
 
     def __sqli_get_url_responses(self):
+        '''Yield responses - takes in a url generator and outputs
+        a response generator'''
 
         return self.url_response_gen(self.__sqli_url_gen)
 
     def sqli_fuzz(self):
+        '''Returns a list of (vulnerable url, payload) tuples
+        of vuln type "sqli"'''
+
+        #define what we're looking for on the pages
 
         match_list = ["you have an error in your sql syntax",
         "supplied argument is not a valid mysql",
@@ -406,29 +417,35 @@ class BSQLiFuzz(GenFuzz):
         self.target = self.set_target(url, param)
 
     def __bsqli_make_payloads(self):
+        '''Set various mutations for SQL Injection. This is a bit different
+        from the previous XSS and SQLi payloads in that we categorize them into true and false.
+        So this returns a list of tuples of (true sql payloads, false sql payloads)'''
 
         #mutate payloads
         #mutate_replace_char_from_end(self, payload_list, str_to_replace, str_to_replace_with, occurrences_to_replace)
 
-        #TODO: don't forget to double url encode these as well
-
-        final_list = []
+        payload_list = []
         for payload in self.bsqli_payloads:
 
             #(true_sql, false_sql)
 
             true_sql_payload = payload
+
+            #replace the trailing "1" with a "2" to make it false
             false_sql_payload = self.mutate_replace_char_from_end([payload], "1", "2", 1)[0]
 
             true_sql_payload_enc = self.mutate_urlencode_single(true_sql_payload)
             false_sql_payload_enc = self.mutate_urlencode_single(false_sql_payload)
             
-            final_list.append((true_sql_payload, false_sql_payload))
-            final_list.append((true_sql_payload_enc, false_sql_payload_enc))
+            payload_list.append((true_sql_payload, false_sql_payload))
+            payload_list.append((true_sql_payload_enc, false_sql_payload_enc))
 
-        return final_list
+        return payload_list
 
     def __bsqli_url_gen(self):
+        '''Yield URLs that are to be SQLi requests. We continue to keep track of
+        true and false url pairs so we can later determine their relative content 
+        lengths.'''
 
         for payload in self.__bsqli_make_payloads():
 
@@ -441,9 +458,7 @@ class BSQLiFuzz(GenFuzz):
             yield (true_url, false_url)
 
     def bsqli_fuzz(self):
-
-        #compare_response_length(self, url_response, content_length_one, content_length_two, difference, vuln_type):
-        #!try to make others consistent with the way this returns. Makes more sense.
+        '''Perform the fuzzing '''
 
         vulnerable_url_list = []
         for url_payload in self.__bsqli_url_gen():
@@ -491,27 +506,5 @@ class PunkFuzz(GenFuzz):
         final_results = self.xss_fuzz_results + self.sqli_fuzz_results + self.bsqli_fuzz_results
 
         return final_results
-
-if __name__ == "__main__":
-
-    x = PunkFuzz()
-#    x = BSQLiFuzz()    
-    x.punk_set_target("http://prisons.ir/index.php?Module=SMMNewsAgency&SMMOp=View&SMM_CMD=&PageId=3937", "PageId")
-    print x.fuzz()
-    
-#    x.set_target("http://www.sheikhtaji.com/viewproduct.php?op=blee&pages=12&min=12", "op")
-#    print x.fuzz()
-    
-#    x.bsqli_set_target("http://www.mysticboarding.com/dealers/distributors/?did=123", "did")
-#    x.bsqli_fuzz()
-#    x = PunkFuzz()
-#    x.set_target("http://www.sheikhtaji.com/viewproduct.php?op=blee&pages=12&min=12", "op")
-#    x.set_target("http://www.mysticboarding.com/dealers/distributors/?did=123", "did")
-
-#    print x.fuzz()
-
-#    x = XSSFuzz()
-#    x.xss_set_target("http://www.mysticboarding.com/dealers/distributors/?did=", "did")
-#    print x.xss_fuzz()
 
 
