@@ -68,10 +68,10 @@ class ConfigoRoboto:
 
     	    except:
     		    print "Failed to transfer urlfilter-regex.txt to %s" % node
-    		    failed_node_num = failed_node_nums + 1
+    		    failed_node_num = failed_node_num + 1
 		
-        print "Failed to transfer regex-urlfilter.txt to %s nodes. If these nodes\
-        come back up this may cause unexpected results." % str(failed_node_num)
+        print "Failed to transfer regex-urlfilter.txt to %s nodes. If these nodes come back up this may cause unexpected results."\
+         % str(failed_node_num)
 
     def generate_template_file(self):
 
