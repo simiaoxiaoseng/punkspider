@@ -36,6 +36,7 @@ class GenFuzz:
         self.xss_payloads_raw = self.fuzz_config.get_xss_strings()
         self.sqli_payloads_raw = self.fuzz_config.get_sqli_strings()
         self.bsqli_payloads_raw = self.fuzz_config.get_bsqli_strings()
+        self.timeout = 4
 
     def mutate_append(self, payload_list, str_to_append):
         '''Take in a list of strings to append to the payloads,
@@ -196,9 +197,15 @@ class GenFuzz:
 
             url = url_payload[0]
             payload = url_payload[1]
-            r = requests.get(url, proxies = self.proxy)
 
-            yield (url, payload, r.text)
+            try:
+                r = requests.get(url, proxies = self.proxy, timeout = self.timeout)
+                ret_text = r.text
+
+            except:
+                ret_text = "The request timed out"
+
+            yield (url, payload, ret_text)
 
     def generate_url(self, payload):
         '''Take in a single payload as a string, and returns a single
@@ -215,9 +222,14 @@ class GenFuzz:
         url = url_payload[0]
         payload = url_payload[1]
         
-        r = requests.get(url, proxies = self.proxy)
+        try:
+            r = requests.get(url, proxies = self.proxy, timeout = self.timeout)
+            ret_text = r.text
 
-        return (url, payload, r.text)
+        except:
+            ret_text = "The request timed out"
+        
+        return (url, payload, ret_text)
 
     def search_urls_tag(self, url_response_gen, match_list, vuln_type, tag = False, attribute = False):
         '''Take in a (url, payload, response text) generator and returns a list
@@ -482,12 +494,13 @@ class BSQLiFuzz(GenFuzz):
 class PunkFuzz(GenFuzz):
     '''A utility class that uses all of the fuzzing objects'''
 
-    def __init__(self):
+    def __init__(self, reducer_instance = False):
         '''Initialize fuzzing modules'''
 
         self.xss_fuzzer = XSSFuzz()
         self.sqli_fuzzer = SQLiFuzz()
         self.bsqli_fuzzer = BSQLiFuzz()
+        self.reducer_instance = reducer_instance
 
     def punk_set_target(self, url, param):
         '''Set the targets for the fuzzers '''
@@ -499,12 +512,31 @@ class PunkFuzz(GenFuzz):
     def fuzz(self):
         '''Perform the fuzzes and collect (vulnerable url, payload) tuples '''
 
+        if self.reducer_instance:
+            self.reducer_instance.set_status(u'Starting XSS fuzz')
+
         self.xss_fuzz_results = self.xss_fuzzer.xss_fuzz()
+
+        if self.reducer_instance:
+            self.reducer_instance.set_status(u'Starting SQLi fuzz')
+
         self.sqli_fuzz_results = self.sqli_fuzzer.sqli_fuzz()
+
+        if self.reducer_instance:
+            self.reducer_instance.set_status(u'Starting bsqli fuzz')
+
         self.bsqli_fuzz_results = self.bsqli_fuzzer.bsqli_fuzz()
+
+        if self.reducer_instance:
+            self.reducer_instance.set_status(u'Finished fuzzing... collecting results')
 
         final_results = self.xss_fuzz_results + self.sqli_fuzz_results + self.bsqli_fuzz_results
 
         return final_results
 
+if __name__ == "__main__":
 
+    x = PunkFuzz()
+#    x.punk_set_target("http://kae123ewwekfwefwefwef2329032jirh09ewfwhioh903r2i.e2wefw3rxteen.wwfeco23r23rm/global/truehiweewafwfawefewwefwefts.php?p=ddd", "p")
+    x.punk_set_target("http://whatever.hyperiongray.com/?p=ff", 'p')
+    print x.fuzz()

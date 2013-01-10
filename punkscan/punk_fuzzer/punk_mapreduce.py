@@ -42,7 +42,8 @@ class PunkFuzzDistributed(MRJob):
         #reducing the <url, query param> to <url, all_vuln_list> all_vuln_list is a list of vulns of the form
         #[[vuln_url, payload, vuln_type], etc.]
 
-        reducer_punk_fuzz = punk_fuzz.PunkFuzz()
+        #pass in an instance of this class so we can update status as fuzzing runs
+        reducer_punk_fuzz = punk_fuzz.PunkFuzz(self)
         vuln_list = []
 
         for url_query_param in url_query_params:
