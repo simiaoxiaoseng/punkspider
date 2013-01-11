@@ -246,7 +246,12 @@ class GenFuzz:
             url_payload_info = (url_response[0], url_response[1], vuln_type, self.param, self.protocol)
 
             #parse the response text
-            soup = BeautifulSoup(url_response[2])
+            try:
+                soup = BeautifulSoup(url_response[2])
+
+            #! if we can't parse it, return no vulnerabilities for now
+            except:
+                return []
 
             for tag_in_page in soup.find_all(tag):
 
