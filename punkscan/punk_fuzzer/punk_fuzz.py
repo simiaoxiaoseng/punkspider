@@ -505,6 +505,8 @@ class PunkFuzz(GenFuzz):
     def punk_set_target(self, url, param):
         '''Set the targets for the fuzzers '''
 
+        url = url.encode('utf-8')
+        param = param.encode('utf-8')
         self.xss_fuzzer.xss_set_target(url, param)
         self.sqli_fuzzer.sqli_set_target(url, param)
         self.bsqli_fuzzer.bsqli_set_target(url, param)
