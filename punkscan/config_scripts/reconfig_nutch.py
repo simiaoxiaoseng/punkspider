@@ -102,3 +102,7 @@ class ConfigoRoboto:
 	
         hadooper.Hadooper().rmr("urls")
         hadooper.Hadooper().copyFromLocal(os.path.join(NUTCH_RUNTIME_DEP, "urls"), "urls")
+
+if __name__ == "__main__":
+
+    generate_template_file()

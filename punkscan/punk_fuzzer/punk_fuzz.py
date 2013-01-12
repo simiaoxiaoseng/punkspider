@@ -541,9 +541,3 @@ class PunkFuzz(GenFuzz):
 
         return final_results
 
-if __name__ == "__main__":
-
-    x = PunkFuzz()
-#    x.punk_set_target("http://kae123ewwekfwefwefwef2329032jirh09ewfwhioh903r2i.e2wefw3rxteen.wwfeco23r23rm/global/truehiweewafwfawefewwefwefts.php?p=ddd", "p")
-    x.punk_set_target("http://whatever.hyperiongray.com/?p=ff", 'p')
-    print x.fuzz()

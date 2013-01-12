@@ -1,3 +1,61 @@
+####################################################################
+#  Hyperion Gray, LLC - PunkCRAWLER                                #
+####################################################################
+#                                                                  #
+#  This script is an automatic configur-er and wrapper for Apache  #
+#  Nutch crawls. It first limits the domains we want to crawl by   #
+#  pulling from your Solr Summary instance. It reads from          #
+#  punkscan_configs/punkscan_config.cfg and then performs a crawl, #
+#  reduces the results down to specific cases, and dumps the       #
+#  results to a directory. This is is generally followed by        #
+#  running punkSCAN - which fuzzes the relevant found URLs         #
+#                                                                  #
+####################################################################  
+'''
+-------begin example config---------------------
+
+[directories]
+
+# These need to be set to your HADOOP_HOME and NUTCH_HOME directories
+HADOOP_HOME = /usr/local/hadoop
+NUTCH_HOME = /usr/local/punkscan/nutch
+
+[performance]
+
+# These values should be tweaked based on your specific scenario, generally the
+# number of sites you are hoping to crawl and fuzz in one round of jobs are the
+# dependencies for these values.
+
+sim_urls_to_scan = 120  # <----- Defines how many urls to scan simultaneously
+depth = 2  # <---- Defines the number of generate-fetch-parse-db update cycles for Apache Nutch
+topN = 5000 # <---- The number of URLs to keep per Nutch cycle
+
+[urls]
+
+# Your Solr detail and Solr Summary URLs - see PunkSCAN tutorial for additional info
+
+solr_details_url = http://localhost:8080/solr/detail/
+solr_summary_url = http://localhost:8080/solr/summary/
+
+[users]
+
+#The user that Hadoop is run as
+hadoop_user = pgotsr
+
+[hadoop]
+
+# csv list of hadoop datanodes - NOT including the machine that punkscan
+# is being run from
+
+datanodes = slave1,slave2,slave3,slave4
+
+---------end example config---------------------
+
+
+Usage: python punkcrawler.py
+
+'''
+
 import os
 import sys
 from urlparse import urlparse

@@ -1,0 +1,5 @@
+#!/bin/bash
+#This script was created by Hyperion Gray, LLC
+cd ../../
+ant job
+cp build/apache-nutch-1.5.1.job runtime/deploy
