@@ -27,10 +27,7 @@
       <bsqli_string><![CDATA[__VALID_PARAM__ AND '1'='1]]></bsqli_string>
       <bsqli_string><![CDATA[__VALID_PARAM__ AND 1=1]]></bsqli_string>
       <bsqli_string><![CDATA[__VALID_PARAM__ AND 1=1#]]></bsqli_string>
-      <bsqli_string><![CDATA[__VALID_PARAM__ OR 1=1#]]></bsqli_string>
       <bsqli_string><![CDATA[__VALID_PARAM__ AND 1=1--]]></bsqli_string>
-      <bsqli_string><![CDATA[__VALID_PARAM__ OR 1=1--]]></bsqli_string>
-      <bsqli_string><![CDATA[__VALID_PARAM__ OR '1'='1]]></bsqli_string>
       </bsqli_strings>
     </bsqli_config>
   </modules>
