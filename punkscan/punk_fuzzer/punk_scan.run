@@ -1,0 +1,83 @@
+#!/bin/bash
+####################################################################
+#  Hyperion Gray, LLC - PunkSCAN execution script                  #
+####################################################################
+#                                                                  #
+#  This script runs PunkSCAN. First it performs a crawl using      #
+#  punkCRAWLER and then runs a mapreduce fuzzing job over your     #
+#  Hadoop cluster, looking for common web application security     #
+#  flaws.common security vulnerabilities. In short it puts all of  #
+#  the pieces together.                                            #
+#                                                                  #
+####################################################################
+#
+#
+# Usage: ./punk_fuzz.run -flag
+#
+# Where flag is either l, d, or c:
+#
+#  l:  performs a single round of distributed crawling but local
+#      fuzzing (useful for testing)
+#
+#  d:  performs a single round of distributed crawling and distributed
+#      fuzzing against a batch of targets in your Solr Summary instance
+#
+#  c:  infinitely performs distributed crawling and distributed fuzzing
+#      of targets in your Solr Summary instance
+#
+
+DIR="$( cd "$( dirname "$0" )" && pwd )"
+
+function scan {
+    #performs a single round of scans against the number of websites in the config
+
+    echo "Running punk_fuzz in distributed mode."
+    cd $DIR
+
+    #run crawl to generate urls to fuzz
+    cd ..
+    python punkcrawler.py
+    cd $DIR
+
+    #run the maprduce job
+    python punk_mapreduce.py -r hadoop --file pysolr/pysolr.py --file pysolr/BeautifulSoup.py\
+ --file mapreduce_indexer/mapreduce_indexer.py --file punk_fuzz.py\
+ --file fuzzer_config/fuzz_config_parser.py --file fuzzer_config/punk_fuzz.cfg.xml\
+ --python-archive includes.tar.gz < urls_to_fuzz > output_distributed
+
+}
+
+while getopts ":dlc" opt; do
+  case $opt in
+
+    l)
+      #note only fuzzing is run in local mode, crawls are distributed
+      echo "Running punk_fuzz in local mode... This should only be used for testing."
+      cd $DIR
+      #run crawl to generate urls to fuzz
+      cd ..
+      python punkcrawler.py
+      cd $DIR
+      python punk_mapreduce.py < urls_to_fuzz > output_local
+      ;;
+
+    d)
+      scan
+      ;;
+
+    c)
+      echo "Scanning indefinitely, press Ctrl+C to stop after this round is done."
+      while true
+      do
+          scan
+      done
+      ;;
+
+   \?)
+      echo "Invalid option: -$OPTARG. Use either -d (distributed mode) or -l (local mode)" >&2
+      ;;
+
+  esac
+done
+
+
