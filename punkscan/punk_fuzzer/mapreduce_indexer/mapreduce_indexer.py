@@ -13,7 +13,7 @@ import fuzz_config_parser
 class PunkMapReduceIndexer:
     '''Class to index the results of a mapreduce fuzzer job'''
 
-    def __init__(self, domain, domain_vuln_list, del_current = True):
+    def __init__(self, domain, domain_vuln_list, reducer_instance = False, del_current = True):
 
         configo = fuzz_config_parser.ConfigO()
         solr_urls_dic = configo.get_solr_urls()
@@ -21,14 +21,17 @@ class PunkMapReduceIndexer:
         solr_summary_url = solr_urls_dic['solr_summary_url']
         solr_details_url = solr_urls_dic['solr_details_url']
 
-        self.conn_summ = pysolr.Solr(solr_summary_url)
-        self.conn_details = pysolr.Solr(solr_details_url)
+        self.conn_summ = pysolr.Solr(solr_summary_url, timeout = 300)
+        self.conn_details = pysolr.Solr(solr_details_url, timeout = 300)
 
         #grab a domain entry in solr summary
         self.solr_summary_doc = self.conn_summ.search('id:' + '"' + domain + '"', rows=1)
         self.domain_vuln_list = domain_vuln_list
         self.domain = domain
         self.reversed_domain = self.__reverse_url(domain)
+
+        #use the reducer instance to set status during mapred job
+        self.reducer_instance = reducer_instance
 
         if del_current:
             self.__clear_current()
@@ -79,7 +82,10 @@ class PunkMapReduceIndexer:
         #and set necessary parameters to add to Solr
 
         for vuln in self.domain_vuln_list:
-
+            
+            if self.reducer_instance:
+                self.reducer_instance.set_status("prepping vulnerability for indexing")
+                
             vuln_details_dic = {}
             vuln_c += 1
             #get details for solr_details
@@ -112,7 +118,11 @@ class PunkMapReduceIndexer:
                 bsqli_c += 1
 
         #commit details vulnerabilities in batch
-        self.conn_details.add(vuln_details_dic_list)                
+        
+        self.conn_details.add(vuln_details_dic_list)
+
+        if self.reducer_instance:
+            self.reducer_instance.set_status("adding vulnerability details")
 
         #set the summary details dictionary and commit
         for summ_doc in self.solr_summary_doc:
@@ -121,4 +131,7 @@ class PunkMapReduceIndexer:
             summ_doc["sqli"] = sqli_c
             summ_doc["bsqli"] = bsqli_c
             
+        if self.reducer_instance:
+            self.reducer_instance.set_status("adding vulnerability summary")
+        
         self.conn_summ.add(self.solr_summary_doc)

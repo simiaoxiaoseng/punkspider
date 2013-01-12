@@ -60,7 +60,7 @@ class PunkFuzzDistributed(MRJob):
                 vuln_list.append(vuln)
 
         #index this stuff to Solr
-        mapreduce_indexer.PunkMapReduceIndexer(domain, vuln_list).add_vuln_info()
+        mapreduce_indexer.PunkMapReduceIndexer(domain, vuln_list, reducer_instance = self).add_vuln_info()
 
         yield domain, vuln_list
 
