@@ -54,16 +54,17 @@ class PunkMapReduceIndexer:
         out = urlparse(url)
 
         #http or https is the first element
-        protocol = out.scheme
+        protocol = out.scheme.encode('utf-8')
 
         #www.google.com -> [www,google,com]
         url_list = out.netloc.split(".")
+        url_list = [x.encode('utf-8') for x in url_list]
 
         #list becomes -> [com,google,www]
         url_list.reverse()
 
         #return com.google.www
-        url_reversed = ".".join(url_list)
+        url_reversed = ".".encode('utf-8').join(url_list)
 
         return url_reversed
 
@@ -135,3 +136,4 @@ class PunkMapReduceIndexer:
             self.reducer_instance.set_status("adding vulnerability summary")
         
         self.conn_summ.add(self.solr_summary_doc)
+
