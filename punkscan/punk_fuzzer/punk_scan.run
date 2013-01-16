@@ -6,8 +6,7 @@
 #  This script runs PunkSCAN. First it performs a crawl using      #
 #  punkCRAWLER and then runs a mapreduce fuzzing job over your     #
 #  Hadoop cluster, looking for common web application security     #
-#  flaws.common security vulnerabilities. In short it puts all of  #
-#  the pieces together.                                            #
+#  flaws. In short it puts all of the pieces together.             #
 #                                                                  #
 ####################################################################
 #
