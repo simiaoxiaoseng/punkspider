@@ -1,3 +1,6 @@
+# Created by Hyperion Gray, LLC
+# Released under the Apache 2.0 License
+
 import os
 cwdir = os.path.dirname(__file__)
 import xml.etree.ElementTree as ET

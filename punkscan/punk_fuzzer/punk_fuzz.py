@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+
+# Created by Hyperion Gray, LLC
+# Released under the Apache 2.0 License
+
 from urlparse import urlparse
 from urlparse import urlunparse
 from urlparse import parse_qs

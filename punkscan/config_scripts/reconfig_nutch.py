@@ -1,3 +1,6 @@
+# Created by Hyperion Gray, LLC
+# Released under the Apache 2.0 License
+
 import sys
 import os
 cwdir = os.path.dirname(__file__)
@@ -55,7 +58,7 @@ class ConfigoRoboto:
         sftp.put(local_path, remote_path)
 
     def __transfer_urlfilter(self):
-        '''Transfer the regex-urlfilter.txt file to each datanode '''
+        '''Transfer the regex-urlfilter.txt file to each datanode'''
 
         failed_node_num = 0
         failed_node_list = []
@@ -74,6 +77,7 @@ class ConfigoRoboto:
          % str(failed_node_num)
 
     def generate_template_file(self):
+        '''Generate the regex-urlfilter that will be passed to the datanodes'''
 
         f_template = open(os.path.join(os.path.dirname(__file__),"templates","regex-urlfilter.txt"),'r').read()
         for url_regex in self.__get_regex_url():
@@ -86,7 +90,7 @@ class ConfigoRoboto:
             self.__transfer_urlfilter()
 
     def generate_seed_list(self):
-
+        '''Generate the seed list of sites that will be crawled'''
         seed_dir = os.path.join(NUTCH_HOME, "runtime", "deploy", "urls")
 
         if not os.path.exists(seed_dir):
@@ -102,7 +106,3 @@ class ConfigoRoboto:
 	
         hadooper.Hadooper().rmr("urls")
         hadooper.Hadooper().copyFromLocal(os.path.join(NUTCH_RUNTIME_DEP, "urls"), "urls")
-
-if __name__ == "__main__":
-
-    generate_template_file()

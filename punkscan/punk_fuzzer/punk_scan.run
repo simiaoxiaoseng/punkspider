@@ -11,7 +11,7 @@
 ####################################################################
 #
 #
-# Usage: ./punk_fuzz.run -flag
+# Usage: ./punk_scan.run -flag
 #
 # Where flag is either l, d, or c:
 #
@@ -23,7 +23,6 @@
 #
 #  c:  infinitely performs distributed crawling and distributed fuzzing
 #      of targets in your Solr Summary instance
-#
 
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 

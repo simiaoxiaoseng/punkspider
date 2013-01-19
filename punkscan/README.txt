@@ -16,7 +16,7 @@ marked as such.
 
 The bulk of the code produced by Hyperion Gray, LLC can be found in the punkscan/ directory. This code is produced by Hyperion 
 Gray, LLC unless otherwise marked with a separate license or authors file. If you find any errors or omissions please report them
-immediately to punkspider@hyperiongray.com.
+immediately to contact@hyperiongray.com.
 
 ___________________________________________________
 

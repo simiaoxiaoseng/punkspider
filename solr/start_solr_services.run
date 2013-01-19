@@ -1,0 +1,4 @@
+#!/bin/bash
+
+java -jar solr-details/example/start.jar > solr_details.out &
+java -jar solr-summary/example/start.jar > solr_summary.out &
