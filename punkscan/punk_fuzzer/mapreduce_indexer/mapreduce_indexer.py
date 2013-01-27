@@ -42,7 +42,7 @@ class PunkMapReduceIndexer:
     def __clear_current(self):
         '''Clear the solr details for the current domain. '''
 
-        self.conn_details.delete(q = "url_main:" + self.reversed_domain)
+        self.conn_details.delete(q = "url_main:".encode("utf-8") + self.reversed_domain)
         
     def __reverse_url(self, url):
         '''Reverse a url. E.g. www.google.com -> com.google.www'''
