@@ -28,7 +28,8 @@ class PunkMapReduceIndexer:
         self.conn_details = pysolr.Solr(solr_details_url, timeout = 300)
 
         #grab a domain entry in solr summary
-        self.solr_summary_doc = self.conn_summ.search('id:' + '"' + domain + '"', rows=1)
+        sq = 'id:' + '"' + domain + '"'
+        self.solr_summary_doc = self.conn_summ.search(sq.encode("utf-8"), rows=1)
         self.domain_vuln_list = domain_vuln_list
         self.domain = domain
         self.reversed_domain = self.__reverse_url(domain)
@@ -42,7 +43,9 @@ class PunkMapReduceIndexer:
     def __clear_current(self):
         '''Clear the solr details for the current domain. '''
 
-        self.conn_details.delete(q = "url_main:".encode("utf-8") + self.reversed_domain)
+        sq = "url_main:" + self.reversed_domain
+        
+        self.conn_details.delete(q = sq.encode("utf-8"))
         
     def __reverse_url(self, url):
         '''Reverse a url. E.g. www.google.com -> com.google.www'''
