@@ -43,8 +43,7 @@ class PunkMapReduceIndexer:
     def __clear_current(self):
         '''Clear the solr details for the current domain. '''
 
-        sq = "url_main:" + self.reversed_domain
-        
+        sq = 'url_main:"' + self.reversed_domain + '"'
         self.conn_details.delete(q = sq.encode("utf-8"))
         
     def __reverse_url(self, url):
@@ -72,7 +71,7 @@ class PunkMapReduceIndexer:
         #return com.google.www
         url_reversed = ".".encode('utf-8').join(url_list)
 
-        return url_reversed
+        return url_reversed.encode('utf-8')
 
     def add_vuln_info(self):
         '''Index the vulnerabilities and details info'''
@@ -103,6 +102,7 @@ class PunkMapReduceIndexer:
             bugtype = vuln[2]
             parameter = vuln[3]
             id = self.reversed_domain + "." + str(vuln_c)
+            id = id.encode('utf-8')
 
             vuln_details_dic["protocol"] = protocol
             vuln_details_dic["url_main"] = url_main
