@@ -5,6 +5,14 @@ About PunkSCAN
 PunkSCAN is a Hyperion Gray, LLC product (http://www.hyperiongray.com) released under the Apache 2.0 License. See LICENSE.txt for additional
 info.
 
+--------------
+Using PunkSCAN
+-------------
+
+The deployment guide and usage can be found here:
+
+https://hyperiongray.atlassian.net/wiki/display/PUB/PunkSCAN+1.2.x+Deployment+Guide
+
 -----------
 Code Scope
 -----------
