@@ -235,6 +235,22 @@ class GenFuzz:
         
         return (url, payload, ret_text)
 
+    def check_stability(self, url, diff_allowed = 10):
+
+        r_1 = requests.get(url, proxies = self.proxy, timeout = self.timeout).text
+        r_2 = requests.get(url, proxies = self.proxy, timeout = self.timeout).text
+
+        r_2_lower_bound = len(r_2) - diff_allowed
+        r_2_upper_bound = len(r_2) + diff_allowed
+
+        if len(r_1) < r_2_lower_bound or len(r_1) > r_2_upper_bound:
+            return False
+
+        else:
+
+            return True
+
+
     def search_urls_tag(self, url_response_gen, match_list, vuln_type, tag = False, attribute = False):
         '''Take in a (url, payload, response text) generator and returns a list
         of (url, payload, vuln_type) that appear to be vulnerable through a string match
@@ -310,7 +326,7 @@ class GenFuzz:
         Currently used for blind sql where true sql statement is content one and false sql statement is two. In
         other words we are hoping to find content length one to be larger due to a true sql statement being injected.
         url_response is a (url, payload, response text) from either one, this tuple is only used for url tracking 
-        purposes in this case.'''
+        purposes in this case. Now checks if a URL is stable before returning a vulnerability'''
 
         if content_length_one > content_length_two + 10:
 
@@ -449,7 +465,6 @@ class BSQLiFuzz(GenFuzz):
         for payload in self.bsqli_payloads:
 
             #(true_sql, false_sql)
-
             true_sql_payload = payload
 
             #replace the trailing "1" with a "2" to make it false
@@ -478,12 +493,20 @@ class BSQLiFuzz(GenFuzz):
             
             yield (true_url, false_url)
 
+    def bsqli_check_stability(self, url):
+    
+        return self.check_stability(url)
+
     def bsqli_fuzz(self):
         '''Perform the fuzzing '''
 
         vulnerable_url_list = []
         for url_payload in self.__bsqli_url_gen():
 
+            #if not stable, return no vulns, can't reliably determine bsqli
+            if not self.bsqli_check_stability(url_payload[0][0]):
+                return []
+            
             true_url_response = self.url_response(url_payload[0])
             false_url_response = self.url_response(url_payload[1])
 
@@ -544,4 +567,3 @@ class PunkFuzz(GenFuzz):
         final_results = self.xss_fuzz_results + self.sqli_fuzz_results + self.bsqli_fuzz_results
 
         return final_results
-

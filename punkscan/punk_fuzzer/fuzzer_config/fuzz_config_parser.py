@@ -38,6 +38,10 @@ class ConfigO:
         protocol = self.tree.find('network_configs/proxy').get('type')
         ip_col_port = self.tree.find('network_configs/proxy/ip_port').text
 
+        #return nothing if ip and port are missing in config - i.e. don't use proxy
+        if not ip_col_port or not protocol:
+            return {}
+
         #need it in this silly format to pass to requests lib
         return {protocol:ip_col_port}
 

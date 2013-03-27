@@ -33,7 +33,7 @@
   </modules>
   <network_configs>
     <proxy type="http">
-      <ip_port><![CDATA[37.221.160.130:3128]]></ip_port>
+      <ip_port><![CDATA[]]></ip_port>
     </proxy>
     <solr>
       <detail_url><![CDATA[http://<your Solr details ip>:8984/solr]]></detail_url>
