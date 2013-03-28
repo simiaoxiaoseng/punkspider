@@ -227,29 +227,31 @@ class GenFuzz:
         payload = url_payload[1]
         
         try:
+
             r = requests.get(url, proxies = self.proxy, timeout = self.timeout)
             ret_text = r.text
 
         except:
+
             ret_text = "The request timed out"
-        
+
         return (url, payload, ret_text)
 
-    def check_stability(self, url, diff_allowed = 10):
+    def check_stability(self, url_payload, diff_allowed = 10):
 
-        r_1 = requests.get(url, proxies = self.proxy, timeout = self.timeout).text
-        r_2 = requests.get(url, proxies = self.proxy, timeout = self.timeout).text
+        r_1 = self.url_response(url_payload)[2]
+        r_2 = self.url_response(url_payload)[2]
 
         r_2_lower_bound = len(r_2) - diff_allowed
         r_2_upper_bound = len(r_2) + diff_allowed
 
-        if len(r_1) < r_2_lower_bound or len(r_1) > r_2_upper_bound:
+        #if URL appears unstable (different content lengths, same request) or request times out return False
+        if len(r_1) < r_2_lower_bound or len(r_1) > r_2_upper_bound or r_1 == "The request timed out" or r_2 == "The request timed out":
             return False
 
         else:
 
             return True
-
 
     def search_urls_tag(self, url_response_gen, match_list, vuln_type, tag = False, attribute = False):
         '''Take in a (url, payload, response text) generator and returns a list
@@ -493,9 +495,9 @@ class BSQLiFuzz(GenFuzz):
             
             yield (true_url, false_url)
 
-    def bsqli_check_stability(self, url):
+    def bsqli_check_stability(self, url_payload):
     
-        return self.check_stability(url)
+        return self.check_stability(url_payload)
 
     def bsqli_fuzz(self):
         '''Perform the fuzzing '''
@@ -504,8 +506,8 @@ class BSQLiFuzz(GenFuzz):
         for url_payload in self.__bsqli_url_gen():
 
             #if not stable, return no vulns, can't reliably determine bsqli
-            if not self.bsqli_check_stability(url_payload[0][0]):
-                return []
+#            if not self.bsqli_check_stability(url_payload[0]):
+#                return []
             
             true_url_response = self.url_response(url_payload[0])
             false_url_response = self.url_response(url_payload[1])
