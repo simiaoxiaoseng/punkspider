@@ -503,11 +503,16 @@ class BSQLiFuzz(GenFuzz):
         '''Perform the fuzzing '''
 
         vulnerable_url_list = []
+        first = 0
         for url_payload in self.__bsqli_url_gen():
 
-            #if not stable, return no vulns, can't reliably determine bsqli
-#            if not self.bsqli_check_stability(url_payload[0]):
-#                return []
+            #if not stable, return no vulns, can't reliably determine bsqli. Do only once.
+            if first == 0:
+                if not self.bsqli_check_stability(url_payload[0]):
+                    return []
+
+            if first == 0:
+                first = first + 1
             
             true_url_response = self.url_response(url_payload[0])
             false_url_response = self.url_response(url_payload[1])
@@ -569,3 +574,9 @@ class PunkFuzz(GenFuzz):
         final_results = self.xss_fuzz_results + self.sqli_fuzz_results + self.bsqli_fuzz_results
 
         return final_results
+
+if __name__ == "__main__":
+
+    x = PunkFuzz()
+    x.punk_set_target("http://www.metaltotal.com/comentario/index.php?sec=%27%29&id=1117&nn=1", "sec")
+    print x.fuzz()
