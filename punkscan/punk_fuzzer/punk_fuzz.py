@@ -574,9 +574,3 @@ class PunkFuzz(GenFuzz):
         final_results = self.xss_fuzz_results + self.sqli_fuzz_results + self.bsqli_fuzz_results
 
         return final_results
-
-if __name__ == "__main__":
-
-    x = PunkFuzz()
-    x.punk_set_target("http://www.metaltotal.com/comentario/index.php?sec=%27%29&id=1117&nn=1", "sec")
-    print x.fuzz()
