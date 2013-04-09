@@ -32,8 +32,17 @@ class PunkSolr:
 
         return scanned_longest_ago_or_not_scanned_dic
 
-    def update_vscan_tstamp(self, url):
+    def update_vscan_tstamp_batch(self, solr_results):
+    
+        vscan_tstamp = datetime.datetime.now()
+        for result in solr_results:
+        
+            result["vscan_tstamp"] = datetime.datetime.now()
+            
+        self.conn.add(solr_results)                
 
+    def update_vscan_tstamp(self, url):
+        #this is stupid.
         solr_doc_pull = self.conn.search('id:' + '"' + url + '"')
         vscan_tstamp = datetime.datetime.now()
 

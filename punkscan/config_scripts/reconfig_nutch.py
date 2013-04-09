@@ -33,13 +33,13 @@ class ConfigoRoboto:
         '''Replace regex url configuration file, this will be used by punkscan to restrict crawls to the domains we are going to scan.
         This method is very important. As soon as this method is called, a URL is marked as being scanned in Solr'''
 
-        #sample regex entry: +http://www.leavenworth.org/.*
 
+    	#mark the urls as being scanned with the vscan_tstamp field
+        self.punk_solro.update_vscan_tstamp_batch(self.solr_urls_dic)
+
+        #sample regex entry: +http://www.leavenworth.org/.*
         for url_dic in self.solr_urls_dic:
 
-    	    #mark the url as being scanned with the vscan_tstamp field
-            self.punk_solro.update_vscan_tstamp(url_dic['url'])
-			
             if not no_regex:
                 url_regex = "+" + url_dic['url'] + ".*"
                 yield url_regex
