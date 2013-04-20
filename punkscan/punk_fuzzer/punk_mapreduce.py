@@ -28,45 +28,32 @@ class PunkFuzzDistributed(MRJob):
         domain = parsed_url.scheme + "://" + parsed_url.netloc + "/"
 
         if mapper_punk_fuzz.check_if_param(parsed_url):
+
             parsed_url_query = parsed_url.query
             url_q_dic = parse_qs(parsed_url_query)
 
             for query_param, query_val in url_q_dic.iteritems():
 
-                #yielding a tuple in mrjob will yield a list, but for
-                #consistency we yield a tuple and mrjob will handle it
-                
-                yield domain, (url, query_param)
+                #and now we fuzz
+                mapper_punk_fuzz.punk_set_target(url, query_param)
+                vuln_list = mapper_punk_fuzz.fuzz()
 
-    def reducer(self, domain, url_query_params):
-        '''The key in this reduce job is the domain. It yields a list of vulnerabilities
-        as the values. It will combine '''
+                #output vuln_list and domain for each url and query param pair
+                yield domain, vuln_list
 
-        #reducer should take the urls as the key and output a dictionary of vulnerabilities per each URL,
-        #reducing the <url, query param> to <url, all_vuln_list> all_vuln_list is a list of vulns of the form
-        #[[vuln_url, payload, vuln_type], etc.]
+    def reducer(self, domain, vuln_lists):
 
-        #pass in an instance of this class so we can update status as fuzzing runs
-        reducer_punk_fuzz = punk_fuzz.PunkFuzz(self)
-        vuln_list = []
+        full_vuln_list = []
 
-        for url_query_param in url_query_params:
+        #iterate over all lists of vulnerabilities corresponding to a single domain
+        for vuln_list in vuln_lists:
+        
+            full_vuln_list = full_vuln_list + vuln_list
 
-            self.set_status(u'Finished query param moving on to next one')
-            url_to_fuzz = url_query_param[0]
-            param_to_fuzz = url_query_param[1]
+        #win
+        mapreduce_indexer.PunkMapReduceIndexer(domain, full_vuln_list, reducer_instance = self).add_vuln_info()
 
-            reducer_punk_fuzz.punk_set_target(url_to_fuzz, param_to_fuzz)
-            fuzzer_vuln_list = reducer_punk_fuzz.fuzz()
-
-            for vuln in fuzzer_vuln_list:
-
-                vuln_list.append(vuln)
-
-        #index this stuff to Solr
-        mapreduce_indexer.PunkMapReduceIndexer(domain, vuln_list, reducer_instance = self).add_vuln_info()
-
-        yield domain, vuln_list
+        yield domain, full_vuln_list
 
 if __name__ == '__main__':
 
