@@ -100,16 +100,3 @@ class ConfigO:
         find_page_memory_load_limit = self.tree.findall('fuzz_configs/page_memory_load_limit')        
 
         return int(find_page_memory_load_limit[0].text)
-    
-
-if __name__ == "__main__":
-
-    print ConfigO().get_xss_strings()
-    print ConfigO().get_proxies_dic()
-    print ConfigO().get_sqli_strings()
-    print ConfigO().get_pagesize_limit()
-#    print ConfigO().get_contentl_check()
-#    print ConfigO().get_content_type_check()
-    print ConfigO().get_contentl_check_wfallback()
-    print ConfigO().get_allowed_content_types()
-    print ConfigO().get_page_memory_load_limit()
