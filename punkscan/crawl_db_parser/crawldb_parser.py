@@ -18,6 +18,7 @@ HADOOP_HOME=config_parser.get('directories','HADOOP_HOME')
 NUTCH_HOME=config_parser.get('directories','NUTCH_HOME')
 NUTCH_RUNTIME_DEP = os.path.join(NUTCH_HOME, "runtime", "deploy")
 import re
+import codecs
 
 class CrawlDBParser:
 
@@ -31,7 +32,7 @@ class CrawlDBParser:
         #clear current crawl dump if exists, dump new crawldb
         hadooper.Hadooper().rmr('punkscan_crawl_dump')
         nutch_bin = os.path.join('bin','nutch')
-        shell_call_list = [nutch_bin, 'readdb', os.path.join('punkscan_crawl', 'crawldb'), '-dump', 'punkscan_crawl_dump', '-format', 'csv']	    	
+        shell_call_list = [nutch_bin, 'readdb', os.path.join('punkscan_crawl', 'crawldb'), '-dump', 'punkscan_crawl_dump', '-format', 'csv']
         output = subprocess.Popen(shell_call_list, cwd = NUTCH_RUNTIME_DEP).communicate()[0]
 
     def get_crawl_db_dump(self):
@@ -66,11 +67,13 @@ class CrawlDBParser:
                 else:
                     trouble_list.append(line)
 
-                yield result
-        
-        print "Had trouble reading the following entries in the crawldb."
+                yield result.decode("iso-8859-1").encode("utf-8")
+
+        print "Had trouble reading %s entries in the crawldb. These have been output to trouble_list.txt" % str(len(trouble_list))
+
+        f = open("trouble_list.txt", "a")
 
         for line in trouble_list:
-            print line
-        
-        print "Skipped %s URLs because we had trouble reading them. " % str(len(trouble_list))
+            f.write(line)
+
+        f.close()        

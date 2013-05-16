@@ -14,6 +14,7 @@
 
 import os
 import sys
+import codecs
 from urlparse import urlparse
 from urlparse import parse_qs
 cwdir = os.path.dirname(__file__)

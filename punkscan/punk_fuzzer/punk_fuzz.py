@@ -40,6 +40,13 @@ class GenFuzz:
         self.xss_payloads_raw = self.fuzz_config.get_xss_strings()
         self.sqli_payloads_raw = self.fuzz_config.get_sqli_strings()
         self.bsqli_payloads_raw = self.fuzz_config.get_bsqli_strings()
+        self.pagesize_limit = self.fuzz_config.get_pagesize_limit()
+        #self.contentl_requirement = self.fuzz_config.get_contentl_check()
+        #self.content_type_requirement = self.fuzz_config.get_content_type_check()
+        self.content_type_fallback_requirement = self.fuzz_config.get_contentl_check_wfallback()
+        self.allowed_content_types = self.fuzz_config.get_allowed_content_types()
+        self.page_memory_load_limit = self.fuzz_config.get_page_memory_load_limit()
+        self.proxy = self.fuzz_config.get_proxies_dic()
         self.timeout = 4
 
     def mutate_append(self, payload_list, str_to_append):
@@ -134,7 +141,6 @@ class GenFuzz:
 
         self.url = url
         self.param = param
-        self.proxy = self.fuzz_config.get_proxies_dic()
         
         #attempt to parse the URL and query parameters
         #if unable to an exception is raised
@@ -229,6 +235,8 @@ class GenFuzz:
         try:
 
             r = requests.get(url, proxies = self.proxy, timeout = self.timeout)
+#!
+            print "setting ret_text"
             ret_text = r.text
 
         except:
@@ -238,7 +246,8 @@ class GenFuzz:
         return (url, payload, ret_text)
 
     def check_stability(self, url_payload, diff_allowed = 10):
-
+        #!
+        print "running check_stability"
         r_1 = self.url_response(url_payload)[2]
         r_2 = self.url_response(url_payload)[2]
 
@@ -267,8 +276,13 @@ class GenFuzz:
 
             url_payload_info = (url_response[0], url_response[1], vuln_type, self.param, self.protocol)
 
-            #parse the response text
+            # if size of site is too big, don't load to memory w/ bsoup - return 0 XSS bugs
+            if sys.getsizeof(url_response[2]) > self.page_memory_load_limit:
+                return []
+
+            #parse the response text            
             try:
+                print "Souping..."
                 soup = BeautifulSoup(url_response[2])
 
             #! if we can't parse it, return no vulnerabilities for now
@@ -336,8 +350,88 @@ class GenFuzz:
             return vulnerability
 
         else:
-            
             return False
+
+    def get_head(self):
+
+        try:
+            head = requests.head(self.url, proxies = self.proxy, timeout = self.timeout).headers
+            return head
+            
+        except:
+            return False        
+
+    def fuzzworth_content_type(self, head, allowed_types_lst, full_req_match = False, strict = False):
+
+        if head and "content-type" in head:
+            content_type = head["content-type"]
+
+            for allowed_type in allowed_types_lst:
+
+                #if strict checking is turned on
+                if full_req_match:
+
+                    #if allowed type is content-type return true
+                    if allowed_type == content_type:
+                        return True
+
+                else:
+                    #if the allowed type is part of the content-type return true
+                    if allowed_type in content_type:
+                        return True
+
+            #if nothing returned true return false
+            return False            
+
+        else:
+
+            if strict:
+                return False 
+
+            else:
+                return True
+
+    def fuzzworth_contentl(self, head, strict = False):
+        '''Check the content-length before moving on. If strict is set to True content-length
+        must be validated before moving on. If strict is set to False (default) the URL will
+        be fuzzed if no content-length is found or no head is returned. The idea behind this
+        method is to ensure that huge files are not downloaded, slowing down fuzzing.'''
+        
+        #no param no fuzzing
+        if head and "content-length" in head:
+          
+            content_length = int(head["content-length"])
+            
+            if content_length < self.pagesize_limit:
+                return True
+
+            else:
+                return False
+
+        else:
+            if strict:
+                return False
+
+            else:
+                return True
+
+    def fuzzworth_contentl_with_type_fallback(self, head, allowed_types_lst, full_req_match = False):
+        '''This method will check the content length header strictly. If a content-length header is found
+        and the content-length is below a certain amount (set in the fuzzer config) return True if either of those
+        is not satisfied,. If it is not check the content-type, if the content-type is of a certain type return 
+        True. If not or if content-type can't be read either, return False.'''
+
+        #if content-length header is found return True
+        if head and "content-length" in head:
+            return self.fuzzworth_contentl(head, strict = True)
+        
+        #if content-length header not found, check content-type, if it is of allowed type
+        #return True, otherwise false
+        if head and "content-type" in head:
+            return self.fuzzworth_content_type(head, allowed_types_lst, full_req_match = False, strict = True)
+            
+        return False
+
 
 class XSSFuzz(GenFuzz):
     '''This class fuzzes a single URL-parameter pair with a simple xss fuzzer'''
@@ -533,19 +627,21 @@ class BSQLiFuzz(GenFuzz):
 class PunkFuzz(GenFuzz):
     '''A utility class that uses all of the fuzzing objects'''
 
-    def __init__(self, reducer_instance = False):
+    def __init__(self, mapper_instance = False):
         '''Initialize fuzzing modules'''
 
+        self.gen_fuzz = GenFuzz()
         self.xss_fuzzer = XSSFuzz()
         self.sqli_fuzzer = SQLiFuzz()
         self.bsqli_fuzzer = BSQLiFuzz()
-        self.reducer_instance = reducer_instance
+        self.mapper_instance = mapper_instance
 
     def punk_set_target(self, url, param):
         '''Set the targets for the fuzzers '''
 
-        url = url.encode('utf-8')
-        param = param.encode('utf-8')
+        self.url = url
+        self.param = param
+        self.gen_fuzz.set_target(url, param)
         self.xss_fuzzer.xss_set_target(url, param)
         self.sqli_fuzzer.sqli_set_target(url, param)
         self.bsqli_fuzzer.bsqli_set_target(url, param)
@@ -553,24 +649,63 @@ class PunkFuzz(GenFuzz):
     def fuzz(self):
         '''Perform the fuzzes and collect (vulnerable url, payload) tuples '''
 
-        if self.reducer_instance:
-            self.reducer_instance.set_status(u'Starting XSS fuzz')
+        self.head = self.gen_fuzz.get_head()
+#!
+        f = open('/home/pgotsr/url.txt', 'a')
+        f.write(self.url)
+        f.write("\n")
+        f.close()
+#!
+
+        #if this returns false, don't check the website
+        #it likely has large content and will slow down the fuzz
+
+        if not self.gen_fuzz.fuzzworth_contentl_with_type_fallback(self.head,\
+        self.gen_fuzz.allowed_content_types, False):
+            return []
+
+        #fuzz if fuzzworth is true, if false skip fuzzing
+        if self.mapper_instance:
+            self.mapper_instance.set_status(u'Starting XSS fuzz')
 
         self.xss_fuzz_results = self.xss_fuzzer.xss_fuzz()
 
-        if self.reducer_instance:
-            self.reducer_instance.set_status(u'Starting SQLi fuzz')
+        if self.mapper_instance:
+            self.mapper_instance.set_status(u'Starting SQLi fuzz')
 
         self.sqli_fuzz_results = self.sqli_fuzzer.sqli_fuzz()
 
-        if self.reducer_instance:
-            self.reducer_instance.set_status(u'Starting bsqli fuzz')
+        if self.mapper_instance:
+            self.mapper_instance.set_status(u'Starting bsqli fuzz')
 
         self.bsqli_fuzz_results = self.bsqli_fuzzer.bsqli_fuzz()
 
-        if self.reducer_instance:
-            self.reducer_instance.set_status(u'Finished fuzzing... collecting results')
+        if self.mapper_instance:
+            self.mapper_instance.set_status(u'Finished fuzzing... collecting results')
 
         final_results = self.xss_fuzz_results + self.sqli_fuzz_results + self.bsqli_fuzz_results
 
         return final_results
+
+if __name__ == "__main__":
+
+    x = PunkFuzz()
+    #overlong content-length
+#    print "overlong content-length"
+#    x.punk_set_target("http://www.chinapwr.com/plus/download.php?open=2&id=175&uhash=8a04af72acc3057001827459", "open")
+#    x.fuzz()
+
+    #no content-length
+#    print "no content-length"
+#    x.punk_set_target("http://mirun.jp/index.php/module/SearchResult?from=SearchPopup&shop_category_id=small_30", "from")
+#    x.fuzz()
+    
+    #short content-length
+#    print "short cl"
+#    x.punk_set_target("http://www.hyperiongray.com?q=blah", "q")
+#    x.fuzz()
+
+    x.punk_set_target("http://hjg.com.ar/coplas/?id1=5", "id1")
+    x.fuzz()
+    
+

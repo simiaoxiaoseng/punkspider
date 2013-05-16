@@ -71,7 +71,7 @@ class PunkMapReduceIndexer:
         #return com.google.www
         url_reversed = ".".encode('utf-8').join(url_list)
 
-        return url_reversed.encode('utf-8')
+        return url_reversed
 
     def add_vuln_info(self):
         '''Index the vulnerabilities and details info'''
@@ -101,8 +101,7 @@ class PunkMapReduceIndexer:
             v_url = vuln[0]
             bugtype = vuln[2]
             parameter = vuln[3]
-            id = self.reversed_domain + "." + str(vuln_c)
-            id = id.encode('utf-8')
+            id = self.reversed_domain + ".".encode("utf-8") + str(vuln_c).encode("utf-8")
 
             vuln_details_dic["protocol"] = protocol
             vuln_details_dic["url_main"] = url_main

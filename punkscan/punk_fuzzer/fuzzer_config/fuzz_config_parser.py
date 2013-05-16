@@ -51,10 +51,65 @@ class ConfigO:
         solr_details_url = self.tree.find('network_configs/solr/detail_url').text
 
         return {'solr_summary_url':solr_summary_url, 'solr_details_url':solr_details_url}
+        
+    def get_pagesize_limit(self):
+    
+        pagesize_limit = self.tree.find('fuzz_configs/pagesize_limit').text        
+        return int(pagesize_limit)
+
+    def get_contentl_check(self):
+    
+        contentl_requirement = self.tree.find('fuzz_configs/contentl_check').text
+        if "yes" in contentl_requirement:
+            return True
+
+        else:
+            return False
+
+    def get_content_type_check(self):
+    
+        content_type_requirement = self.tree.find('fuzz_configs/content_type_check').text    
+        if "yes" in content_type_requirement:
+            return True
+            
+        else:
+            return False        
+
+    def get_contentl_check_wfallback(self):
+
+        content_type_fallback_requirement = self.tree.find('fuzz_configs/contentl_check_wfallback').text
+        if "yes" in content_type_fallback_requirement:
+            return True
+
+        else:
+            return False
+    
+    def get_allowed_content_types(self):
+
+        find_allowed_content_types = self.tree.findall('fuzz_configs/allowed_content_types/type')
+        allowed_content_types = []
+
+        for type in find_allowed_content_types:
+
+            allowed_content_types.append(type.text)
+
+        return allowed_content_types
+        
+    def get_page_memory_load_limit(self):
+    
+        find_page_memory_load_limit = self.tree.findall('fuzz_configs/page_memory_load_limit')        
+
+        return int(find_page_memory_load_limit[0].text)
+    
 
 if __name__ == "__main__":
 
     print ConfigO().get_xss_strings()
     print ConfigO().get_proxies_dic()
     print ConfigO().get_sqli_strings()
-    
+    print ConfigO().get_pagesize_limit()
+#    print ConfigO().get_contentl_check()
+#    print ConfigO().get_content_type_check()
+    print ConfigO().get_contentl_check_wfallback()
+    print ConfigO().get_allowed_content_types()
+    print ConfigO().get_page_memory_load_limit()

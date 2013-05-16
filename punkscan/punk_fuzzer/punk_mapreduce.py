@@ -23,21 +23,25 @@ class PunkFuzzDistributed(MRJob):
 
         #takes in <None, url> as the <key, value> of the mapper input
 
-        mapper_punk_fuzz = punk_fuzz.PunkFuzz()
+        self.set_status(u'building PunkFuzz object')
+        mapper_punk_fuzz = punk_fuzz.PunkFuzz(self)
         parsed_url = urlparse(url)
         domain = parsed_url.scheme + "://" + parsed_url.netloc + "/"
 
         if mapper_punk_fuzz.check_if_param(parsed_url):
 
+            self.set_status(u'checking if URL has param')
             parsed_url_query = parsed_url.query
             url_q_dic = parse_qs(parsed_url_query)
 
             for query_param, query_val in url_q_dic.iteritems():
 
+                self.set_status(u'looping through params and vals')
+
                 #and now we fuzz
                 mapper_punk_fuzz.punk_set_target(url, query_param)
                 vuln_list = mapper_punk_fuzz.fuzz()
-
+                    
                 #output vuln_list and domain for each url and query param pair
                 yield domain, vuln_list
 
@@ -50,6 +54,7 @@ class PunkFuzzDistributed(MRJob):
         
             full_vuln_list = full_vuln_list + vuln_list
 
+        self.set_status(u'Indexing')
         #win
         mapreduce_indexer.PunkMapReduceIndexer(domain, full_vuln_list, reducer_instance = self).add_vuln_info()
 
