@@ -235,8 +235,6 @@ class GenFuzz:
         try:
 
             r = requests.get(url, proxies = self.proxy, timeout = self.timeout)
-#!
-            print "setting ret_text"
             ret_text = r.text
 
         except:
@@ -246,8 +244,7 @@ class GenFuzz:
         return (url, payload, ret_text)
 
     def check_stability(self, url_payload, diff_allowed = 10):
-        #!
-        print "running check_stability"
+
         r_1 = self.url_response(url_payload)[2]
         r_2 = self.url_response(url_payload)[2]
 
@@ -650,12 +647,6 @@ class PunkFuzz(GenFuzz):
         '''Perform the fuzzes and collect (vulnerable url, payload) tuples '''
 
         self.head = self.gen_fuzz.get_head()
-#!
-        f = open('/home/pgotsr/url.txt', 'a')
-        f.write(self.url)
-        f.write("\n")
-        f.close()
-#!
 
         #if this returns false, don't check the website
         #it likely has large content and will slow down the fuzz
