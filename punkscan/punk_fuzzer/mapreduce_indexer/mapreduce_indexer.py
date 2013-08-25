@@ -12,6 +12,7 @@ sys.path.append(os.path.join(cwdir, "../", "fuzzer_config/"))
 sys.path.append(cwdir)
 import pysolr
 import fuzz_config_parser
+import traceback
 
 class PunkMapReduceIndexer:
     '''Class to index the results of a mapreduce fuzzer job'''
@@ -101,7 +102,7 @@ class PunkMapReduceIndexer:
             v_url = vuln[0]
             bugtype = vuln[2]
             parameter = vuln[3]
-            id = self.reversed_domain + ".".encode("utf-8") + str(vuln_c).encode("utf-8")
+            id = self.reversed_domain + str(vuln_c)
 
             vuln_details_dic["protocol"] = protocol
             vuln_details_dic["url_main"] = url_main
@@ -133,12 +134,43 @@ class PunkMapReduceIndexer:
         #set the summary details dictionary and commit
         for summ_doc in self.solr_summary_doc:
 
+#dbg            for r in self.solr_summary_doc:
+#dbg                print r
+
+            for key, val in summ_doc.items():
+
+                if isinstance(val, int) or key == u'id' or key == u'url':
+                    continue
+                
+                #zero out the anchors tag (it can cause encoding issues)
+                elif isinstance(val, list):
+                    summ_doc[key] = []
+
+                else:
+                    try:
+                        summ_doc[key] = val.encode("ascii", "ignore")
+                        
+                    except:
+                        try:
+                            summ_doc[key] = val.decode("iso-8859-1").encode("ascii", "ignore")
+                        except:
+                            try:
+                                summ_doc[key] = val.decode("utf-8").encode("ascii", "ignore") 
+                            except:
+                                pass
+
             summ_doc["xss"] = xss_c
             summ_doc["sqli"] = sqli_c
             summ_doc["bsqli"] = bsqli_c
+            summ_doc["vscan_tstamp"] = datetime.datetime.now()
             
         if self.reducer_instance:
             self.reducer_instance.set_status("adding vulnerability summary")
-        
-        self.conn_summ.add(self.solr_summary_doc)
 
+        try:
+            self.conn_summ.add(self.solr_summary_doc)
+        except:
+            print "indexing failed:"
+            for r in self.solr_summary_doc:
+                print r
+            print traceback.format_exc()
