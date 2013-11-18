@@ -1,0 +1,34 @@
+#!/bin/bash
+#
+#Takes in crawl_filename as the seed (note this will be overwritten)
+#and crawls with a depth of 3, overwriting the file, deduping it then
+#finally filtering it by the domains specified in the original seed
+#
+
+
+#
+# Local constrained mode
+#
+
+crawl_filename=urls.txt
+#Get domains to constrain self to
+python filter.py $crawl_filename --load
+
+for i in {1..3}
+do
+  echo "Going to depth $i"
+  crawl_out=`cat $crawl_filename | python punkcrawler_mapper.py`
+  echo "$crawl_out" > $crawl_filename
+
+  #dedupe the file, perhaps these should just echo to stdout and writing file handled here?
+  crawl_out=`python dedupe.py $crawl_filename`
+  echo "$crawl_out" > $crawl_filename
+
+  #filter the file by domains in original seed file
+  crawl_out=`python filter.py $crawl_filename --filter`
+  echo "$crawl_out" > $crawl_filename
+
+  crawl_out=`cat $crawl_filename | python purge_404_mapper.py`
+  echo "$crawl_out" > $crawl_filename
+
+done
