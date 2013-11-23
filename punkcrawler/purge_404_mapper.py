@@ -1,20 +1,22 @@
 import sys
-import requests
+from pnk_requests import pnk_request
 
 def mapper():
     #purge 404s in urls.txt
     
-    for urlin in sys.stdin:
-        urlin_clean = urlin.strip()
+    for line in sys.stdin:
+        domain, urlin_clean = line.split("\t")
+        domain = domain.strip()
+        urlin_clean = urlin_clean.strip()
+        
         try:
-            urlin_clean = urlin.strip()
-            r = requests.get(urlin_clean)
+            r = pnk_request(urlin_clean)
             if r.status_code != 404:
-                print urlin_clean            
+                print domain + "\t" + urlin_clean            
 
         except:
             
-            print urlin_clean
+            print domain + "\t" + urlin_clean
 
 if __name__ == "__main__":
-    mapper()    
+    mapper()
