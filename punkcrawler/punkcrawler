@@ -26,8 +26,8 @@ function usage {
 }
 
 if [ "$#" == "0" ]; then
-	usage
-    exit 1
+  usage
+  exit 1
 fi
 
 CURRENTDIR=`pwd`
@@ -38,81 +38,82 @@ source readconfig.bash
 
 function echolog {
 
-	echo "PunkCRAWLER: `date` $*" | tee -a punkcrawler.log
+  echo "PunkCRAWLER: `date` $*" | tee -a punkcrawler.log
 }
 
 function initialize {
 
-    mkdir -p db/
-	seeds_filename=seeds.txt
-	crawl_filename=db/urls.db
-	rooturls_filename=db/rooturls.db
-	
-	echolog "Initializing crawldb"
-	init_out=`cat $seeds_filename | python init_crawldb_mapper.py`
-	echo "$init_out" > $crawl_filename
+  mkdir -p db/
+  seeds_filename=seeds.txt
+  crawl_filename=db/urls.db
+  rooturls_filename=db/rooturls.db
+
+  echolog "Initializing crawldb"
+  init_out=`cat $seeds_filename | python init_crawldb_mapper.py`
+  echo "$init_out" > $crawl_filename
 }
 
 function prep_filter {
 
-	echolog "Prepping filter for $crawl_filename"
-	#Get domains to constrain self to
-	python filter.py $crawl_filename --load
+  echolog "Prepping filter for $crawl_filename"
+  #Get domains to constrain self to
+  python filter.py $crawl_filename --load
 }
 
 function apply_filter {
 
-	  echolog "Applying filter to $crawl_filename"
-	  #filter the file by domains in original seed file
-	  crawl_out=`python filter.py $crawl_filename --filter`
-	  echo "$crawl_out" > $crawl_filename
+  echolog "Applying filter to $crawl_filename"
+  #filter the file by domains in original seed file
+  crawl_out=`python filter.py $crawl_filename --filter`
+  echo "$crawl_out" > $crawl_filename
 }
 
 function crawl_to_depth {
 	
-	echolog "Crawling to depth $depth"
-	for ((n=1; n<=$depth; n++))
-	do
-	
-	  echolog "Current crawl depth is $n"
-	  crawl_out=`cat $crawl_filename | python punkcrawler_mapper.py`
-	  echo "$crawl_out" > $crawl_filename
-	
-	  #dedupe the file
-	  crawl_out=`python dedupe.py $crawl_filename`
-	  echo "$crawl_out" > $crawl_filename
+  echolog "Crawling to depth $depth"
+  for ((n=1; n<=$depth; n++))
+  do
 
-	  if [[ $1 == "filter" ]]
-	  then
-	    echolog "Got filter flag. Applying filter."
-   	    apply_filter
-   	  fi
-	
-	  crawl_out=`cat $crawl_filename | python purge_404_mapper.py`
-	  echo "$crawl_out" > $crawl_filename
+    echolog "Current crawl depth is $n"
+    crawl_out=`cat $crawl_filename | python punkcrawler_mapper.py`
+    echo "$crawl_out" > $crawl_filename
 
-	done
-	
-	  root_out=`cat $crawl_filename | sort -k1,1| python punkcrawler_reducer.py`
-	  echo "$root_out" > $rooturls_filename
-	  
-	  root_out=`cat $rooturls_filename | python purge_404_mapper.py`
-	  echo "$root_out" > $rooturls_filename
+    #dedupe the file
+    crawl_out=`python dedupe.py $crawl_filename`
+    echo "$crawl_out" > $crawl_filename
+
+    if [[ $1 == "filter" ]]
+    then
+      echolog "Got filter flag. Applying filter."
+      apply_filter
+    fi
+
+    crawl_out=`cat $crawl_filename | python purge_404_mapper.py`
+    echo "$crawl_out" > $crawl_filename
+
+  done
+
+    root_out=`cat $crawl_filename | sort -k1,1| python punkcrawler_reducer.py`
+    echo "$root_out" > $rooturls_filename
+  
+    root_out=`cat $rooturls_filename | python purge_404_mapper.py`
+    echo "$root_out" > $rooturls_filename
 }
 
 function solr_index {
 
-	cat $rooturls_filename | python solr_index_mapper.py
-	python solr_index_mapper.py --commit
+  cat $rooturls_filename | python solr_index_mapper.py
+  python solr_index_mapper.py --commit
 }
 
 #constrained local crawl
 if [ $1 == "-lc" ] || [ $1 == "-cl" ]; then
-	echolog "Running constrained local crawl with $max_links_per_url maximum links per URL"
-    set -e
-	initialize
-	prep_filter
-	crawl_to_depth filter
+  echolog "Running constrained local crawl with $max_links_per_url maximum links per URL"
+  set -e
+  initialize
+  prep_filter
+  crawl_to_depth filter
+  #constrained local crawl does not index to Solr
 
 #free local crawl
 elif [ $1 == "-lf" ] || [ $1 == "-fl" ]; then
@@ -120,6 +121,8 @@ elif [ $1 == "-lf" ] || [ $1 == "-fl" ]; then
   set -e
   initialize
   crawl_to_depth
+
+  #free local crawl indexes to Solr
   solr_index
 
 else
