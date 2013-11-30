@@ -11,3 +11,7 @@ def get_proxy():
 def pnk_request(url):
     r = requests.get(url, proxies=get_proxy(), timeout=int(conf.get("punkcrawler", "timeout")))
     return r
+
+def pnk_head(url):
+    r = requests.head(url, proxies=get_proxy(), timeout=int(conf.get("punkcrawler", "timeout")))
+    return r

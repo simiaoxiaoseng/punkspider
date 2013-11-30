@@ -100,6 +100,12 @@ function crawl_to_depth {
 	  echo "$root_out" > $rooturls_filename
 }
 
+function solr_index {
+
+	cat $rooturls_filename | python solr_index_mapper.py
+	python solr_index_mapper.py --commit
+}
+
 #constrained local crawl
 if [ $1 == "-lc" ] || [ $1 == "-cl" ]; then
 	echolog "Running constrained local crawl with $max_links_per_url maximum links per URL"
@@ -110,14 +116,17 @@ if [ $1 == "-lc" ] || [ $1 == "-cl" ]; then
 
 #free local crawl
 elif [ $1 == "-lf" ] || [ $1 == "-fl" ]; then
-
   echolog "Running free local crawl with $max_links_per_url maximum links per URL"
   set -e
   initialize
   crawl_to_depth
+  solr_index
+
 else
   usage
   exit 1
 fi
+
+
 
 cd $CURRENTDIR
