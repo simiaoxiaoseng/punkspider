@@ -1,0 +1,3 @@
+#!/bin/bash
+curl http://10.180.236.76:8080/solr-4.1.0/summary/update?commit=true -H "Content-Type: text/xml" --data-binary '<delete><query>url:".mil/"</query></delete>'
+curl http://10.180.236.76:8080/solr-4.1.0/summary/update?commit=true -H "Content-Type: text/xml" --data-binary '<delete><query>url:\*\.gov\*</query></delete>'

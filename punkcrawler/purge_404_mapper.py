@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import sys
 from pnk_requests import pnk_head
 import traceback

@@ -1,3 +1,8 @@
+#!/usr/bin/python
+import zipimport
+importer_bs4 = zipimport.zipimporter("lib/bs4.zip")
+bs4 = importer_bs4.load_module("bs4")
+
 from bs4 import BeautifulSoup, SoupStrainer
 import sys
 from urlparse import urlparse, urlunparse
@@ -5,8 +10,12 @@ import traceback
 from pnk_requests import pnk_request
 from ConfigParser import ConfigParser
 from pnk_logging import pnk_log
+import os
 conf = ConfigParser()
 conf.read("punkcrawler.cfg")
+
+sys.path.append(os.path.join(os.getcwd(), "bs4"))
+sys.path.append(os.path.join(os.getcwd(), "requests"))
 
 def mapper():
     
