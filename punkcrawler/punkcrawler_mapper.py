@@ -1,3 +1,8 @@
+#!/usr/bin/python
+import zipimport
+importer_bs4 = zipimport.zipimporter("lib/bs4.zip")
+bs4 = importer_bs4.load_module("bs4")
+
 from bs4 import BeautifulSoup, SoupStrainer
 import sys
 from urlparse import urlparse, urlunparse
@@ -5,19 +10,42 @@ import traceback
 from pnk_requests import pnk_request
 from ConfigParser import ConfigParser
 from pnk_logging import pnk_log
+import already_crawled
+import pickle
+import os
 conf = ConfigParser()
 conf.read("punkcrawler.cfg")
+
+sys.path.append(os.path.join(os.getcwd(), "bs4"))
+sys.path.append(os.path.join(os.getcwd(), "requests"))
 
 def mapper():
     
     mod = __file__
     #!should go in config file
+    try:
+        already_crawled_filename = ".__tmp__.already-crawled"
+        f = open(already_crawled_filename, "rb")
+        already_crawled = pickle.load(f)
+    except:
+        pnk_log(mod, "Unable to load already crawled URLs, assuming none have been crawled")
+        already_crawled = []
+    
     max_links = int(conf.get("punkcrawler", "max_links_per_url"))
     for line in sys.stdin:
         
         domain, urlin_clean = line.split("\t")
         domain = domain.strip()
         urlin_clean = urlin_clean.strip()
+        
+        try:
+            if normalize_url(urlin_clean) in already_crawled:
+                pnk_log(mod, "Url %s has already been crawled by a previous depth, skipping it and moving on" % urlin_clean)
+                continue
+        except:
+            pnk_log(mod, "Some sort of error occurred checking if a URL has been crawled, attempting to crawl the URL")
+            traceback.print_exc()
+
 
         try:
             #!check this flow
@@ -25,7 +53,8 @@ def mapper():
             print to_print
 
         except:
-            pnk_log(mod, "Unicode error echoing URL, this won't be pretty - skipping it altogether")
+            pnk_log(mod, "(Most likely a) Unicode error echoing URL, this won't be pretty - skipping it altogether")
+            traceback.print_exc()
             continue
 
         try:
@@ -73,11 +102,9 @@ def normalize_link(url_to_normalize, current_page_url):
     cp_netloc = cp_parsed.netloc
     
     parsed_url_to_normalize = urlparse(url_to_normalize)
-
     scheme, netloc, path, params, query, fragment = urlparse(url_to_normalize)
     
-    if not parsed_url_to_normalize.scheme or not parsed_url_to_normalize.netloc:
-        
+    if not parsed_url_to_normalize.scheme or not parsed_url_to_normalize.netloc:        
         full_url = urlunparse((cp_scheme, cp_netloc, path, params, query, fragment))
     else:
         full_url = urlunparse(parsed_url_to_normalize)

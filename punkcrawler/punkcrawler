@@ -42,15 +42,26 @@ function echolog {
 }
 
 function initialize {
-
+  #must be called before EVERY crawl (including distributed)
   mkdir -p db/
-  seeds_filename=seeds.txt
+  seeds_filename=urls/urls
   crawl_filename=db/urls.db
   rooturls_filename=db/rooturls.db
+  rm db/*
 
   echolog "Initializing crawldb"
   init_out=`cat $seeds_filename | python init_crawldb_mapper.py`
   echo "$init_out" > $crawl_filename
+}
+
+function initialize_distributed {
+
+  #must be called before distributed job is run and after initialize
+  hadoop dfs -rmr db/
+  hadoop dfs -mkdir db/
+
+  hadoop dfs -copyFromLocal $crawl_filename db/urls.db
+  urls_to_crawl=`cat $crawl_filename`  
 }
 
 function prep_filter {
@@ -71,8 +82,12 @@ function apply_filter {
 function crawl_to_depth {
 	
   echolog "Crawling to depth $depth"
+  
+  python already_crawled.py --init
   for ((n=1; n<=$depth; n++))
   do
+  
+    urls_to_crawl=`cat $crawl_filename`
 
     echolog "Current crawl depth is $n"
     crawl_out=`cat $crawl_filename | python punkcrawler_mapper.py`
@@ -90,19 +105,109 @@ function crawl_to_depth {
 
     crawl_out=`cat $crawl_filename | python purge_404_mapper.py`
     echo "$crawl_out" > $crawl_filename
-
+    
+	echo -ne "$urls_to_crawl" | python already_crawled.py --add-db-to-crawled	
   done
 
     root_out=`cat $crawl_filename | sort -k1,1| python punkcrawler_reducer.py`
     echo "$root_out" > $rooturls_filename
-  
+
     root_out=`cat $rooturls_filename | python purge_404_mapper.py`
     echo "$root_out" > $rooturls_filename
+}
+
+function crawl_to_depth_distributed {
+
+  echolog "Crawling to depth $depth"
+  for ((n=1; n<=$depth; n++))
+  do
+	
+    echolog "Current crawl depth is $n, running PunkCRAWLER Mapper"
+    $HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/contrib/streaming/*streaming*.jar \
+    -D mapred.max.reduce.failures.percent=20 -D mapred.map.max.attempts=2 -file lib/bs4.zip -file lib/requests.zip -file pnk_logging.py \
+    -file punkcrawler.cfg -file .__tmp__.already-crawled -input db/urls.db -mapper punkcrawler_mapper.py \
+    -output db/urls.db.tmp -file pnk_requests.py -file punkcrawler_mapper.py
+
+    echolog "Copying temporary db to $crawl_filename"
+    hadoop dfs -copyToLocal db/urls.db.tmp db-tmp
+    cat db-tmp/part-* > $crawl_filename
+    rm -rf db-tmp
+    hadoop dfs -rmr db/urls.db.tmp
+
+    #dedupe the file
+    echolog "Deduping $crawl_filename"
+    crawl_out=`python dedupe.py $crawl_filename`
+    echo "$crawl_out" > $crawl_filename
+
+    echolog "Removing hdfs crawl db and copying the swanky new local copy with new URLs use with purge 404 Mapper"
+    hadoop dfs -rm db/urls.db
+    hadoop dfs -copyFromLocal $crawl_filename db/urls.db
+
+    if [[ $1 == "filter" ]]
+    then
+      echolog "Got filter flag. Applying filter to $crawl_filename."
+      apply_filter
+    fi
+
+    echolog "The output of $crawl_filename is:"
+    cat $crawl_filename
+
+    echolog "Purging 404s"
+    $HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/contrib/streaming/*streaming*.jar \
+    -D mapred.max.reduce.failures.percent=20 -D mapred.map.max.attempts=2 -file lib/bs4.zip -file lib/requests.zip -file pnk_logging.py \
+    -file punkcrawler.cfg -input db/urls.db -mapper purge_404_mapper.py \
+    -output db/urls.db.tmp -file pnk_requests.py -file purge_404_mapper.py
+
+    echolog "The output of $crawl_filename is:"
+    cat $crawl_filename
+
+    echolog "Copying temporary db to $crawl_filename"
+    hadoop dfs -copyToLocal db/urls.db.tmp db-tmp
+    cat db-tmp/part-* > $crawl_filename
+    rm -rf db-tmp
+    hadoop dfs -rmr db/urls.db.tmp
+
+    echolog "Removing hdfs crawl db and copying the swanky new local copy with new URLs for next crawl step"
+    hadoop dfs -rm db/urls.db
+    hadoop dfs -copyFromLocal $crawl_filename db/urls.db
+    
+    echo -ne "$urls_to_crawl" | python already_crawled.py --add-db-to-crawled
+  done
+
+    root_out=`cat $crawl_filename | sort -k1,1| python punkcrawler_reducer.py`
+    echo "$root_out" > $rooturls_filename
+
+    hadoop dfs -copyFromLocal $rooturls_filename db/rooturls.db
+
+    $HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/contrib/streaming/*streaming*.jar \
+    -D mapred.max.reduce.failures.percent=20 -D mapred.map.max.attempts=2 -file lib/bs4.zip -file lib/requests.zip -file pnk_logging.py \
+    -file punkcrawler.cfg -input db/rooturls.db -mapper purge_404_mapper.py \
+    -output db/rooturls.db.tmp -file pnk_requests.py -file purge_404_mapper.py
+
+    hadoop dfs -copyToLocal db/rooturls.db.tmp db-rooturls-tmp
+    cat db-rooturls-tmp/part-* > $rooturls_filename
+    rm -rf db-rooturls-tmp
+    hadoop dfs -rmr db/rooturls.db.tmp
 }
 
 function solr_index {
 
   cat $rooturls_filename | python solr_index_mapper.py
+  python solr_index_mapper.py --commit
+}
+
+function solr_index_distributed {
+
+  echolog "Indexing $rooturls_filename to Solr"
+
+  hadoop dfs -rmr solr-output.tmp
+  $HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/contrib/streaming/*streaming*.jar \
+  -file lib/bs4.zip -file lib/requests.zip -file pnk_logging.py \
+  -file punkcrawler.cfg -input db/rooturls.db -mapper solr_index_mapper.py \
+  -output solr-output.tmp -file pnk_requests.py -file solr_index_mapper.py
+
+  hadoop dfs -rmr db/rooturls.db
+  hadoop dfs -rmr solr-output.tmp
   python solr_index_mapper.py --commit
 }
 
@@ -125,11 +230,32 @@ elif [ $1 == "-lf" ] || [ $1 == "-fl" ]; then
   #free local crawl indexes to Solr
   solr_index
 
+#distributed free crawl
+elif [ $1 == "-df" ] || [ $1 == "-fd" ]; then
+  echolog "Running free distributed crawl with $max_links_per_url maximum links per URL"
+  #set -e
+  initialize
+  initialize_distributed
+  crawl_to_depth_distributed
+
+  #free local crawl indexes to Solr
+  solr_index_distributed
+
+#distributed constrained crawl
+elif [ $1 == "-dc" ] || [ $1 == "-cd" ]; then
+  echolog "Running free distributed crawl with $max_links_per_url maximum links per URL"
+  #set -e
+  initialize
+  prep_filter
+  initialize_distributed
+  crawl_to_depth_distributed filter
+
+  #free local crawl indexes to Solr
+  solr_index_distributed
+
 else
   usage
   exit 1
 fi
-
-
 
 cd $CURRENTDIR

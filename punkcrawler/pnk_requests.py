@@ -1,3 +1,9 @@
+#!/usr/bin/python
+import zipimport
+
+importer_requests = zipimport.zipimporter("lib/requests.zip")
+bs4 = importer_requests.load_module("requests")
+
 import requests
 from ConfigParser import ConfigParser
 from urlparse import urlparse

@@ -1,0 +1,71 @@
+#!/bin/bash
+
+#!This needs to use the command line flags in nutch  like topN more to customize for large-scale crawling
+
+crawl_once() {
+
+    ./punkcrawler -df
+}
+
+crawl_continuous() {
+
+    CURRENTDIR=`pwd`
+    DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+    cd $DIR
+
+	#set up the file start and file end, the difference here (+1) will be how many urls are crawled
+	#at the same time
+	file_start=1
+	file_end=10
+	increment=$(($file_end - $file_start + 1))
+	num_lines=`cat seeds.txt | wc -l`
+
+	#this is the file that's going to be used to continue a crawl if it is stopped	
+	continue_file=crawl_continue_file
+
+	#if the continue file exists we use the data in it to continue the crawl
+	if [ -f "$continue_file" ]
+	then
+
+        	file_start=`head -n 1 crawl_continue_file`
+        	file_end=`tail -n 1 crawl_continue_file`
+        	echo "got file start at $file_start"
+        	echo "got file end at $file_end"
+
+else
+	#if not just move on (i.e. start from the beginning)
+        echo "no crawl continue file found, starting the crawl from scratch"
+fi
+
+#while we haven't read the files end
+while [ $file_end -lt $num_lines ]
+do
+
+	#clear the urls folder
+    mkdir -p urls/
+	rm urls/*
+	#get the proper lines of the file and move them to the urls folder
+        sed -n "${file_start},${file_end}p" seeds.txt > urls/urls
+
+	#get the crawl_continue file ready
+        file_end=$(($file_end + $increment))
+        file_start=$(($file_start + $increment))
+        echo -e "${file_start}\n${file_end}" > crawl_continue_file
+
+	#perform the actual crawl
+	crawl_once
+
+    #stop if a file named stop exists
+    if [ -f "stop" ];
+    then
+        exit 0
+    fi
+
+done
+
+rm crawl_continue_file
+
+}
+
+crawl_continuous
+cd $CURRENTDIR
