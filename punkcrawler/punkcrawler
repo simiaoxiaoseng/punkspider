@@ -42,6 +42,8 @@ function echolog {
 }
 
 function initialize {
+
+  python already_crawled.py --init
   #must be called before EVERY crawl (including distributed)
   mkdir -p db/
   seeds_filename=urls/urls
@@ -61,7 +63,8 @@ function initialize_distributed {
   hadoop dfs -mkdir db/
 
   hadoop dfs -copyFromLocal $crawl_filename db/urls.db
-  urls_to_crawl=`cat $crawl_filename`  
+  urls_to_crawl=`cat $crawl_filename`
+  python already_crawled.py --init
 }
 
 function prep_filter {
@@ -83,7 +86,6 @@ function crawl_to_depth {
 	
   echolog "Crawling to depth $depth"
   
-  python already_crawled.py --init
   for ((n=1; n<=$depth; n++))
   do
   
