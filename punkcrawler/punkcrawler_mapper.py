@@ -26,12 +26,12 @@ def mapper():
     try:
         already_crawled_filename = ".__tmp__.already-crawled"
         f = open(already_crawled_filename, "rb")
-        already_crawled = pickle.load(f)
+        already_crawled_urls = pickle.load(f)
     except:
         already_crawled_filename = ".__tmp__.already-crawled"
         already_crawled.init()
         f = open(already_crawled_filename, "rb")
-        already_crawled = pickle.load(f)
+        already_crawled_urls = pickle.load(f)
         pnk_log(mod, "Unable to load already crawled URLs, assuming none have been crawled and initializing")
     
     max_links = int(conf.get("punkcrawler", "max_links_per_url"))
@@ -42,7 +42,7 @@ def mapper():
         urlin_clean = urlin_clean.strip()
         
         try:
-            if normalize_url(urlin_clean) in already_crawled:
+            if normalize_url(urlin_clean) in already_crawled_urls:
                 pnk_log(mod, "Url %s has already been crawled by a previous depth, skipping it and moving on" % urlin_clean)
                 continue
         except:
