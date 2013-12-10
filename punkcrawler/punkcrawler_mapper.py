@@ -28,8 +28,11 @@ def mapper():
         f = open(already_crawled_filename, "rb")
         already_crawled = pickle.load(f)
     except:
-        pnk_log(mod, "Unable to load already crawled URLs, assuming none have been crawled")
-        already_crawled = []
+        already_crawled_filename = ".__tmp__.already-crawled"
+        already_crawled.init()
+        f = open(already_crawled_filename, "rb")
+        already_crawled = pickle.load(f)
+        pnk_log(mod, "Unable to load already crawled URLs, assuming none have been crawled and initializing")
     
     max_links = int(conf.get("punkcrawler", "max_links_per_url"))
     for line in sys.stdin:

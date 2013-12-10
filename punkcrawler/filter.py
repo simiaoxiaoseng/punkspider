@@ -4,6 +4,7 @@ import pickle
 import traceback
 
 filter_pickle_filename = ".__tmp__.filter-domains"
+already_crawled_pickle_filename = ".__tmp__.already-crawled"
         
 def load(seed_filename):
 
