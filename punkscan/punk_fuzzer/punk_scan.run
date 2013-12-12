@@ -33,11 +33,12 @@ function scan {
     cd $DIR
 
     #run crawl to generate urls to fuzz
+    echo "Performing a crawl. See the PunkCRAWLER logs for progress."
     cd ..
     python punkcrawler.py
     cd $DIR
 
-    #run the maprduce job
+    #run the mapreduce job
     python punk_mapreduce.py -r hadoop --file pysolr/pysolr.py --file pysolr/BeautifulSoup.py\
  --file mapreduce_indexer/mapreduce_indexer.py --file punk_fuzz.py\
  --file fuzzer_config/fuzz_config_parser.py --file fuzzer_config/punk_fuzz.cfg.xml\

@@ -119,6 +119,7 @@ def crawl_db_reduce(crawl_db_generator):
             
 def execute():
 
+    #configure and run punkscan, then filter and prepare URLs to be fuzzed
     configure_punkscan()
     crawl()
     f = open(os.path.join(punkscan_base, "punk_fuzzer", "urls_to_fuzz"), 'w')
