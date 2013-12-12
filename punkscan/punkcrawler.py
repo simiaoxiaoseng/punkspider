@@ -2,9 +2,9 @@
 #  Hyperion Gray, LLC - PunkCRAWLER                                #
 ####################################################################
 #                                                                  #
-#  This script is an automatic configur-er and wrapper for Apache  #
-#  Nutch crawls. It first limits the domains we want to crawl by   #
-#  pulling from your Solr Summary instance. It reads from          #
+#  This script is an automatic configur-er and wrapper for         #
+#  PunkCRAWLER crawls. It first limits the domains we want to crawl#
+#  by pulling from your Solr Summary instance. It reads from       #
 #  punkscan_configs/punkscan_config.cfg and then performs a crawl, #
 #  reduces the results down to specific cases, and dumps the       #
 #  results to a directory. This is is generally followed by        #
@@ -15,6 +15,7 @@
 import os
 import sys
 import codecs
+import subprocess
 from urlparse import urlparse
 from urlparse import parse_qs
 cwdir = os.path.dirname(__file__)
@@ -23,39 +24,54 @@ sys.path.append(os.path.join(punkscan_base, "hadooper"))
 sys.path.append(os.path.join(punkscan_base, "config_scripts"))
 sys.path.append(os.path.join(punkscan_base, "crawl_db_parser"))
 sys.path.append(os.path.join(punkscan_base, "crawler"))
+sys.path.append(os.path.join(punkscan_base, "punk_solr"))
 import reconfig_nutch
 import crawldb_parser
 import hadooper
 import nutch
+import punkscan_solr
 from ConfigParser import SafeConfigParser
+
 config_parser = SafeConfigParser()
 config_parser.read(os.path.join(punkscan_base,'punkscan_configs', 'punkscan_config.cfg'))
 HADOOP_HOME=config_parser.get('directories','HADOOP_HOME')
 NUTCH_HOME=config_parser.get('directories','NUTCH_HOME')
 
+
 def configure_punkscan():
     '''Configure punkscan, get ready for the crawl.
     Mark vscan_tstamp in Solr.'''
 
-    config_r = reconfig_nutch.ConfigoRoboto()
-    config_r.generate_template_file()
-    config_r.generate_seed_list()
-    config_r.clear_and_put_seed_list_on_hdfs()
+    punk_solro = punkscan_solr.PunkSolr()
+    #get the urls to scan
+    solr_urls_dic = punk_solro.get_scanned_longest_ago()
 
+    #mark urls as scan attempted with vscan_tstamp
+    punk_solro.update_vscan_tstamp_batch(solr_urls_dic)
+    
+    f = open("../punkcrawler/urls/urls", "w")
+    for url_dic in solr_urls_dic:
+        try:
+            f.write(url_dic["url"])
+            f.write("\n")
+        except:
+            #silently fail, should probably log failed attempt, but that would likely fail...
+            pass
+                
 def crawl():
     '''Perform the crawl against the sites'''
 
-    nutch.NutchController().crawl()
+    subprocess.Popen("../punkcrawler/punkcrawler -dc", shell = True, stdout = subprocess.PIPE, stderr = subprocess.PIPE).communicate()[0]    
 
 def parse_crawl_db():
     '''Delete previous crawl db on HDFS and local fs,
     Dump the crawl db to HDFS, copy from HDFS to local
     filesystem'''
 
-    db_parso = crawldb_parser.CrawlDBParser()
-    db_parso.dump_crawl_db()
-    db_parso.get_crawl_db_dump()
-    return db_parso.crawl_db_url_generator()
+    f = open("../punkcrawler/db/urls.db", "r")
+    for line in f:
+        url = line.split("\t")[1]
+        yield url
 
 def crawl_db_reduce(crawl_db_generator):
     '''Goes through the crawldb and removes duplicate
