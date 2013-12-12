@@ -40,7 +40,7 @@ def commit():
     commit_url = solr_summ_url + "?commit=true"
 
     headers = {"content-type" : "application/json", "content-length" : 0}
-    r = requests.post("http://10.180.234.221:8080/solr-4.1.0/summary/update/json?commit=true", headers = headers)
+    r = requests.post(commit_url, headers = headers)
     pnk_log(mod, "Committing to solr with URL %s" % commit_url)
     pnk_log(mod, "Server returned response %s" % str(r.status_code))
     print r.text

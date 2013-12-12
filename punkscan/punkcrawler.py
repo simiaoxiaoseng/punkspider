@@ -66,7 +66,6 @@ def crawl_db_reduce(crawl_db_generator):
     This step significantly reduces the amount of data processed
     by the mapreduce job.'''
     
-
     #append url query_domain keys to list_of_keys and the url to url_list if we have not seen it
     #in a prevoius iteration. Else just move along. url_list will then be a list of
     #urls with unique keys

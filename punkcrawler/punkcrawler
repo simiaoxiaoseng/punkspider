@@ -63,7 +63,6 @@ function initialize_distributed {
   hadoop dfs -mkdir db/
 
   hadoop dfs -copyFromLocal $crawl_filename db/urls.db
-  urls_to_crawl=`cat $crawl_filename`
   python already_crawled.py --init
 }
 
@@ -123,7 +122,9 @@ function crawl_to_depth_distributed {
   echolog "Crawling to depth $depth"
   for ((n=1; n<=$depth; n++))
   do
-	
+
+    urls_to_crawl=`cat $crawl_filename`
+
     echolog "Current crawl depth is $n, running PunkCRAWLER Mapper"
     $HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/contrib/streaming/*streaming*.jar \
     -D mapred.max.reduce.failures.percent=20 -D mapred.map.max.attempts=2 -file lib/bs4.zip -file lib/requests.zip -file pnk_logging.py \
@@ -252,8 +253,7 @@ elif [ $1 == "-dc" ] || [ $1 == "-cd" ]; then
   initialize_distributed
   crawl_to_depth_distributed filter
 
-  #free local crawl indexes to Solr
-  solr_index_distributed
+  #constrained distributed crawl does not index to Solr
 
 else
   usage

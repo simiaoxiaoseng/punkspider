@@ -12,25 +12,6 @@ def init():
     pickle.dump([], f)
     f.close()
     
-def add_seeds_to_already_crawled():
-
-    mod = __file__
-    urls_to_add = []
-    for line in sys.stdin:
-
-        try:
-            urlin_clean = line.strip()
-            urls_to_add.append(normalize_url(urlin_clean))
-    
-        except:
-            pnk_log(mod, "Bad line in file: %s" % line)
-            continue
-
-    #clears previous file and starts new one
-    f = open(already_crawled_filename, "wb")
-    pickle.dump(urls_to_add, f)
-    f.close()
-
 def add_to_already_crawled():
 
     mod = __file__
@@ -54,9 +35,8 @@ def add_to_already_crawled():
     f.close()
 
     f = open(already_crawled_filename, "wb")
-    pickle.dump(already_crawled_list, f)
+    pickle.dump(list(set(already_crawled_list)), f)
     f.close()
-
 
 def normalize_url(url):
         
