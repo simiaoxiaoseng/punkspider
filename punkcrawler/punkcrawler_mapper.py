@@ -43,12 +43,13 @@ def mapper():
         
         try:
             if normalize_url(urlin_clean) in already_crawled_urls:
+                to_print = get_host(normalize_url(urlin_clean)) + "\t" + normalize_url(urlin_clean)
+                print to_print
                 pnk_log(mod, "Url %s has already been crawled by a previous depth, skipping it and moving on" % urlin_clean)
                 continue
         except:
             pnk_log(mod, "Some sort of error occurred checking if a URL has been crawled, attempting to crawl the URL")
             traceback.print_exc()
-
 
         try:
             #!check this flow

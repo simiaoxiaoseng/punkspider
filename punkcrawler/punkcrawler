@@ -142,15 +142,15 @@ function crawl_to_depth_distributed {
     crawl_out=`python dedupe.py $crawl_filename`
     echo "$crawl_out" > $crawl_filename
 
-    echolog "Removing hdfs crawl db and copying the swanky new local copy with new URLs use with purge 404 Mapper"
-    hadoop dfs -rm db/urls.db
-    hadoop dfs -copyFromLocal $crawl_filename db/urls.db
-
     if [[ $1 == "filter" ]]
     then
       echolog "Got filter flag. Applying filter to $crawl_filename."
       apply_filter
     fi
+
+    echolog "Removing hdfs crawl db and copying the swanky new local copy with new URLs use with purge 404 Mapper"
+    hadoop dfs -rm db/urls.db
+    hadoop dfs -copyFromLocal $crawl_filename db/urls.db
 
     echolog "The output of $crawl_filename is:"
     cat $crawl_filename

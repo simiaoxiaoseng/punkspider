@@ -55,7 +55,14 @@ def configure_punkscan():
 def crawl():
     '''Perform the crawl against the sites'''
 
-    subprocess.Popen("../punkcrawler/punkcrawler -dc", shell = True, stdout = subprocess.PIPE, stderr = subprocess.PIPE).communicate()[0]    
+    child = subprocess.Popen("../punkcrawler/punkcrawler -dc", shell = True, stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+    while True:
+        out = child.stderr.read(1)
+        if out == '' and child.poll() != None:
+            break
+        if out != '':
+            sys.stdout.write(out)
+            sys.stdout.flush()
 
 def parse_crawl_db():
     '''Delete previous crawl db on HDFS and local fs,
@@ -95,10 +102,10 @@ def crawl_db_reduce(crawl_db_generator):
         #one URL for the domain sent to the mapreduce job. This is a
         #requirement.
         
-        if not query_keys and domain not in list_of_keys:
+        if not query_keys and domain.strip() not in list_of_keys:
 
-            url_list.append(url)
-            list_of_keys.append(domain)
+            url_list.append(url.strip())
+            list_of_keys.append(domain.strip())
 
 
         #set up a unique string for unique query keys on a
@@ -120,14 +127,13 @@ def crawl_db_reduce(crawl_db_generator):
 def execute():
 
     #configure and run punkscan, then filter and prepare URLs to be fuzzed
-    configure_punkscan()
-    crawl()
-    f = open(os.path.join(punkscan_base, "punk_fuzzer", "urls_to_fuzz"), 'w')
+#    configure_punkscan()
+#    crawl()
+#    f = open(os.path.join(punkscan_base, "punk_fuzzer", "urls_to_fuzz"), 'w')
 
     for url in crawl_db_reduce(parse_crawl_db()):
-
-        f.write(url)
-        f.write("\n")
+        print url.strip()
+#        f.write(url)
                     
 if __name__ == "__main__":
 
