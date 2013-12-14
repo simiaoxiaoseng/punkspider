@@ -32,6 +32,34 @@ class ConfigO:
         bsqli_string_list = [bsqli_string.text for bsqli_string in bsqli_strings_elt]
 
         return bsqli_string_list
+    
+    def get_trav_strings(self):
+
+        trav_strings_elt = self.tree.findall('modules/trav_config/trav_strings/trav_string')
+        trav_string_list = [trav_string.text for trav_string in trav_strings_elt]
+
+        return trav_string_list
+
+    def get_mxi_strings(self):
+
+        mxi_strings_elt = self.tree.findall('modules/mxi_config/mxi_strings/mxi_string')
+        mxi_string_list = [mxi_string.text for mxi_string in mxi_strings_elt]
+
+        return mxi_string_list
+
+    def get_xpathi_strings(self):
+
+        xpathi_strings_elt = self.tree.findall('modules/xpathi_config/xpathi_strings/xpathi_string')
+        xpathi_string_list = [xpathi_string.text for xpathi_string in xpathi_strings_elt]
+
+        return xpathi_string_list
+
+    def get_osci_strings(self):
+
+        osci_strings_elt = self.tree.findall('modules/osci_config/osci_strings/osci_string')
+        osci_string_list = [osci_string.text for osci_string in osci_strings_elt]
+
+        return osci_string_list
 
     def get_proxies_dic(self):
 

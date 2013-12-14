@@ -84,6 +84,10 @@ class PunkMapReduceIndexer:
         xss_c = 0
         sqli_c = 0
         bsqli_c = 0
+        trav_c = 0
+        mxi_c = 0
+        xpathi_c = 0
+        osci_c = 0
 
         #for each vulnerability, make necessary counts
         #and set necessary parameters to add to Solr
@@ -123,6 +127,18 @@ class PunkMapReduceIndexer:
 
             if vuln[2] == "bsqli":
                 bsqli_c += 1
+                
+            if vuln[2] == "trav":
+                trav_c += 1
+
+            if vuln[2] == "mxi":
+                mxi_c += 1
+
+            if vuln[2] == "xpathi":
+                xpathi_c += 1
+
+            if vuln[2] == "osci":
+                osci_c += 1
 
         #commit details vulnerabilities in batch
         
@@ -162,6 +178,10 @@ class PunkMapReduceIndexer:
             summ_doc["xss"] = xss_c
             summ_doc["sqli"] = sqli_c
             summ_doc["bsqli"] = bsqli_c
+            summ_doc["trav"] = trav_c
+            summ_doc["mxi"] = mxi_c
+            summ_doc["xpathi"] = xpathi_c
+            summ_doc["osci"] = osci_c
             summ_doc["vscan_tstamp"] = datetime.datetime.now()
             
         if self.reducer_instance:

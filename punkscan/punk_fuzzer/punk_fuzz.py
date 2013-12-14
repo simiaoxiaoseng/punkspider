@@ -21,6 +21,7 @@ sys.path.append(os.path.join(cwdir,  "beautifulsoup"))
 sys.path.append(cwdir)
 
 #import the modules aded to the path
+import traceback
 import fuzz_config_parser
 import requests
 from bs4 import BeautifulSoup
@@ -40,6 +41,11 @@ class GenFuzz:
         self.xss_payloads_raw = self.fuzz_config.get_xss_strings()
         self.sqli_payloads_raw = self.fuzz_config.get_sqli_strings()
         self.bsqli_payloads_raw = self.fuzz_config.get_bsqli_strings()
+        self.trav_payloads_raw = self.fuzz_config.get_trav_strings()
+        self.xpathi_payloads_raw = self.fuzz_config.get_xpathi_strings()
+        self.mxi_payloads_raw = self.fuzz_config.get_mxi_strings()
+        self.osci_payloads_raw = self.fuzz_config.get_osci_strings()
+
         self.pagesize_limit = self.fuzz_config.get_pagesize_limit()
         #self.contentl_requirement = self.fuzz_config.get_contentl_check()
         #self.content_type_requirement = self.fuzz_config.get_content_type_check()
@@ -159,6 +165,7 @@ class GenFuzz:
 
         except:
             
+            traceback.print_exc()
             raise Exception("Cannot parse url %s" % self.url)
 
     def __interpret_payloads(self, valid_query_val):
@@ -170,6 +177,10 @@ class GenFuzz:
         self.xss_payloads = [x.replace("__VALID_PARAM__", valid_query_val).replace("__RANDOM_INT__", str(self.random_int)) for x in self.xss_payloads_raw]
         self.sqli_payloads = [x.replace("__VALID_PARAM__", valid_query_val).replace("__RANDOM_INT__", str(self.random_int)) for x in self.sqli_payloads_raw]
         self.bsqli_payloads = [x.replace("__VALID_PARAM__", valid_query_val).replace("__RANDOM_INT__", str(self.random_int)) for x in self.bsqli_payloads_raw]
+        self.trav_payloads = [x.replace("__VALID_PARAM__", valid_query_val).replace("__RANDOM_INT__", str(self.random_int)) for x in self.trav_payloads_raw]
+        self.mxi_payloads = [x.replace("__VALID_PARAM__", valid_query_val).replace("__RANDOM_INT__", str(self.random_int)) for x in self.mxi_payloads_raw]
+        self.xpathi_payloads = [x.replace("__VALID_PARAM__", valid_query_val).replace("__RANDOM_INT__", str(self.random_int)) for x in self.xpathi_payloads_raw]
+        self.osci_payloads = [x.replace("__VALID_PARAM__", valid_query_val).replace("__RANDOM_INT__", str(self.random_int)) for x in self.osci_payloads_raw]
 
     def replace_param(self, replacement_string):
         '''Replace a parameter in a url with another string. Returns
@@ -510,7 +521,7 @@ class SQLiFuzz(GenFuzz):
 
         #define what we're looking for on the pages
 
-        match_list = ["you have an error in your sql syntax",
+        match_list_raw = ["you have an error in your sql syntax",
         "supplied argument is not a valid mysql",
         "[microsoft][odbc microsoft acess driver]",
         "[microsoft][odbc sql server driver]",
@@ -531,8 +542,228 @@ class SQLiFuzz(GenFuzz):
         "ora-00920: invalid relational operator",
         "ora-00920: missing right parenthesis"]
 
+        #we lower our http responses for easier matching
+        match_list = [x.lower() for x in match_list_raw]
+        
         url_response_gen = self.__sqli_get_url_responses()
         return self.search_responses(url_response_gen, match_list, "sqli")
+
+class TravFuzz(GenFuzz):
+    '''This class is a path traversal fuzzer '''
+
+    def __init__(self):
+
+        GenFuzz.__init__(self)
+
+    def trav_set_target(self, url, param):
+        '''Set the target '''
+
+        self.target = self.set_target(url, param)
+
+    def __trav_make_payloads(self):
+        '''Set various mutations for SQL Injection'''
+
+        #mutate payloads
+        trav_string_list_add_enc = self.mutate_urlencode(self.trav_payloads)
+        final_list = trav_string_list_add_enc
+
+        #return final list of payloads
+        return final_list
+
+    def __trav_url_gen(self):
+        '''Yield URLs that are to be SQLi requests'''
+
+        return self.generate_urls_gen(self.__trav_make_payloads())
+
+    def __trav_get_url_responses(self):
+        '''Yield responses - takes in a url generator and outputs
+        a response generator'''
+
+        return self.url_response_gen(self.__trav_url_gen)
+
+    def trav_fuzz(self):
+        '''Returns a list of (vulnerable url, payload) tuples
+        of vuln type "trav"'''
+
+        #define what we're looking for on the pages
+
+        match_list_raw = ["root:x:", "[font]"]
+
+        #we lower our http responses for easier matching
+        match_list = [x.lower() for x in match_list_raw]
+
+        url_response_gen = self.__trav_get_url_responses()
+        return self.search_responses(url_response_gen, match_list, "trav")
+
+class MXiFuzz(GenFuzz):
+    '''This class is an MX Injection fuzzer '''
+
+    def __init__(self):
+
+        GenFuzz.__init__(self)
+
+    def mxi_set_target(self, url, param):
+        '''Set the target '''
+
+        self.target = self.set_target(url, param)
+
+    def __mxi_make_payloads(self):
+        '''Set various mutations for mx Injection'''
+
+        #mutate payloads
+        mxi_string_list_add_enc = self.mutate_urlencode(self.mxi_payloads)
+        final_list = mxi_string_list_add_enc
+
+        #return final list of payloads
+        return final_list
+
+    def __mxi_url_gen(self):
+        '''Yield URLs that are to be mxi requests'''
+
+        return self.generate_urls_gen(self.__mxi_make_payloads())
+
+    def __mxi_get_url_responses(self):
+        '''Yield responses - takes in a url generator and outputs
+        a response generator'''
+
+        return self.url_response_gen(self.__mxi_url_gen)
+
+    def mxi_fuzz(self):
+        '''Returns a list of (vulnerable url, payload) tuples
+        of vuln type "mxi"'''
+
+        #define what we're looking for on the pages
+
+        match_list_raw = ["unexpected extra arguments to select", 
+                      "Bad or malformed request", "Could not access the following folders",
+                      "A000", "A001", "invalid mailbox name", 
+                      "go to the folders page"]
+
+        #we lower our http responses for easier matching
+        match_list = [x.lower() for x in match_list_raw]
+
+        url_response_gen = self.__mxi_get_url_responses()
+        return self.search_responses(url_response_gen, match_list, "mxi")
+
+class XPathiFuzz(GenFuzz):
+    '''This class is an XPath injection fuzzer '''
+
+    def __init__(self):
+
+        GenFuzz.__init__(self)
+
+    def xpathi_set_target(self, url, param):
+        '''Set the target '''
+
+        self.target = self.set_target(url, param)
+
+    def __xpathi_make_payloads(self):
+        '''Set various mutations for XPath Injection'''
+
+        #mutate payloads
+        xpathi_string_list_add_enc = self.mutate_urlencode(self.xpathi_payloads)
+        final_list = xpathi_string_list_add_enc
+
+        #return final list of payloads
+        return final_list
+
+    def __xpathi_url_gen(self):
+        '''Yield URLs that are to be xpathi requests'''
+
+        return self.generate_urls_gen(self.__xpathi_make_payloads())
+
+    def __xpathi_get_url_responses(self):
+        '''Yield responses - takes in a url generator and outputs
+        a response generator'''
+
+        return self.url_response_gen(self.__xpathi_url_gen)
+
+    def xpathi_fuzz(self):
+        '''Returns a list of (vulnerable url, payload) tuples
+        of vuln type "xpathi"'''
+
+        #define what we're looking for on the pages.
+        #credit to Andres Riancho/w3af: match list from 
+        #https://github.com/andresriancho/w3af/blob/master/plugins/audit/xpath.py
+        match_list_raw = ['System.Xml.XPath.XPathException:',
+        'MS.Internal.Xml.',
+        'Unknown error in XPath',
+        'org.apache.xpath.XPath',
+        'A closing bracket expected in',
+        'An operand in Union Expression does not produce a node-set',
+        'Cannot convert expression to a number',
+        'Document Axis does not allow any context Location Steps',
+        'Empty Path Expression',
+        'DOMXPath::'
+        'Empty Relative Location Path',
+        'Empty Union Expression',
+        "Expected ')' in",
+        'Expected node test or name specification after axis operator',
+        'Incompatible XPath key',
+        'Incorrect Variable Binding',
+        'libxml2 library function failed',
+        'libxml2',
+        'xmlsec library function',
+        'xmlsec',
+        "error '80004005'",
+        "A document must contain exactly one root element.",
+        '<font face="Arial" size=2>Expression must evaluate to a node-set.',
+        "Expected token ']'",
+        "<p>msxml4.dll</font>",
+        "<p>msxml3.dll</font>",
+        '4005 Notes error: Query is not understandable']
+        #we lower our http responses for easier matching
+        match_list = [x.lower() for x in match_list_raw]
+
+        url_response_gen = self.__xpathi_get_url_responses()
+        return self.search_responses(url_response_gen, match_list, "xpathi")
+
+class OSCiFuzz(GenFuzz):
+    '''This class is an MX Injection fuzzer '''
+
+    def __init__(self):
+
+        GenFuzz.__init__(self)
+
+    def osci_set_target(self, url, param):
+        '''Set the target '''
+
+        self.target = self.set_target(url, param)
+
+    def __osci_make_payloads(self):
+        '''Set various mutations for mx Injection'''
+
+        #mutate payloads
+        osci_string_list_add_enc = self.mutate_urlencode(self.osci_payloads)
+        final_list = osci_string_list_add_enc
+
+        #return final list of payloads
+        return final_list
+
+    def __osci_url_gen(self):
+        '''Yield URLs that are to be osci requests'''
+
+        return self.generate_urls_gen(self.__osci_make_payloads())
+
+    def __osci_get_url_responses(self):
+        '''Yield responses - takes in a url generator and outputs
+        a response generator'''
+
+        return self.url_response_gen(self.__osci_url_gen)
+
+    def osci_fuzz(self):
+        '''Returns a list of (vulnerable url, payload) tuples
+        of vuln type "osci"'''
+
+        #define what we're looking for on the pages
+
+        match_list_raw = ["root:x:", "[font]"]
+
+        #we lower our http responses for easier matching
+        match_list = [x.lower() for x in match_list_raw]
+
+        url_response_gen = self.__osci_get_url_responses()
+        return self.search_responses(url_response_gen, match_list, "osci")
 
 class BSQLiFuzz(GenFuzz):
     '''Content-length based sql injection checks '''
@@ -631,6 +862,10 @@ class PunkFuzz(GenFuzz):
         self.xss_fuzzer = XSSFuzz()
         self.sqli_fuzzer = SQLiFuzz()
         self.bsqli_fuzzer = BSQLiFuzz()
+        self.trav_fuzzer = TravFuzz()
+        self.mxi_fuzzer = MXiFuzz()
+        self.xpathi_fuzzer = XPathiFuzz()
+        self.osci_fuzzer = OSCiFuzz()
         self.mapper_instance = mapper_instance
 
     def punk_set_target(self, url, param):
@@ -642,6 +877,10 @@ class PunkFuzz(GenFuzz):
         self.xss_fuzzer.xss_set_target(url, param)
         self.sqli_fuzzer.sqli_set_target(url, param)
         self.bsqli_fuzzer.bsqli_set_target(url, param)
+        self.trav_fuzzer.trav_set_target(url, param)
+        self.mxi_fuzzer.mxi_set_target(url, param)
+        self.xpathi_fuzzer.xpathi_set_target(url, param)
+        self.osci_fuzzer.osci_set_target(url, param)
 
     def fuzz(self):
         '''Perform the fuzzes and collect (vulnerable url, payload) tuples '''
@@ -670,11 +909,33 @@ class PunkFuzz(GenFuzz):
             self.mapper_instance.set_status(u'Starting bsqli fuzz')
 
         self.bsqli_fuzz_results = self.bsqli_fuzzer.bsqli_fuzz()
+        
+        
+        if self.mapper_instance:
+            self.mapper_instance.set_status(u'Starting trav fuzz')
+        
+        self.trav_fuzz_results = self.trav_fuzzer.trav_fuzz()
+
+        if self.mapper_instance:
+            self.mapper_instance.set_status(u'Starting mxi fuzz')
+        
+        self.mxi_fuzz_results = self.mxi_fuzzer.mxi_fuzz()        
+
+        if self.mapper_instance:
+            self.mapper_instance.set_status(u'Starting xpathi fuzz')
+        
+        self.xpathi_fuzz_results = self.xpathi_fuzzer.xpathi_fuzz()
+
+        if self.mapper_instance:
+            self.mapper_instance.set_status(u'Starting osci fuzz')
+        
+        self.osci_fuzz_results = self.osci_fuzzer.osci_fuzz()
 
         if self.mapper_instance:
             self.mapper_instance.set_status(u'Finished fuzzing... collecting results')
 
-        final_results = self.xss_fuzz_results + self.sqli_fuzz_results + self.bsqli_fuzz_results
+        final_results = self.xss_fuzz_results + self.sqli_fuzz_results + self.bsqli_fuzz_results + self.trav_fuzz_results\
+        + self.mxi_fuzz_results + self.xpathi_fuzz_results + self.osci_fuzz_results
 
         return final_results
 
@@ -696,7 +957,8 @@ if __name__ == "__main__":
 #    x.punk_set_target("http://www.hyperiongray.com?q=blah", "q")
 #    x.fuzz()
 
-    x.punk_set_target("http://hjg.com.ar/coplas/?id1=5", "id1")
-    x.fuzz()
-    
+    x.punk_set_target("http://sqli1.hyperiongray.com/?getfile=index.php&user=root", "user")
+    print x.fuzz()
 
+    x.punk_set_target("http://sqli1.hyperiongray.com/?getfile=index.php&user=root", "getfile")
+    print x.fuzz()

