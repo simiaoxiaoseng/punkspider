@@ -106,7 +106,7 @@ class PunkMapReduceIndexer:
             v_url = vuln[0]
             bugtype = vuln[2]
             parameter = vuln[3]
-            id = self.reversed_domain + str(vuln_c)
+            id = self.reversed_domain + "." + str(vuln_c)
 
             vuln_details_dic["protocol"] = protocol
             vuln_details_dic["url_main"] = url_main
@@ -183,11 +183,16 @@ class PunkMapReduceIndexer:
             summ_doc["xpathi"] = xpathi_c
             summ_doc["osci"] = osci_c
             summ_doc["vscan_tstamp"] = datetime.datetime.now()
+            f = open ("/home/pgotsr/punkscan/punkscan/punk_fuzzer/fff.txt", "w")
+            f.write(str(summ_doc))
+
+
             
         if self.reducer_instance:
             self.reducer_instance.set_status("adding vulnerability summary")
 
         try:
+            print self.solr_summary_doc
             self.conn_summ.add(self.solr_summary_doc)
         except:
             print "indexing failed:"

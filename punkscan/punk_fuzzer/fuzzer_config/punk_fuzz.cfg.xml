@@ -87,8 +87,8 @@
       <ip_port><![CDATA[]]></ip_port>
     </proxy>
     <solr>
-      <detail_url><![CDATA[http://<your Solr details ip>:8984/solr]]></detail_url>
-      <summary_url><![CDATA[http://<your Solr summary ip>:8983/solr]]></summary_url>
+      <detail_url><![CDATA[http://10.180.234.221:8080/solr-4.1.0/detail]]></detail_url>
+      <summary_url><![CDATA[http://10.180.234.221:8080/solr-4.1.0/summary]]></summary_url>
     </solr>
   </network_configs>
 

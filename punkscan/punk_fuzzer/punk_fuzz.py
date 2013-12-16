@@ -290,7 +290,6 @@ class GenFuzz:
 
             #parse the response text            
             try:
-                print "Souping..."
                 soup = BeautifulSoup(url_response[2])
 
             #! if we can't parse it, return no vulnerabilities for now
