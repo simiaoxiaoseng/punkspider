@@ -10,6 +10,7 @@ import traceback
 from pnk_requests import pnk_request
 from ConfigParser import ConfigParser
 from pnk_logging import pnk_log
+from requests.exceptions import ConnectionError
 import already_crawled
 import pickle
 import os
@@ -18,6 +19,8 @@ conf.read("punkcrawler.cfg")
 
 sys.path.append(os.path.join(os.getcwd(), "bs4"))
 sys.path.append(os.path.join(os.getcwd(), "requests"))
+
+#!!!!!!!!!!!! Needs to handle titles of websites
 
 def mapper():
     
@@ -93,6 +96,10 @@ def mapper():
 
         except KeyboardInterrupt:
             sys.exit(1)
+
+        except ConnectionError:
+            traceback.print_exc()
+            pnk_log("The request timed out, moving on")
 
         except:
             #if something goes wrong, just move on

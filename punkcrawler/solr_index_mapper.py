@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import sys
 from datetime import datetime
+from bs4 import BeautifulSoup, SoupStrainer
 import time
 import requests
 import json
@@ -9,30 +10,45 @@ conf = ConfigParser()
 conf.read("punkcrawler.cfg")
 from pnk_logging import pnk_log
 mod = __file__
+from pnk_requests import pnk_request
 
 def mapper():
     
     headers = {"content-type" : "application/json"}
     for line in sys.stdin:
 
-        domain = line.split("\t")[1].strip()
-        solr_update_json = build_solr_update(domain)
+        domain_page = line.split("\t")[1].strip()
+        solr_update_json = build_solr_update(domain_page)
 
         pnk_log(mod, "Sending json: %s" % solr_update_json)
         solr_summ_url = conf.get("punkcrawler", "solr_summary_url")
         
-        pnk_log(mod, "Indexing %s to Solr"% domain)
+        pnk_log(mod, "Indexing %s to Solr"% domain_page)
         r = requests.post(solr_summ_url, data = solr_update_json, headers = headers)
 
     pnk_log(mod, "Finished a round of indexing")
 
-def build_solr_update(domain):
+def build_solr_update(domain_page):
     """Perform a partial update on url and tstamp in solr. Prevents docs from being overwritten."""
 
-    if not domain.endswith("/"):
-        domain = domain + "/"
+    if not domain_page.endswith("/"):
+        domain_page = domain_page + "/"
 
-    return json.dumps([{"id" : domain, "url" : {"set" : domain}, "tstamp"  : {"set" : str(datetime.now().isoformat() + "Z")}}])
+    title = resolve_title(domain_page)
+    return json.dumps([{"id" : domain_page, "title" : {"set" : title}, "url" : {"set" : domain_page}, "tstamp"  : {"set" : str(datetime.now().isoformat() + "Z")}}])
+
+def resolve_title(url):
+
+    #grab the first title if there's more than one
+    try:
+        pnk_log(mod, "Requesting %s" % url)
+        r = pnk_request(url)
+        response_text = r.text
+        
+        for title in BeautifulSoup(response_text, 'html.parser', parse_only=SoupStrainer('title')):
+            return title.text.strip()
+    except:
+        return None
 
 def commit():
 
