@@ -29,14 +29,14 @@ DIR="$( cd "$( dirname "$0" )" && pwd )"
 function scan {
     #performs a single round of scans against the number of websites in the config
 
-    echo "Running punk_fuzz in distributed mode."
-    cd $DIR
+#    echo "Running punk_fuzz in distributed mode."
+#    cd $DIR
 
     #run crawl to generate urls to fuzz
-    echo "Performing a crawl. See the PunkCRAWLER logs for progress."
-    cd ..
-    python punkcrawler.py
-    cd $DIR
+ #   echo "Performing a crawl. See the PunkCRAWLER logs for progress."
+ #   cd ..
+ #   python punkcrawler.py
+ #   cd $DIR
 
     #run the mapreduce job
     python punk_mapreduce.py -r hadoop --file pysolr/pysolr.py --file pysolr/BeautifulSoup.py\

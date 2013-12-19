@@ -10,7 +10,7 @@ sys.path.append(os.path.join(cwdir,"pysolr/"))
 import pysolr
 from ConfigParser import SafeConfigParser
 config_parser = SafeConfigParser()
-config_parser.read(os.path.join(punkscan_base,'punkscan_configs', 'punkscan_config.cfg'))
+config_parser.read(os.path.join(punkscan_base,'../', 'punkcrawler', 'punkcrawler.cfg'))
 
 class PunkSolr:
 
@@ -47,9 +47,10 @@ class PunkSolr:
         vscan_tstamp = datetime.datetime.now()
 
         for result in solr_doc_pull:
-            result['vscan_tstamp'] = datetime.datetime.now()
+            if solr_doc_pull["url"] == url:
+                result['vscan_tstamp'] = datetime.datetime.now()
 
-        self.conn.add(solr_doc_pull)
+#        self.conn.add(solr_doc_pull)
 
     def delete_vscan_tstamp(self, url):
 

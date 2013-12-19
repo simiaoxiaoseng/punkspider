@@ -192,10 +192,10 @@ class PunkMapReduceIndexer:
             self.reducer_instance.set_status("adding vulnerability summary")
 
         try:
-            print self.solr_summary_doc
+#            print self.solr_summary_doc
             self.conn_summ.add(self.solr_summary_doc)
         except:
-            print "indexing failed:"
+            sys.stderr.write("indexing failed:")
             for r in self.solr_summary_doc:
-                print r
-            print traceback.format_exc()
+                sys.stderr.write(r)
+            traceback.format_exc()

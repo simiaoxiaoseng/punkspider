@@ -29,8 +29,7 @@ import punkscan_solr
 from ConfigParser import SafeConfigParser
 
 config_parser = SafeConfigParser()
-config_parser.read(os.path.join(punkscan_base,'punkscan_configs', 'punkscan_config.cfg'))
-
+config_parser.read(os.path.join(punkscan_base,'..', 'punkcrawler', 'punkcrawler.cfg'))
 
 def configure_punkscan():
     '''Configure punkscan, get ready for the crawl.
@@ -120,20 +119,21 @@ def crawl_db_reduce(crawl_db_generator):
         if query_keys and url_keys not in list_of_keys:
 
             list_of_keys.append(url_keys)
-            url_list.append(url)
+            url_list.append(url.strip())
 
     return url_list
             
 def execute():
 
     #configure and run punkscan, then filter and prepare URLs to be fuzzed
-#    configure_punkscan()
+    configure_punkscan()
 #    crawl()
 #    f = open(os.path.join(punkscan_base, "punk_fuzzer", "urls_to_fuzz"), 'w')
 
     for url in crawl_db_reduce(parse_crawl_db()):
         print url.strip()
 #        f.write(url)
+#        f.write("\n")
                     
 if __name__ == "__main__":
 

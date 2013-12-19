@@ -1,5 +1,1 @@
 http://www.hyperiongray.com/
-http://www.bbc.co.uk
-http://www.theregister.co.uk/
-http://www.thegeekstuff.com/2010/06/bash-if-statement-examples/
-http://stackoverflow.com/questions/16571739/bash-parsing-variables-from-config-file
