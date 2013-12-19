@@ -99,7 +99,7 @@ def mapper():
 
         except ConnectionError:
             traceback.print_exc()
-            pnk_log("The request timed out, moving on")
+            pnk_log(mod, "The request timed out, moving on")
 
         except:
             #if something goes wrong, just move on

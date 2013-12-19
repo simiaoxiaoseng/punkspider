@@ -24,7 +24,7 @@ def get_proxy():
 def pnk_request_raw(url):
     r = requests.get(url, proxies=get_proxy(), timeout=int(conf.get("punkcrawler", "timeout")))
     return r
-    
+
 def pnk_request(url):
 
     pool = ThreadPool(processes = 1)
@@ -33,6 +33,7 @@ def pnk_request(url):
     try:
         ret_val = async_result.get(timeout = int(conf.get("punkcrawler", "hard_timeout")))
     except TimeoutError as te:
+        traceback.print_exc()
         pnk_log(mod, "Received hard timeout, raising timeout exception")
         #raise requests ConnectionError for easier handling if there's a hard timeout
         raise ConnectionError("Request received a hard timeout")
@@ -42,16 +43,3 @@ def pnk_request(url):
 def pnk_head(url):
     r = requests.head(url, proxies=get_proxy(), timeout=int(conf.get("punkcrawler", "timeout")))
     return r
-
-def hard_timeout_handler(signum, frame):    
-    raise requests.exceptions.ConnectionError("Hard timeout received from hard_timeout_handler in pnk_requests")
-
-if __name__ == "__main__":
-
-#    url = "http://download.thinkbroadband.com/100MB.zip"
-#    url = "http://www.hyperiongray.com"
-    print pnk_request(url)
-#    url = "http://wwweafwefw.hyperiongrweaefay.cowefaewfewafawefm"
-#    pool = ThreadPool(processes = 1)
-#    async_result = pool.apply_async(pnk_request, (url,))
-#    print async_result.get(timeout = 4)
