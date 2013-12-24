@@ -20,10 +20,6 @@ from urlparse import urlparse
 from urlparse import parse_qs
 cwdir = os.path.dirname(__file__)
 punkscan_base = os.path.join(cwdir, ".")
-sys.path.append(os.path.join(punkscan_base, "hadooper"))
-sys.path.append(os.path.join(punkscan_base, "config_scripts"))
-sys.path.append(os.path.join(punkscan_base, "crawl_db_parser"))
-sys.path.append(os.path.join(punkscan_base, "crawler"))
 sys.path.append(os.path.join(punkscan_base, "punk_solr"))
 import punkscan_solr
 from ConfigParser import SafeConfigParser
@@ -127,15 +123,14 @@ def execute():
 
     #configure and run punkscan, then filter and prepare URLs to be fuzzed
     configure_punkscan()
-#    crawl()
-#    f = open(os.path.join(punkscan_base, "punk_fuzzer", "urls_to_fuzz"), 'w')
+    crawl()
+    f = open(os.path.join(punkscan_base, "punk_fuzzer", "urls_to_fuzz"), 'w')
 
     for url in crawl_db_reduce(parse_crawl_db()):
         print url.strip()
-#        f.write(url)
-#        f.write("\n")
+        f.write(url)
+        f.write("\n")
                     
 if __name__ == "__main__":
 
     execute()
-                

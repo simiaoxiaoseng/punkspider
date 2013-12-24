@@ -25,10 +25,6 @@ import traceback
 import fuzz_config_parser
 import requests
 from bs4 import BeautifulSoup
-punkscan_base = os.path.join(cwdir, "../")
-from ConfigParser import SafeConfigParser
-config_parser = SafeConfigParser()
-config_parser.read(os.path.join(punkscan_base,'punkscan_configs', 'punkscan_config.cfg'))
 
 class GenFuzz:
     '''Series of methods useful in the individual fuzzing objects. Note this
