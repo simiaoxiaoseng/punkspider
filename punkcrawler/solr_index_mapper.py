@@ -1,16 +1,22 @@
 #!/usr/bin/python
 import sys
 from datetime import datetime
+import zipimport
+importer_bs4 = zipimport.zipimporter("lib/bs4.zip")
+bs4 = importer_bs4.load_module("bs4")
+
 from bs4 import BeautifulSoup, SoupStrainer
 import time
 import requests
 import json
+from urlparse import urlparse
 from ConfigParser import ConfigParser
 conf = ConfigParser()
 conf.read("punkcrawler.cfg")
 from pnk_logging import pnk_log
 mod = __file__
 from pnk_requests import pnk_request
+
 
 def mapper():
     
@@ -24,7 +30,7 @@ def mapper():
         solr_summ_url = conf.get("punkcrawler", "solr_summary_url")
         
         pnk_log(mod, "Indexing %s to Solr"% domain_page)
-        r = requests.post(solr_summ_url, data = solr_update_json, headers = headers)
+        r = requests.post(solr_summ_url, data = solr_update_json, headers = headers, proxy = get_index_proxy())
 
     pnk_log(mod, "Finished a round of indexing")
 
@@ -56,10 +62,14 @@ def commit():
     commit_url = solr_summ_url + "?commit=true"
 
     headers = {"content-type" : "application/json", "content-length" : 0}
-    r = requests.post(commit_url, headers = headers)
+    r = requests.post(commit_url, headers = headers, proxy = get_index_proxy())
     pnk_log(mod, "Committing to solr with URL %s" % commit_url)
     pnk_log(mod, "Server returned response %s" % str(r.status_code))
     print r.text
+
+def get_index_proxy():
+    purl = urlparse(conf.get("punkcrawler", "index_proxy"))
+    return {purl.scheme : purl.netloc}
 
 if __name__ == "__main__":
     
@@ -71,4 +81,3 @@ if __name__ == "__main__":
             
     except:
         mapper()
-        
