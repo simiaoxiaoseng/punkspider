@@ -20,12 +20,12 @@ from urlparse import urlparse
 from urlparse import parse_qs
 cwdir = os.path.dirname(__file__)
 punkscan_base = os.path.join(cwdir, ".")
-sys.path.append(os.path.join(punkscan_base, "punk_solr"))
+sys.path.append(os.path.join(punkscan_base, "punk_solr/"))
 import punkscan_solr
 from ConfigParser import SafeConfigParser
 
 config_parser = SafeConfigParser()
-config_parser.read(os.path.join(punkscan_base,'..', 'punkcrawler', 'punkcrawler.cfg'))
+config_parser.read(os.path.join(punkscan_base,'../', 'punkcrawler/', 'punkcrawler.cfg'))
 
 def configure_punkscan():
     '''Configure punkscan, get ready for the crawl.

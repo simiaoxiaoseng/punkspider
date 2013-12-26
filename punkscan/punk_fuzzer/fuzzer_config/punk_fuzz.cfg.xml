@@ -93,7 +93,7 @@
   </network_configs>
 
   <fuzz_configs>
-    <sim_urls_to_scan>  </sim_urls_to_scan>
+    <sim_urls_to_scan>20</sim_urls_to_scan>
     <contentl_check_wfallback>yes</contentl_check_wfallback>
     <pagesize_limit>5242880</pagesize_limit>
     <page_memory_load_limit>1048576</page_memory_load_limit>

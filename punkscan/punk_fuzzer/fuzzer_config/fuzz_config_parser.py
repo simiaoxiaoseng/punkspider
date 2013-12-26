@@ -128,3 +128,14 @@ class ConfigO:
         find_page_memory_load_limit = self.tree.findall('fuzz_configs/page_memory_load_limit')        
 
         return int(find_page_memory_load_limit[0].text)
+
+    def get_item(self, xpath):
+
+        find_item = self.tree.findall(xpath)        
+
+        return find_item[0].text
+
+if __name__ == "__main__":
+
+    configo = ConfigO()
+    print configo.get_item('fuzz_configs/sim_urls_to_scan')

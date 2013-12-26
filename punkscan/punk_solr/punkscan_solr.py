@@ -7,6 +7,8 @@ import datetime
 cwdir = os.path.dirname(__file__)
 punkscan_base = os.path.join(cwdir, "../")
 sys.path.append(os.path.join(cwdir,"pysolr/"))
+sys.path.append(os.path.join(punkscan_base,"punk_fuzzer/", "fuzzer_config/"))
+import fuzz_config_parser
 import pysolr
 from ConfigParser import SafeConfigParser
 config_parser = SafeConfigParser()
@@ -16,8 +18,14 @@ class PunkSolr:
 
     def __init__(self):
 
-        self.conn = pysolr.Solr(config_parser.get('urls', 'solr_summary_url'))
-        self.num_urls_to_scan = config_parser.get('performance', 'sim_urls_to_scan')
+        configo = fuzz_config_parser.ConfigO()
+        solr_urls_dic = configo.get_solr_urls()
+
+        solr_summary_url = solr_urls_dic['solr_summary_url']
+        solr_details_url = solr_urls_dic['solr_details_url']
+
+        self.conn = pysolr.Solr(solr_summary_url)
+        self.num_urls_to_scan = configo.get_item('fuzz_configs/sim_urls_to_scan')
 
     def get_record_by_id(self):
 
@@ -50,7 +58,7 @@ class PunkSolr:
             if solr_doc_pull["url"] == url:
                 result['vscan_tstamp'] = datetime.datetime.now()
 
-#        self.conn.add(solr_doc_pull)
+        self.conn.add(solr_doc_pull)
 
     def delete_vscan_tstamp(self, url):
 
