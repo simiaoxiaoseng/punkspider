@@ -7,12 +7,13 @@ import os
 import datetime
 from urlparse import urlparse
 cwdir = os.path.dirname(__file__)
-sys.path.append(os.path.join(cwdir, "../", "pysolr/"))
 sys.path.append(os.path.join(cwdir, "../", "fuzzer_config/"))
+sys.path.append(os.path.join(cwdir, "../../", "punk_solr/"))
 sys.path.append(cwdir)
-import pysolr
+import punkscan_solr
 import fuzz_config_parser
 import traceback
+
 
 class PunkMapReduceIndexer:
     '''Class to index the results of a mapreduce fuzzer job'''
@@ -20,17 +21,11 @@ class PunkMapReduceIndexer:
     def __init__(self, domain, domain_vuln_list, reducer_instance = False, del_current = True):
 
         configo = fuzz_config_parser.ConfigO()
-        solr_urls_dic = configo.get_solr_urls()
-
-        solr_summary_url = solr_urls_dic['solr_summary_url']
-        solr_details_url = solr_urls_dic['solr_details_url']
-
-        self.conn_summ = pysolr.Solr(solr_summary_url, timeout = 300)
-        self.conn_details = pysolr.Solr(solr_details_url, timeout = 300)
+        self.punk_solr = punkscan_solr.PunkSolr()
 
         #grab a domain entry in solr summary
         sq = 'id:' + '"' + domain + '"'
-        self.solr_summary_doc = self.conn_summ.search(sq.encode("utf-8"), rows=1)
+        self.solr_summary_doc = self.punk_solr.query_summ(sq, rows=1)
         self.domain_vuln_list = domain_vuln_list
         self.domain = domain
         self.reversed_domain = self.__reverse_url(domain)
@@ -45,7 +40,7 @@ class PunkMapReduceIndexer:
         '''Clear the solr details for the current domain. '''
 
         sq = 'url_main:"' + self.reversed_domain + '"'
-        self.conn_details.delete(q = sq.encode("utf-8"))
+        self.punk_solr.delete_detail(sq)
         
     def __reverse_url(self, url):
         '''Reverse a url. E.g. www.google.com -> com.google.www'''
@@ -77,7 +72,7 @@ class PunkMapReduceIndexer:
     def add_vuln_info(self):
         '''Index the vulnerabilities and details info'''
 
-        vuln_details_dic_list = []        
+        vuln_details_dic_list = []
         vuln_summary_dic = {}
 
         vuln_c = 0
@@ -142,7 +137,7 @@ class PunkMapReduceIndexer:
 
         #commit details vulnerabilities in batch
         
-        self.conn_details.add(vuln_details_dic_list)
+        self.punk_solr.add_detail(vuln_details_dic_list)
 
         if self.reducer_instance:
             self.reducer_instance.set_status("adding vulnerability details")
@@ -183,17 +178,13 @@ class PunkMapReduceIndexer:
             summ_doc["xpathi"] = xpathi_c
             summ_doc["osci"] = osci_c
             summ_doc["vscan_tstamp"] = datetime.datetime.now()
-            f = open ("/home/pgotsr/punkscan/punkscan/punk_fuzzer/fff.txt", "w")
-            f.write(str(summ_doc))
-
-
             
         if self.reducer_instance:
             self.reducer_instance.set_status("adding vulnerability summary")
 
         try:
 #            print self.solr_summary_doc
-            self.conn_summ.add(self.solr_summary_doc)
+            self.punk_solr.add_summ(self.solr_summary_doc)
         except:
             sys.stderr.write("indexing failed:")
             for r in self.solr_summary_doc:

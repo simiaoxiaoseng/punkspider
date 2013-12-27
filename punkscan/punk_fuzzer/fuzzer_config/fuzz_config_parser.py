@@ -73,6 +73,18 @@ class ConfigO:
         #need it in this silly format to pass to requests lib
         return {protocol:ip_col_port}
 
+    def get_index_proxies_dic(self):
+
+        protocol = self.tree.find('network_configs/index_proxy').get('type')
+        ip_col_port = self.tree.find('network_configs/index_proxy/ip_port').text
+
+        #return nothing if ip and port are missing in config - i.e. don't use proxy
+        if not ip_col_port or not protocol:
+            return {}
+
+        #need it in this silly format to pass to requests lib
+        return {protocol:ip_col_port}
+
     def get_solr_urls(self):
 
         solr_summary_url = self.tree.find('network_configs/solr/summary_url').text

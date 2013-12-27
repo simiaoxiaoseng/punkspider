@@ -86,6 +86,11 @@
     <proxy type="http">
       <ip_port><![CDATA[]]></ip_port>
     </proxy>
+    
+    <index_proxy type="http">
+      <ip_port><![CDATA[]]></ip_port>
+    </index_proxy>
+    
     <solr>
       <detail_url><![CDATA[http://10.180.234.221:8080/solr-4.1.0/detail]]></detail_url>
       <summary_url><![CDATA[http://10.180.234.221:8080/solr-4.1.0/summary]]></summary_url>
