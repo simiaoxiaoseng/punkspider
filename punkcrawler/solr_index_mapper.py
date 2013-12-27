@@ -17,7 +17,6 @@ from pnk_logging import pnk_log
 mod = __file__
 from pnk_requests import pnk_request
 
-
 def mapper():
     
     headers = {"content-type" : "application/json"}
