@@ -39,7 +39,7 @@ function scan {
     cd $DIR
 
     #run the mapreduce job
-    python punk_mapreduce.py -r hadoop --file ../punk_solr/punkscan_solr.py --file pysolr/BeautifulSoup.py\
+    python punk_mapreduce.py -r hadoop --file ../punk_solr/punkscan_solr.py --file BeautifulSoup.py\
  --file mapreduce_indexer/mapreduce_indexer.py --file punk_fuzz.py\
  --file fuzzer_config/fuzz_config_parser.py --file fuzzer_config/punk_fuzz.cfg.xml\
  --python-archive includes.tar.gz < urls_to_fuzz > output_distributed
