@@ -18,8 +18,9 @@ conf = ConfigParser()
 conf.read("punkcrawler.cfg")
 
 def get_proxy():
-    purl = urlparse(conf.get("punkcrawler", "proxy"))
-    return {purl.scheme : purl.netloc}
+    url = conf.get("punkcrawler", "proxy")
+    purl = urlparse(url)
+    return {purl.scheme : url}
 
 def pnk_request_raw(url):
     r = requests.get(url, proxies=get_proxy(), timeout=int(conf.get("punkcrawler", "timeout")))

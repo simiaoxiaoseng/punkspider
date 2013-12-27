@@ -30,7 +30,7 @@ def mapper():
         solr_summ_url = conf.get("punkcrawler", "solr_summary_url")
         
         pnk_log(mod, "Indexing %s to Solr"% domain_page)
-        r = requests.post(solr_summ_url, data = solr_update_json, headers = headers, proxy = get_index_proxy())
+        r = requests.post(solr_summ_url, data = solr_update_json, headers = headers, proxies = get_index_proxy())
 
     pnk_log(mod, "Finished a round of indexing")
 
@@ -62,17 +62,18 @@ def commit():
     commit_url = solr_summ_url + "?commit=true"
 
     headers = {"content-type" : "application/json", "content-length" : 0}
-    r = requests.post(commit_url, headers = headers, proxy = get_index_proxy())
+    r = requests.post(commit_url, headers = headers, proxies = get_index_proxy())
     pnk_log(mod, "Committing to solr with URL %s" % commit_url)
     pnk_log(mod, "Server returned response %s" % str(r.status_code))
     print r.text
 
 def get_index_proxy():
-    purl = urlparse(conf.get("punkcrawler", "index_proxy"))
-    return {purl.scheme : purl.netloc}
+    url = conf.get("punkcrawler", "index_proxy")
+    purl = urlparse(url)
+    return {purl.scheme : url}
 
 if __name__ == "__main__":
-    
+ 
     try:   
         if sys.argv[1] == "--commit":
             commit()
