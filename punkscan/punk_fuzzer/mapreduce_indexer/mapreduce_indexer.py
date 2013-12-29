@@ -4,7 +4,7 @@
 
 import sys
 import os
-import datetime
+from datetime import datetime
 from urlparse import urlparse
 cwdir = os.path.dirname(__file__)
 sys.path.append(os.path.join(cwdir, "../", "fuzzer_config/"))
@@ -144,31 +144,31 @@ class PunkMapReduceIndexer:
 
         #set the summary details dictionary and commit
         for summ_doc in self.solr_summary_doc:
-
+#
 #dbg            for r in self.solr_summary_doc:
 #dbg                print r
-
-            for key, val in summ_doc.items():
-
-                if isinstance(val, int) or key == u'id' or key == u'url':
-                    continue
-                
-                #zero out the anchors tag (it can cause encoding issues)
-                elif isinstance(val, list):
-                    summ_doc[key] = []
-
-                else:
-                    try:
-                        summ_doc[key] = val.encode("ascii", "ignore")
-                        
-                    except:
-                        try:
-                            summ_doc[key] = val.decode("iso-8859-1").encode("ascii", "ignore")
-                        except:
-                            try:
-                                summ_doc[key] = val.decode("utf-8").encode("ascii", "ignore") 
-                            except:
-                                pass
+#
+#            for key, val in summ_doc.items():
+#
+#                if isinstance(val, int) or key == u'id' or key == u'url':
+#                    continue
+#                
+#                #zero out the anchors tag (it can cause encoding issues)
+#                elif isinstance(val, list):
+#                    summ_doc[key] = []
+#
+#                else:
+#                    try:
+#                        summ_doc[key] = val.encode("ascii", "ignore")
+#                        
+#                    except:
+#                        try:
+#                            summ_doc[key] = val.decode("iso-8859-1").encode("ascii", "ignore")
+#                        except:
+#                            try:
+#                                summ_doc[key] = val.decode("utf-8").encode("ascii", "ignore") 
+#                            except:
+#                                pass
 
             summ_doc["xss"] = xss_c
             summ_doc["sqli"] = sqli_c
@@ -177,16 +177,9 @@ class PunkMapReduceIndexer:
             summ_doc["mxi"] = mxi_c
             summ_doc["xpathi"] = xpathi_c
             summ_doc["osci"] = osci_c
-            summ_doc["vscan_tstamp"] = datetime.datetime.now()
+            summ_doc["vscan_tstamp"] = str(datetime.now().isoformat() + "Z")
             
         if self.reducer_instance:
             self.reducer_instance.set_status("adding vulnerability summary")
 
-        try:
-#            print self.solr_summary_doc
-            self.punk_solr.add_summ(self.solr_summary_doc)
-        except:
-            sys.stderr.write("indexing failed:")
-            for r in self.solr_summary_doc:
-                sys.stderr.write(r)
-            traceback.format_exc()
+        self.punk_solr.add_summ(self.solr_summary_doc)

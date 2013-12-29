@@ -27,10 +27,8 @@ class PunkSolr:
 
         self.solr_summary_url = solr_urls_dic['solr_summary_url']
         self.solr_details_url = solr_urls_dic['solr_details_url']
-        print self.solr_summary_url
 
         self.solr_summary_url_update = urljoin(self.solr_summary_url, "summary/update/json/?commit=true")
-        print self.solr_summary_url_update
         
         self.solr_summary_url_query = urljoin(self.solr_summary_url, "summary/select")
         self.solr_details_url_update = urljoin(self.solr_details_url, "detail/update/json/?commit=true")
@@ -53,7 +51,7 @@ class PunkSolr:
         if return_code != 200:
             raise Exception("Query didn't return 200 OK")
         
-        return json.loads(raw_results)["response"]
+        return json.loads(raw_results)["response"]["docs"]
         
     def add_summ(self, docs_list):
         '''docs_list is a dictionary of documents (not a JSON string)'''
@@ -98,7 +96,7 @@ class PunkSolr:
     def update_vscan_tstamp_batch(self, solr_results):
         
         for result in solr_results:
-        
+            print result
             result["vscan_tstamp"] = str(datetime.now().isoformat() + "Z")
             
         self.add_summ(solr_results)
@@ -107,7 +105,7 @@ if __name__ == "__main__":
 
     x = PunkSolr()
     print x.query_summ('*:*', rows = 10)
-    x.get_scanned_longest_ago()
+#    x.get_scanned_longest_ago()
 
     """test_docs = [
       {
@@ -132,4 +130,4 @@ if __name__ == "__main__":
 
    # x.update_vscan_tstamp_batch(test_docs)
     
-    x.delete_detail('url_main:"pl.com.di.dlamediow"')
+#    x.delete_detail('url_main:"pl.com.di.dlamediow"')
