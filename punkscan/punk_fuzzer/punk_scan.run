@@ -35,7 +35,7 @@ function scan {
     #run crawl to generate urls to fuzz
     echo "Performing a crawl. See the PunkCRAWLER logs for progress."
     cd ..
-    python punkcrawler.py
+    python punkcrawler.py -d
     cd $DIR
 
     #run the mapreduce job
@@ -54,7 +54,7 @@ while getopts ":dlc" opt; do
       cd $DIR
       #run crawl to generate urls to fuzz
       cd ..
-      python punkcrawler.py
+      python punkcrawler.py -l
       cd $DIR
       python punk_mapreduce.py < urls_to_fuzz > output_local
       ;;

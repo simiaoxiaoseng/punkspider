@@ -50,7 +50,12 @@ def configure_punkscan():
 def crawl():
     '''Perform the crawl against the sites'''
 
-    child = subprocess.Popen("../punkcrawler/punkcrawler -dc", shell = True, stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+    if sys.argv[1] == "-d":
+        child = subprocess.Popen("../punkcrawler/punkcrawler -dc", shell = True, stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+
+    if sys.argv[1] == "-l":
+        child = subprocess.Popen("../punkcrawler/punkcrawler -lc", shell = True, stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+        
     while True:
         out = child.stderr.read(1)
         if out == '' and child.poll() != None:
@@ -101,7 +106,6 @@ def crawl_db_reduce(crawl_db_generator):
 
             url_list.append(url.strip())
             list_of_keys.append(domain.strip())
-
 
         #set up a unique string for unique query keys on a
         #domain. A concat of the query key + "_" + domain.
