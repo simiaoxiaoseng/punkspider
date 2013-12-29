@@ -146,9 +146,3 @@ class ConfigO:
         find_item = self.tree.findall(xpath)        
 
         return find_item[0].text
-
-if __name__ == "__main__":
-
-    configo = ConfigO()
-    print configo.get_item('fuzz_configs/sim_urls_to_scan')
-    print configo.get_index_proxies_dic()

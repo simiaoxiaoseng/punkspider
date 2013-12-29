@@ -23,7 +23,10 @@ sys.path.append(cwdir)
 #import the modules aded to the path
 import traceback
 import fuzz_config_parser
+from multiprocessing import TimeoutError
+from multiprocessing.pool import ThreadPool
 import requests
+from requests.exceptions import ConnectionError
 from bs4 import BeautifulSoup
 
 class GenFuzz:
@@ -50,6 +53,7 @@ class GenFuzz:
         self.page_memory_load_limit = self.fuzz_config.get_page_memory_load_limit()
         self.proxy = self.fuzz_config.get_proxies_dic()
         self.timeout = 4
+        self.hard_timeout = int(self.fuzz_config.get_item('fuzz_configs/hard_timeout'))
 
     def mutate_append(self, payload_list, str_to_append):
         '''Take in a list of strings to append to the payloads,
@@ -64,7 +68,25 @@ class GenFuzz:
         full_list = mutated_list + payload_list
 
         return full_list
-        
+
+    def pnk_request_raw(self, url):
+        r = requests.get(url, proxies=self.proxy, timeout=int(self.timeout))
+        return r
+
+    def pnk_request(self, url):
+    
+        pool = ThreadPool(processes = 1)
+        async_result = pool.apply_async(self.pnk_request_raw, (url,))
+    
+        try:
+            ret_val = async_result.get(timeout = self.hard_timeout)
+        except TimeoutError as te:
+            traceback.print_exc()
+            #raise requests ConnectionError for easier handling if there's a hard timeout
+            raise ConnectionError("Request received a hard timeout")
+    
+        return ret_val
+            
     def mutate_prepend(self, payload_list, str_to_prepend):
         '''Take in a list of strings to prepend to the payloads,
         apppend to the list and return all values as a list'''
@@ -216,10 +238,11 @@ class GenFuzz:
             payload = url_payload[1]
 
             try:
-                r = requests.get(url, proxies = self.proxy, timeout = self.timeout)
+                r = self.pnk_request(url)
                 ret_text = r.text
 
             except:
+                traceback.print_exc()
                 ret_text = "The request timed out"
 
             yield (url, payload, ret_text)
@@ -241,11 +264,11 @@ class GenFuzz:
         
         try:
 
-            r = requests.get(url, proxies = self.proxy, timeout = self.timeout)
+            r = self.pnk_request(url)
             ret_text = r.text
 
         except:
-
+            traceback.print_exc()
             ret_text = "The request timed out"
 
         return (url, payload, ret_text)
@@ -434,7 +457,6 @@ class GenFuzz:
             return self.fuzzworth_content_type(head, allowed_types_lst, full_req_match = False, strict = True)
             
         return False
-
 
 class XSSFuzz(GenFuzz):
     '''This class fuzzes a single URL-parameter pair with a simple xss fuzzer'''
@@ -938,9 +960,9 @@ if __name__ == "__main__":
 
     x = PunkFuzz()
     #overlong content-length
-#    print "overlong content-length"
-#    x.punk_set_target("http://www.chinapwr.com/plus/download.php?open=2&id=175&uhash=8a04af72acc3057001827459", "open")
-#    x.fuzz()
+    print "overlong content-length"
+    x.punk_set_target("http://www.chinapwr.com/plus/download.php?open=2&id=175&uhash=8a04af72acc3057001827459", "open")
+    x.fuzz()
 
     #no content-length
 #    print "no content-length"
@@ -952,8 +974,8 @@ if __name__ == "__main__":
 #    x.punk_set_target("http://www.hyperiongray.com?q=blah", "q")
 #    x.fuzz()
 
-    x.punk_set_target("http://sqli1.hyperiongray.com/?getfile=index.php&user=root", "user")
-    print x.fuzz()
+#    x.punk_set_target("http://sqli1.hyperiongray.com/?getfile=index.php&user=root", "user")
+#    print x.fuzz()
 
-    x.punk_set_target("http://sqli1.hyperiongray.com/?getfile=index.php&user=root", "getfile")
-    print x.fuzz()
+#    x.punk_set_target("http://sqli1.hyperiongray.com/?getfile=index.php&user=root", "getfile")
+#    print x.fuzz()

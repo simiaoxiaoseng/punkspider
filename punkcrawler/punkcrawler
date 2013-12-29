@@ -127,7 +127,7 @@ function crawl_to_depth_distributed {
 
     echolog "Current crawl depth is $n, running PunkCRAWLER Mapper"
     $HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/contrib/streaming/*streaming*.jar \
-    -D mapred.max.reduce.failures.percent=20 -D mapred.map.max.attempts=2 -file lib/bs4.zip -file lib/requests.zip -file pnk_logging.py \
+    -file lib/bs4.zip -file lib/requests.zip -file pnk_logging.py \
     -file punkcrawler.cfg -file already_crawled.py -file .__tmp__.already-crawled -input db/urls.db -mapper punkcrawler_mapper.py \
     -output db/urls.db.tmp -file pnk_requests.py -file punkcrawler_mapper.py
 
@@ -157,7 +157,7 @@ function crawl_to_depth_distributed {
 
     echolog "Purging 404s"
     $HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/contrib/streaming/*streaming*.jar \
-    -D mapred.max.reduce.failures.percent=20 -D mapred.map.max.attempts=2 -file lib/bs4.zip -file lib/requests.zip -file pnk_logging.py \
+    -file lib/bs4.zip -file lib/requests.zip -file pnk_logging.py \
     -file punkcrawler.cfg -input db/urls.db -mapper purge_404_mapper.py \
     -output db/urls.db.tmp -file pnk_requests.py -file purge_404_mapper.py
 
@@ -183,7 +183,7 @@ function crawl_to_depth_distributed {
     hadoop dfs -copyFromLocal $rooturls_filename db/rooturls.db
 
     $HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/contrib/streaming/*streaming*.jar \
-    -D mapred.max.reduce.failures.percent=20 -D mapred.map.max.attempts=2 -file lib/bs4.zip -file lib/requests.zip -file pnk_logging.py \
+    -file lib/bs4.zip -file lib/requests.zip -file pnk_logging.py \
     -file punkcrawler.cfg -input db/rooturls.db -mapper purge_404_mapper.py \
     -output db/rooturls.db.tmp -file pnk_requests.py -file purge_404_mapper.py
 

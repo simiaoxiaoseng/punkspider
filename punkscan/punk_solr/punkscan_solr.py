@@ -7,6 +7,7 @@ import os
 cwdir = os.path.dirname(__file__)
 punkscan_base = os.path.join(cwdir, "../")
 sys.path.append(os.path.join(punkscan_base,"punk_fuzzer/", "fuzzer_config/"))
+sys.path.append(os.path.join(punkscan_base,"punk_fuzzer/", "requests/"))
 import fuzz_config_parser
 from datetime import datetime
 import requests
