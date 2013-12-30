@@ -2,8 +2,12 @@
 import sys
 from datetime import datetime
 import zipimport
+
 importer_bs4 = zipimport.zipimporter("lib/bs4.zip")
 bs4 = importer_bs4.load_module("bs4")
+
+importer_requests = zipimport.zipimporter("lib/requests.zip")
+requests = importer_requests.load_module("requests")
 
 from bs4 import BeautifulSoup, SoupStrainer
 import time
