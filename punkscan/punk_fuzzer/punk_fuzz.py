@@ -960,9 +960,9 @@ if __name__ == "__main__":
 
     x = PunkFuzz()
     #overlong content-length
-    print "overlong content-length"
-    x.punk_set_target("http://www.chinapwr.com/plus/download.php?open=2&id=175&uhash=8a04af72acc3057001827459", "open")
-    x.fuzz()
+#    print "overlong content-length"
+#    x.punk_set_target("http://www.chinapwr.com/plus/download.php?open=2&id=175&uhash=8a04af72acc3057001827459", "open")
+#    x.fuzz()
 
     #no content-length
 #    print "no content-length"
@@ -979,3 +979,8 @@ if __name__ == "__main__":
 
 #    x.punk_set_target("http://sqli1.hyperiongray.com/?getfile=index.php&user=root", "getfile")
 #    print x.fuzz()
+
+
+#    x.punk_set_target("http://www.bjsjhjc.com/aboutus.asp?title=dd", "title")
+#    print x.fuzz()
+    
