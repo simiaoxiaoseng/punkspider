@@ -1,7 +1,0 @@
-#!/bin/bash
-
-cd solr-details/example
-java -jar start.jar 2>&1 &
-cd ../../solr-summary/example
-java -jar start.jar 2>&1 &
-
