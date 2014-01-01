@@ -20,7 +20,8 @@ def load(seed_filename):
     
 def filter_by_domain(infilename, domain_list):
 
-    for line in open(infilename, 'r'):
+    f = open (infilename, 'r')
+    for line in f:
 
         try:
             domain, url = line.split("\t")
@@ -34,6 +35,7 @@ def filter_by_domain(infilename, domain_list):
 
 def filter_only_root_urls(infilename):
 
+    f = open(infilename, 'r')
     for line in open(infilename, 'r'):
 
         try:
