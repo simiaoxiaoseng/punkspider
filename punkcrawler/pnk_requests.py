@@ -6,7 +6,7 @@ from multiprocessing import TimeoutError
 from multiprocessing.pool import ThreadPool
 
 importer_requests = zipimport.zipimporter("lib/requests.zip")
-bs4 = importer_requests.load_module("requests")
+requests = importer_requests.load_module("requests")
 
 import requests
 from requests.exceptions import ConnectionError

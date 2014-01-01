@@ -51,18 +51,18 @@ def crawl():
     '''Perform the crawl against the sites'''
 
     if sys.argv[1] == "-d":
-        child = subprocess.Popen("../punkcrawler/punkcrawler -dc", shell = True, stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+        child = subprocess.Popen("../punkcrawler/punkcrawler -dc", shell = True, stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
 
     if sys.argv[1] == "-l":
-        child = subprocess.Popen("../punkcrawler/punkcrawler -lc", shell = True, stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+        child = subprocess.Popen("../punkcrawler/punkcrawler -lc", shell = True, stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
         
     while True:
-        out = child.stderr.read(1)
+        out = child.stdout.read(1)
         if out == '' and child.poll() != None:
             break
         if out != '':
-            sys.stdout.write(out)
-            sys.stdout.flush()
+            sys.stderr.write(out)
+            sys.stderr.flush()
 
 def parse_crawl_db():
     '''Delete previous crawl db on HDFS and local fs,
