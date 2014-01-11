@@ -44,7 +44,7 @@ def build_solr_update(domain_page):
         domain_page = domain_page + "/"
 
     title = resolve_title(domain_page)
-    return json.dumps([{"id" : domain_page, "title" : {"set" : title}, "url" : {"set" : domain_page}, "tstamp"  : {"set" : str(datetime.now().isoformat() + "Z")}}])
+    return json.dumps([{"id" : domain_page, "url_str" : {"set" : domain_page}, "title_str" : {"set" : title}, "title" : {"set" : title}, "url" : {"set" : domain_page}, "tstamp"  : {"set" : str(datetime.now().isoformat() + "Z")}}])
 
 def resolve_title(url):
 
