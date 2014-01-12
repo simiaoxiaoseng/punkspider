@@ -29,6 +29,7 @@ class PunkSolr:
         self.solr_summary_url = solr_urls_dic['solr_summary_url']
         self.solr_details_url = solr_urls_dic['solr_details_url']
 
+        #may need to reduce # of commits
         self.solr_summary_url_update = urljoin(self.solr_summary_url, "summary/update/json/?commit=true")
         
         self.solr_summary_url_query = urljoin(self.solr_summary_url, "summary/select")
@@ -97,38 +98,6 @@ class PunkSolr:
     def update_vscan_tstamp_batch(self, solr_results):
         
         for result in solr_results:
-            print result
             result["vscan_tstamp"] = str(datetime.now().isoformat() + "Z")
             
         self.add_summ(solr_results)
-
-if __name__ == "__main__":
-
-    x = PunkSolr()
-    print x.query_summ('*:*', rows = 10)
-#    x.get_scanned_longest_ago()
-
-    """test_docs = [
-      {
-        'url':'http://etiennejung.ultra-book.com/',
-        'title':'Ultra-book de etiennejungUltra-book',
-        'id':'http://etiennejung.ultra-book.com/',
-        'tstamp':'2012-11-14T18:49:46.043Z',
-        '_version_':1454706248621490176},
-      {
-        'url':'http://etranger.oovacances.com/',
-        'title':u'Etranger OOVacances - Vacances \u00e0 l\'\u00e9tranger',
-        'id':'http://etranger.oovacances.com/',
-        'tstamp':'2012-11-14T18:05:29.104Z',
-        '_version_':1454706248622538752},
-      {
-        'url':'http://etsydarkteam.webs.com/',
-        'title':'Home - Etsy\'s Dark Side Street Team',
-        'id':'http://etsydarkteam.webs.com/',
-        'tstamp':'2012-11-14T19:21:08.269Z',
-        '_version_':1454706248623587328}]
-    """
-
-   # x.update_vscan_tstamp_batch(test_docs)
-    
-#    x.delete_detail('url_main:"pl.com.di.dlamediow"')

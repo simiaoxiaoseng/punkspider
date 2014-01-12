@@ -648,12 +648,14 @@ class MXiFuzz(GenFuzz):
     def mxi_fuzz(self):
         '''Returns a list of (vulnerable url, payload) tuples
         of vuln type "mxi"'''
+        
+        print "mxi fuzz"
 
         #define what we're looking for on the pages
 
         match_list_raw = ["unexpected extra arguments to select", 
                       "Bad or malformed request", "Could not access the following folders",
-                      "A000", "A001", "invalid mailbox name", 
+                      "invalid mailbox name", 
                       "go to the folders page"]
 
         #we lower our http responses for easier matching
@@ -955,32 +957,3 @@ class PunkFuzz(GenFuzz):
         + self.mxi_fuzz_results + self.xpathi_fuzz_results + self.osci_fuzz_results
 
         return final_results
-
-if __name__ == "__main__":
-
-    x = PunkFuzz()
-    #overlong content-length
-#    print "overlong content-length"
-#    x.punk_set_target("http://www.chinapwr.com/plus/download.php?open=2&id=175&uhash=8a04af72acc3057001827459", "open")
-#    x.fuzz()
-
-    #no content-length
-#    print "no content-length"
-#    x.punk_set_target("http://mirun.jp/index.php/module/SearchResult?from=SearchPopup&shop_category_id=small_30", "from")
-#    x.fuzz()
-    
-    #short content-length
-#    print "short cl"
-#    x.punk_set_target("http://www.hyperiongray.com?q=blah", "q")
-#    x.fuzz()
-
-#    x.punk_set_target("http://sqli1.hyperiongray.com/?getfile=index.php&user=root", "user")
-#    print x.fuzz()
-
-#    x.punk_set_target("http://sqli1.hyperiongray.com/?getfile=index.php&user=root", "getfile")
-#    print x.fuzz()
-
-
-#    x.punk_set_target("http://www.bjsjhjc.com/aboutus.asp?title=dd", "title")
-#    print x.fuzz()
-    

@@ -84,16 +84,16 @@
   
   <network_configs>
     <proxy type="http">
-      <ip_port><![CDATA[http://puser1:blahblahblah1234blahblahblah@37.221.160.130:3131]]></ip_port>
+      <ip_port><![CDATA[]]></ip_port>
     </proxy>
     
     <index_proxy type="http">
-      <ip_port><![CDATA[http://puser1:blahblahblah1234blahblahblah@198.101.170.229:3131]]></ip_port>
+      <ip_port><![CDATA[]]></ip_port>
     </index_proxy>
     
     <solr>
-      <detail_url><![CDATA[http://10.180.234.221:8080/solr-4.1.0/detail]]></detail_url>
-      <summary_url><![CDATA[http://10.180.234.221:8080/solr-4.1.0/summary]]></summary_url>
+      <detail_url><![CDATA[]]></detail_url>
+      <summary_url><![CDATA[]]></summary_url>
     </solr>
   </network_configs>
 
