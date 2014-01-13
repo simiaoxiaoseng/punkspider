@@ -70,12 +70,16 @@ def mapper():
             response_text = r.text
 
             link_c = 0
-            for link in BeautifulSoup(response_text, 'html.parser', parse_only=SoupStrainer('a')):
-                
+            for link in BeautifulSoup(response_text, 'html.parser', parse_only=SoupStrainer(['a', 'img', 'script', 'link'])):
+
                 if link_c > max_links:
                     break
 
-                href = link.get('href')
+                if link.get('href'):
+                    href = link.get('href')
+            
+                elif link.get('src'):
+                    href = link.get('src')
                 
                 if href and not href.startswith("mailto:"):
 
